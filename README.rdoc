@@ -12,7 +12,9 @@ Start the code by running command <tt>rails s</tt>
 
 To do for later: check out documentation on command <tt>rake doc:app</tt>.
 
-:section: My Section
-Just playing around with sections
+# -------------------------------------------
+# :section: My Section
+# Just playing around with sections
+# -------------------------------------------
 
 still in section?
