@@ -1,8 +1,8 @@
-== README
+= Cal Raijin Taiko Website Revamp
 
 This is a side project I'm working on to familiarize myself with Rails. If it goes well enough, I might propose using it as a basis for our website revamp.
 
-Resources:
+== Resources:
 
 * {Rdoc documentation}[http://jan.varwig.org/wp-content/uploads/2006/09/Rdoc%20Cheat%20Sheet.pdf]
 
@@ -12,9 +12,6 @@ Start the code by running command <tt>rails s</tt>
 
 To do for later: check out documentation on command <tt>rake doc:app</tt>.
 
-# -------------------------------------------
-# :section: My Section
-# Just playing around with sections
-# -------------------------------------------
+=== Rdocs
+To generate the formatted Rdoc document, run the command <tt>rdoc FILENAME.rdoc -o ./path/to/destfile</tt> from the main directory.
 
-still in section?
