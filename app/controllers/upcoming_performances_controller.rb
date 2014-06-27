@@ -1,0 +1,2 @@
+class UpcomingPerformancesController < ApplicationController
+end

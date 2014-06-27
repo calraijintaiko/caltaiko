@@ -1,0 +1,2 @@
+class PastPerformancesController < ApplicationController
+end
