@@ -12,6 +12,8 @@
       <td><%= member.bio %></td>
       <td><%= link_to 'Show', member_path(member) %></td>
       <td><%= link_to 'Edit', edit_member_path(member) %></td>
+      <td><%= link_to 'Delete', member_path(member),
+              method: :delete, data: { confirm: 'Are you sure you\'d like to delete member ' + member.name + '?' } %></td>
     </tr>
   <% end %>
 </table>

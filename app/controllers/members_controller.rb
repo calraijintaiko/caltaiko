@@ -1,4 +1,6 @@
 class MembersController < ApplicationController
+  before_action :authenticate_user!, :except => [:show, :index]
+
   def new
     @member = Member.new
   end
@@ -39,5 +41,12 @@ class MembersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @member = Member.find(params[:id])
+    @member.destroy
+    
+    redirect_to members_path
   end
 end
