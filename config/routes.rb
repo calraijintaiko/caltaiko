@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :members
+
   resources :past_performances
 
   resources :upcoming_performances

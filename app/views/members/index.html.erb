@@ -1,0 +1,19 @@
+<h1>Listing Members</h1>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Bio</th>
+  </tr>
+ 
+  <% @members.each do |member| %>
+    <tr>
+      <td><%= member.name %></td>
+      <td><%= member.bio %></td>
+      <td><%= link_to 'Show', member_path(member) %></td>
+      <td><%= link_to 'Edit', edit_member_path(member) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to "Add New Member", new_member_path %>
