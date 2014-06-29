@@ -29,6 +29,9 @@ gem 'spring',        group: :development
 # Use Device for authentification
 gem 'devise'
 
+# Use high_voltage for static pages, like 'About'
+gem 'high_voltage'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
