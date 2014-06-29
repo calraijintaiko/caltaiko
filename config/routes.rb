@@ -6,7 +6,10 @@ Rails.application.routes.draw do
 
   resources :upcoming_performances
 
-  get 'front_page/main'
+  get 'about' => 'pages#about'
+  get 'contact' => 'pages#contact'
+  get 'performances/upcoming' => 'upcoming_performances#index'
+  get 'performances/past' => 'past_performances#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
