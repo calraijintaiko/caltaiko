@@ -2,26 +2,20 @@
 
 <h1>Upcoming Performances</h1>
  
-<table>
-  <tr>
-    <th>Date</th>
-    <th>Title</th>
-    <th>Location</th>
-    <th>Description</th>
-  </tr>
- 
-  <% @upcoming_performances.each do |upcoming_performance| %>
-    <tr>
-      <td><%= upcoming_performance.date %></td>
-      <td><%= upcoming_performance.title %></td>
-      <td><%= upcoming_performance.location %></td>
-      <td><%= upcoming_performance.description %></td>
-      <td><%= link_to 'Show', upcoming_performance_path(upcoming_performance) %></td>
-      <td><%= link_to 'Edit', edit_upcoming_performance_path(upcoming_performance) %></td>
-      <td><%= link_to 'Delete', upcoming_performance_path(upcoming_performance),
-              method: :delete, data: { confirm: 'Are you sure you\'d like to delete upcoming performance "' + upcoming_performance.title + '"?' } %></td>
-    </tr>
-  <% end %>
-</table>
+<ul>
 
-<%= link_to "Add New Upcoming Performance", new_upcoming_performance_path %>
+  <% @upcoming_performances.each do |upcoming_performance| %>
+    <li>
+      <p><strong>When: </strong><%= upcoming_performance.date %></p>
+      <p><strong>What: </strong><%= upcoming_performance.title %></p>
+      <p><strong>Where: </strong><%= upcoming_performance.location %></p>
+      <p><%= upcoming_performance.description %></p>
+      <p><%= link_to 'Show', upcoming_performance_path(upcoming_performance) %>
+        <%= link_to 'Edit', edit_upcoming_performance_path(upcoming_performance) %>
+        <%= link_to 'Delete', upcoming_performance_path(upcoming_performance),
+              method: :delete, data: { confirm: 'Are you sure you\'d like to delete upcoming performance "' + upcoming_performance.title + '"?' } %></p>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add Upcoming Performance", new_upcoming_performance_path %>
