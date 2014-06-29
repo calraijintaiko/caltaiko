@@ -1,0 +1,37 @@
+<%= form_for @past_performance do |f| %>
+  <% if @past_performance.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@past_performance.errors.count, "error") %> prohibited
+      this past_performance from being saved:</h2>
+    <ul>
+    <% @past_performance.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <p>
+    <%= f.label :date %><br>
+    <%= f.datetime_select :date, :ampm => true, :timezone => 'PST' %>
+  </p>
+ 
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

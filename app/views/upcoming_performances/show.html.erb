@@ -1,0 +1,21 @@
+<p>
+  <strong>When:</strong>
+  <%= @upcoming_performance.date %>
+</p>
+
+<p>
+  <strong>What:</strong>
+  <%= @upcoming_performance.title %>
+</p>
+
+<p>
+  <strong>Where:</strong>
+  <%= @upcoming_performance.location %>
+</p>
+
+<p>
+  <%= @upcoming_performance.description %>
+</p>
+
+<%= link_to 'Back', upcoming_performances_path %>
+<%= link_to 'Edit', edit_upcoming_performance_path(@upcoming_performance) %>
