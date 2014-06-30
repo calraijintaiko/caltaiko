@@ -4,15 +4,15 @@ This is a side project I'm working on to familiarize myself with Rails. If it go
 
 == Dependencies:
 
-* rvm
+* rvm[https://rvm.io/rvm/install]
 
-* git
+* Git[https://help.github.com/articles/set-up-git]
 
-* Ruby 2.1.*
+* {Ruby 2.1.*}[https://www.ruby-lang.org/en/]
 
-* Rails 4.1.*
+* {Rails 4.1.*}[http://rubyonrails.org/]
 
-* ImageMagick
+* ImageMagick[http://www.imagemagick.org/]
 
 == Installation:
 
@@ -20,23 +20,23 @@ Note: Some of these steps assume you are running this on a Mac, since that's wha
 
 1. Install rvm, by using these[https://rvm.io/rvm/install] instructions.
 
-2. Use the command <tt>rvm use 2.1.2<tt> to download and install ruby v2.1.2.
+2. Use the command <tt>rvm use 2.1.2</tt> to download and install ruby v2.1.2.
 
-3. Install homebrew (on Mac), with the command <tt>ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"<tt>
+3. Install homebrew (on Mac), with the command <tt>ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"</tt>
 
 4. Fork this repository, then:
 
-   <tt>git clone git@github.com:[Your Github Account]/caltaiko.git<tt>
+   <tt>git clone git@github.com:[Your Github Account]/caltaiko.git</tt>
 
 5. Go into the caltaiko repository
 
-   <tt>cd caltaiko<tt>
+   <tt>cd caltaiko</tt>
 
 6. Download the appropriate gems using Bundler[http://bundler.io/rails3.html]:
 
-   <tt>bundle install<tt>
+   <tt>bundle install</tt>
 
-And now you should be all set! Running the command <tt>rails s<tt> should now start up the application, and navigating to <tt>localhost:3000<tt> in a browser will let you play around with it!
+And now you should be all set! Running the command <tt>rails s</tt> should now start up the application, and navigating to <tt>localhost:3000</tt> in a browser will let you play around with it!
 
 
 
