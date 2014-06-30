@@ -29,6 +29,9 @@ gem 'spring',        group: :development
 # Use Device for authentification
 gem 'devise'
 
+# Use Paperclip to attach images
+gem 'paperclip', '~> 4.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
