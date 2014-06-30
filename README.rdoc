@@ -8,10 +8,9 @@ This is a side project I'm working on to familiarize myself with Rails. If it go
 
 * {Rails tutorial}[http://guides.rubyonrails.org/getting_started.html]
 
-Start the code by running command <tt>rails s</tt>
+Start the application by running command <tt>rails s</tt>
 
-To do for later: check out documentation on command <tt>rake doc:app</tt>.
+=== Documentation
+To generate the formatted Rdoc document, run the command <tt>rake doc:app</tt> from the main directory. This will generate a directory caltaiko/doc/app/.
 
-=== Rdocs
-To generate the formatted Rdoc document, run the command <tt>rdoc FILENAME.rdoc -o ./path/to/destfile</tt> from the main directory.
-
+Open the file caltaiko/doc/app/table_of_contents.html to view the documentation on each of the pages, classes, modules, and methods of the application.
