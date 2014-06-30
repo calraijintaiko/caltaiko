@@ -10,12 +10,16 @@
     <tr>
       <td><%= member.name %></td>
       <td><%= member.bio %></td>
+      <% if user_signed_in? %>
       <td><%= link_to 'Show', member_path(member) %></td>
       <td><%= link_to 'Edit', edit_member_path(member) %></td>
       <td><%= link_to 'Delete', member_path(member),
               method: :delete, data: { confirm: 'Are you sure you\'d like to delete member ' + member.name + '?' } %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>
 
+<% if user_signed_in? %>
 <%= link_to "Add New Member", new_member_path %>
+<% end %>

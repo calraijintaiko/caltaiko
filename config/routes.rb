@@ -10,6 +10,16 @@ Rails.application.routes.draw do
   get 'contact' => 'pages#contact'
   get 'performances/upcoming' => 'upcoming_performances#index'
   get 'performances/past' => 'past_performances#index'
+  get 'members' => 'members#index'
+  
+  devise_scope :user do
+    get "login", :to => "devise/sessions#new"
+    get "settings", :to => "devise/registrations#edit"
+    get "logout",   :to => "devise/sessions#destroy"
+    # MUST BE REMOVED BEFORE DISTRIBUTING; there should be no way to register new users
+    # Included purely for testing reasons
+    get "register", to: "devise/registrations#new"
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -65,4 +75,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
 end
