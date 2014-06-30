@@ -14,3 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore system stored avatar pictures
+/public/system
+
+# Ignore generated Rdoc documentation
+/doc

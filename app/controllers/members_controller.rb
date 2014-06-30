@@ -17,7 +17,7 @@ class MembersController < ApplicationController
 
   private
   def member_params
-    params.require(:member).permit(:name, :gen, :major, :bio)
+    params.require(:member).permit(:name, :gen, :major, :bio, :avatar)
   end
 
   public

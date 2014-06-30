@@ -20,6 +20,10 @@ ActiveRecord::Schema.define(version: 20140630201549) do
     t.text     "bio"
     t.decimal  "gen"
     t.string   "major"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "past_performances", force: true do |t|

@@ -18,5 +18,7 @@
   <%= @member.bio %>
 </p>
 
+<%= image_tag @member.avatar.url(:medium) %><br>
+
 <%= link_to 'Back', members_path %>
 <%= link_to 'Edit', edit_member_path(@member) %>
