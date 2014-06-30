@@ -18,11 +18,13 @@ This is a side project I'm working on to familiarize myself with Rails. If it go
 
 Note: Some of these steps assume you are running this on a Mac, since that's what I'm using. I'll update this later with Linux instructions, but Windows... you're outta luck T_T
 
-1. Install rvm, by using these[https://rvm.io/rvm/install] instructions.
+1. Install rvm, by following these[https://rvm.io/rvm/install] instructions.
 
-2. Use the command <tt>rvm use 2.1.2</tt> to download and install ruby v2.1.2.
+2. Run the command <tt>rvm use 2.1.2</tt> to download and install ruby v2.1.2.
 
-3. Install homebrew (on Mac), with the command <tt>ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"</tt>
+3. Install homebrew (on Mac), with the command
+
+   <tt>ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"</tt>
 
 4. Fork this repository, then:
 
@@ -32,7 +34,12 @@ Note: Some of these steps assume you are running this on a Mac, since that's wha
 
    <tt>cd caltaiko</tt>
 
-6. Download the appropriate gems using Bundler[http://bundler.io/rails3.html]:
+6. Run the command <tt>brew install imagemagick</tt> to install ImageMagick.
+
+7. Run <tt>which convert</tt> to find out where ImageMagick was installed.
+   If it does not return <tt>/usr/local/bin/convert</tt>, go to the file <tt>caltaiko/config/environments/development.rb</tt> and change the line <tt>Paperclip.options[:command_path] = "/usr/local/bin/"</tt> to <tt>Paperclip.options[:command_path] = "/path/to/bin/"</tt>, where <tt>/path/to/bin</tt> is the output of <tt>which convert</tt> except for the last <tt>convert</tt> part.
+
+8. Download the appropriate gems using Bundler[http://bundler.io/rails3.html]:
 
    <tt>bundle install</tt>
 
@@ -49,6 +56,6 @@ And now you should be all set! Running the command <tt>rails s</tt> should now s
 Start the application by running command <tt>rails s</tt>
 
 === Documentation
-To generate the formatted Rdoc document, run the command <tt>rake doc:app</tt> from the main directory. This will generate a directory caltaiko/doc/app/.
+To generate the formatted Rdoc document, run the command <tt>rake doc:app</tt> from the main directory. This will generate a directory <tt>caltaiko/doc/app/</tt>.
 
-Open the file caltaiko/doc/app/table_of_contents.html to view the documentation on each of the pages, classes, modules, and methods of the application.
+Open the file <tt>caltaiko/doc/app/table_of_contents.html</tt> to view the documentation on each of the pages, classes, modules, and methods of the application.

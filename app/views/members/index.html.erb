@@ -1,14 +1,18 @@
-<h1>Listing Members</h1>
+<h1>Members</h1>
  
 <table>
   <tr>
     <th>Name</th>
+    <th>Gen</th>
+    <th>Major</th>
     <th>Bio</th>
   </tr>
  
   <% @members.each do |member| %>
     <tr>
       <td><%= member.name %></td>
+      <td><%= number_with_precision(member.gen, precision: 0) %></td>
+      <td><%= member.major %></td>
       <td><%= member.bio %></td>
       <% if user_signed_in? %>
       <td><%= link_to 'Show', member_path(member) %></td>
