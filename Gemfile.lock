@@ -138,6 +138,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  cocaine (~> 0.5.4)
   coffee-rails (~> 4.0.0)
   devise
   jbuilder (~> 2.0)

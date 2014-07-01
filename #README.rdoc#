@@ -86,7 +86,9 @@ To sync any changes I make with your own repository, run the commands
 
      b. Create an account.
 
-     c. 
+     c. Now, when you navigate to the 'Members', 'Upcoming Performances', or 'Past Performances' pages, you will see an option to add new resources.
+
+  4. From then on, whenever you wish to add, edit, or delete entires in those three resources, go to <tt>localhost:3000/login</tt> to login using the account you created before. 
 
 == Resources:
 

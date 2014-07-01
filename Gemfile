@@ -33,6 +33,8 @@ gem 'devise'
 
 # Use Paperclip to attach images
 gem 'paperclip', '~> 4.1'
+# Paperclip requires cocaine
+gem 'cocaine', '~> 0.5.4'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
