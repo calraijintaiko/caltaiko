@@ -6,11 +6,38 @@ $primary-color: #585858;
 #logo {
     width: 540px;
     height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .icons {
     img {
         width: 20px;
         height: 20px;
+    }
+}
+
+p {
+    text-align: center;
+}
+
+#perf_list {
+    // Changes made here will apply to the front page performance list
+    h2 {
+        text-align: center;
+    }
+
+    p {
+        font-family: Geneva;
+    }
+
+    ul {
+        list-style-type: none;
+        text-align: center;
+    }
+
+    strong {
+        font-family: Impact;
     }
 }

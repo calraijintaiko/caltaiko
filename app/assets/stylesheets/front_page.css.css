@@ -1,7 +1,23 @@
 #logo {
   width: 540px;
-  height: auto; }
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
 
 .icons img {
   width: 20px;
   height: 20px; }
+
+p {
+  text-align: center; }
+
+#perf_list h2 {
+  text-align: center; }
+#perf_list p {
+  font-family: Geneva; }
+#perf_list ul {
+  list-style-type: none;
+  text-align: center; }
+#perf_list strong {
+  font-family: Impact; }
