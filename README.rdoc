@@ -50,7 +50,7 @@ Note: Some of these steps assume you are running this on a Mac, since that's wha
 
    If it does not return <tt>/usr/local/bin/convert</tt>, go to the file <tt>caltaiko/config/environments/development.rb</tt> and change the line <tt>Paperclip.options[:command_path] = "/usr/local/bin/"</tt> to <tt>Paperclip.options[:command_path] = "/path/to/bin/"</tt>, where <tt>/path/to/bin</tt> is the output of <tt>which convert</tt> except for the last <tt>convert</tt> part.
 
-8. On Linux, run the command <tt>sudo apt-get install bundler</tt>
+8. Enter the command <tt>gem install bundler</tt>
 
 9. Download the appropriate gems using Bundler[http://bundler.io/rails3.html]:
 
