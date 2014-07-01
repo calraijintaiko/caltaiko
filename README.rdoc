@@ -34,6 +34,10 @@ Note: Some of these steps assume you are running this on a Mac, since that's wha
 
    <tt>cd caltaiko</tt>
 
+6. To keep track of any changes made to the original repository, add remote named upstream
+
+   <tt>git remote add upstream https://github.com/greytoyota/caltaiko.git</tt>
+
 6. If on a Mac, run the command <tt>brew install imagemagick</tt> to install ImageMagick.
 
    If running a distro of Linux, go to the {ImageMagick website}[http://www.imagemagick.org/script/download.php] and select a mirror, then download the latest version. Unpack the compressed folder, then <tt>cd</tt> into it.
@@ -55,6 +59,11 @@ Note: Some of these steps assume you are running this on a Mac, since that's wha
 10. Create the database by running <tt>rake db:create</tt>, then push all the migrations to it with <tt>rake db:migrate</tt>
 
 And now you should be all set! Running the command <tt>rails s</tt> should now start up the application, and navigating to <tt>localhost:3000</tt> in a browser will let you play around with it!
+
+To sync any changes I have made with your repository, run the commands
+
+   <tt>git fetch upstream</tt>
+   <tt>git merge upstream/master</tt>
 
 == Resources:
 
