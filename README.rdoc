@@ -62,8 +62,8 @@ And now you should be all set! Running the command <tt>rails s</tt> should now s
 
 To sync any changes I have made with your repository, run the commands
 
-   <tt>git fetch upstream</tt>
-   <tt>git merge upstream/master</tt>
+   git fetch upstream
+   git merge upstream/master
 
 == Resources:
 
