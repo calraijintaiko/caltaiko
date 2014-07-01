@@ -15,6 +15,7 @@ $primary-color: #585858;
 
 .links {
     text-align: center;
+    font-family: Geneva;
 }
 
 .icons {
@@ -26,6 +27,7 @@ $primary-color: #585858;
 
 p {
     text-align: center;
+    font-family: Verdana;
 }
 
 #perf_list {
@@ -41,6 +43,9 @@ p {
     ul {
         list-style-type: none;
         text-align: center;
+        li:not(:last-child) {
+            margin-bottom: 40px;
+        }
     }
 
     strong {
