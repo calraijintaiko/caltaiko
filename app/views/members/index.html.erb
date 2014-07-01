@@ -1,24 +1,27 @@
 <h1>Members</h1>
  
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Gen</th>
-    <th>Major</th>
-    <th>Bio</th>
-  </tr>
- 
   <% @members.each do |member| %>
     <tr>
-      <td><%= member.name %></td>
-      <td><%= number_with_precision(member.gen, precision: 0) %></td>
-      <td><%= member.major %></td>
-      <td><%= member.bio %></td>
+      <td>
+        <ul>
+          <li><p><strong>Name: </strong><%= member.name %></li></p>
+          <li><p><strong>Gen: </strong><%= number_with_precision(member.gen, precision: 0) %></li></p>
+          <li><p><strong>Major: </strong><%= member.major %></li></p>
+          <li><%= member.bio %></li>
+      </td>
+      <td>
+        <%= image_tag member.avatar.url(:thumb) %>
+      </td>
       <% if user_signed_in? %>
-      <td><%= link_to 'Show', member_path(member) %></td>
-      <td><%= link_to 'Edit', edit_member_path(member) %></td>
-      <td><%= link_to 'Delete', member_path(member),
-              method: :delete, data: { confirm: 'Are you sure you\'d like to delete member ' + member.name + '?' } %></td>
+      <td>
+        <ul>
+          <li><%= link_to 'Show', member_path(member) %></li>
+          <li><%= link_to 'Edit', edit_member_path(member) %></li>
+          <li><%= link_to 'Delete', member_path(member),
+                  method: :delete, data: { confirm: 'Are you sure you\'d like to delete member ' + member.name + '?' } %></li>
+        </ul>
+      </td>
       <% end %>
     </tr>
   <% end %>
