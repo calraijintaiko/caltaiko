@@ -1,3 +1,16 @@
 // Place all the styles related to the past_performances controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+    text-align: center;
+}
+
+.past_perf_feed {
+    ul {
+        list-style-type: none;
+        li:not(:last-child) {
+            margin-bottom: 40px;
+        }
+    }
+}

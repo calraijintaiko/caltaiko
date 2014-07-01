@@ -1,0 +1,7 @@
+h1 {
+  text-align: center; }
+
+.upcoming_perf_feed ul {
+  list-style-type: none; }
+  .upcoming_perf_feed ul li:not(:last-child) {
+    margin-bottom: 40px; }

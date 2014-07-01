@@ -1,9 +1,14 @@
 #logo {
   width: 540px;
   height: auto;
+  border: 0;
+  outline: none;
   display: block;
   margin-left: auto;
   margin-right: auto; }
+
+.links {
+  text-align: center; }
 
 .icons img {
   width: 20px;

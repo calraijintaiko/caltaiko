@@ -12,18 +12,27 @@
 </head>
 <%= render "layouts/header" %>
 <body>
+  <%-# All these divs are used to keep the footer at the bottom of the page, as per https://gist.github.com/mokagio/1918937 %>
+  <div class="container">
+    <div class="content">
+      <div class="wrapper">
+        <div class="proper-content">
+          <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+          <p class="alert alert-danger"><%= alert %></p>
+          <% end %>
 
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
-
-<%= yield %>
-
+          <%= yield %>
+        </div>
+        <div class="push"></div>
+      </div>
+      <div class="footer-wrapper">
+        <%= render "layouts/footer" %>
+      </div>
+    </div>
+  </div>
 </body>
-
-<%= render "layouts/footer" %>
 
 </html>

@@ -6,9 +6,15 @@ $primary-color: #585858;
 #logo {
     width: 540px;
     height: auto;
+    border: 0;
+    outline: none;
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.links {
+    text-align: center;
 }
 
 .icons {
@@ -40,4 +46,32 @@ p {
     strong {
         font-family: Impact;
     }
+}
+
+// The following is used to keep the footer at the bottom of the page, as per https://gist.github.com/mokagio/1918937
+html, body, .container, .content {
+    height: 100%;
+}
+ 
+.container, .content {
+    position: relative;
+}
+ 
+.proper-content {
+    padding-top: 40px; /* >= navbar height */
+}
+ 
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -25px; /* same as the footer */
+}
+ 
+.push {
+    height: 50px; /* same as the footer */
+}
+.footer-wrapper {
+    position: relative;
+    height: 25px;
 }
