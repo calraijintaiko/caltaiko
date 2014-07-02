@@ -56,30 +56,17 @@ h2 {
     }
 }
 
-// The following is used to keep the footer at the bottom of the page, as per https://gist.github.com/mokagio/1918937
-html, body, .container, .content {
-    height: 100%;
+.footer-wrapper{
+    position: fixed;
+    height: 20px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 5px;
+    margin-left: 5px
 }
- 
-.container, .content {
-    position: relative;
-}
- 
-.proper-content {
-    padding-top: 40px; /* >= navbar height */
-}
- 
-.wrapper {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -25px; /* same as the footer */
-}
- 
-.push {
-    height: 50px; /* same as the footer */
-}
-.footer-wrapper {
-    position: relative;
-    height: 25px;
+
+
+body{
+    margin-bottom: 50px;
 }
