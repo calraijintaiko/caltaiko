@@ -7,7 +7,7 @@ class Member < ActiveRecord::Base
   has_attached_file :avatar, :styles => { thumb: "200x200#" },
   path: ":rails_root/public/system/members/:attachment/:id/:style/:filename",
   url: "/system/members/:attachment/:id/:style/:filename",
-  default_url: "/images/:style/missing.png"
+  default_url: "http://www.robohash.org/:id?size=200x200&bgset=bgany"
   include DeletableAttachment
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
