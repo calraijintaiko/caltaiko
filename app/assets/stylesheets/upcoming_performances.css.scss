@@ -3,22 +3,34 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
 
-h1 {
-    text-align: center;
-    font-family: $header-font;
-}
-
-.upcoming_perf_feed {
-    p {
-        font-family: $main-font;
-    }
-    ul {
-        list-style-type: none;
-        li:not(:last-child) {
-            margin-bottom: 40px;
+.show {
+    width: 1000px;
+    height: auto;
+    border: 3px $primary-color solid;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    .show-deets {
+        width: 300px;
+        height: auto;
+        display: inline-block;
+        margin-left: 20px;
+        margin-right: 20px;
+        border-right: 3px $primary-color solid;
+        p {
+            text-align: left;
         }
     }
-    strong {
-        font-family: $strong-font;
+    .show-description {
+        width: 610px;
+        height: auto;
+        display: inline-block;
+        margin-right: 20px;
+        margin-left: 20px;
+        vertical-align: top;
+        P {
+            text-align: left;
+        }
     }
 }

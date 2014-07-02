@@ -3,6 +3,28 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
 
+a {
+    color: $link-color;
+}
+
+p {
+    font-family: $main-font;
+}
+
+strong {
+    font-family: $strong-font;
+}
+
+h1 {
+    text-align: center;
+    font-family: $header-font;
+}
+
+h2 {
+    text-align: center;
+    font-family: $header-font;
+}
+
 #logo {
     width: 540px;
     height: auto;
@@ -28,34 +50,33 @@
         display: inline-block;
         margin: 5px 5px 5px 5px;
         a {
-            color: $link-color;
             display: inline;
             text-decoration: none;
         }
     }
 }
 
-h2 {
+.add-new {
+    margin-top: 30px;
+    display: block;
     text-align: center;
-    font-family: $header-font;
 }
 
 #perf_list {
-    // Changes made here will apply to the front page performance list
-    h2 {
-        text-align: center;
-    }
-    p {
-        font-family: $main-font;
-    }
     ul {
         list-style-type: none;
         li:not(:last-child) {
             margin-bottom: 40px;
         }
     }
-    strong {
-        font-family: $strong-font;
+}
+
+.perf_feed {
+    ul {
+        list-style-type: none;
+        li:not(:last-child) {
+            margin-bottom: 40px;
+        }
     }
 }
 
@@ -63,8 +84,8 @@ h2 {
     position: fixed;
     height: 20px;
     bottom: 0px;
-    left: 0px;
     right: 0px;
+    left: 0px;
     margin-bottom: 5px;
     margin-left: 5px;
     .icons {
@@ -78,4 +99,9 @@ h2 {
 
 body{
     margin-bottom: 50px;
+}
+
+.devise-notice {
+    background-color: black;
+    color: white;
 }

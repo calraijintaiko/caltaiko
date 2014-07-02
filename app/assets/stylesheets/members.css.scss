@@ -15,28 +15,18 @@
         .element-wrapper {
             display: inline-block;
             margin: 10px 10px 10px 10px;
-            p {
-                font-family: $main-font;
-            }
             ul {
                 list-style-type: none;
                 li {
                     display: inline-block;
-                    a {
-                        color: $link-color;
-                        text-decoration: none;
-                    }
                 }
-            }
-            strong {
-                font-family: $strong-font;
             }
         }
     }
 }
 
 .individual {
-    width: 500px;
+    width: 800px;
     height: auto;
     margin-right: auto;
     margin-left: auto;
@@ -51,10 +41,7 @@
         display: inline-block;
         vertical-align: top;
         p {
-            font-family: $main-font;
-        }
-        strong {
-            font-family: $strong-font;
+            text-align: left;
         }
     }
 }

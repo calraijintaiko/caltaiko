@@ -1,21 +1,6 @@
-<p>
-  <strong>When:</strong>
-  <%= @past_performance.date %>
-</p>
+<%= render 'show', :past_performance => @past_performance %>
 
-<p>
-  <strong>What:</strong>
-  <%= @past_performance.title %>
-</p>
-
-<p>
-  <strong>Where:</strong>
-  <%= @past_performance.location %>
-</p>
-
-<p>
-  <%= @past_performance.description %>
-</p>
-
-<%= link_to 'Back', past_performances_path %>
-<%= link_to 'Edit', edit_past_performance_path(@past_performance) %>
+<div class="nav-links">
+  <%= link_to 'Back', past_performances_path %>
+  <%= link_to 'Edit', edit_past_performance_path(@past_performance) %>
+</div>

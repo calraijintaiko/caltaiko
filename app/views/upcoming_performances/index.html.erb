@@ -1,9 +1,11 @@
 <h1>Upcoming Performances</h1>
  
-<div class="upcoming_perf_feed">
+<div class="perf_feed">
 <%= render 'upcoming_performances_feed' %>
 </div>
 
 <% if user_signed_in? %>
-<%= link_to "Add Upcoming Performance", new_upcoming_performance_path %>
+<div class="add-new">
+  <%= link_to "Add Upcoming Performance", new_upcoming_performance_path %>
+</div>
 <% end %>

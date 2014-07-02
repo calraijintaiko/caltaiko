@@ -3,22 +3,3 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
 
-h1 {
-    text-align: center;
-    font-family: $header-font;
-}
-
-.past_perf_feed {
-    p {
-        font-family: $main-font;
-    }
-    ul {
-        list-style-type: none;
-        li:not(:last-child) {
-            margin-bottom: 40px;
-        }
-    }
-    strong {
-        font-family: $strong-font;
-    }
-}

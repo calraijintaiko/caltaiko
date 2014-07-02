@@ -2,10 +2,7 @@
 
   <% @past_performances.each do |past_performance| %>
     <li>
-      <p><strong>When: </strong><%= past_performance.date.strftime("%A, %B %d, %I:%M%p") %></p>
-      <p><strong>What: </strong><%= past_performance.title %></p>
-      <p><strong>Where: </strong><%= past_performance.location %></p>
-      <p><%= past_performance.description %></p>
+      <%= render '/past_performances/show', :past_performance => past_performance %>
       <% if user_signed_in? %>
       <p><%= link_to 'Show', past_performance_path(past_performance) %>
         <%= link_to 'Edit', edit_past_performance_path(past_performance) %>

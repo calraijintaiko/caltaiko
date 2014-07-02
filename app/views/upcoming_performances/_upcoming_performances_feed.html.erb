@@ -2,10 +2,7 @@
 
   <% @upcoming_performances.each do |upcoming_performance| %>
     <li>
-      <p><strong>When: </strong><%= upcoming_performance.date.strftime("%A, %B %d, %I:%M%p") %></p>
-      <p><strong>What: </strong><%= upcoming_performance.title %></p>
-      <p><strong>Where: </strong><%= upcoming_performance.location %></p>
-      <p><%= upcoming_performance.description %></p>
+      <%= render '/upcoming_performances/show', :upcoming_performance => upcoming_performance %>
       <% if user_signed_in? %>
         <p><%= link_to 'Show', upcoming_performance_path(upcoming_performance) %>
         <%= link_to 'Edit', edit_upcoming_performance_path(upcoming_performance) %>

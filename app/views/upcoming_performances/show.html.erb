@@ -1,21 +1,6 @@
-<p>
-  <strong>When:</strong>
-  <%= @upcoming_performance.date %>
-</p>
+<%= render 'show', :upcoming_performance => @upcoming_performance %>
 
-<p>
-  <strong>What:</strong>
-  <%= @upcoming_performance.title %>
-</p>
-
-<p>
-  <strong>Where:</strong>
-  <%= @upcoming_performance.location %>
-</p>
-
-<p>
-  <%= @upcoming_performance.description %>
-</p>
-
-<%= link_to 'Back', upcoming_performances_path %>
-<%= link_to 'Edit', edit_upcoming_performance_path(@upcoming_performance) %>
+<div class="nav-links">
+  <%= link_to 'Back', upcoming_performances_path %>
+  <%= link_to 'Edit', edit_upcoming_performance_path(@upcoming_performance) %>
+</div>
