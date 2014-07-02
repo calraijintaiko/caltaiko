@@ -1,0 +1,32 @@
+// Place all the styles related to the devise controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+.login-screen {
+    width: 310px;
+    height: auto;
+    border: 3px $primary-color solid;
+    margin: auto;
+    .login-field {
+        display: inline-block;
+        margin-left: 20px;
+        margin-right: 20px;
+        float: left;
+    }
+    .password-field {
+        display: inline-block;
+        margin-top: 16px;
+        #passwrd {
+            font-family: $main-font;
+        }
+    }
+    .bottom-buttons {
+        display: inline-block;
+        div {
+            margin-left: 20px;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+    }
+}

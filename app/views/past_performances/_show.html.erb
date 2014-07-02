@@ -1,0 +1,23 @@
+<div class="show">
+  <div class="show-deets">
+    <p>
+      <strong>When:</strong>
+      <%= past_performance.date.strftime("%A, %m/%d/%Y, %I:%M%p") %>
+    </p>
+    <p>
+      <strong>What:</strong>
+      <%= past_performance.title %>
+    </p>
+    <p>
+      <strong>Where:</strong>
+      <%= past_performance.location %>
+    </p>
+  </div>
+
+  <div class="show-description">
+    <p>
+      <%= past_performance.description %>
+    </p>
+  </div>
+</div>
+

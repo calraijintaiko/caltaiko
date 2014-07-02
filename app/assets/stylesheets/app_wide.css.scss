@@ -1,0 +1,26 @@
+// Place all the styles affecting entire app here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+a {
+    color: $link-color;
+}
+
+p {
+    font-family: $main-font;
+}
+
+strong {
+    font-family: $strong-font;
+}
+
+h1 {
+    text-align: center;
+    font-family: $header-font;
+}
+
+h2 {
+    text-align: center;
+    font-family: $header-font;
+}
