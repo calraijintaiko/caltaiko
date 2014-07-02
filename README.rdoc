@@ -28,37 +28,43 @@ Note: Some of these steps assume you are running this on a Mac, since that's wha
 
    If you get the output <tt>rvm is a function</tt> then you're all set! If not... time to go a-Googling.
 
-3. If using a Mac, install homebrew with the command
-
-   <tt>ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"</tt>
-
-4. Fork this repository on the GitHub website, then clone your repository onto your computer:
+3. Fork this repository on the GitHub website, then clone your repository onto your computer:
 
    <tt>git clone git@github.com:[Your Github Account]/caltaiko.git</tt>
 
-5. Go into the caltaiko repository
+4. Go into the caltaiko repository
 
    <tt>cd caltaiko</tt>
 
-6. If on a Mac, run the command <tt>brew install imagemagick</tt> to install ImageMagick.
+5.
+=== On Mac:
+    a. If on a Mac, install Homebrew with
+   <tt>ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"</tt>
 
-   If running a distro of Linux, go to the {ImageMagick website}[http://www.imagemagick.org/script/download.php] and select a mirror, then download the latest version. Unpack the compressed folder, then <tt>cd</tt> into it.
+    b. Run the command <tt>brew install imagemagick</tt> to install ImageMagick.
 
-   Run the command <tt>./configure</tt>, and when it is finished, <tt>make</tt> and then <tt>sudo make install</tt>.
+=== On Linux:   
+    a. Go to the {ImageMagick website}[http://www.imagemagick.org/script/download.php] and select a mirror, then download the latest version.
+
+    b. Unpack the compressed folder, then <tt>cd</tt> into it.
+
+    c. Run the command <tt>./configure</tt>
+
+    d. Once configuration is done, run <tt>make</tt> and then <tt>sudo make install</tt>.
 
    <b>Note:</b> it is possible to download ImageMagick by simply running <tt>sudo apt-get install imagemagick</tt>, but if you do so the binaries will be downloaded to <tt>/usr/bin/</tt>, rather than <tt>/usr/local/bin/</tt>, requiring more configuration later and loss of compability with any future changes.
 
-7. Run <tt>which convert</tt> to find out where ImageMagick was installed.
+6. Run <tt>which convert</tt> to find out where ImageMagick was installed.
 
    If it does not return <tt>/usr/local/bin/convert</tt>, go to the file <tt>caltaiko/config/environments/development.rb</tt> and change the line <tt>Paperclip.options[:command_path] = "/usr/local/bin/"</tt> to <tt>Paperclip.options[:command_path] = "/path/to/bin/"</tt>, where <tt>/path/to/bin</tt> is the output of <tt>which convert</tt> except for the last <tt>convert</tt> part.
 
-8. Enter the command <tt>gem install bundler</tt>
+7. Enter the command <tt>gem install bundler</tt>
 
-9. Download the appropriate gems using Bundler[http://bundler.io/rails3.html]:
+8. Download the appropriate gems using Bundler[http://bundler.io/rails3.html]:
 
    <tt>bundle install</tt>
 
-10. Create the database by running <tt>rake db:create</tt>, then push all the migrations to it with <tt>rake db:migrate</tt>
+9. Create the database by running <tt>rake db:create</tt>, then push all the migrations to it with <tt>rake db:migrate</tt>
 
 And now you should be all set! Running the command <tt>rails s</tt> should now start up the application, and navigating to <tt>localhost:3000</tt> in a browser will let you play around with it!
 
