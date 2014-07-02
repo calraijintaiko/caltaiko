@@ -1,24 +1,34 @@
-<p>
-  <strong>Name:</strong>
-  <%= @member.name %>
-</p>
+<div class="individual">
+  <div class="pic">
+    <%= image_tag @member.avatar.url(:original) %><br>
+  </div>
 
-<p>
-  <strong>Gen:</strong>
-  <%= number_with_precision(@member.gen, precision: 0) %>
-</p>
+  <div class="bio-info">
+    <p>
+      <strong>Name:</strong>
+      <%= @member.name %>
+    </p>
 
-<p>
-  <strong>Major:</strong>
-  <%= @member.major %>
-</p>
+    <p>
+      <strong>Gen:</strong>
+      <%= number_with_precision(@member.gen, precision: 0) %>
+    </p>
 
-<p>
-  <strong>Bio:</strong>
-  <%= @member.bio %>
-</p>
+    <p>
+      <strong>Major:</strong>
+      <%= @member.major %>
+    </p>
 
-<%= image_tag @member.avatar.url(:medium) %><br>
+    <p>
+      <%= @member.bio %>
+    </p>
+  </div>
+</div>
 
-<%= link_to 'Back', members_path %>
-<%= link_to 'Edit', edit_member_path(@member) %>
+<div class="nav-links">
+  <%= link_to 'Back', members_path %>
+  <% if user_signed_in? %>
+  <%= link_to 'Edit', edit_member_path(@member) %>
+  <% end %>
+</div>
+

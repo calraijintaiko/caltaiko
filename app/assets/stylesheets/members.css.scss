@@ -1,20 +1,66 @@
 // Place all the styles related to the members controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
 .members-wrapper {
     width: 1000px;
     margin: auto;
     .person-wrapper {
+        width: 220px;
+        height: auto;
+        display: inline-block;
+        margin: 10px 10px 10px 10px;
+        border: 3px $primary-color solid;
         .element-wrapper {
+            display: inline-block;
+            margin: 10px 10px 10px 10px;
             p {
-                font-family: Geneva;
+                font-family: $main-font;
             }
             ul {
                 list-style-type: none;
+                li {
+                    display: inline-block;
+                    a {
+                        color: $link-color;
+                        text-decoration: none;
+                    }
+                }
             }
             strong {
-                font-family: Arial;
+                font-family: $strong-font;
             }
         }
     }
+}
+
+.individual {
+    width: 500px;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 3px $primary-color solid;
+    .pic {
+        display: inline-block;
+        margin: 10px 10px 10px 10px;
+    }
+    .bio-info {
+        display: inline-block;
+        vertical-align: top;
+        p {
+            font-family: $main-font;
+        }
+        strong {
+            font-family: $strong-font;
+        }
+    }
+}
+
+
+.nav-links {
+    display: block;
+    text-align: center;
 }

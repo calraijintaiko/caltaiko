@@ -13,12 +13,25 @@
     margin-right: auto;
 }
 
+#header-wrapper {
+    width: 800px;
+    height: auto;
+    border-top: 2px black solid;
+    border-bottom: 2px black solid;
+    margin: auto;
+}
+
 .links {
     text-align: center;
     font-family: $main-font;
-    a {
-        color: $link-color;
-        display: inline;
+    .link {
+        display: inline-block;
+        margin: 5px 5px 5px 5px;
+        a {
+            color: $link-color;
+            display: inline;
+            text-decoration: none;
+        }
     }
 }
 

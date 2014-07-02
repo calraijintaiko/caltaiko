@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head class="header">
-  <%= link_to image_tag("logo.png", :id => "logo"), root_url %>
-  <br>
   <div class="links">
-    <%= link_to "Home", root_url %>
-    <%= link_to "Members", '/members' %>
-    <%= link_to "Upcoming Performances", '/performances/upcoming' %>
-    <%= link_to "Past Performances", '/performances/past' %>
-    <%= link_to "About Us", '/about' %>
-    <%= link_to "Contact Us", '/contact' %>
+    <div class="link">
+      <%= link_to "Home", root_url %>
+    </div>
+    <div class="link">
+      <%= link_to "Members", '/members' %>
+    </div>
+    <div class="link">
+      <%= link_to "Upcoming Performances", '/performances/upcoming' %>
+    </div>
+    <div class="link">
+      <%= link_to "Past Performances", '/performances/past' %>
+    </div>
+    <div class="link">
+      <%= link_to "About Us", '/about' %>
+    </div>
+    <div class="link">
+      <%= link_to "Contact Us", '/contact' %>
+    </div>
   </div>
 </head>
 </html>
