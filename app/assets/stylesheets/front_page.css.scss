@@ -16,6 +16,10 @@ $primary-color: #585858;
 .links {
     text-align: center;
     font-family: Geneva;
+    a {
+        color: black;
+        display: inline;
+    }
 }
 
 .icons {
@@ -25,7 +29,7 @@ $primary-color: #585858;
     }
 }
 
-p {
+h2 {
     text-align: center;
     font-family: Verdana;
 }
@@ -35,21 +39,20 @@ p {
     h2 {
         text-align: center;
     }
-
     p {
         font-family: Geneva;
     }
-
     ul {
         list-style-type: none;
-        text-align: center;
+        li {
+            text-align: center;
+        }
         li:not(:last-child) {
             margin-bottom: 40px;
         }
     }
-
     strong {
-        font-family: Impact;
+        font-family: Arial;
     }
 }
 
