@@ -1,7 +1,7 @@
 // Place all the styles related to the front_page controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$primary-color: #585858;
+@import "variables";
 
 #logo {
     width: 540px;
@@ -15,23 +15,16 @@ $primary-color: #585858;
 
 .links {
     text-align: center;
-    font-family: Geneva;
+    font-family: $main-font;
     a {
-        color: black;
+        color: $link-color;
         display: inline;
-    }
-}
-
-.icons {
-    img {
-        width: 20px;
-        height: 20px;
     }
 }
 
 h2 {
     text-align: center;
-    font-family: Verdana;
+    font-family: $header-font;
 }
 
 #perf_list {
@@ -40,30 +33,33 @@ h2 {
         text-align: center;
     }
     p {
-        font-family: Geneva;
+        font-family: $main-font;
     }
     ul {
         list-style-type: none;
-        li {
-            text-align: center;
-        }
         li:not(:last-child) {
             margin-bottom: 40px;
         }
     }
     strong {
-        font-family: Arial;
+        font-family: $strong-font;
     }
 }
 
-.footer-wrapper{
+#footer-wrapper{
     position: fixed;
     height: 20px;
     bottom: 0px;
     left: 0px;
     right: 0px;
     margin-bottom: 5px;
-    margin-left: 5px
+    margin-left: 5px;
+    .icons {
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
 }
 
 

@@ -1,31 +1,32 @@
 <h1>Members</h1>
  
-<table>
+<div class="members-wrapper">
   <% @members.each do |member| %>
-    <tr>
-      <td>
-        <ul>
-          <li><p><strong>Name: </strong><%= member.name %></li></p>
-          <li><p><strong>Gen: </strong><%= number_with_precision(member.gen, precision: 0) %></li></p>
-          <li><p><strong>Major: </strong><%= member.major %></li></p>
-          <li><%= member.bio %></li>
-      </td>
-      <td>
+    <div class="person-wrapper">
+      <div class="element-wrapper">
         <%= image_tag member.avatar.url(:thumb) %>
-      </td>
+      </div>
+      <div class="element-wrapper">
+        <ul>
+          <li><p><strong>Name: </strong><%= member.name %></p></li>
+          <li><p><strong>Gen: </strong><%= number_with_precision(member.gen, precision: 0) %></p></li>
+          <li><p><strong>Major: </strong><%= member.major %></p></li>
+          <li><p><%= member.bio %></p></li>
+        </ul>
+      </div>
       <% if user_signed_in? %>
-      <td>
+      <div class="element-wrapper">
         <ul>
           <li><%= link_to 'Show', member_path(member) %></li>
           <li><%= link_to 'Edit', edit_member_path(member) %></li>
           <li><%= link_to 'Delete', member_path(member),
                   method: :delete, data: { confirm: 'Are you sure you\'d like to delete member ' + member.name + '?' } %></li>
-        </ul>
-      </td>
+        </div>
+      </div>
       <% end %>
-    </tr>
+    </div>
   <% end %>
-</table>
+</div>
 
 <% if user_signed_in? %>
 <%= link_to "Add New Member", new_member_path %>
