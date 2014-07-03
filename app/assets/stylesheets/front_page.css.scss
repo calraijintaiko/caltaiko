@@ -19,6 +19,7 @@
     border-top: 2px black solid;
     border-bottom: 2px black solid;
     margin: auto;
+    border-radius: 0px;
 }
 
 .links {
@@ -66,6 +67,7 @@
     left: 0px;
     margin-bottom: 5px;
     margin-left: 5px;
+    z-index: 1;
     .icons {
         img {
             width: 20px;

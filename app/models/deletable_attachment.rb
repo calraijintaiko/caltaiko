@@ -1,3 +1,9 @@
+=begin rdoc
+This module is supposed to allow users to remove their avatars on the settings page.
+Unfortunately, it doesn't seem to work...
+
+It's a work in progress :P
+=end
 module DeletableAttachment
   extend ActiveSupport::Concern
 

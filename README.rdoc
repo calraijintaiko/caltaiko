@@ -20,52 +20,86 @@ This is a side project I'm working on to familiarize myself with Rails. If it go
 
 === On Mac:
 a. If on a Mac, install Homebrew with
-   <tt>ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"</tt>
 
-b. Run the command <tt>brew install imagemagick</tt> to install ImageMagick.
+      ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+
+b. Run the command
+
+       brew install imagemagick
+
+   to install ImageMagick.
 
 === On Linux:   
 a. Go to the {ImageMagick website}[http://www.imagemagick.org/script/download.php] and select a mirror, then download the latest version.
 
 b. Unpack the compressed folder, then <tt>cd</tt> into it.
 
-c. Run the command <tt>./configure</tt>
+c. From within the uncompressed folder, run the following:
 
-d. Once configuration is done, run <tt>make</tt> and then <tt>sudo make install</tt>.
+          ./configure
+          make
+          sudo make install
 
 <b>Note:</b> it is possible to download ImageMagick by simply running <tt>sudo apt-get install imagemagick</tt>, but if you do so the binaries will be downloaded to <tt>/usr/bin/</tt>, rather than <tt>/usr/local/bin/</tt>, requiring more configuration later and loss of compability with any future changes.
 
+== On Both:
+
 1. Install rvm by following these[https://rvm.io/rvm/install] instructions (you'll need to install curl[http://www.vettyofficer.com/2013/06/how-to-install-curl-in-mac-os-x.html] first).
 
-2. Run the command <tt>rvm install ruby-2.1.2</tt> to download ruby v2.1.2, then <tt>rvm use ruby-2.1.2</tt> to begin using it.
+2. Run the commands
 
-   If you encounter the error <tt>RVM is not a function, selecting rubies with 'rvm use ...' will not work.</tt>, try running the commands
-   <tt>source ~/.rvm/scripts/rvm</tt>
-   <tt>user$ type rvm | head -n 1</tt>
+       rvm install ruby-2.1.2
+       rvm use ruby-2.1.2
+
+   to download ruby v2.1.2 and begin using it.
+
+   If you encounter the error
+
+      RVM is not a function, selecting rubies with 'rvm use ...' will not work
+
+   try running the commands
+
+      source ~/.rvm/scripts/rvm
+      user$ type rvm | head -n 1
 
    If you get the output <tt>rvm is a function</tt> then you're all set! If not... time to go a-Googling.
 
 3. Fork this repository on the GitHub website, then clone your repository onto your computer:
 
-   <tt>git clone git@github.com:[Your Github Account]/caltaiko.git</tt>
+        git clone git@github.com:[Your Github Account]/caltaiko.git
 
 4. Go into the caltaiko repository
 
-   <tt>cd caltaiko</tt>
+      cd caltaiko
 
 6. Run <tt>which convert</tt> to find out where ImageMagick was installed.
 
-   If it does not return <tt>/usr/local/bin/convert</tt>, go to the file <tt>caltaiko/config/environments/development.rb</tt> and change the line <tt>Paperclip.options[:command_path] = "/usr/local/bin/"</tt> to <tt>Paperclip.options[:command_path] = "/path/to/bin/"</tt>, where <tt>/path/to/bin</tt> is the output of <tt>which convert</tt> except for the last <tt>convert</tt> part.
+   If it does not return <tt>/usr/local/bin/convert</tt>, go to the file <tt>caltaiko/config/environments/development.rb</tt> and change the line 
 
-7. Enter the command <tt>gem install bundler</tt>
+        Paperclip.options[:command_path] = "/usr/local/bin/"
+
+   to
+
+        Paperclip.options[:command_path] = "/path/to/bin/"
+
+   where <tt>/path/to/bin/</tt> is the output of <tt>which convert</tt> except for the last <tt>convert</tt> part.
+
+7. Enter the command
+
+         gem install bundler
 
 8. Download the appropriate gems using Bundler[http://bundler.io/rails3.html]:
 
-   <tt>bundle install</tt>
+            bundle install
 
-9. Create the database by running <tt>rake db:create</tt>, then push all the migrations to it with <tt>rake db:migrate</tt>
+9. Create the database by running
 
-And now you should be all set! Running the command <tt>rails s</tt> should now start up the application, and navigating to <tt>localhost:3000</tt> in a browser will let you play around with it!
+          rake db:create
+          rake db:migrate
+
+And now you should be all set! Running the command
+    rails s
+should now start up the application, and navigating to <tt>localhost:3000</tt> in a browser will let you play around with it!
 
 == Upkeep:
 
@@ -95,15 +129,14 @@ To sync any changes I make with your own repository, run the commands
 
   4. From then on, whenever you wish to add, edit, or delete entires in those three resources, go to <tt>localhost:3000/login</tt> to login using the account you created before. 
 
-== Resources:
+* The goal is to make it so that rather than having the website manager be responsible for updating everything on the website, we will be able to have other officer's be in charge of their areas. So the performance coordinator could easily manage the performances, while the secretary updates the members every year.
 
-* {Rdoc documentation}[http://jan.varwig.org/wp-content/uploads/2006/09/Rdoc%20Cheat%20Sheet.pdf]
-
-* {Rails tutorial}[http://guides.rubyonrails.org/getting_started.html]
-
-Start the application by running command <tt>rails s</tt>
+* I left the register option available right now so that we could test creating an admin account and updating the website. For deployment it will be disabled.
 
 === Documentation
-To generate the formatted Rdoc document, run the command <tt>rake doc:app</tt> from the main directory. This will generate a directory <tt>caltaiko/doc/app/</tt>.
+To generate the formatted Rdoc document, run the command
+   rake doc:app
+from the main directory. This will generate a directory <tt>caltaiko/doc/app/</tt>.
 
-Open the file <tt>caltaiko/doc/app/table_of_contents.html</tt> to view the documentation on each of the pages, classes, modules, and methods of the application.
+Open the file <tt>caltaiko/doc/app/index.html</tt> to view the documentation on each of the pages, classes, modules, and methods of the application.
+
