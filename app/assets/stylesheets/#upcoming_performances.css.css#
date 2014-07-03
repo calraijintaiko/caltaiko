@@ -1,4 +1,0 @@
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: variables.\A               Load paths:\A                 /home/joel/CompSci/caltaiko/app/assets/stylesheets\A                 /home/joel/CompSci/caltaiko/app/assets/stylesheets\A         on line 4 of /home/joel/CompSci/caltaiko/app/assets/stylesheets/upcoming_performances.css.scss\A \A 1: // Place all the styles related to the upcoming_performances controller here.\A 2: // They will automatically be included in application.css.\A 3: // You can use Sass (SCSS) here: http://sass-lang.com/\A 4: @import \"variables\";\A 5: \A 6: .show {\A 7:     width: 1000px;\A 8:     height: auto;\A 9:     border: 3px $primary-color solid;"; }
