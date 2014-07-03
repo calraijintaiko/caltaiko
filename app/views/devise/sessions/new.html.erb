@@ -2,12 +2,12 @@
 
 <div class="login-screen">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="login-field">
+  <div id="login-field">
     <p><%= f.label :login %><br />
       <%= f.text_field :login %></p>
   </div>
 
-  <div class="password-field">
+  <div id="password-field">
     <div><%= f.label :password, :id => "passwrd" %><br />
       <%= f.password_field :password, autocomplete: "off" %></div>
   </div>
@@ -18,7 +18,7 @@
   <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
   <% end -%>
 
-  <div class="bottom-buttons">
+  <div id="bottom-buttons">
     <div><%= f.submit "Sign in" %></div>
     <% end %>
 

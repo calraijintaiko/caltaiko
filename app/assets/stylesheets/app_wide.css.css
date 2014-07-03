@@ -3,20 +3,20 @@ Syntax error: File to import not found or unreadable: variables.
               Load paths:
                 /home/joel/CompSci/caltaiko/app/assets/stylesheets
                 /home/joel/CompSci/caltaiko/app/assets/stylesheets
-        on line 4 of /home/joel/CompSci/caltaiko/app/assets/stylesheets/members.css.scss
+        on line 4 of /home/joel/CompSci/caltaiko/app/assets/stylesheets/app_wide.css.scss
 
-1: // Place all the styles related to the members controller here.
+1: // Place all the styles affecting entire app here.
 2: // They will automatically be included in application.css.
 3: // You can use Sass (SCSS) here: http://sass-lang.com/
 4: @import "variables";
 5: 
-6: .members-wrapper {
-7:     width: 1000px;
-8:     margin: auto;
-9:     .person-wrapper {
+6: a {
+7:     color: $link-color;
+8: }
+9: 
 
 Backtrace:
-/home/joel/CompSci/caltaiko/app/assets/stylesheets/members.css.scss:4
+/home/joel/CompSci/caltaiko/app/assets/stylesheets/app_wide.css.scss:4
 /var/lib/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/import_node.rb:67:in `rescue in import'
 /var/lib/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/import_node.rb:45:in `import'
 /var/lib/gems/1.9.1/gems/sass-3.2.19/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -54,4 +54,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: variables.\A               Load paths:\A                 /home/joel/CompSci/caltaiko/app/assets/stylesheets\A                 /home/joel/CompSci/caltaiko/app/assets/stylesheets\A         on line 4 of /home/joel/CompSci/caltaiko/app/assets/stylesheets/members.css.scss\A \A 1: // Place all the styles related to the members controller here.\A 2: // They will automatically be included in application.css.\A 3: // You can use Sass (SCSS) here: http://sass-lang.com/\A 4: @import \"variables\";\A 5: \A 6: .members-wrapper {\A 7:     width: 1000px;\A 8:     margin: auto;\A 9:     .person-wrapper {"; }
+  content: "Syntax error: File to import not found or unreadable: variables.\A               Load paths:\A                 /home/joel/CompSci/caltaiko/app/assets/stylesheets\A                 /home/joel/CompSci/caltaiko/app/assets/stylesheets\A         on line 4 of /home/joel/CompSci/caltaiko/app/assets/stylesheets/app_wide.css.scss\A \A 1: // Place all the styles affecting entire app here.\A 2: // They will automatically be included in application.css.\A 3: // You can use Sass (SCSS) here: http://sass-lang.com/\A 4: @import \"variables\";\A 5: \A 6: a {\A 7:     color: $link-color;\A 8: }\A 9: "; }

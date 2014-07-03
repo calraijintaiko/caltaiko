@@ -3,25 +3,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
 
-.login-screen {
+#login-screen {
     width: 310px;
     height: auto;
     border: 3px $primary-color solid;
     margin: auto;
-    .login-field {
+    #login-field {
         display: inline-block;
         margin-left: 20px;
         margin-right: 20px;
         float: left;
     }
-    .password-field {
+    #password-field {
         display: inline-block;
         margin-top: 16px;
         #passwrd {
             font-family: $main-font;
         }
     }
-    .bottom-buttons {
+    #bottom-buttons {
         display: inline-block;
         div {
             margin-left: 20px;
