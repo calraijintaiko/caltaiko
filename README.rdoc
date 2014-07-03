@@ -36,7 +36,11 @@ This is a side project I'm working on to familiarize myself with Rails. If it go
       source ~/.rvm/scripts/rvm
       type rvm | head -n 1
 
-   If you get the output <tt>rvm is a function</tt> then you're all set! If not... time to go a-Googling.
+   If you get the output <tt>rvm is a function</tt> then enter the command
+
+      echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' >> ~/.bashrc
+
+   Close your Terminal session, reopen it, and you should be all set! If not... time to go a-Googling.          
 
 4. Make sure you have a working installation of SQLite3 Database; enter the command
 
@@ -52,8 +56,6 @@ a. Install Homebrew with
 b. Run the command
 
        brew install imagemagick
-
-   to install ImageMagick.
 
 === On Linux:   
 a. Go to the {ImageMagick website}[http://www.imagemagick.org/script/download.php] and select a mirror, then download the latest version.
