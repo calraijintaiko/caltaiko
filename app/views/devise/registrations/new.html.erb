@@ -26,10 +26,12 @@
     </div>
   </div>
 
-  <div id="sign-up"><%= f.submit "Sign up" %></div>
-  <% end %>
+  <div id="sign-in-sign-up">
+    <div id="sign-up"><%= f.submit "Sign up" %></div>
+    <% end %>
 
-  <div id="other-buttons">
-    <%= render "devise/shared/links" %>
+    <div id="sign-in">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 </div>

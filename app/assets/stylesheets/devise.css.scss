@@ -33,9 +33,22 @@
 
 #register-screen {
     #login-info-field {
-
     }
     #password-field {
-
+	text-align: center;
+    }
+    #sign-in-sign-up {
+	border: 3px green solid;
+	width: max-content;
+	#sign-up {
+	    display: inline;
+	    margin: auto;
+	    border: 3px red solid;
+	}
+	#sign-in {
+	    width: 47px;
+	    border: 3px blue solid;
+	    display: inline;
+	}
     }
 }
