@@ -38,6 +38,12 @@ This is a side project I'm working on to familiarize myself with Rails. If it go
 
    If you get the output <tt>rvm is a function</tt> then you're all set! If not... time to go a-Googling.
 
+4. Make sure you have a working installation of SQLite3 Database; enter the command
+
+     sqlite3
+
+   from the command line. If it enters their interactive prompt, you're all set! (quit with <tt>.quit</tt>). If not, see here[http://www.sqlite.org/download.html] for download links
+
 === On Mac:
 a. Install Homebrew with
 
@@ -60,7 +66,7 @@ c. From within the uncompressed folder, run the following:
           make
           sudo make install
 
-<b>Note:</b> it is possible to download ImageMagick by simply running <tt>sudo apt-get install imagemagick</tt>, but if you do so the binaries will be downloaded to <tt>/usr/bin/</tt>, rather than <tt>/usr/local/bin/</tt>, requiring more configuration later and loss of compability with any future changes.
+   <b>Note:</b> it is possible to download ImageMagick by simply running <tt>sudo apt-get install imagemagick</tt>, but if you do so the binaries will be downloaded to <tt>/usr/bin/</tt>, rather than <tt>/usr/local/bin/</tt>, requiring more configuration later and loss of compability with any future changes.
 
 === Installation:
 
