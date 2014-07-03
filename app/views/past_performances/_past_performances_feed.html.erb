@@ -1,15 +1,17 @@
-<ul>
-
-  <% @past_performances.each do |past_performance| %>
+<div class="perf-feed">
+  <ul>
+    <% @past_performances.each do |past_performance| %>
     <li>
       <%= render '/past_performances/show', :past_performance => past_performance %>
       <% if user_signed_in? %>
-      <p><%= link_to 'Show', past_performance_path(past_performance) %>
-        <%= link_to 'Edit', edit_past_performance_path(past_performance) %>
-        <%= link_to 'Delete', past_performance_path(past_performance),
+      <div class="nav-buttons">
+	<p><%= link_to 'Show', past_performance_path(past_performance) %>
+          <%= link_to 'Edit', edit_past_performance_path(past_performance) %>
+          <%= link_to 'Delete', past_performance_path(past_performance),
               method: :delete, data: { confirm: 'Are you sure you\'d like to delete past performance "' + past_performance.title + '"?' } %></p>
+      </div>
       <% end %>
     </li>
-  <% end %>
-
-</ul>
+    <% end %>
+  </ul>
+</div>
