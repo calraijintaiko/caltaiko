@@ -29,3 +29,61 @@ h2 {
 div {
     border-radius: 5px;
 }
+
+#page-wrapper {
+    // Change body background-color to have it apply behind content-wrapper
+}
+
+#logo {
+    width: 540px;
+    height: auto;
+    border: 0;
+    outline: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#content-wrapper {
+    background-color: white;
+    width: 1000px;
+    margin: 0 auto;
+    border-radius: 0px;
+}
+
+#page-content {
+    width: 800px;
+    margin: auto;
+}
+
+#header-wrapper {
+    width: 800px;
+    height: auto;
+    border-top: 2px black solid;
+    border-bottom: 2px black solid;
+    margin: auto;
+    border-radius: 0px;
+}
+
+#footer-wrapper{
+    position: fixed;
+    height: 20px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    z-index: 1;
+    .icons {
+        img {
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
+
+
+body{
+    margin-bottom: 50px;
+    //background-color: gray;
+}

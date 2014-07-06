@@ -3,25 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
 
-#logo {
-    width: 540px;
-    height: auto;
-    border: 0;
-    outline: none;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#header-wrapper {
-    width: 800px;
-    height: auto;
-    border-top: 2px black solid;
-    border-bottom: 2px black solid;
-    margin: auto;
-    border-radius: 0px;
-}
-
 .links {
     text-align: center;
     font-family: $main-font;
@@ -54,6 +35,7 @@
 }
 
 .perf-feed {
+    margin-left: -40px;
     ul {
         list-style-type: none;
         li:not(:last-child) {
@@ -63,31 +45,10 @@
 }
 
 .nav-buttons {
-    width: 130px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-#footer-wrapper{
-    position: fixed;
-    height: 20px;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
-    margin-bottom: 5px;
-    margin-left: 5px;
-    z-index: 1;
-    .icons {
-        img {
-            width: 20px;
-            height: 20px;
-        }
-    }
-}
-
-
-body{
-    margin-bottom: 50px;
+    width: 800px;
+    margin-right: 0px;
+    margin-left: 0px;
+    text-align: center;
 }
 
 .devise-notice {

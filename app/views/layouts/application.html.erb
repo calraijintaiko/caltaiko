@@ -10,27 +10,30 @@
   <%= favicon_link_tag 'favicon.png', :rel => 'icon', :type => 'image/png' %>
 
 </head>
-<%= link_to image_tag("logo.png", :id => "logo"), root_url %>
-<br>
-<div id="header-wrapper">
-  <%= render "layouts/header" %>
-</div>
-<body>
-  <div class="devise-notice">
-    <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
+<div id="page-wrapper">
+  <div id="content-wrapper">
+    <%= link_to image_tag("logo.png", :id => "logo"), root_url %>
+    <br>
+    <div id="header-wrapper">
+      <%= render "layouts/header" %>
+    </div>
+    <body>
+      <div class="devise-notice">
+        <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
+      </div>
+
+      <div id="page-content">
+        <%= yield %>
+      </div>
+    </body>
   </div>
-
-  <%= yield %>
-
   <div id="footer-wrapper">
     <%= render "layouts/footer" %>
   </div>
-
-</body>
-
+</div>
 </html>

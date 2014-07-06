@@ -19,9 +19,11 @@
   <% end -%>
 
   <div id="bottom-buttons">
-    <div><%= f.submit "Sign in" %></div>
+    <div id="sign-in-butt"><%= f.submit "Sign in" %></div>
     <% end %>
 
-    <%= render "devise/shared/links" %>
+    <div id="forgot-pass-link">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 </div>

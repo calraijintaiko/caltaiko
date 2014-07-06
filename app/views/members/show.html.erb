@@ -1,6 +1,7 @@
 <div class="individual">
   <div class="pic">
     <%= image_tag @member.avatar.url(:original) %><br>
+    <script type="text/javascript" src="members.js"></script>
   </div>
 
 
@@ -26,9 +27,7 @@
   </div>
 </div>
 
-<script type="text/javascript" src="members.js"></script>
-
-<div class="nav-links">
+<div class="nav-buttons">
   <%= link_to 'Back', members_path %>
   <% if user_signed_in? %>
   <%= link_to 'Edit', edit_member_path(@member) %>

@@ -4,31 +4,32 @@
 @import "variables";
 
 .show {
-    width: 1000px;
+    width: 800px;
     height: auto;
     border: 3px $primary-color solid;
     margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0px;
+    margin-right: 0px;
     margin-bottom: 20px;
     .show-deets {
         width: 300px;
         height: auto;
         display: inline-block;
         margin-left: 20px;
-        margin-right: 20px;
+        margin-right: 0px;
         border-radius: 0px;
+        padding-right: 0px;
         border-right: 3px $primary-color solid;
         p {
             text-align: left;
         }
     }
     .show-description {
-        width: 610px;
+        width: 400px;
         height: auto;
         display: inline-block;
-        margin-right: 20px;
-        margin-left: 20px;
+        margin-right: 0px;
+        margin-left: 10px;
         vertical-align: top;
         P {
             text-align: left;

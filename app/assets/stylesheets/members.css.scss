@@ -5,8 +5,10 @@
 
 .members-wrapper {
     width: 1000px;
-    margin: auto;
+    margin-left: -100px;
+    margin-right: 0px;
     .person-wrapper {
+        background-color: white;
         width: 220px;
         height: auto;
         display: inline-block;
@@ -46,10 +48,4 @@
             text-align: left;
         }
     }
-}
-
-
-.nav-links {
-    display: block;
-    text-align: center;
 }
