@@ -1,0 +1,9 @@
+<h1>Performances</h1>
+ 
+<%= render 'performances_feed' %>
+
+<% if user_signed_in? %>
+<div class="add-new">
+  <%= link_to "Add Performance", new_performance_path %>
+</div>
+<% end %>

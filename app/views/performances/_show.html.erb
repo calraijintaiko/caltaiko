@@ -1,0 +1,22 @@
+<div class="show">
+  <div class="show-deets">
+    <p>
+      <strong>When:</strong>
+      <%= performance.date.strftime("%A, %B %d, %I:%M%p") %>
+    </p>
+    <p>
+      <strong>What:</strong>
+      <%= performance.title %>
+    </p>
+    <p>
+      <strong>Where:</strong>
+      <%= performance.location %>
+    </p>
+  </div>
+
+  <div class="show-description">
+    <p>
+      <%= performance.description %>
+    </p>
+  </div>
+</div>

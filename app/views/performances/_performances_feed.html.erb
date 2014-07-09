@@ -1,0 +1,17 @@
+<div class="perf-feed">
+  <ul>
+    <% @performances.each do |performance| %>
+    <li>
+      <%= render '/performances/show', :performance => performance %>
+      <% if user_signed_in? %>
+      <div class="nav-buttons">
+        <p><%= link_to 'Show', performance_path(performance) %>
+          <%= link_to 'Edit', edit_performance_path(performance) %>
+          <%= link_to 'Delete', performance_path(performance),
+              method: :delete, data: { confirm: 'Are you sure you\'d like to delete performance "' + performance.title + '"?' } %></p>
+      </div>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+</div>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :performances
+
   devise_for :users
   resources :members
 
