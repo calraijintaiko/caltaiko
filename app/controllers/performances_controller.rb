@@ -1,64 +1,56 @@
 class PerformancesController < ApplicationController
-  before_action :set_performance, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:show, :index, :upcoming, :past]
 
-  # GET /performances
-  # GET /performances.json
   def index
-    @performances = Performance.all
+    @upcoming = Performance.upcoming_performances
+    @past = Performance.past_performances
   end
 
-  # GET /performances/1
-  # GET /performances/1.json
   def show
+    set_performance
   end
 
-  # GET /performances/new
   def new
     @performance = Performance.new
   end
 
-  # GET /performances/1/edit
   def edit
+    set_performance
   end
 
-  # POST /performances
-  # POST /performances.json
   def create
     @performance = Performance.new(performance_params)
 
-    respond_to do |format|
-      if @performance.save
-        format.html { redirect_to @performance, notice: 'Performance was successfully created.' }
-        format.json { render :show, status: :created, location: @performance }
-      else
-        format.html { render :new }
-        format.json { render json: @performance.errors, status: :unprocessable_entity }
-      end
+    if @performance.save
+      redirect_to @performance
+    else
+      render 'new'
     end
   end
 
-  # PATCH/PUT /performances/1
-  # PATCH/PUT /performances/1.json
   def update
-    respond_to do |format|
-      if @performance.update(performance_params)
-        format.html { redirect_to @performance, notice: 'Performance was successfully updated.' }
-        format.json { render :show, status: :ok, location: @performance }
-      else
-        format.html { render :edit }
-        format.json { render json: @performance.errors, status: :unprocessable_entity }
-      end
+    set_performance
+
+    if @performance.update(performance_params)
+      redirect_to @performance
+    else
+      render 'edit'
     end
   end
 
-  # DELETE /performances/1
-  # DELETE /performances/1.json
   def destroy
+    set_performance
     @performance.destroy
-    respond_to do |format|
-      format.html { redirect_to performances_url, notice: 'Performance was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+
+    redirect_to performances_path
+  end
+
+  def upcoming
+    @upcoming = Performance.upcoming_performances
+  end
+
+  def past
+    @past = Performance.past_performances
   end
 
   private
@@ -67,7 +59,6 @@ class PerformancesController < ApplicationController
       @performance = Performance.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def performance_params
       params.require(:performance).permit(:date, :title, :location, :description, :upcoming)
     end

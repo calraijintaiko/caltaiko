@@ -2,7 +2,11 @@
   <div class="show-deets">
     <p>
       <strong>When:</strong>
+      <% if performance.upcoming == true %>
       <%= performance.date.strftime("%A, %B %d, %I:%M%p") %>
+      <% else %>
+      <%= performance.date.strftime("%m/%d/%Y, %I:%M%p") %>
+      <% end %>
     </p>
     <p>
       <strong>What:</strong>

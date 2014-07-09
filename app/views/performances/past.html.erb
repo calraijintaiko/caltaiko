@@ -1,9 +1,5 @@
-<h1>Performances</h1>
+<h1>Past Performances</h1>
  
-<h3>Upcoming</h3>
-<%= render 'performances_feed', performances: @upcoming %>
-
-<h3>Past</h3>
 <%= render 'performances_feed', performances: @past %>
 
 <% if user_signed_in? %>

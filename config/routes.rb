@@ -1,18 +1,15 @@
 Rails.application.routes.draw do
-  resources :performances
-
   devise_for :users
   resources :members
 
-  resources :past_performances
-
-  resources :upcoming_performances
-
   get 'about' => 'pages#about'
   get 'contact' => 'pages#contact'
-  get 'performances/upcoming' => 'upcoming_performances#index'
-  get 'performances/past' => 'past_performances#index'
+  get 'performances/upcoming' => 'performances#upcoming'
+  get 'performances/past' => 'performances#past'
+  get 'performances/show/:id' => 'performances#show'
   get 'members' => 'members#index'
+
+  resources :performances
   
   devise_scope :user do
     get "login", :to => "devise/sessions#new"

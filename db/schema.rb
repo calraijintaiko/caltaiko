@@ -26,15 +26,6 @@ ActiveRecord::Schema.define(version: 20140708205550) do
     t.string   "major"
   end
 
-  create_table "past_performances", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.datetime "date"
-    t.text     "location"
-    t.text     "description"
-    t.string   "title"
-  end
-
   create_table "performances", force: true do |t|
     t.datetime "date"
     t.string   "title"
@@ -43,15 +34,6 @@ ActiveRecord::Schema.define(version: 20140708205550) do
     t.boolean  "upcoming"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "upcoming_performances", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.datetime "date"
-    t.text     "location"
-    t.text     "description"
-    t.string   "title"
   end
 
   create_table "users", force: true do |t|

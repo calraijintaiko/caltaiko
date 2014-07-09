@@ -4,6 +4,6 @@ the upcoming performances feed on the home page.
 =end
 class FrontPageController < ApplicationController
   def main
-    @upcoming_performances = UpcomingPerformance.all
+    @upcoming = Performance.upcoming_performances
   end
 end

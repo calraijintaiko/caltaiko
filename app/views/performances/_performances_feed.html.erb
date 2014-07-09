@@ -1,6 +1,6 @@
 <div class="perf-feed">
   <ul>
-    <% @performances.each do |performance| %>
+    <% performances.each do |performance| %>
     <li>
       <%= render '/performances/show', :performance => performance %>
       <% if user_signed_in? %>

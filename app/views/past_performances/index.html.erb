@@ -1,9 +1,0 @@
-<h1>Past Performances</h1>
- 
-<%= render 'past_performances_feed' %>
-
-<% if user_signed_in? %>
-<div class="add-new">
-  <%= link_to "Add Past Performance", new_past_performance_path %>
-</div>
-<% end %>
