@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :members
 
   get 'about' => 'pages#about'
   get 'contact' => 'pages#contact'
@@ -8,8 +7,11 @@ Rails.application.routes.draw do
   get 'performances/past' => 'performances#past'
   get 'performances/show/:id' => 'performances#show'
   get 'members' => 'members#index'
+  get 'members/current' => 'members#current'
+  get 'members/alumni' => 'members#alumni'
 
   resources :performances
+  resources :members
   
   devise_scope :user do
     get "login", :to => "devise/sessions#new"

@@ -1,0 +1,19 @@
+<div class="alumni-wrapper">
+  <% members.each do |member| %>
+    <div class="person-wrapper">
+      <div class="element-wrapper">
+        <p><%= link_to member.name, member_path(member) %></p>
+      </div>
+      <% if user_signed_in? %>
+      <div class="nav-buttons">
+          <ul>
+            <li><%= link_to 'Show', member_path(member) %></li>
+            <li><%= link_to 'Edit', edit_member_path(member) %></li>
+            <li><%= link_to 'Delete', member_path(member),
+                    method: :delete, data: { confirm: 'Are you sure you\'d like to delete member ' + member.name + '?' } %></li>
+          </ul>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+</div>

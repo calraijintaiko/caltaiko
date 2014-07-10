@@ -16,7 +16,8 @@ class MembersController < ApplicationController
   end
 
   def index
-    @members = Member.all
+    @current = Member.current_members
+    @alumni = Member.alumni
   end
 
   def show
@@ -49,7 +50,7 @@ class MembersController < ApplicationController
   end
 
   def alumni
-    @alumni = Performance.alumni_members
+    @alumni = Member.alumni
   end
 
   private

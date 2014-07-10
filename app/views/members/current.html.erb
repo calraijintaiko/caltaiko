@@ -2,10 +2,6 @@
 
 <%= render 'current_members', members: @current %>
 
-<h2>Alumni</h2>
-
-<%= render 'alumni_members', members: @alumni %>
-
 <% if user_signed_in? %>
 <div class="add-new">
   <%= link_to "Add New Member", new_member_path %>

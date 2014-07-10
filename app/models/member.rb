@@ -27,4 +27,11 @@ class Member < ActiveRecord::Base
   include DeletableAttachment
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
+  def self.current_members
+    return Member.where(current: true)
+  end
+
+  def self.alumni
+    return Member.where(current: false)
+  end
 end

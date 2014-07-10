@@ -27,6 +27,33 @@
     }
 }
 
+.alumni-wrapper {
+    width: 400px;
+    margin: auto;
+    .person-wrapper {
+        border: 1px $primary-color solid;
+        width: 185px;
+        height: auto;
+        margin: 5px 5px 5px 5px;
+        display: inline-block;
+        .element-wrapper {
+            a {
+                text-decoration: none;
+            }
+        }
+        .nav-buttons {
+            width: 170px;
+            ul {
+                list-style-type: none;
+                margin: auto;
+                li {
+                    display: inline;
+                }
+            }
+        }
+    }
+}
+
 .individual {
     width: 800px;
     height: auto;
