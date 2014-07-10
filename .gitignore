@@ -23,3 +23,6 @@
 
 # Ignore AWS configuration
 /config/aws_config.yml
+
+# Ignore environment variable configuration
+/config/local_env.yml
