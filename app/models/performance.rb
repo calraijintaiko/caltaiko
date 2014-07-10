@@ -7,11 +7,11 @@ class Performance < ActiveRecord::Base
   validates :title, presence: true
 
   def self.upcoming_performances
-    return Performance.where(upcoming: true)
+    return Performance.where(upcoming: true).order('date ASC')
   end
 
   def self.past_performances
-    return Performance.where(upcoming: false)
+    return Performance.where(upcoming: false).order('date ASC')
   end
 
   private
