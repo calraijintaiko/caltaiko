@@ -68,8 +68,8 @@ d. Add the line
    to your <tt>~/.bash_profile</tt> file.
 
 === On Ubuntu:   
-a. Go to the {ImageMagick website}[http://www.imagemagick.org/script/download.php] and select a
-mirror, then download the latest version.
+a. Go to the {ImageMagick website}[http://www.imagemagick.org/script/download.php]
+   and select a mirror, then download the latest version.
 
 b. Unpack the compressed folder, then <tt>cd</tt> into it.
 
