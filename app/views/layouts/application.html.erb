@@ -12,7 +12,7 @@
 </head>
 <div id="page-wrapper">
   <div id="content-wrapper">
-    <%= link_to image_tag("logo.png", :id => "logo"), root_url %>
+    <%= link_to image_tag("logo.png", :id => "logo"), root_url, "data-no-turbolink" => true %>
     <br>
     <div id="header-wrapper">
       <%= render "layouts/header" %>
