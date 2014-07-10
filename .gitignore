@@ -20,3 +20,6 @@
 
 # Ignore generated Rdoc documentation
 /doc
+
+# Ignore AWS configuration
+/config/aws_config.yml

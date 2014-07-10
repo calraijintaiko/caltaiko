@@ -35,6 +35,8 @@ gem 'devise'
 gem 'paperclip', '~> 4.1'
 # Paperclip requires cocaine
 gem 'cocaine', '~> 0.5.4'
+# Enable AWS support
+gem 'aws-sdk'
 
 # Allows more features in Heroku
 gem 'rails_12factor'

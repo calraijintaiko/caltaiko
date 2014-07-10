@@ -39,5 +39,10 @@ Rails.application.configure do
 
   # Letting Paperclip know where to find ImageMagick
   Paperclip.options[:command_path] = "/usr/local/bin/"
+  # Set up Paperclip so that it uploads to AWS
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => "#{Rails.root}/config/aws_config.yml",
+  }
 
 end
