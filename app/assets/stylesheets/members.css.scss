@@ -30,6 +30,9 @@
 .alumni-wrapper {
     width: 400px;
     margin: auto;
+    a {
+        text-decoration: none;
+    }
     .person-wrapper {
         border: 1px $primary-color solid;
         width: 185px;
@@ -42,11 +45,12 @@
             }
         }
         .nav-buttons {
-            width: 170px;
+            width: 185px;
             ul {
                 list-style-type: none;
                 margin: auto;
                 li {
+                    text-decoration: underline;
                     display: inline;
                 }
             }
