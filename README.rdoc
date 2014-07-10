@@ -1,6 +1,8 @@
 = Cal Raijin Taiko Website Revamp
 
-This is a side project I'm working on to familiarize myself with Rails. If it goes well enough, I might propose using it as a basis for our website revamp.
+This is a side project I'm working on to familiarize myself with
+Rails. If it goes well enough, I might propose using it as a basis for
+our website revamp.
 
 == Dependencies:
 
@@ -16,9 +18,14 @@ This is a side project I'm working on to familiarize myself with Rails. If it go
 
 == Setup:
 
-<b>Note:</b> I've had some trouble getting ImageMagick to work correctly on Linux, but will update this once I figure it out. Also if you're using Windows... you're outta luck T_T
+<b>Note:</b> I've successfully installed this app on Mac and Ubuntu, 
+but if you're using Windows... you'll have to figure it out on your
+own T_T
 
-1. Install rvm by following these[https://rvm.io/rvm/install] instructions (you'll need to install curl[http://www.vettyofficer.com/2013/06/how-to-install-curl-in-mac-os-x.html] first).
+1. Install rvm by following these[https://rvm.io/rvm/install] instructions
+   (you'll need to install
+   curl[http://www.vettyofficer.com/2013/06/how-to-install-curl-in-mac-os-x.html]
+   first).
 
 2. Run the commands
 
@@ -40,13 +47,8 @@ This is a side project I'm working on to familiarize myself with Rails. If it go
 
       echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' >> ~/.bashrc
 
-   Close your Terminal session, reopen it, and you should be all set! If not... time to go a-Googling.          
-
-4. Make sure you have a working installation of SQLite3 Database; enter the command
-
-     sqlite3
-
-   from the command line. If it enters their interactive prompt, you're all set! (quit with <tt>.quit</tt>). If not, see here[http://www.sqlite.org/download.html] for download links
+   Close your Terminal session, reopen it, and you should be all set!
+   If not... time to go a-Googling.
 
 === On Mac:
 a. Install Homebrew with
@@ -57,8 +59,18 @@ b. Run the command
 
        brew install imagemagick
 
-=== On Linux:   
-a. Go to the {ImageMagick website}[http://www.imagemagick.org/script/download.php] and select a mirror, then download the latest version.
+c. Install Postgres.app[http://postgresapp.com/]
+
+d. Add the line
+
+       export PATH=/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH
+
+   to your <tt>~/.bash_profile</tt> file.
+
+=== On Ubuntu:   
+a. Go to the {ImageMagick
+website}[http://www.imagemagick.org/script/download.php] and select a
+mirror, then download the latest version.
 
 b. Unpack the compressed folder, then <tt>cd</tt> into it.
 
@@ -68,7 +80,15 @@ c. From within the uncompressed folder, run the following:
           make
           sudo make install
 
-   <b>Note:</b> it is possible to download ImageMagick by simply running <tt>sudo apt-get install imagemagick</tt>, but if you do so the binaries will be downloaded to <tt>/usr/bin/</tt>, rather than <tt>/usr/local/bin/</tt>, requiring more configuration later and loss of compability with any future changes.
+   <b>Note:</b> it is possible to download ImageMagick by simply
+   running <tt>sudo apt-get install imagemagick</tt>, but if you do so
+   the binaries will be downloaded to <tt>/usr/bin/</tt>, rather than
+   <tt>/usr/local/bin/</tt>, requiring more configuration later and
+   loss of compability with any future changes.
+
+d. Install Postgresql with the command
+
+           sudo apt-get install postgresql
 
 === Installation:
 
@@ -82,7 +102,9 @@ c. From within the uncompressed folder, run the following:
 
 3. Run <tt>which convert</tt> to find out where ImageMagick was installed.
 
-   If it does not return <tt>/usr/local/bin/convert</tt>, go to the file <tt>caltaiko/config/environments/development.rb</tt> and change the line 
+   If it does not return <tt>/usr/local/bin/convert</tt>, go to the
+   file <tt>caltaiko/config/environments/development.rb</tt> and
+   change the line
 
         Paperclip.options[:command_path] = "/usr/local/bin/"
 
@@ -90,7 +112,8 @@ c. From within the uncompressed folder, run the following:
 
         Paperclip.options[:command_path] = "/path/to/bin/"
 
-   where <tt>/path/to/bin/</tt> is the output of <tt>which convert</tt> except for the last <tt>convert</tt> part.
+   where <tt>/path/to/bin/</tt> is the output of <tt>which
+   convert</tt> except for the last <tt>convert</tt> part.
 
 4. Enter the command
 
@@ -100,18 +123,30 @@ c. From within the uncompressed folder, run the following:
 
             bundle install
 
-6. Create the database by running
+6. Ensure your installation of Postgresql is set up correctly by running
+
+        psql --version
+
+   It should return something along the lines of 
+
+        psql (PostgreSQL) 9.3.4
+
+7. Create the database by running
 
           rake db:create
           rake db:migrate
 
 And now you should be all set! Running the command
+
     rails s
-should now start up the application, and navigating to <tt>localhost:3000</tt> in a browser will let you play around with it!
+
+should now start up the application, and navigating to
+<tt>localhost:3000</tt> in a browser will let you play around with it!
 
 == Upkeep:
 
-To keep track of any changes made to the original repository, add remote named upstream
+To keep track of any changes made to the original repository, add
+remote named upstream
 
    git remote add upstream https://github.com/greytoyota/caltaiko.git
 
@@ -122,29 +157,53 @@ To sync any changes I make with your own repository, run the commands
 
 == Usage:
 
-* To make use of the website, you will first need to create an account.
-  1. Make sure you have created the databases with the <tt>rake db:create</tt> and <tt>rake db:migrate</tt> commands (you'll only ever need to use <tt>rake db:create</tt> once!)
+* To make use of the website, you will first need to create an
+  account.
 
-  2. Start up the server with <tt>rails s</tt>, then open a broswer such as Google Chrome to <tt>localhost:3000</tt>
+  1. Make sure you have created the databases with the <tt>rake
+  db:create</tt> and <tt>rake db:migrate</tt> commands (you'll only
+  ever need to use <tt>rake db:create</tt> once!)
 
-  3. The first time you are using the site, there will be no members, upcoming performances, or past performances. Your first step to creating those will be to create an admin account.
+  2. Start up the server with <tt>rails s</tt>, then open a broswer
+  such as Google Chrome to <tt>localhost:3000</tt>
 
-     a. Navigate to <tt>localhost:3000/register</tt> to reach the registration page.
+  3. The first time you are using the site, there will be no members,
+  upcoming performances, or past performances. Your first step to
+  creating those will be to create an admin account.
+
+     a. Navigate to <tt>localhost:3000/register</tt> to reach the
+     registration page.
 
      b. Create an account.
 
-     c. Now, when you navigate to the 'Members', 'Upcoming Performances', or 'Past Performances' pages, you will see an option to add new resources.
+     c. Now, when you navigate to the 'Members', 'Upcoming
+     Performances', or 'Past Performances' pages, you will see an
+     option to add new resources.
 
-  4. From then on, whenever you wish to add, edit, or delete entires in those three resources, go to <tt>localhost:3000/login</tt> to login using the account you created before. 
+  4. From then on, whenever you wish to add, edit, or delete entires
+  in those three resources, go to <tt>localhost:3000/login</tt> to
+  login using the account you created before.
 
-* The goal is to make it so that rather than having the website manager be responsible for updating everything on the website, we will be able to have other officer's be in charge of their areas. So the performance coordinator could easily manage the performances, while the secretary updates the members every year.
+* The goal is to make it so that rather than having the website
+  manager be responsible for updating everything on the website, we
+  will be able to have other officer's be in charge of their areas. So
+  the performance coordinator could easily manage the performances,
+  while the secretary updates the members every year.
 
-* I left the register option available right now so that we could test creating an admin account and updating the website. For deployment it will be disabled.
+* I left the register option available right now so that we could test
+  creating an admin account and updating the website. For deployment
+  it will be disabled.
+
 
 === Documentation
 To generate the formatted Rdoc document, run the command
+
    rake doc:app
-from the main directory. This will generate a directory <tt>caltaiko/doc/app/</tt>.
 
-Open the file <tt>caltaiko/doc/app/index.html</tt> to view the documentation on each of the pages, classes, modules, and methods of the application.
+from the main directory. This will generate a directory
+<tt>caltaiko/doc/app/</tt>.
 
+
+Open the file <tt>caltaiko/doc/app/index.html</tt> to view the
+documentation on each of the pages, classes, modules, and methods of
+the application.
