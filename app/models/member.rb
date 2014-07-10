@@ -28,10 +28,10 @@ class Member < ActiveRecord::Base
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   def self.current_members
-    return Member.where(current: true).order('gen ASC')
+    return Member.where(current: true).order('gen ASC, name')
   end
 
   def self.alumni
-    return Member.where(current: false).order('gen DESC')
+    return Member.where(current: false).order('gen DESC, name')
   end
 end
