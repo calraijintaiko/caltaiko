@@ -4,6 +4,16 @@ This is a side project I'm working on to familiarize myself with
 Rails. If it goes well enough, I might propose using it as a basis for
 our website revamp.
 
+== Note:
+
+On July 10th, I got the app up and running on
+http://caltaiko.herokuapp.com. In order to do so, however, I made a
+number of changes to the inner workings of the app that make it much
+harder to run locally. At some point I will update this README to
+include instructions on how to do it, but at present, you won't be
+able to get it working on your own machine. Sorry!! I'll try to fix
+that as soon as possible.
+
 == Dependencies:
 
 * rvm[https://rvm.io/rvm/install]
