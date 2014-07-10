@@ -15,26 +15,20 @@ class MembersController < ApplicationController
     end
   end
 
-  private
-  def member_params
-    params.require(:member).permit(:name, :gen, :major, :bio, :avatar, :current)
-  end
-
-  public
   def index
     @members = Member.all
   end
 
   def show
-    @member = Member.find(params[:id])
+    set_member
   end
 
   def edit
-    @member = Member.find(params[:id])
+    set_member
   end
 
   def update
-    @member = Member.find(params[:id])
+    set_member
 
     if @member.update(member_params)
       redirect_to @member
@@ -44,9 +38,26 @@ class MembersController < ApplicationController
   end
 
   def destroy
-    @member = Member.find(params[:id])
+    set_member
     @member.destroy
     
     redirect_to members_path
+  end
+
+  def current
+    @current = Member.current_members
+  end
+
+  def alumni
+    @alumni = Performance.alumni_members
+  end
+
+  private
+  def set_member
+    @member = Member.find(params[:id])
+  end
+
+  def member_params
+    params.require(:member).permit(:name, :gen, :major, :bio, :avatar, :current)
   end
 end

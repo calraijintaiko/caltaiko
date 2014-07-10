@@ -5,8 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.2'
 # Use rubygems 2.3.0
 gem 'rubygems-update', '~> 2.3.0'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use Postgres as database for Active Record since required by Heroku
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
