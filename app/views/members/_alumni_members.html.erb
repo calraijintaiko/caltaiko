@@ -1,10 +1,11 @@
 <div class="alumni-wrapper">
   <% members.each do |member| %>
-    <div class="person-wrapper">
-      <div class="element-wrapper">
-        <p><%= link_to member.name, member_path(member) %></p>
-      </div>
-      <% if user_signed_in? %>
+  <%= link_to member_path(member) do %>
+  <div class="person-wrapper">
+    <div class="element-wrapper">
+      <p><%= member.name %></p>
+    </div>
+    <% if user_signed_in? %>
       <div class="nav-buttons">
           <ul>
             <li><%= link_to 'Show', member_path(member) %></li>
@@ -15,5 +16,6 @@
       </div>
       <% end %>
     </div>
+    <% end %>
     <% end %>
 </div>
