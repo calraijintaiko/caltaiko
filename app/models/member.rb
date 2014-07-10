@@ -19,11 +19,11 @@ class Member < ActiveRecord::Base
   validates :bio, presence: true
 
   has_attached_file :avatar, :styles => { thumb: "200x200#" },
-  path: "/members/:id/:style/:filename",
-  default_url: "/images/:style/missing.png",
-  url: "/members/:id/:style/:filename"
+  path: "/members/:id/:attachment/:style/:filename",
+  url: "/members/:id/:attachment/:style/:filename",
+  # default_url: "/images/:style/missing.png"
   # if robohash website ever closes down, delete below and uncomment above
-  # default_url: "http://robohash.org/:id?size=200x200&bgset=bgany"
+  default_url: "http://robohash.org/:id?size=200x200&bgset=bgany"
   include DeletableAttachment
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
