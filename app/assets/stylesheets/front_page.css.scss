@@ -23,16 +23,16 @@
 }
 
 // perf_list is just the perf_feed that appears on the homepage
-#perf-list {
-    .perf-feed {
-	ul {
-            list-style-type: none;
-            li:not(:last-child) {
-		margin-bottom: 40px;
-            }
-	}
-    }
-}
+/* #perf-list { */
+/*     .perf-feed { */
+/* 	ul { */
+/*             list-style-type: none; */
+/*             li:not(:last-child) { */
+/* 		margin-bottom: 40px; */
+/*             } */
+/* 	} */
+/*     } */
+/* } */
 
 .perf-feed {
     margin-left: -40px;
