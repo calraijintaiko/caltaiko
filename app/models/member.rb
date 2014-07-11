@@ -18,7 +18,7 @@ class Member < ActiveRecord::Base
   validates :major, presence: true, length: {minimum: 2}
   validates :bio, presence: true
 
-  has_attached_file :avatar, :styles => { thumb: "200x200#" },
+  has_attached_file :avatar, :styles => { thumb: "200x200#", full: "300x9999" },
   path: "/members/:id/:attachment/:style/:filename",
   url: "/members/:id/:attachment/:style/:filename",
   # default_url: "/images/:style/missing.png"
