@@ -1,5 +1,6 @@
 <div class="show">
   <div class="show-deets">
+    <h3><%= performance.title %></h3>
     <p>
       <strong>When:</strong>
       <% if performance.upcoming == true %>
@@ -9,13 +10,13 @@
       <% end %>
     </p>
     <p>
-      <strong>What:</strong>
-      <%= performance.title %>
-    </p>
-    <p>
       <strong>Where:</strong>
       <%= performance.location %>
     </p>
+  </div>
+
+  <div class="banner-pic">
+    <%= image_tag performance.banner.url(:display) %><br>
   </div>
 
   <div class="show-description">

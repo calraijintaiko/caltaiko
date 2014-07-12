@@ -27,6 +27,16 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+
+  <div class="field">
+    <p>
+      <%= f.label :banner %><br>
+      <%= f.file_field :banner %>
+      <%= f.label :delete_banner %>
+      <%= f.check_box :delete_banner %>
+    </p>
+  </div>
+
   <div class="field">
     <%= f.label :upcoming %><br>
     <%= f.check_box :upcoming %>

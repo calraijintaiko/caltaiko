@@ -12,24 +12,34 @@
     margin-right: 0px;
     margin-bottom: 20px;
     .show-deets {
-        width: 300px;
+        width: 760px;
         height: auto;
         display: inline-block;
-        margin-left: 20px;
-        margin-right: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 10px;
         border-radius: 0px;
-        padding-right: 0px;
-        border-right: 3px $primary-color solid;
+        border-bottom: 3px $primary-color solid;
         p {
             text-align: left;
+            display: inline;
+            margin-right: 20px;
         }
     }
+    .banner-pic {
+        margin: 0px;
+        padding: 0px;
+        width: 800px;
+        height: auto;
+    }
     .show-description {
-        width: 400px;
+        width: 760px;
         height: auto;
         display: inline-block;
-        margin-right: 0px;
-        margin-left: 10px;
+        border-top: 3px $primary-color solid;
+        border-radius: 0px;
+        padding-right: 20px;
+        padding-left: 20px;
         vertical-align: top;
         P {
             text-align: left;

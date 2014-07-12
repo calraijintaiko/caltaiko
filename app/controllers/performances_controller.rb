@@ -60,6 +60,7 @@ class PerformancesController < ApplicationController
     end
 
     def performance_params
-      params.require(:performance).permit(:date, :title, :location, :description, :upcoming)
+      params.require(:performance).permit(:date, :title, :location, :description,
+                                          :upcoming, :banner)
     end
 end

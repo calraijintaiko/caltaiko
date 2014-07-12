@@ -6,6 +6,13 @@ class Performance < ActiveRecord::Base
   validates :description, presence: true
   validates :title, presence: true
 
+  has_attached_file :banner, :styles => { display: "800x9999" },
+  path: "/performances/:id/:attachment/:style/:filename",
+  url: "/performances/:id/:attachment/:style/:filename",
+  default_url: "/images/performances/:attachment/:style/missing.png"
+  include DeletableAttachment
+  validates_attachment_content_type :banner, content_type: /\Aimage\/.*\Z/
+
   def self.upcoming_performances
     return Performance.where(upcoming: true).order('date ASC')
   end
