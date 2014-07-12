@@ -58,8 +58,10 @@ $alumni-width: 185px;
     }
 }
 
+$bio-width: 450px;
+
 .individual {
-    width: 800px;
+    width: $bio-width + 350px;
     height: auto;
     margin: 30px auto;
     border: 3px $primary-color solid;
@@ -68,10 +70,12 @@ $alumni-width: 185px;
         margin: 10px;
     }
     .bio-info {
-        width: 450px;
+        border: 2px red solid;
+        width: $bio-width;
         height: auto;
         display: inline-block;
         vertical-align: top;
+        padding-right: 20px;
         p {
             text-align: left;
         }

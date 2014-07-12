@@ -3,8 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
 
+$show-width: 800px;
+$show-padding: 20px;
+
 .show {
-    width: 800px;
+    width: $show-width;
     height: auto;
     border: 3px $primary-color solid;
     margin-top: 40px;
@@ -12,34 +15,44 @@
     margin-right: 0px;
     margin-bottom: 20px;
     .show-deets {
-        width: 760px;
+        width: $show-width - 2 * $show-padding;
         height: auto;
         display: inline-block;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 10px;
+        padding-left: $show-padding;
+        padding-right: $show-padding;
+        padding-bottom: 0px;
         border-radius: 0px;
         border-bottom: 3px $primary-color solid;
         p {
             text-align: left;
-            display: inline;
-            margin-right: 20px;
+        }
+        h3 {
+            margin-bottom: 0px;
+        }
+        .when {
+            width: 340px;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .where {
+            width: $show-width - 387px;
+            display: inline-block;
         }
     }
     .banner-pic {
         margin: 0px;
         padding: 0px;
-        width: 800px;
+        width: $show-width;
         height: auto;
     }
     .show-description {
-        width: 760px;
+        width: $show-width - 2 * $show-padding;
         height: auto;
         display: inline-block;
         border-top: 3px $primary-color solid;
         border-radius: 0px;
-        padding-right: 20px;
-        padding-left: 20px;
+        padding-right: $show-padding;
+        padding-left: $show-padding;
         vertical-align: top;
         P {
             text-align: left;

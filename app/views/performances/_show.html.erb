@@ -1,18 +1,22 @@
 <div class="show">
   <div class="show-deets">
     <h3><%= performance.title %></h3>
-    <p>
-      <strong>When:</strong>
-      <% if performance.upcoming == true %>
-      <%= performance.date.strftime("%A, %B %d, %I:%M%p") %>
-      <% else %>
-      <%= performance.date.strftime("%m/%d/%Y, %I:%M%p") %>
-      <% end %>
-    </p>
-    <p>
-      <strong>Where:</strong>
-      <%= performance.location %>
-    </p>
+    <div class="when">
+      <p>
+        <strong>When:</strong>
+        <% if performance.upcoming %>
+        <%= performance.date.strftime("%A, %B %d, %I:%M%p") %>
+        <% else %>
+        <%= performance.date.strftime("%m/%d/%Y, %I:%M%p") %>
+        <% end %>
+      </p>
+    </div>
+    <div class="where">
+      <p>
+        <strong>Where:</strong>
+        <%= performance.location %>
+      </p>
+    </div>
   </div>
 
   <div class="banner-pic">
