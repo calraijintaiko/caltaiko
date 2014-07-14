@@ -22,38 +22,15 @@
     text-align: center;
 }
 
-// perf_list is just the perf_feed that appears on the homepage
-/* #perf-list { */
-/*     .perf-feed { */
-/* 	ul { */
-/*             list-style-type: none; */
-/*             li:not(:last-child) { */
-/* 		margin-bottom: 40px; */
-/*             } */
-/* 	} */
-/*     } */
-/* } */
-
-.perf-feed {
-    margin-left: -40px;
-    ul {
-        list-style-type: none;
-        li:not(:last-child) {
-            margin-bottom: 40px;
-        }
-    }
-}
-
-.nav-buttons {
-    width: 800px;
-    margin-right: 0px;
-    margin-left: 0px;
-    text-align: center;
-}
-
 .devise-notice {
-    background-color: black;
-    color: white;
+    .alert-success {
+        background-color: black;
+        color: white;
+    }
+    .alert-danger {
+        background-color: red;
+        colo: white;
+    }
 }
 
 #fb-stuff {
@@ -65,8 +42,6 @@
     #fb-feed {
     }
     #fb-faces {
-        //width: 700px;
-        //margin: auto;
         margin-left: 5px;
         margin-right: 5px;
         margin-bottom: 5px;

@@ -9,14 +9,17 @@
     border: 3px $primary-color solid;
     margin-right: auto;
     margin-left: auto;
+    padding-left: 0px;
     #login-field {
         width: 300px;
         height: 70px;
         display: block;
         margin-top: -20px;
         margin: auto;
+        padding-left: 0px;
     }
     #password-field {
+        padding-left: 0px;
         width: auto;
         height: auto;
         display: block;

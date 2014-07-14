@@ -3,6 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
 
+.perf-feed {
+    padding-left: 0px;
+    margin-left: -40px;
+    ul {
+        list-style-type: none;
+        li:not(:last-child) {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.nav-buttons {
+    width: 800px;
+    margin-right: 0px;
+    margin-left: 0px;
+    text-align: center;
+}
+
 $show-width: 800px;
 $show-padding: 20px;
 

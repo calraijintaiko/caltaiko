@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head class="header">
-  <div class="links">
-    <div class="link">
+<head>
+  <ul id="nav-bar">
+    <li>
       <%= link_to "Home", root_url, "data-no-turbolink" => true %>
-    </div>
-    <div class="link">
+    </li>
+    <li id="members">
       <%= link_to "Members", '/members' %>
-    </div>
-    <div class="link">
-      <%= link_to "Upcoming Performances", '/performances/upcoming' %>
-    </div>
-    <div class="link">
-      <%= link_to "Past Performances", '/performances/past' %>
-    </div>
-    <div class="link">
+      <ul>
+        <li><%= link_to "Current", '/members/current' %></li>
+        <li><%= link_to "Alumni", '/members/alumni' %></li>
+      </ul>
+    </li>
+    <li>
+      <%= link_to "Performances", '/performances' %>
+      <ul>
+        <li><%= link_to "Upcoming", '/performances/upcoming' %></li>
+        <li><%= link_to "Past", '/performances/past' %></li>
+      </ul>
+    </li>
+    <li>
       <%= link_to "About Us", '/about' %>
-    </div>
-    <div class="link">
+    </li>
+    <li>
       <%= link_to "Contact Us", '/contact' %>
-    </div>
-  </div>
+    </li>
+  </ul>
 </head>
 </html>
