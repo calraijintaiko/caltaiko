@@ -85,6 +85,7 @@ div {
         a {
             display: inline;
             text-decoration: none;
+            color: black;
         }
         ul {
             position: absolute;
@@ -94,78 +95,27 @@ div {
             background-color: transparent;
             list-style-type: none;
             li {
-                border: 3px black solid;
+                border-bottom: 3px black solid;
+                border-right: 3px black solid;
+                border-left: 3px black solid;
                 background-color: white;
                 padding: 4px;
                 float: none;
                 width: 100%;
             }
+            li:not(:last-child) {
+                border-top: 3px black solid;
+            }
         }
     }
     .link:hover {
-        //margin-bottom: 10px;
         ul {
-            //border: 2px black solid;
-            margin-top: 0px;
+            margin-top: 5px;
             left: auto;
             li {
-                a {
-                    //background-color: black;
-                    color: black;
-                }
                 a:hover {
                     color: blue;
                 }
-            }
-        }
-    }
-}
-
-#nav-bar {
-    list-style-type: none;
-    float: left;
-    width: 100%;
-    position: relative;
-    margin: 0 auto 20px auto;
-    border-top: 3px black solid;
-    border-bottom: 3px black solid;
-    li {
-        float: left;
-        margin-right: 5px;
-        position: relative;
-        a {
-            display: block;
-            padding:  5px;
-            color: $link-color;
-            text-decoration: none;
-            font-family: $main-font;
-        }
-        a:hover {
-            color: blue;
-        }
-        ul {
-            list-style-type: none;
-            background-color: white;
-            background-color: transparent;
-            position: absolute;
-            left: -9999px;
-            padding-left: 0px;
-            li {
-                padding-top: 1px;
-                float: none;
-            }
-            a {
-                white-space: nowrap;
-                background-color: black;
-                color: white;
-            }
-        }
-    }
-    li:hover {
-        ul {
-            left: 0px;
-            a {
-                text-decoration: none;
             }
         }
     }
