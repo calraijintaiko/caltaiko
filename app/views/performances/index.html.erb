@@ -1,9 +1,7 @@
-<h1>Performances</h1>
- 
-<h3>Upcoming</h3>
+<h2 class="link-header"><%= link_to "Upcoming Performances", '/performances/upcoming' %></h2>
 <%= render 'performances_feed', performances: @upcoming %>
 
-<h3>Past</h3>
+<h2 class="link-header"><%= link_to "Past Performances", '/performances/past' %></h2>
 <%= render 'performances_feed', performances: @past %>
 
 <% if user_signed_in? %>

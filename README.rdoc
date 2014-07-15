@@ -196,28 +196,28 @@ To sync any changes I make with your own repository, run the commands
   account.
 
   1. Make sure you have created the databases with the <tt>rake
-  db:create</tt> and <tt>rake db:migrate</tt> commands (you'll only
-  ever need to use <tt>rake db:create</tt> once!)
+     db:create</tt> and <tt>rake db:migrate</tt> commands (you'll only
+     ever need to use <tt>rake db:create</tt> once!)
 
   2. Start up the server with <tt>rails s</tt>, then open a broswer
-  such as Google Chrome to <tt>localhost:3000</tt>
+     such as Google Chrome to <tt>localhost:3000</tt>
 
   3. The first time you are using the site, there will be no members,
-  upcoming performances, or past performances. Your first step to
-  creating those will be to create an admin account.
+     upcoming performances, or past performances. Your first step to
+     creating those will be to create an admin account.
 
      a. Navigate to <tt>localhost:3000/register</tt> to reach the
-     registration page.
+        registration page.
 
      b. Create an account.
 
      c. Now, when you navigate to the 'Members', 'Upcoming
-     Performances', or 'Past Performances' pages, you will see an
-     option to add new resources.
+        Performances', or 'Past Performances' pages, you will see an
+        option to add new resources.
 
   4. From then on, whenever you wish to add, edit, or delete entires
-  in those three resources, go to <tt>localhost:3000/login</tt> to
-  login using the account you created before.
+     in those three resources, go to <tt>localhost:3000/login</tt> to
+     login using the account you created before.
 
 * The goal is to make it so that rather than having the website
   manager be responsible for updating everything on the website, we
