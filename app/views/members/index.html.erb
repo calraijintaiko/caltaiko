@@ -1,9 +1,7 @@
 <h1 class="link-header"><%= link_to "Current Members", '/members/current' %></h1>
-
 <%= render 'current_members', members: @current %>
 
-<h2 class="link-header"><%= link_to "Alumni", '/members/alumni' %></h2>
-
+<h1 class="link-header"><%= link_to "Alumni", '/members/alumni' %></h1>
 <%= render 'alumni_members', members: @alumni %>
 
 <% if user_signed_in? %>

@@ -6,16 +6,16 @@
       <p><%= member.name %></p>
     </div>
     <% if user_signed_in? %>
-      <div class="nav-buttons">
-          <ul>
-            <li><%= link_to 'Show', member_path(member) %></li>
-            <li><%= link_to 'Edit', edit_member_path(member) %></li>
-            <li><%= link_to 'Delete', member_path(member),
-                    method: :delete, data: { confirm: 'Are you sure you\'d like to delete member ' + member.name + '?' } %></li>
-          </ul>
-      </div>
-      <% end %>
+    <div class="nav-buttons">
+      <ul>
+        <li><%= link_to 'Show', member_path(member) %></li>
+        <li><%= link_to 'Edit', edit_member_path(member) %></li>
+        <li><%= link_to 'Delete', member_path(member),
+                method: :delete, data: { confirm: 'Are you sure you\'d like to delete member ' + member.name + '?' } %></li>
+      </ul>
     </div>
     <% end %>
-    <% end %>
+  </div>
+  <% end %>
+  <% end %>
 </div>
