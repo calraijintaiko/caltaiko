@@ -39,7 +39,7 @@ gem 'cocaine', '~> 0.5.4'
 gem 'aws-sdk'
 
 # Allows more features in Heroku
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
