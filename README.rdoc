@@ -4,16 +4,6 @@ This is a side project I'm working on to familiarize myself with
 Rails. If it goes well enough, I might propose using it as a basis for
 our website revamp.
 
-== Note:
-
-On July 10th, I got the app up and running on
-http://caltaiko.herokuapp.com. In order to do so, however, I made a
-number of changes to the inner workings of the app that make it much
-harder to run locally. At some point I will update this README to
-include instructions on how to do it, but at present, you won't be
-able to get it working on your own machine. Sorry!! I'll try to fix
-that as soon as possible.
-
 == Dependencies:
 
 * rvm[https://rvm.io/rvm/install]
@@ -99,7 +89,15 @@ d. Install Postgresql with the command
 
            sudo apt-get install postgresql psql-dev
 
-=== Installation:
+e. Give your user account the ablility to create the
+   database with the command
+
+        sudo -u postgres createuser --superuser USERNAME
+
+If you are having trouble getting Postgres set up, try following the
+instructions provided here[https://help.ubuntu.com/community/PostgreSQL#Installation]
+
+== Installation:
 
 1. Fork[https://help.github.com/articles/fork-a-repo] this repository
    on the GitHub website, then clone your repository onto your computer:
@@ -141,10 +139,6 @@ d. Install Postgresql with the command
 
         psql (PostgreSQL) 9.3.4
 
-6. On Ubuntu, give your user account the ablility to create the database
-
-        sudo -u postgres createuser --superuser USERNAME
-
 7. Create the database by running
 
           rake db:create
@@ -159,24 +153,47 @@ should now start up the application, and navigating to
 
 == Integrate with AWS
 
-1. Create `config/aws_config.yml`
+1. Go to https://aws.amazon.com and create an Amazon AWS account.
 
-1. Enter the following
+2. Go to your {management
+   console}[https://console.aws.amazon.com/console/home] and change the
+   region to <b>US West (N. California)</b>
 
-    access_key_id: AWS_ACCESS_KEY_ID
-    secret_access_key: AWS_SECRET_KEY_ID
-    s3_host_name: "HOST_NAME"
-    bucket: BUCKET
+3. Go to the {S3 Management
+   Console}[https://console.aws.amazon.com/s3/home] and create a new
+   bucket.
+
+4. Go to the {IAM
+   ManagementConsole}[https://console.aws.amazon.com/iam/home?#users] and
+   create a new IAM user.
+
+   When the success notification pops up, be sure to either download
+   the security credentials or otherwise store them in a secure location.    
+
+5. Create the file <tt>config/aws_config.yml</tt> and fill it with the following:
+
+          access_key_id: AWS_ACCESS_KEY_ID
+          secret_access_key: AWS_SECRET_KEY_ID
+          s3_host_name: "s3-us-west-1.amazonaws.com"
+          bucket: YOUR_BUCKET_NAME
+
+   Where <tt>AWS_ACCESS_KEY_ID</tt> is the IAM user Access Key ID,
+   <tt>AWS_SECRET_KEY_ID</tt> is the IAM user Secret Access Key, and
+   <tt>YOUR_BUCKET_NAME</tt> is the name of the bucket you created.
     
 == Enable emails to be sent through Gmail
 
-1. Create `config/local_env.yml`
+Create the file <tt>/config/local_env.yml</tt> and fill it with the
+following:
 
-1. Enter the following
+   GMAIL_USERNAME: "username@example.com"
+   GMAIL_PASSWORD: "PASSWORD"
+   GMAIL_DOMAIN: "example.com"
 
-    GMAIL_USERNAME: FULL_EMAIL_ADDRESS
-    GMAIL_PASSWORD: PASSWORD
-    GMAIL_DOMAIN: gmail.com
+where <tt>username@example.com</tt> is a Gmail address that you
+have access to, and <tt>example.com</tt> is the domain. Most
+likely this will be <tt>gmail.com</tt>, unless you are using a
+Google Apps account.
 
 == Upkeep:
 
@@ -230,7 +247,7 @@ To sync any changes I make with your own repository, run the commands
   it will be disabled.
 
 
-=== Documentation
+== Documentation
 To generate the formatted Rdoc document, run the command
 
    rake doc:app
