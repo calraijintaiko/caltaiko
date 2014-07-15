@@ -73,6 +73,54 @@ div {
     border-radius: 0px;
 }
 
+.links {
+    border-top: 3px black solid;
+    border-bottom: 3px black solid;
+    border-radius: 0px;
+    text-align: center;
+    font-family: $main-font;
+    .link {
+        display: inline-block;
+        margin: 5px 5px 5px 5px;
+        a {
+            display: inline;
+            text-decoration: none;
+        }
+        ul {
+            position: absolute;
+            padding-left: 0px;
+            left: -9999px;
+            background-color: white;
+            background-color: transparent;
+            list-style-type: none;
+            li {
+                border: 3px black solid;
+                background-color: white;
+                padding: 4px;
+                float: none;
+                width: 100%;
+            }
+        }
+    }
+    .link:hover {
+        //margin-bottom: 10px;
+        ul {
+            //border: 2px black solid;
+            margin-top: 0px;
+            left: auto;
+            li {
+                a {
+                    //background-color: black;
+                    color: black;
+                }
+                a:hover {
+                    color: blue;
+                }
+            }
+        }
+    }
+}
+
 #nav-bar {
     list-style-type: none;
     float: left;
