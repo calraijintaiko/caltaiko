@@ -64,81 +64,12 @@ div {
     margin: auto;
 }
 
-#header-wrapper {
-    width: 800px;
-    height: auto;
-    margin: auto;
-}
-
-.links {
-    border-top: 2px black solid;
-    border-bottom: 2px black solid;
-    border-radius: 0px;
-    text-align: center;
-    font-family: $main-font;
-    .link {
-        display: inline-block;
-        margin: 0px 5px 0px 5px;
-        padding-bottom: 5px;
-        padding-top: 5px;
-        a {
-            height: 100%;
-            display: inline;
-            text-decoration: none;
-            color: black;
-        }
-        ul {
-            position: absolute;
-            padding-left: 0px;
-            left: -9999px;
-            background-color: white;
-            background-color: transparent;
-            list-style-type: none;
-            li {
-                border-bottom: 2px black solid;
-                border-right: 2px black solid;
-                border-left: 2px black solid;
-                background-color: white;
-                padding: 4px;
-                float: none;
-                width: 100%;
-            }
-            li:not(:last-child) {
-                border-top: 2px black solid;
-            }
-        }
-    }
-    .link:hover {
-        ul {
-            margin-top: 5px;
-            left: auto;
-            li {
-                a:hover {
-                    color: blue;
-                }
-            }
-        }
-    }
-}
-
-#footer-wrapper{
-    position: fixed;
-    height: 20px;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
-    margin-bottom: 10px;
-    margin-left: 5px;
-    z-index: 1;
-    .icons {
-        img {
-            width: 25px;
-            height: 25px;
-        }
-    }
-}
-
-
 body{
     margin-bottom: 50px;
+}
+
+.add-new {
+    margin-top: 30px;
+    display: block;
+    text-align: center;
 }
