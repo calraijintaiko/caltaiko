@@ -18,7 +18,7 @@ class Performance < ActiveRecord::Base
   end
 
   def self.past_performances
-    return Performance.where(upcoming: false).order('date ASC')
+    return Performance.where(upcoming: false).order('date DESC')
   end
 
   private
