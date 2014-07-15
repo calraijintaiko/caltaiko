@@ -64,10 +64,14 @@ $show-padding: 20px;
         }
     }
     .banner-pic {
+        //font-size: 0px;
         margin: 0px;
         padding: 0px;
         width: $show-width;
         height: auto;
+        img {
+            display: block;
+        }
     }
     .show-description {
         width: $show-width - 2 * $show-padding;
