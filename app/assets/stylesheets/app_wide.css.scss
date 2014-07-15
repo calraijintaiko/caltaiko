@@ -67,22 +67,22 @@ div {
 #header-wrapper {
     width: 800px;
     height: auto;
-    //border-top: 2px black solid;
-    //border-bottom: 2px black solid;
     margin: auto;
-    border-radius: 0px;
 }
 
 .links {
-    border-top: 3px black solid;
-    border-bottom: 3px black solid;
+    border-top: 2px black solid;
+    border-bottom: 2px black solid;
     border-radius: 0px;
     text-align: center;
     font-family: $main-font;
     .link {
         display: inline-block;
-        margin: 5px 5px 5px 5px;
+        margin: 0px 5px 0px 5px;
+        padding-bottom: 5px;
+        padding-top: 5px;
         a {
+            height: 100%;
             display: inline;
             text-decoration: none;
             color: black;
@@ -95,16 +95,16 @@ div {
             background-color: transparent;
             list-style-type: none;
             li {
-                border-bottom: 3px black solid;
-                border-right: 3px black solid;
-                border-left: 3px black solid;
+                border-bottom: 2px black solid;
+                border-right: 2px black solid;
+                border-left: 2px black solid;
                 background-color: white;
                 padding: 4px;
                 float: none;
                 width: 100%;
             }
             li:not(:last-child) {
-                border-top: 3px black solid;
+                border-top: 2px black solid;
             }
         }
     }
