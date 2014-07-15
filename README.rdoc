@@ -97,7 +97,7 @@ c. From within the uncompressed folder, run the following:
 
 d. Install Postgresql with the command
 
-           sudo apt-get install postgresql
+           sudo apt-get install postgresql psql-dev
 
 === Installation:
 
@@ -141,6 +141,10 @@ d. Install Postgresql with the command
 
         psql (PostgreSQL) 9.3.4
 
+6. On Ubuntu, give your user account the ablility to create the database
+
+        sudo -u postgres createuser --superuser USERNAME
+
 7. Create the database by running
 
           rake db:create
@@ -152,6 +156,17 @@ And now you should be all set! Running the command
 
 should now start up the application, and navigating to
 <tt>localhost:3000</tt> in a browser will let you play around with it!
+
+== Integrate with AWS
+
+1. Create `config/aws_config.yml`
+
+1. Enter the following
+
+    access_key_id: AWS_ACCESS_KEY_ID
+    secret_access_key: AWS_SECRET_KEY_ID
+    s3_host_name: HOST_NAME
+    bucket: BUCKET
 
 == Upkeep:
 
