@@ -1,8 +1,8 @@
-<h1>Current Members</h1>
+<h1 class="link-header"><%= link_to "Current Members", '/members/current' %></h1>
 
 <%= render 'current_members', members: @current %>
 
-<h2>Alumni</h2>
+<h2 class="link-header"><%= link_to "Alumni", '/members/alumni' %></h2>
 
 <%= render 'alumni_members', members: @alumni %>
 
