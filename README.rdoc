@@ -165,8 +165,18 @@ should now start up the application, and navigating to
 
     access_key_id: AWS_ACCESS_KEY_ID
     secret_access_key: AWS_SECRET_KEY_ID
-    s3_host_name: HOST_NAME
+    s3_host_name: "HOST_NAME"
     bucket: BUCKET
+    
+== Enable emails to be sent through Gmail
+
+1. Create `config/local_env.yml`
+
+1. Enter the following
+
+    GMAIL_USERNAME: FULL_EMAIL_ADDRESS
+    GMAIL_PASSWORD: PASSWORD
+    GMAIL_DOMAIN: gmail.com
 
 == Upkeep:
 
