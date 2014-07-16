@@ -1,36 +1,28 @@
-<div class="individual">
-  <div class="pic">
-    <%= image_tag @member.avatar.url(:full) %><br>
-    <script type="text/javascript" src="members.js"></script>
-  </div>
-
+<article class="individual">
+  <%= image_tag @member.avatar.url(:full) %>
 
   <div class="bio-info">
     <p>
       <strong>Name:</strong>
       <%= @member.name %>
     </p>
-
     <p>
       <strong>Gen:</strong>
       <%= number_with_precision(@member.gen, precision: 0) %>
     </p>
-
     <p>
       <strong>Major:</strong>
       <%= @member.major %>
     </p>
 
-    <p>
-      <%= @member.bio %>
-    </p>
+    <p><%= @member.bio %></p>
   </div>
-</div>
+</article>
 
-<div class="nav-buttons">
+<nav class="nav-buttons">
   <%= link_to 'Back', members_path %>
   <% if user_signed_in? %>
   <%= link_to 'Edit', edit_member_path(@member) %>
   <% end %>
-</div>
+</nav>
 

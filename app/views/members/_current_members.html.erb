@@ -1,19 +1,18 @@
-<div class="members-wrapper">
+<section class="current-members">
   <% members.each do |member| %>
-    <div class="person-wrapper">
-      <div class="element-wrapper">
-        <%= link_to image_tag(member.avatar.url(:thumb), :class => "avatar"), member_path(member) %>
-      </div>
-      <% if user_signed_in? %>
-      <div class="element-wrapper">
-          <ul>
-            <li><%= link_to 'Show', member_path(member) %></li>
-            <li><%= link_to 'Edit', edit_member_path(member) %></li>
-            <li><%= link_to 'Delete', member_path(member),
-                    method: :delete, data: { confirm: 'Are you sure you\'d like to delete member ' + member.name + '?' } %></li>
-          </ul>
-      </div>
-      <% end %>
+  <article class="member">
+    <div class="element">
+      <%= link_to image_tag(member.avatar.url(:thumb), :class => "avatar"),
+      member_path(member) %>
     </div>
+    <% if user_signed_in? %>
+    <nav class="nav-buttons">
+      <%= link_to 'Show', member_path(member) %>
+      <%= link_to 'Edit', edit_member_path(member) %>
+      <%= link_to 'Delete', member_path(member),
+          method: :delete, data: { confirm: 'Are you sure you\'d like to delete member ' + member.name + '?' } %>
+    </nav>
     <% end %>
-</div>
+  </article>
+  <% end %>
+</section>

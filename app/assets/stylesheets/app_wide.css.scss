@@ -3,6 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
 
+// Below are the new HTML5 elements; need this line to ensure backwards compatability
+header, hgroup, nav, section, article, aside, footer { display:block; }
+
 a {
     color: $link-color;
     &:hover {
@@ -34,7 +37,7 @@ h3 {
     font-family: $header-font;
 }
 
-div {
+article {
     border-radius: 5px;
 }
 
@@ -71,5 +74,11 @@ body{
 .add-new {
     margin-top: 30px;
     display: block;
+    text-align: center;
+}
+
+.nav-buttons {
+    margin-right: 0px;
+    margin-left: 0px;
     text-align: center;
 }

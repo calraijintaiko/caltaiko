@@ -1,11 +1,13 @@
-<h1 class="link-header"><%= link_to "Current Members", '/members/current' %></h1>
+<header>
+  <h1 class="link-header"><%= link_to "Current Members", '/members/current' %></h1>
+</header>
 <%= render 'current_members', members: @current %>
 
-<h1 class="link-header"><%= link_to "Alumni", '/members/alumni' %></h1>
+<header>
+  <h1 class="link-header"><%= link_to "Alumni", '/members/alumni' %></h1>
+</header>
 <%= render 'alumni_members', members: @alumni %>
 
 <% if user_signed_in? %>
-<div class="add-new">
-  <%= link_to "Add New Member", new_member_path %>
-</div>
+<%= link_to "Add New Member", new_member_path, class: "add-new" %>
 <% end %>

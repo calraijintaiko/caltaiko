@@ -1,9 +1,9 @@
-<h1>Current Members</h1>
+<header>
+  <h1>Current Members</h1>
+</header>
 
 <%= render 'current_members', members: @current %>
 
 <% if user_signed_in? %>
-<div class="add-new">
-  <%= link_to "Add New Member", new_member_path %>
-</div>
+<%= link_to "Add New Member", new_member_path, class: "add-new" %>
 <% end %>

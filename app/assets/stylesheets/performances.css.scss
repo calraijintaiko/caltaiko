@@ -4,13 +4,8 @@
 @import "variables";
 
 .perf-feed {
-    padding-left: 0px;
-    margin-left: -40px;
-    ul {
-        list-style-type: none;
-        li:not(:last-child) {
-            margin-bottom: 40px;
-        }
+    article {
+        margin-bottom: 50px;
     }
 }
 
@@ -20,30 +15,20 @@
     }
 }
 
-.nav-buttons {
-    width: 800px;
-    margin-right: 0px;
-    margin-left: 0px;
-    text-align: center;
-}
-
-$show-width: 800px;
-$show-padding: 20px;
-
-.show {
-    width: $show-width;
+.performance {
+    width: $performance-width;
     height: auto;
     border: 3px $primary-color solid;
     margin-top: 40px;
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 20px;
-    .show-deets {
-        width: $show-width - 2 * $show-padding;
+    .performance-deets {
+        width: $performance-width - 2 * $performance-padding;
         height: auto;
         display: inline-block;
-        padding-left: $show-padding;
-        padding-right: $show-padding;
+        padding-left: $performance-padding;
+        padding-right: $performance-padding;
         padding-bottom: 0px;
         border-radius: 0px;
         border-bottom: 3px $primary-color solid;
@@ -59,31 +44,20 @@ $show-padding: 20px;
             vertical-align: top;
         }
         .where {
-            width: $show-width - 387px;
+            width: $performance-width - 387px;
             display: inline-block;
         }
     }
-    .banner-pic {
-        //font-size: 0px;
-        margin: 0px;
-        padding: 0px;
-        width: $show-width;
+    img {
+        width: 800px;
         height: auto;
-        img {
-            display: block;
-        }
+        display: block;
+        border-bottom: 3px $primary-color solid;
     }
-    .show-description {
-        width: $show-width - 2 * $show-padding;
-        height: auto;
-        display: inline-block;
-        border-top: 3px $primary-color solid;
-        border-radius: 0px;
-        padding-right: $show-padding;
-        padding-left: $show-padding;
+    .description {
+        padding-left: $performance-padding;
+        padding-right: $performance-padding;
+        text-align: left;
         vertical-align: top;
-        P {
-            text-align: left;
-        }
     }
 }

@@ -5,6 +5,7 @@
     <title>Cal Raijin Taiko</title>
     <meta property="og:image" content="<%= URI.join(root_url, image_path("logo.png")) %>" />
     <meta property="og:title" content="Cal Raijin Taiko" />
+    <meta property="keywords" content="taiko, raijin, cal, berkeley, japanese, music, caltaiko" />
     <meta name="description" property="og:description" content="Founded in 2005, Cal Raijin Taiko is UC Berkeley's Japanese drumming performance ensemble." />
     <meta property="og:url" content="http://caltaiko.herokuapp.com" />
 
@@ -16,15 +17,18 @@
     <%= favicon_link_tag 'favicon.png', :rel => 'icon', :type => 'image/png' %>
 
   </head>
-  <div id="page-wrapper">
-    <div id="content-wrapper">
-      <%= link_to image_tag("logo.png", :id => "logo"), root_url, "data-no-turbolink" => true %>
-      <br>
-      <div id="header-wrapper">
-        <%= render "layouts/header" %>
-      </div>
 
-      <body>
+  <body>
+    <div id="page-wrapper">
+      <div id="content-wrapper">
+
+        <%= link_to image_tag("logo.png", :id => "logo"), root_url,
+        "data-no-turbolink" => true %>
+
+        <header id="nav-header">
+          <%= render "layouts/header" %>
+        </header>
+
         <div class="devise-notice">
           <% if notice %>
           <p class="alert-success"><%= notice %></p>
@@ -37,10 +41,14 @@
         <div id="page-content">
           <%= yield %>
         </div>
-      </body>
+
+      </div>
+
+      <footer id="social-media">
+        <%= render "layouts/footer" %>
+      </footer>
+
     </div>
-    <div id="footer-wrapper">
-      <%= render "layouts/footer" %>
-    </div>
-  </div>
+  </body>
+
 </html>

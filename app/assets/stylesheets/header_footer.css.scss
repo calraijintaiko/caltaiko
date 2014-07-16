@@ -3,13 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
 
-#header-wrapper {
+#nav-header{
+    display: block;
     width: 900px;
     height: auto;
     margin: auto;
 }
 
-.links {
+.nav-bar {
     border-top: 2px black solid;
     border-bottom: 2px black solid;
     border-radius: 0px;
@@ -58,7 +59,7 @@
     }
 }
 
-#footer-wrapper{
+#social-media {
     position: fixed;
     height: 20px;
     bottom: 0px;

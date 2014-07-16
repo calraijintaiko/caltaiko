@@ -3,18 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
 
-.members-wrapper {
+.current-members {
+    display: block;
     width: 1000px;
     margin-left: -100px;
     margin-right: 0px;
-    .person-wrapper {
+    .member {
         background-color: white;
         width: 220px;
         height: auto;
         display: inline-block;
         margin: 10px;
         border: 3px $primary-color solid;
-        .element-wrapper {
+        .element {
             display: inline-block;
             margin: 10px;
             ul {
@@ -29,30 +30,22 @@
 
 $alumni-width: 185px;
 
-.alumni-wrapper {
+.alumni {
     width: 800px;
     margin: auto;
     a {
         text-decoration: none;
     }
-    .person-wrapper {
+    .alumnus {
         border: 1px $primary-color solid;
         width: $alumni-width;
         height: auto;
         margin: 5px;
         display: inline-block;
-        .element-wrapper {
-            width: $alumni-width;
-        }
         .nav-buttons {
             width: $alumni-width;
-            ul {
-                list-style-type: none;
-                margin: auto;
-                li {
-                    text-decoration: underline;
-                    display: inline;
-                }
+            a {
+                text-decoration: underline;
             }
         }
     }
@@ -65,12 +58,13 @@ $bio-width: 450px;
     height: auto;
     margin: 30px auto;
     border: 3px $primary-color solid;
-    .pic {
-        display: inline-block;
+    img {
         margin: 10px;
+        display: inline-block;
     }
     .bio-info {
         width: $bio-width;
+        width: 300px;
         height: auto;
         display: inline-block;
         vertical-align: top;

@@ -1,5 +1,5 @@
-<div class="show">
-  <div class="show-deets">
+<article class="performance">
+  <div class="performance-deets">
     <h3><%= performance.title %></h3>
     <div class="when">
       <p>
@@ -19,13 +19,8 @@
     </div>
   </div>
 
-  <div class="banner-pic">
-    <%= image_tag performance.banner.url(:display) %>
-  </div>
+  <%= image_tag performance.banner.url(:display) %>
 
-  <div class="show-description">
-    <p>
-      <%= performance.description %>
-    </p>
-  </div>
-</div>
+  <p class="description"><%= performance.description %></p>
+
+</article>
