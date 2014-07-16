@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711161140) do
+ActiveRecord::Schema.define(version: 20140716095502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 20140711161140) do
     t.string   "title"
     t.string   "location"
     t.text     "description"
-    t.boolean  "upcoming"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "banner_file_name"

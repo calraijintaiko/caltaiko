@@ -4,7 +4,7 @@
     <div class="when">
       <p>
         <strong>When:</strong>
-        <% if performance.upcoming %>
+        <% if performance.date.to_date >= Time.new %>
         <%= performance.date.strftime("%A, %B %d, %I:%M%p") %>
         <% else %>
         <%= performance.date.strftime("%m/%d/%Y, %I:%M%p") %>
