@@ -1,4 +1,6 @@
 class Performance < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :slug_candidates, use: :slugged
   validates :date, presence: true
   validates :location, presence: true
   validates :description, presence: true
@@ -10,6 +12,23 @@ class Performance < ActiveRecord::Base
   default_url: "/images/performances/:attachment/:style/missing.png"
   include DeletableAttachment
   validates_attachment_content_type :banner, content_type: /\Aimage\/.*\Z/
+
+  def slug_candidates
+    [
+     :title,
+     #[:title, :year],
+     #[:title, :full_date],
+     [:title, :id]
+    ]
+  end
+
+  def year
+    return :date.strftime("%Y")
+  end
+
+  def full_date
+    return :date.to_date.strftime("%m-%d-%Y")
+  end
 
   def self.upcoming_performances
     return Performance.where("date >= ?", Time.new).order('date ASC')

@@ -56,7 +56,7 @@ class PerformancesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_performance
-      @performance = Performance.find(params[:id])
+      @performance = Performance.friendly.find(params[:id])
     end
 
     def performance_params

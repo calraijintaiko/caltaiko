@@ -13,6 +13,8 @@ They can be found in
     /public/images/:style/missing.png
 =end
 class Member < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :slug_candidates, use: :slugged
   validates :name, presence: true, length: { minimum: 2 }
   validates :gen, presence: true, numericality: {only_integer: true, greater_than: 0 }
   validates :major, presence: true, length: {minimum: 2}
@@ -26,6 +28,14 @@ class Member < ActiveRecord::Base
   default_url: "http://robohash.org/:id?size=200x200&bgset=bgany"
   include DeletableAttachment
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+
+  def slug_candidates
+    [
+     :name,
+     [:name, :gen],
+     [:name, :id],
+    ]
+  end
 
   def self.current_members
     return Member.where(current: true).order('gen ASC, name')

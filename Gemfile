@@ -55,3 +55,6 @@ gem 'unicorn'
 
 # Add New Relic for data analysis
 gem 'newrelic_rpm'
+
+# Enables prettier urls, ie caltaiko.com/members/tom-hata vs caltaiko.com/members/1
+gem 'friendly_id'

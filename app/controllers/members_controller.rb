@@ -55,7 +55,7 @@ class MembersController < ApplicationController
 
   private
   def set_member
-    @member = Member.find(params[:id])
+    @member = Member.friendly.find(params[:id])
   end
 
   def member_params

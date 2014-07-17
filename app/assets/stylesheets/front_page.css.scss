@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
 
+#frontpage-intro {
+    margin: 40px auto;
+}
+
 .devise-notice {
     .alert-success {
         background-color: black;
