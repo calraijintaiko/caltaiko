@@ -20,12 +20,20 @@ class Member < ActiveRecord::Base
   validates :major, presence: true, length: {minimum: 2}
   validates :bio, presence: true
 
+  def self.dimensions(style)
+    # Can't figure out how to do this, but should return size based on style
+    # if style == "full"
+    #   return "300x300"
+    # end
+    return "200x200"
+  end
+
   has_attached_file :avatar, :styles => { thumb: "200x200#", full: "300x9999" },
   path: "/members/:id/:attachment/:style/:filename",
   url: "/members/:id/:attachment/:style/:filename",
-  #default_url: "/images/members/:attachment/:style/missing.png"
+  # default_url: "/images/members/:attachment/:style/missing.png"
   # if robohash website ever closes down, delete below and uncomment above
-  default_url: "http://robohash.org/:id?size=200x200&bgset=bgany"
+  default_url: "http://robohash.org/:id?size="  + dimensions(:style) + "&bgset=bgany"
   include DeletableAttachment
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
