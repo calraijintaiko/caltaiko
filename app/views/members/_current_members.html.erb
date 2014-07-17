@@ -1,10 +1,8 @@
 <section class="current-members">
   <% members.each do |member| %>
   <article class="member">
-    <div class="element">
       <%= link_to image_tag(member.avatar.url(:thumb), :class => "avatar"),
       member_path(member) %>
-    </div>
     <% if user_signed_in? %>
     <nav class="nav-buttons">
       <%= link_to 'Show', member_path(member) %>

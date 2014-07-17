@@ -23,6 +23,9 @@
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 20px;
+    div {
+        background-color: white;
+    }
     .performance-deets {
         width: $performance-width - 2 * $performance-padding;
         height: auto;
@@ -55,9 +58,8 @@
         border-bottom: 3px $primary-color solid;
     }
     .description {
-        padding-left: $performance-padding;
-        padding-right: $performance-padding;
         text-align: left;
-        vertical-align: top;
+        margin: 0px;
+        padding: $performance-padding;
     }
 }

@@ -6,24 +6,18 @@
 .current-members {
     display: block;
     width: 1000px;
-    margin-left: -100px;
+    margin-left: -70px;
     margin-right: 0px;
     .member {
-        background-color: white;
-        width: 220px;
+        background-color: $primary-color;
+        width: auto;
         height: auto;
         display: inline-block;
+        padding: 0px;
         margin: 10px;
-        border: 3px $primary-color solid;
-        .element {
-            display: inline-block;
-            margin: 10px;
-            ul {
-                list-style-type: none;
-                li {
-                    display: inline-block;
-                }
-            }
+        border: 5px $primary-color solid;
+        img {
+            display: block;
         }
     }
 }
@@ -42,6 +36,7 @@ $alumni-width: 185px;
         height: auto;
         margin: 5px;
         display: inline-block;
+        background-image: linear-gradient(to top right, #C3C4C2, white);
         .nav-buttons {
             width: $alumni-width;
             a {

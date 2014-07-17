@@ -45,8 +45,10 @@ div {
     border-radius: 5px;
 }
 
-#page-wrapper {
-    // Change body background-color to have it apply behind content-wrapper
+body {
+    margin: 0px;
+    z-index: 0;
+    background-image: asset-data-url("backgrounds/1.jpg");
 }
 
 #logo {
@@ -60,7 +62,8 @@ div {
 }
 
 #content-wrapper {
-    background-color: white;
+    background-color: transparent;
+    z-index: 1;
     width: 1000px;
     margin: 0 auto;
     border-radius: 0px;
