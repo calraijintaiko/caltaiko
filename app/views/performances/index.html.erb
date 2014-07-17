@@ -1,3 +1,17 @@
+<%
+   title = "Cal Raijin Taiko | Performances"
+   description = "Cal Raijin Taiko's upcoming and past performances."
+   image = URI.join(root_url, image_path("logo.png"))
+
+   meta title: title,
+   description: description,
+   og: {
+   title: title,
+   description: description,
+   image: image
+   }
+%>
+
 <header>
   <h1 class="link-header"><%= link_to "Upcoming Performances", '/performances/upcoming' %></h1>
 </header>

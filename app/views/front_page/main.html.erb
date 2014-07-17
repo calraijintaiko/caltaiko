@@ -1,9 +1,14 @@
 <%
-   meta title: "Cal Raijin Taiko",
-   description: "Founded in 2005, Cal Raijin Taiko is UC Berkeley's Japanese drumming performance ensemble.",
+   title = "Cal Raijin Taiko"
+   description = "Founded in 2005, Cal Raijin Taiko is UC Berkeley's Japanese drumming performance ensemble."
+   image = URI.join(root_url, image_path("logo.png"))
+
+   meta title: title,
+   description: description,
    og: {
-   image: URI.join(root_url, image_path("logo.png")),
-   title: "Cal Raijin Taiko"
+   image: image,
+   title: title,
+   description: description
    }
 %>
 
