@@ -76,5 +76,9 @@
             width: 25px;
             height: 25px;
         }
+        img:hover {
+            position: relative;
+            top: -3px;
+        }
     }
 }
