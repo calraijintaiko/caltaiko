@@ -2,12 +2,9 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
-    <title>Cal Raijin Taiko</title>
-    <meta property="og:image" content="<%= URI.join(root_url, image_path("logo.png")) %>" />
-    <meta property="og:title" content="Cal Raijin Taiko" />
-    <meta property="keywords" content="taiko, raijin, cal, berkeley, japanese, music, caltaiko" />
-    <meta name="description" property="og:description" content="Founded in 2005, Cal Raijin Taiko is UC Berkeley's Japanese drumming performance ensemble." />
-    <meta property="og:url" content="http://caltaiko.herokuapp.com" />
+    <%= metamagic title: "Cal Raijin Taiko", keywords: "taiko, raijin, cal, berkeley, japanese, music, caltaiko" %>
+    <!-- <meta property="og:title" content="Cal Raijin Taiko" /> -->
+    <!-- <meta name="description" property="og:description" content="Founded in 2005, Cal Raijin Taiko is UC Berkeley's Japanese drumming performance ensemble." /> -->
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -22,7 +19,7 @@
     <div id="page-wrapper">
       <div id="content-wrapper">
 
-        <%= link_to image_tag("logo.png", :id => "logo"), root_url,
+        <%= link_to image_tag("banner.png", :id => "banner"), root_url,
         "data-no-turbolink" => true %>
 
         <header id="nav-header">
