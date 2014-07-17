@@ -1,3 +1,18 @@
+<%
+   title = "Cal Raijin Taiko | " + @performance.title
+   description = "View more detailed information for the performance " + @performance.title
+   image = @performance.banner.url(:display)
+
+   meta title: title,
+   description: description,
+   og: {
+   title: title,
+   description: description,
+   image: image,
+   url: root_url + "performances/" + @performance.slug
+   }
+%>
+
 <%= render 'show', :performance => @performance %>
 
 <nav class="nav-buttons">
