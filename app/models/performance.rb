@@ -13,21 +13,19 @@ class Performance < ActiveRecord::Base
   include DeletableAttachment
   validates_attachment_content_type :banner, content_type: /\Aimage\/.*\Z/
 
-  def slug_candidates
-    [
-     :title,
-     #[:title, :year],
-     #[:title, :full_date],
-     [:title, :id]
-    ]
-  end
-
   def year
-    return :date.strftime("%Y")
+    return self.date.strftime("%Y")
   end
 
   def full_date
-    return :date.to_date.strftime("%m-%d-%Y")
+    return self.date.to_date
+  end
+
+  def slug_candidates
+    [
+     [:title, year],
+     [:title, full_date],
+    ]
   end
 
   def self.upcoming_performances
