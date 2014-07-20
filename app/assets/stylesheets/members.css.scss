@@ -37,6 +37,9 @@ $alumni-width: 185px;
         margin: 5px;
         display: inline-block;
         background-image: linear-gradient(to top right, #C3C4C2, white);
+        p {
+            color: black;
+        }
         .nav-buttons {
             width: $alumni-width;
             a {
