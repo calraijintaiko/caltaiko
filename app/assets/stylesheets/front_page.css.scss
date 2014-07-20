@@ -3,10 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
 
-#frontpage-intro {
-    margin: 40px auto;
-}
-
 .devise-notice {
     .alert-success {
         background-color: black;
@@ -24,7 +20,7 @@
     border: 3px $primary-color solid;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 30px;
+    margin-top: 50px;
     #fb-feed {
     }
     #fb-faces {
