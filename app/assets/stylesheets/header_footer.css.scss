@@ -41,7 +41,8 @@
                 border-bottom: 2px black solid;
                 border-right: 2px black solid;
                 border-left: 2px black solid;
-                background-color: $primary-color;
+                background-color: black;
+                opacity: .8;
                 padding: 4px;
                 float: none;
                 width: 100%;
@@ -66,6 +67,7 @@
 #social-media {
     position: fixed;
     height: 20px;
+    width: 90px;
     bottom: 0px;
     right: 0px;
     left: 0px;
