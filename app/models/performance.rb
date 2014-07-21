@@ -6,7 +6,7 @@ class Performance < ActiveRecord::Base
   validates :description, presence: true
   validates :title, presence: true
 
-  has_attached_file :banner, :styles => { display: "800x9999" },
+  has_attached_file :banner, :styles => { display: "800x9999", thumb: "300x9999" },
   path: "/performances/:id/:attachment/:style/:filename",
   url: "/performances/:id/:attachment/:style/:filename",
   default_url: "/images/performances/:attachment/:style/missing.png"

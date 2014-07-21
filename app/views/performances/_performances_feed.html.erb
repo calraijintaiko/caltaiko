@@ -1,4 +1,5 @@
 <section class="perf-feed">
+  <% if performances.length > 0 %>
   <% performances.each do |performance| %>
   <%= render '/performances/show', :performance => performance %>
   <% if user_signed_in? %>
@@ -9,5 +10,10 @@
         method: :delete, data: { confirm: 'Are you sure you\'d like to delete performance "' + performance.title + '"?' } %>
   </nav>
   <% end %>
+  <% end %>
+  <% else %>
+  <div class="text-wrapper">
+    <p>Stay tuned for more information soon!</p>
+  </div>
   <% end %>
 </section>

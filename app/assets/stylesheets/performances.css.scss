@@ -23,6 +23,9 @@
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 20px;
+    p {
+        color: black;
+    }
     div {
         background-color: white;
     }
@@ -61,5 +64,33 @@
         text-align: left;
         margin: 0px;
         padding: $performance-padding;
+    }
+}
+
+.past-perf-feed {
+    width: 1000px;
+    margin-left: -92px;
+    .past-performance {
+        vertical-align: top;
+        display: inline-block;
+        width: 300px;
+        border: 1px white solid;
+        border-radius: 0px;
+        margin: 12px;
+        box-shadow: 0 0 0 7px rgba(0, 0, 0, .6);
+        p {
+            padding: 7px;
+            margin: 0px;
+        }
+        .details {
+            background-color: black;
+            opacity: .6
+        }
+    }
+    img {
+        border-top: 1px white solid;
+        border-bottom: 1px white solid;
+        display: block;
+        height: auto;
     }
 }
