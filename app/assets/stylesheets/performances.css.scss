@@ -67,10 +67,10 @@
     }
 }
 
-.past-perf-feed {
+.thumbnail-feed {
     width: 1000px;
     margin-left: -92px;
-    .past-performance {
+    .thumb-performance {
         vertical-align: top;
         display: inline-block;
         width: 300px;
@@ -86,11 +86,10 @@
             background-color: black;
             opacity: .6
         }
-    }
-    img {
-        border-top: 1px white solid;
-        border-bottom: 1px white solid;
-        display: block;
-        height: auto;
+        img {
+            border-top: 1px white solid;
+            border-bottom: 1px white solid;
+            display: block;
+        }
     }
 }

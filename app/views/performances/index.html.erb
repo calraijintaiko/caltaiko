@@ -21,7 +21,7 @@
 <header>
   <h1 class="link-header"><%= link_to "Past Performances", '/performances/past' %></h1>
 </header>
-<%= render 'past_performances_feed', performances: @past %>
+<%= render 'thumbnail_feed', performances: @past %>
 
 <% if user_signed_in? %>
 <%= link_to "Add New Performance", new_performance_path, class: "add-new" %>
