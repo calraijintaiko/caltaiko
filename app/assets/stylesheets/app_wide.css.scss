@@ -46,6 +46,47 @@ div {
     border-radius: 5px;
 }
 
+form.edit_performance, form.new_performance {
+    textarea {
+        width: 50%;
+        height: 60px;
+    }
+    input {
+        width: 30%;
+    }
+}
+
+form.edit_member, form.new_member {
+    textarea {
+        width: 50%;
+        height: 60px;
+    }
+    input#member_gen {
+        width: 30px;
+    }
+}
+
+form {
+    border: 1px white solid;
+    background: rgba(0, 0, 0, .6);
+    box-shadow: 0 0 0 7px rgba(0, 0, 0, .6);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    label {
+        color: white;
+    }
+    p {
+        text-align: center;
+    }
+    .field {
+        text-align: center;
+        margin: 15px auto;
+    }
+    .actions {
+        text-align: center;
+    }
+}
+
 body {
     margin: 0px;
     z-index: 0;
@@ -84,12 +125,11 @@ body {
 
 .text-wrapper {
     border: 1px white solid;
-    background-color: black;
-    opacity: .6;
+    background-color: rgba(0, 0, 0, .6);
     margin-top: 50px;
     z-index: -1;
     border-radius: 0px;
-    box-shadow: 0 0 0 7px black;
+    box-shadow: 0 0 0 7px rgba(0, 0, 0, .6);
     p {
         padding: 20px;
         margin: 0px;
