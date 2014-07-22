@@ -50,17 +50,14 @@ $alumni-width: 185px;
         text-decoration: none;
     }
     .alumnus {
-        border: 1px white solid;
+        border: 1px $border-color solid;
         width: $alumni-width;
         height: auto;
         margin: 5px;
         display: inline-block;
-        background-color: rgba(0, 0, 0, .6);
-        box-shadow: 0 0 0 3px rgba(0, 0, 0, .6);
+        background-color: $trans-bg-color;
+        box-shadow: 0 0 0 3px $trans-bg-color;
         border-radius: 0px;
-        p {
-            color: white;
-        }
         .nav-buttons {
             width: $alumni-width;
             a {
@@ -86,12 +83,11 @@ $bio-width: 450px;
         border-radius: 0px;
         width: $bio-width;
         height: auto;
-        background-color: black;
-        opacity: .6;
-        box-shadow: 0 0 0 5px black;
+        background-color: $trans-bg-color;
+        box-shadow: 0 0 0 5px $trans-bg-color;
         display: inline-block;
         vertical-align: top;
-        border: 1px white solid;
+        border: 1px $border-color solid;
         margin-top: 15px;
         padding-top: 10px;
         p {

@@ -67,9 +67,9 @@ form.edit_member, form.new_member {
 }
 
 form {
-    border: 1px white solid;
-    background: rgba(0, 0, 0, .6);
-    box-shadow: 0 0 0 7px rgba(0, 0, 0, .6);
+    border: 1px $border-color solid;
+    background: $trans-bg-color;
+    box-shadow: 0 0 0 7px $trans-bg-color;
     margin-bottom: 20px;
     padding-bottom: 10px;
     label {
@@ -124,12 +124,12 @@ body {
 }
 
 .text-wrapper {
-    border: 1px white solid;
-    background-color: rgba(0, 0, 0, .6);
+    border: 1px $border-color solid;
+    background-color: $trans-bg-color;
     margin-top: 50px;
     z-index: -1;
     border-radius: 0px;
-    box-shadow: 0 0 0 7px rgba(0, 0, 0, .6);
+    box-shadow: 0 0 0 7px $trans-bg-color;
     p {
         padding: 20px;
         margin: 0px;

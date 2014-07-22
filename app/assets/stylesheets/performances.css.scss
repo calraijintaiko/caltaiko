@@ -74,20 +74,20 @@
         vertical-align: top;
         display: inline-block;
         width: 300px;
-        border: 1px white solid;
+        border: 1px $border-color solid;
         border-radius: 0px;
         margin: 12px;
-        box-shadow: 0 0 0 7px rgba(0, 0, 0, .6);
+        box-shadow: 0 0 0 7px $trans-bg-color;
         p {
             padding: 7px;
             margin: 0px;
         }
         .details {
-            background-color: rgba(0, 0, 0, .6);
+            background-color: $trans-bg-color;
         }
         img {
-            border-top: 1px white solid;
-            border-bottom: 1px white solid;
+            border-top: 1px $border-color solid;
+            border-bottom: 1px $border-color solid;
             display: block;
         }
     }
