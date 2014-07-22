@@ -55,10 +55,9 @@ $alumni-width: 185px;
         height: auto;
         margin: 5px;
         display: inline-block;
-        background-color: black;
-        box-shadow: 0 0 0 3px black;
+        background-color: rgba(0, 0, 0, .6);
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, .6);
         border-radius: 0px;
-        opacity: .6;
         p {
             color: white;
         }
