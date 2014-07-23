@@ -2,3 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
+
+img#team-pic {
+    display: block;
+    border: 5px $trans-bg-color solid;
+    margin: 40px auto 0px auto;
+    width: 700px;
+}

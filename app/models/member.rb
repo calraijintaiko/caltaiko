@@ -29,7 +29,7 @@ class Member < ActiveRecord::Base
   end
 
   Paperclip.interpolates :slug do |attachment, style|
-    attachment.instance.slug # or whatever you've named your User's login/username/etc. attribute
+    attachment.instance.slug
   end
 
   has_attached_file :avatar, :styles => { thumb: "200x200#", full: "300x9999" },
