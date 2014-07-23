@@ -28,9 +28,13 @@ class Member < ActiveRecord::Base
     return "200x200"
   end
 
+  Paperclip.interpolates :slug do |attachment, style|
+    attachment.instance.slug # or whatever you've named your User's login/username/etc. attribute
+  end
+
   has_attached_file :avatar, :styles => { thumb: "200x200#", full: "300x9999" },
-  path: "/members/:id/:attachment/:style/:filename",
-  url: "/members/:id/:attachment/:style/:filename",
+  path: "/members/:slug/:attachment/:style/:filename",
+  url: "/members/:slug/:attachment/:style/:filename",
   # default_url: "/images/members/:attachment/:style/missing.png"
   # if robohash website ever closes down, delete below and uncomment above
   default_url: "http://robohash.org/:id?size="  + dimensions(:style) + "&bgset=bgany"

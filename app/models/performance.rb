@@ -6,9 +6,13 @@ class Performance < ActiveRecord::Base
   validates :description, presence: true
   validates :title, presence: true
 
+  Paperclip.interpolates :slug do |attachment, style|
+    attachment.instance.slug # or whatever you've named your User's login/username/etc. attribute
+  end
+
   has_attached_file :banner, :styles => { display: "800x9999", thumb: "300x110#" },
-  path: "/performances/:id/:attachment/:style/:filename",
-  url: "/performances/:id/:attachment/:style/:filename",
+  path: "/performances/:slug/:attachment/:style/:filename",
+  url: "/performances/:slug/:attachment/:style/:filename",
   default_url: "/images/performances/:attachment/:style/missing.png"
   include DeletableAttachment
   validates_attachment_content_type :banner, content_type: /\Aimage\/.*\Z/
