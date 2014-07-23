@@ -66,6 +66,11 @@ $alumni-width: 185px;
             }
         }
     }
+    .alumnus:hover {
+        p {
+            color: blue;
+        }
+    }
 }
 
 $bio-width: 450px;
