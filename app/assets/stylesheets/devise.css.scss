@@ -51,7 +51,6 @@
 #register-screen {
     width: 200px;
     height: auto;
-    border: 3px $primary-color solid;
     margin: 0 auto;
     #login-info-field {
     }
@@ -73,7 +72,6 @@
 }
 
 #edit-account {
-    border: 3px $primary-color solid;
     margin: auto;
     width: 400px;
     #username-email-fields {
@@ -94,6 +92,17 @@
     }
     #cancel-account {
         text-align: center;
+	p {
+	    color: black;
+	}
+	form {
+	    background: transparent;
+	    box-shadow: none;
+	    border: none;
+	}
+    }
+    i {
+	color: white;
     }
 }
 
@@ -105,5 +114,4 @@
 .email {
     width: 800px;
     margin: auto;
-    border: 1px $primary-color solid;
 }
