@@ -22,4 +22,9 @@
   <div class="link">
     <%= link_to "Contact Us", '/contact' %>
   </div>
+  <% if user_signed_in? %>
+  <div class="link">
+    <%= link_to "Logout", '/logout' %>
+  </div>
+  <% end %>
 </nav>
