@@ -18,16 +18,19 @@
 .performance {
     width: $performance-width;
     height: auto;
-    border: 3px $primary-color solid;
+    //border: 3px $primary-color solid;
+    border: 1px $border-color solid;
     margin-top: 40px;
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 20px;
+    box-shadow: 0 0 0 7px $trans-bg-color;
+    color: white;
     p {
-        color: black;
+        //color: black;
     }
     div {
-        background-color: white;
+        background-color: $trans-bg-color;
     }
     .performance-deets {
         width: $performance-width - 2 * $performance-padding;
@@ -36,8 +39,6 @@
         padding-left: $performance-padding;
         padding-right: $performance-padding;
         padding-bottom: 0px;
-        border-radius: 0px;
-        border-bottom: 3px $primary-color solid;
         p {
             text-align: left;
         }
@@ -48,9 +49,11 @@
             width: 340px;
             display: inline-block;
             vertical-align: top;
+            background-color: transparent;
         }
         .where {
             width: $performance-width - 387px;
+            background-color: transparent;
             display: inline-block;
         }
     }
@@ -58,7 +61,8 @@
         width: 800px;
         height: auto;
         display: block;
-        border-bottom: 3px $primary-color solid;
+        border-top: 1px $border-color solid;
+        border-bottom: 1px $border-color solid;
     }
     .description {
         text-align: left;
@@ -85,7 +89,6 @@
         display: inline-block;
         width: 300px;
         border: 1px $border-color solid;
-        border-radius: 0px;
         margin: 20px auto auto auto;
         box-shadow: 0 0 0 7px $trans-bg-color;
         p {
