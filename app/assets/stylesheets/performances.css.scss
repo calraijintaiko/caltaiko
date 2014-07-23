@@ -82,14 +82,14 @@
     display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
     flex-flow: row wrap;
     justify-content: center;
-    align-items: stretch;
-    align-content: flex-start;
+    align-items: center;
+    align-content: center;
     .thumb-performance {
         vertical-align: top;
         display: inline-block;
         width: 300px;
         border: 1px $border-color solid;
-        margin: 20px auto auto auto;
+        margin: 15px;
         box-shadow: 0 0 0 7px $trans-bg-color;
         p {
             margin: 0px;
