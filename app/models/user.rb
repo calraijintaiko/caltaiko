@@ -5,13 +5,8 @@ and both must be unique (ie we can't use caltaiko@gmail.com for every account.
 
 Account settings (username, email, password) can be easily modified by logging in 
 then going to <tt>localhost:3000/settings</tt>
-
-My plan is to have one admin account accessible by both Website Manager and 
-Directors that has control over everything, then also performance and secretary 
-accounts that can only affect areas under their jurisdiction. 
-Just cuz it'd be cool haha
 === Note:
-After deployment, the +registerable+ tag will be removed, so that someone couldn't just create an account and wreak havoc.
+After deployment, the +registerable+ tag will be removed, so that someone couldn't just create an account.
 =end
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
