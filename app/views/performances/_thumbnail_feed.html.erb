@@ -4,7 +4,13 @@
   <article class="thumb-performance">
     <section class="details">
       <p>
-        <strong><%= performance.title %></strong><br>
+        <strong>
+          <% if performance.title.length < 35 %>
+             <%= performance.title %>
+          <% else %>
+             <%= performance.title[0, 30] + " ..." %>
+          <% end %>
+        </strong>
       </p>
     </section>
     <%= link_to image_tag(performance.banner.url(:thumb)), performance_path(performance) %>
