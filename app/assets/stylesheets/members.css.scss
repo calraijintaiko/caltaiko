@@ -23,7 +23,8 @@
         display: inline-block;
         padding: 0px;
         margin: 10px;
-        border: 5px $trans-bg-color solid;
+        background-color: $trans-bg-color;
+        border: 5px $primary-color solid;
         border-radius: 5px;
         img {
             display: block;
@@ -40,8 +41,8 @@ $alumni-width: 185px;
     display: -ms-flexbox;      /* TWEENER - IE 10 */
     display: -webkit-flex;     /* NEW - Chrome */
     display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
-    width: 800px;
-    margin: auto;
+    width: 900px;
+    margin-left: -50px;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
@@ -53,7 +54,7 @@ $alumni-width: 185px;
         border: 1px $border-color solid;
         width: $alumni-width;
         height: auto;
-        margin: 5px;
+        margin: 8px;
         display: inline-block;
         background-color: $trans-bg-color;
         box-shadow: 0 0 0 3px $trans-bg-color;
@@ -73,7 +74,6 @@ $bio-width: 450px;
     width: $bio-width + 347px;
     height: auto;
     margin: 30px auto;
-    //border: 3px $trans-bg-color solid;
     img {
         margin: 10px;
         display: inline-block;
