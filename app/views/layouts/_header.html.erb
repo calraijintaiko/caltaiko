@@ -24,7 +24,7 @@
   </div>
   <% if user_signed_in? %>
   <div class="link">
-    <%= link_to "Logout", '/logout' %>
+    <%= link_to "Logout", '/logout', "data-no-turbolink" => true %>
   </div>
   <% end %>
 </nav>
