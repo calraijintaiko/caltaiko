@@ -2,7 +2,11 @@
   <% if performances.length > 0 %>
   <% performances.each do |performance| %>
   <article class="thumb-performance">
-    <%= link_to image_tag(performance.banner.url(:thumb)), performance_path(performance) %>
+
+    <div class="performance-image">
+      <%= link_to image_tag(performance.banner.url(:thumb)), performance_path(performance) %>
+      <p><a href="<%= performance.link %>">VIEW EVENT</a></p>
+    </div>
     <section class="details">
       <p>
         <strong>

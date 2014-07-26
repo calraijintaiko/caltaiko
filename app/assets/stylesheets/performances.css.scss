@@ -24,10 +24,8 @@
     margin-bottom: 20px;
     box-shadow: 5px 5px 0px 1px $sub-color-2;
     color: white;
-    div {
-        background-color: $sub-color;
-    }
     .performance-deets {
+        background-color: $sub-color;
         width: $performance-width - 2 * $performance-padding;
         height: auto;
         display: inline-block;
@@ -48,36 +46,47 @@
             font-size: 40px;
         }
     }
-    .performance-image {
+}
+
+.performance-image {
+    background-color: transparent;
+    position: relative;
+    img {
         position: relative;
-        width: 800px;
-        img {
-            position: relative;
-            display: block;
-            z-index: 1;
-        }
-        p {
-            display: block;
-            z-index: 0;
-            width: 760px;
-            position: absolute;
-            top: 40%;
-            left: 0px;
-            margin-right: 20px;
-            margin-left: 20px;
-            text-align: center;
-        }
+        display: block;
+        z-index: 1;
     }
-    .performance-image:hover {
-        img {
-            opacity: .3;
-        }
-        p {
-            z-index: 3;
-        }
-        a {
-            color: white;
-        }
+    p {
+        display: block;
+        z-index: 0;
+        width: 80%;
+        position: absolute;
+        top: 40%;
+        left: 0px;
+        margin-right: 10%;
+        margin-left: 10%;
+        text-align: center;
+        color: rgba(0, 0, 0, 0);
+    }
+    a {
+        color: rgba(0, 0, 0, 0);
+    }
+}
+.performance-image:hover {
+    img {
+        $contrast-percent: 20%;
+	filter: contrast($contrast-percent);
+	-webkit-filter: contrast($contrast-percent);
+	-moz-filter: contrast($contrast-percent);
+	-o-filter: contrast($contrast-percent);
+	-ms-filter: contrast($contrast-percent);
+    }
+    p {
+        color: white;
+        z-index: 3;
+    }
+    a {
+        color: white;
     }
 }
 
