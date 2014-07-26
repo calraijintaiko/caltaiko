@@ -2,6 +2,7 @@
   <% if performances.length > 0 %>
   <% performances.each do |performance| %>
   <article class="thumb-performance">
+    <%= link_to image_tag(performance.banner.url(:thumb)), performance_path(performance) %>
     <section class="details">
       <p>
         <strong>
@@ -12,9 +13,6 @@
           <% end %>
         </strong>
       </p>
-    </section>
-    <%= link_to image_tag(performance.banner.url(:thumb)), performance_path(performance) %>
-    <section class="details">
       <p>
         <%= performance.date.strftime("%m/%d/%Y") %>
       </p>

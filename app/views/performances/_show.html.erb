@@ -1,20 +1,13 @@
 <article class="performance">
   <div class="performance-deets">
-    <h3><%= performance.title %></h3>
+    <h3><%= performance.title.upcase %></h3>
     <div class="when">
       <p>
-        <strong>When:</strong>
         <% if performance.date.to_date >= Time.new %>
-        <%= performance.date.strftime("%A, %B %d, %I:%M%p") %>
+        <%= performance.date.strftime("%A, %B %d, %I:%M%p").upcase %> | <%= performance.location.upcase %>
         <% else %>
-        <%= performance.date.strftime("%m/%d/%Y, %I:%M%p") %>
+        <%= performance.date.strftime("%m/%d/%Y, %I:%M%p").upcase %> | <%= performance.location.upcase %>
         <% end %>
-      </p>
-    </div>
-    <div class="where">
-      <p>
-        <strong>Where:</strong>
-        <%= performance.location %>
       </p>
     </div>
   </div>

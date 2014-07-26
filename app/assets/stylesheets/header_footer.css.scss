@@ -38,11 +38,10 @@
             background-color: transparent;
             list-style-type: none;
             li {
-                border-bottom: 2px black solid;
-                border-right: 2px black solid;
-                border-left: 2px black solid;
-                background-color: black;
-                opacity: .8;
+                border-bottom: 2px $trans-bg-color solid;
+                border-right: 2px $trans-bg-color solid;
+                border-left: 2px $trans-bg-color solid;
+                background-color: $trans-bg-color;
                 padding: 4px;
                 float: none;
                 width: 100%;
@@ -51,7 +50,7 @@
                 }
             }
             li:not(:last-child) {
-                border-top: 2px black solid;
+                border-top: 2px $trans-bg-color solid;
             }
         }
     }
