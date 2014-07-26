@@ -19,7 +19,7 @@
     width: $performance-width;
     height: auto;
     //border: 3px $primary-color solid;
-    border: 1px $border-color solid;
+    //border: 1px $border-color solid;
     margin-top: 40px;
     margin-left: 0px;
     margin-right: 0px;
@@ -48,8 +48,8 @@
         }
     }
     #performance-image {
-        border-top: 1px $border-color solid;
-        border-bottom: 1px $border-color solid;
+        //border-top: 1px $border-color solid;
+        //border-bottom: 1px black solid;
         position: relative;
         width: 800px;
         img {
