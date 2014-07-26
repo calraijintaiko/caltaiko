@@ -23,7 +23,7 @@
         display: inline-block;
         padding: 0px;
         margin: 10px;
-        background-color: $trans-bg-color;
+        background-color: $main-color;
         border: 5px $primary-color solid;
         border-radius: 5px;
         img {
@@ -56,8 +56,8 @@ $alumni-width: 185px;
         height: auto;
         margin: 8px;
         display: inline-block;
-        background-color: $trans-bg-color;
-        box-shadow: 0 0 0 3px $trans-bg-color;
+        background-color: $main-color;
+        box-shadow: 0 0 0 3px $main-color;
         border-radius: 0px;
         .nav-buttons {
             width: $alumni-width;
@@ -68,7 +68,7 @@ $alumni-width: 185px;
     }
     .alumnus:hover {
         p {
-            color: blue;
+            color: $sub-color;
         }
     }
 }
@@ -82,14 +82,14 @@ $bio-width: 450px;
     img {
         margin: 10px;
         display: inline-block;
-        border: 5px $trans-bg-color solid;
+        border: 5px $main-color solid;
         border-radius: 3px;
     }
     .bio-info {
         width: $bio-width;
         height: auto;
-        background-color: $trans-bg-color;
-        box-shadow: 0 0 0 5px $trans-bg-color;
+        background-color: $main-color;
+        box-shadow: 0 0 0 5px $main-color;
         display: inline-block;
         vertical-align: top;
         border: 1px $border-color solid;

@@ -1,19 +1,22 @@
 <article class="performance">
-  <div class="performance-deets">
-    <h3><%= performance.title.upcase %></h3>
-    <div class="when">
-      <p>
-        <% if performance.date.to_date >= Time.new %>
-        <%= performance.date.strftime("%A, %B %d, %I:%M%p").upcase %> | <%= performance.location.upcase %>
-        <% else %>
-        <%= performance.date.strftime("%m/%d/%Y, %I:%M%p").upcase %> | <%= performance.location.upcase %>
-        <% end %>
-      </p>
-    </div>
+
+  <div id="performance-image">
+    <%= link_to image_tag(performance.banner.url(:display)), performance_path(performance) %>
+    <p>
+      <%= performance.description %><br>
+      <a href="<%= performance.link %>">VIEW EVENT</a>
+    </p>
   </div>
 
-  <%= link_to image_tag(performance.banner.url(:display)), performance_path(performance) %>
-
-  <div><p class="description"><%= performance.description %></p></div>
+  <div class="performance-deets">
+    <h3><%= performance.title.upcase %></h3>
+    <p>
+      <% if performance.date.to_date >= Time.new %>
+      <%= performance.date.strftime("%A, %B %d, %l:%M%p").upcase %> | <%= performance.location.upcase %>
+      <% else %>
+      <%= performance.date.strftime("%m/%d/%Y, %l:%M%p").upcase %> | <%= performance.location.upcase %>
+      <% end %>
+    </p>
+  </div>
 
 </article>

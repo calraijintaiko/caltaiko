@@ -24,13 +24,10 @@
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 20px;
-    box-shadow: 0 0 0 7px $trans-bg-color;
+    box-shadow: 5px 5px 0px 1px $sub-color-2;
     color: white;
-    p {
-        //color: black;
-    }
     div {
-        background-color: $trans-bg-color;
+        background-color: $sub-color;
     }
     .performance-deets {
         width: $performance-width - 2 * $performance-padding;
@@ -41,33 +38,44 @@
         padding-bottom: 0px;
         p {
             text-align: left;
+            margin-top: -3px;
+            margin-bottom: 10px;
         }
         h3 {
+            margin-top: 0px;
             margin-bottom: 0px;
-        }
-        .when {
-            width: 340px;
-            display: inline-block;
-            vertical-align: top;
-            background-color: transparent;
-        }
-        .where {
-            width: $performance-width - 387px;
-            background-color: transparent;
-            display: inline-block;
+            font-size: 40px;
         }
     }
-    img {
-        width: 800px;
-        height: auto;
-        display: block;
+    #performance-image {
         border-top: 1px $border-color solid;
         border-bottom: 1px $border-color solid;
+        position: relative;
+        width: 800px;
+        img {
+            position: relative;
+            display: block;
+            z-index: 1;
+        }
+        p {
+            display: block;
+            z-index: 0;
+            width: 760px;
+            position: absolute;
+            top: 40%;
+            left: 0px;
+            margin-right: 20px;
+            margin-left: 20px;
+            text-align: center;
+        }
     }
-    .description {
-        text-align: left;
-        margin: 0px;
-        padding: $performance-padding;
+    #performance-image:hover {
+        img {
+            opacity: .3;
+        }
+        p {
+            z-index: 3;
+        }
     }
 }
 
@@ -90,14 +98,14 @@
         width: 300px;
         border: 1px $border-color solid;
         margin: 15px;
-        box-shadow: 0 0 0 7px $trans-bg-color;
+        box-shadow: 0 0 0 7px $main-color;
         p {
             margin: 0px;
             white-space: nowrap;
             overflow: hidden;
         }
         .details {
-            background-color: $trans-bg-color;
+            background-color: $main-color;
             padding: 7px;
         }
         img {

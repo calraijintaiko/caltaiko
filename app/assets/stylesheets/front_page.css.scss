@@ -5,7 +5,7 @@
 
 .devise-notice {
     .alert-success {
-        background-color: $trans-bg-color;
+        background-color: $main-color;
         color: white;
     }
     .alert-danger {
@@ -17,7 +17,7 @@
 #fb-stuff {
     width: 702px;
     background-color: white;
-    border: 3px $trans-bg-color solid;
+    border: 3px $main-color solid;
     margin-right: auto;
     margin-left: auto;
     margin-top: 50px;

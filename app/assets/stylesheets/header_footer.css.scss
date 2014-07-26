@@ -30,7 +30,7 @@
             color: black;
         }
         a:hover {
-            color: blue;
+            color: $sub-color;
         }
         ul {
             position: absolute;
@@ -40,10 +40,10 @@
             background-color: transparent;
             list-style-type: none;
             li {
-                border-bottom: 2px $trans-bg-color solid;
-                border-right: 2px $trans-bg-color solid;
-                border-left: 2px $trans-bg-color solid;
-                background-color: $trans-bg-color;
+                border-bottom: 2px $main-color solid;
+                border-right: 2px $main-color solid;
+                border-left: 2px $main-color solid;
+                background-color: $main-color;
                 padding: 4px;
                 float: none;
                 width: 100%;
@@ -52,7 +52,7 @@
                 }
             }
             li:not(:last-child) {
-                border-top: 2px $trans-bg-color solid;
+                border-top: 2px $main-color solid;
             }
         }
     }
@@ -65,50 +65,24 @@
     }
 }
 
-#nav-bar.front_page_main {
-    .link#home-page {
-        background-color: black;
-        a {
-            color: white;
-        }
+#nav-bar.front_page_main .link#home-page,
+#nav-bar.members_index .link#members-page,
+#nav-bar.members_current .link#members-page,
+#nav-bar.members_alumni .link#members-page,
+#nav-bar.performances_index .link#performances-page,
+#nav-bar.performances_upcoming .link#performances-page,
+#nav-bar.performances_past .link#performances-page,
+#nav-bar.pages_about .link#about-page,
+#nav-bar.pages_contact .link#contact-page {
+    background-color: $main-color;
+    a {
+        color: white;
+    }
+    a:hover {
+        color: $sub-color;
     }
 }
 
-#nav-bar.members_index, #nav-bar.members_current, #nav-bar.members_alumni {
-    .link#members-page {
-        background-color: black;
-        a {
-            color: white;
-        }
-    }
-}
-
-#nav-bar.performances_index, #nav-bar.performances_upcoming, #nav-bar.performances_past {
-    .link#performances-page {
-        background-color: black;
-        a {
-            color: white;
-        }
-    }
-}
-
-#nav-bar.pages_about {
-    .link#about-page {
-        background-color: black;
-        a {
-            color: white;
-        }
-    }
-}
-
-#nav-bar.pages_contact {
-    .link#contact-page {
-        background-color: black;
-        a {
-            color: white;
-        }
-    }
-}
 #social-media {
     position: fixed;
     height: 20px;
