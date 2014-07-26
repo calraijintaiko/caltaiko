@@ -24,7 +24,7 @@
         padding: 0px;
         margin: 10px;
         background-color: $main-color;
-        border: 5px $primary-color solid;
+        border: 5px $main-color solid;
         border-radius: 5px;
         .member-image {
             position: relative;
@@ -52,6 +52,9 @@
                 z-index: 3;
             }
         }
+        a {
+            color: white;
+        }
     }
 }
 
@@ -72,6 +75,7 @@ $alumni-width: 185px;
     align-content: center;
     a {
         text-decoration: none;
+        color: white;
     }
     .alumnus {
         border: 1px $border-color solid;
