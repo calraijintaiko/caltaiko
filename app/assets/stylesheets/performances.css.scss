@@ -18,8 +18,6 @@
 .performance {
     width: $performance-width;
     height: auto;
-    //border: 3px $primary-color solid;
-    //border: 1px $border-color solid;
     margin-top: 40px;
     margin-left: 0px;
     margin-right: 0px;
@@ -40,16 +38,17 @@
             text-align: left;
             margin-top: -3px;
             margin-bottom: 10px;
+            word-spacing: 5px;
+            font-family: "Oswald";
         }
         h3 {
+            text-shadow: 2px 2px 0px $sub-color-2;
             margin-top: 0px;
             margin-bottom: 0px;
             font-size: 40px;
         }
     }
-    #performance-image {
-        //border-top: 1px $border-color solid;
-        //border-bottom: 1px black solid;
+    .performance-image {
         position: relative;
         width: 800px;
         img {
@@ -69,19 +68,22 @@
             text-align: center;
         }
     }
-    #performance-image:hover {
+    .performance-image:hover {
         img {
             opacity: .3;
         }
         p {
             z-index: 3;
         }
+        a {
+            color: white;
+        }
     }
 }
 
 .thumbnail-feed {
     width: 1000px;
-    margin-left: -100px;
+    margin-left: -50px;
     // Use flexbox to keep single / double performances centered
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
     display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */

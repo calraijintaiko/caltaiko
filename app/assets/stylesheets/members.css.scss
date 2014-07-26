@@ -15,7 +15,7 @@
     align-items: center;
     align-content: center;
     width: 1000px;
-    margin-left: -100px;
+    margin-left: -50px;
     margin-right: 0px;
     .member {
         width: auto;
@@ -26,8 +26,31 @@
         background-color: $main-color;
         border: 5px $primary-color solid;
         border-radius: 5px;
-        img {
-            display: block;
+        .member-image {
+            position: relative;
+            img {
+                position: relative;
+                display: block;
+                z-index: 1;
+            }
+            p {
+                display: block;
+                position: absolute;
+                z-index: 0;
+                width: 160px;
+                left: 0px;
+                top: 80%;
+                margin: auto 20px;
+                text-align: center;
+            }
+        }
+        .member-image:hover {
+            img {
+                opacity: .3;
+            }
+            p {
+                z-index: 3;
+            }
         }
     }
 }

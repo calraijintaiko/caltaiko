@@ -23,23 +23,13 @@ strong {
     font-family: $strong-font;
 }
 
-h1 {
-    text-align: center;
-    font-family: $header-font;
-}
-
-h2 {
-    text-align: center;
+h1, h2, h3 {
+    text-align: left;
     font-family: $header-font;
 }
 
 header {
     margin-top: 40px;
-}
-
-h3 {
-    text-align: left;
-    font-family: $header-font;
 }
 
 form.edit_performance, form.new_performance {
@@ -143,7 +133,7 @@ body {
 
 #page-content {
     margin: 0px;
-    width: 800px;
+    width: 900px;
     margin: auto;
     margin-bottom: 200px;
 }

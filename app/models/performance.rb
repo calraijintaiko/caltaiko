@@ -10,7 +10,7 @@ class Performance < ActiveRecord::Base
     attachment.instance.slug # or whatever you've named your User's login/username/etc. attribute
   end
 
-  has_attached_file :banner, :styles => { display: "800x9999", thumb: "300x110#" },
+  has_attached_file :banner, :styles => { display: "900x9999", thumb: "300x110#" },
   path: "/performances/:slug/:attachment/:style/:filename",
   url: "/performances/:slug/:attachment/:style/:filename",
   default_url: "/images/performances/:attachment/:style/missing.png"
