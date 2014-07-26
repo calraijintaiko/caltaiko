@@ -1,25 +1,25 @@
-<nav class="nav-bar">
-  <div class="link">
+<nav id="nav-bar", class="<%= controller.controller_name + '_' + controller.action_name %>">
+  <div class="link", id="home-page">
     <%= link_to "HOME", root_url, "data-no-turbolink" => true %>
   </div>
-  <div class="link">
+  <div class="link", id="members-page">
     <%= link_to "MEMBERS", '/members' %>
     <ul>
       <li><%= link_to "CURRENT", '/members/current' %></li>
       <li><%= link_to "ALUMNI", '/members/alumni' %></li>
     </ul>
   </div>
-  <div class="link">
+  <div class="link", id="performances-page">
     <%= link_to "PERFORMANCES", '/performances' %>
     <ul>
       <li><%= link_to "UPCOMING", '/performances/upcoming' %></li>
       <li><%= link_to "PAST", '/performances/past' %></li>
     </ul>
   </div>
-  <div class="link">
+  <div class="link", id="about-page">
     <%= link_to "ABOUT US", '/about' %>
   </div>
-  <div class="link">
+  <div class="link", id="contact-page">
     <%= link_to "CONTACT US", '/contact' %>
   </div>
   <% if user_signed_in? %>
