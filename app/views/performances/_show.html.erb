@@ -1,10 +1,10 @@
 <article class="performance">
 
   <div class="performance-image">
-    <%= link_to image_tag(performance.banner.url(:display)), performance.link %>
+    <%= link_to image_tag(performance.banner.url(:display)), performance.link, target: "_blank" %>
     <p>
       <%= performance.description %><br><br>
-      <a href="<%= performance.link %>">VIEW EVENT</a>
+      <a href="<%= performance.link %>" target="_blank">VIEW EVENT</a>
     </p>
   </div>
 
