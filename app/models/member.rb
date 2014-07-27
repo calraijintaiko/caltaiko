@@ -20,14 +20,6 @@ class Member < ActiveRecord::Base
   validates :major, presence: true, length: {minimum: 2}
   validates :bio, presence: true
 
-  def self.dimensions(style)
-    # Can't figure out how to do this, but should return size based on style
-    # if style == "full"
-    #   return "300x300"
-    # end
-    return "200x200"
-  end
-
   Paperclip.interpolates :slug do |attachment, style|
     attachment.instance.slug
   end
@@ -37,7 +29,7 @@ class Member < ActiveRecord::Base
   url: "/members/:slug/:attachment/:style/:filename",
   # default_url: "/images/members/:attachment/:style/missing.png"
   # if robohash website ever closes down, delete below and uncomment above
-  default_url: "http://robohash.org/:id?size="  + dimensions(:style) + "&bgset=bgany"
+  default_url: "http://robohash.org/:id?size=200x200&bgset=bgany"
   include DeletableAttachment
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
@@ -50,10 +42,10 @@ class Member < ActiveRecord::Base
   end
 
   def self.current_members
-    return Member.where(current: true).order('gen ASC, name')
+    return Member.where(current: true).order('name ASC, gen')
   end
 
   def self.alumni
-    return Member.where(current: false).order('gen DESC, name')
+    return Member.where(current: false).order('name ASC, genx')
   end
 end
