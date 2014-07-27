@@ -46,6 +46,19 @@
             font-size: 40px;
         }
     }
+    .edit-icons {
+        margin-top: -34px;
+        position: relative;
+        text-align: right;
+        top: -10px;
+        z-index: 4;
+        img {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            padding-right: 10px;
+        }
+    }
 }
 
 .thumbnail-feed {
@@ -72,13 +85,30 @@
             white-space: nowrap;
             overflow: hidden;
             font-family: "Oswald";
+            padding-left: 7px;
+            padding-top: 2px;
+            padding-bottom: 3px;
+            padding-right: 7px;
         }
         p.perf-date {
+            margin-top: -7px;
+            padding-top: 0px;
             font-size: 13px;
         }
-        .details {
-            background-color: $sub-color;
-            padding: 2px 7px 2px 7px;
+        background-color: $sub-color;
+        padding: 0px;
+        .edit-icons {
+            position: relative;
+            margin-top: -20px;
+            z-index: 4;
+            top: -2px;
+            text-align: right;
+            img {
+                width: 15px;
+                height: 15px;
+                padding-right: 3px;
+                display: inline-block;
+            }
         }
         img {
             width: 280px;

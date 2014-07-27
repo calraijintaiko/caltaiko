@@ -8,7 +8,7 @@
     </p>
   </div>
 
-  <div class="performance-deets">
+  <section class="performance-deets">
     <h3><%= performance.title.upcase %></h3>
     <p>
       <% if performance.date.to_date >= Time.new %>
@@ -17,6 +17,14 @@
       <%= performance.date.strftime("%-m/%d/%Y, %l:%M%p").upcase %> | <%= performance.location.upcase %>
       <% end %>
     </p>
-  </div>
+  </section>
+  <% if user_signed_in? %>
+  <section class="edit-icons">
+    <%= link_to image_tag("icons/edit.png"), edit_performance_path(performance) %>
+    <%= link_to image_tag("icons/delete.png"),
+        performance_path(performance), method: :delete,
+        data: { confirm: "Are you sure you'd like to delete performance '" + performance.title + "'?" } %>
+  </section>
+  <% end %>
 
 </article>
