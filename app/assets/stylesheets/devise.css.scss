@@ -8,33 +8,16 @@
     height: auto;
     margin-right: auto;
     margin-left: auto;
-    padding-left: 0px;
     #login-field {
-        width: 300px;
-        height: 70px;
-        display: block;
-        margin: auto;
-        padding-left: 0px;
+        margin-top: 20px;
+        text-align: center;
     }
     #password-field {
-        padding-left: 0px;
-        width: auto;
-        height: auto;
-        display: block;
-        margin-top: -15px;
-        margin-left: 88px;
-        margin-right: 80px;
-        margin-bottom: 15px;
-        label#passwrd {
-            margin-left: 30px;
-        }
-	input#user_password {
-	    margin-left: -30px;
-	}
+        margin-top: 20px;
+        text-align: center;
     }
     #bottom-buttons {
-        margin-left: 80px;
-        margin-right: 80px;
+        margin-top: 20px;
         text-align: center;
         #sign-in-butt {
             margin-bottom: 5px;
@@ -44,6 +27,9 @@
             text-align: center;
             font-size: 12px;
             margin-bottom: 10px;
+            a {
+                color: white;
+            }
         }
     }
 }
