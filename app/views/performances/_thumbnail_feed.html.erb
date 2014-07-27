@@ -9,14 +9,14 @@
     </div>
     <section class="details">
       <p>
-        <% if performance.title.length < 36 %>
-           <%= performance.title %>
+        <% if performance.title.length < 34 %>
+           <%= performance.title.upcase %>
         <% else %>
-           <%= performance.title[0, 35] + " ..." %>
+           <%= (performance.title[0, 33] + " ...").upcase %>
         <% end %>
       </p>
       <p>
-        <%= performance.date.strftime("%m/%d/%Y") %>
+        <%= performance.date.strftime("%-m/%d/%Y") %>
       </p>
       <% if user_signed_in? %>
       <nav class="nav-buttons">
