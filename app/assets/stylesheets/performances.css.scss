@@ -48,52 +48,6 @@
     }
 }
 
-.performance-image {
-    background-color: $main-color;
-    position: relative;
-    border-bottom: 1px $border-color solid;
-    img {
-        position: relative;
-        display: block;
-        z-index: 1;
-    }
-    p {
-        display: block;
-        z-index: 0;
-        width: 80%;
-        position: absolute;
-        top: 40%;
-        left: 0px;
-        margin-right: 10%;
-        margin-left: 10%;
-        text-align: center;
-        color: rgba(0, 0, 0, 0);
-    }
-    a {
-        color: rgba(0, 0, 0, 0);
-    }
-}
-.performance-image:hover {
-    img {
-	width: 100%; 
-	filter: alpha(opacity=30);
-        opacity: .3;
-        /* $brightness-percent: 30%; */
-	/* filter: contrast($brightness-percent); */
-	/* -webkit-filter: brightness($brightness-percent); */
-	/* -moz-filter: brightness($brightness-percent); */
-	/* -o-filter: brightness($brightness-percent); */
-	/* -ms-filter: brightness($brightness-percent); */
-    }
-    p {
-        color: white;
-        z-index: 3;
-    }
-    a {
-        color: white;
-    }
-}
-
 .thumbnail-feed {
     // Use flexbox to keep single / double performances centered
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
@@ -130,6 +84,62 @@
             width: 280px;
             display: block;
         }
+        .performance-image {
+            p {
+                width: 80%;
+                margin-right: 10%;
+                margin-left: 10%;
+                margin-top: 0px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.performance-image {
+    background-color: $main-color;
+    position: relative;
+    border-bottom: 1px $border-color solid;
+    img {
+        position: relative;
+        display: block;
+        z-index: 1;
+    }
+    p {
+        display: block;
+        z-index: 0;
+        width: 80%;
+        position: absolute;
+        top: 40%;
+        left: 0px;
+        margin-right: 10%;
+        margin-left: 10%;
+        text-align: center;
+        color: rgba(0, 0, 0, 0);
+    }
+    a {
+        color: rgba(0, 0, 0, 0);
+    }
+}
+
+.performance-image:hover {
+    img {
+	width: 100%; 
+	filter: alpha(opacity=30);
+        opacity: .3;
+        /* $brightness-percent: 30%; */
+	/* filter: contrast($brightness-percent); */
+	/* -webkit-filter: brightness($brightness-percent); */
+	/* -moz-filter: brightness($brightness-percent); */
+	/* -o-filter: brightness($brightness-percent); */
+	/* -ms-filter: brightness($brightness-percent); */
+    }
+    p {
+        color: white;
+        z-index: 3;
+    }
+    a {
+        color: white;
     }
 }
 
