@@ -5,17 +5,15 @@
 
     <div class="performance-image">
       <%= link_to image_tag(performance.banner.url(:thumb)), performance_path(performance) %>
-      <p><a href="<%= performance.link %>">VIEW EVENT</a></p>
+      <p><%= link_to "VIEW EVENT", performance_path(performance) %></p>
     </div>
     <section class="details">
       <p>
-        <strong>
-          <% if performance.title.length < 35 %>
-             <%= performance.title %>
-          <% else %>
-             <%= performance.title[0, 30] + " ..." %>
-          <% end %>
-        </strong>
+        <% if performance.title.length < 36 %>
+           <%= performance.title %>
+        <% else %>
+           <%= performance.title[0, 35] + " ..." %>
+        <% end %>
       </p>
       <p>
         <%= performance.date.strftime("%m/%d/%Y") %>

@@ -58,7 +58,7 @@
     }
 }
 
-$alumni-width: 200px;
+$alumni-width: 205px;
 
 .alumni {
     // Use flexbox to keep centered
@@ -67,8 +67,7 @@ $alumni-width: 200px;
     display: -ms-flexbox;      /* TWEENER - IE 10 */
     display: -webkit-flex;     /* NEW - Chrome */
     display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
-    width: 925px;
-    //margin-left: -25px;
+    width: 930px;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
@@ -81,11 +80,20 @@ $alumni-width: 200px;
         border: 1px $border-color solid;
         width: $alumni-width;
         height: auto;
-        margin: 8px 25px 8px 0px;
+        margin-right: 25px;
+        margin-bottom: 20px;
         display: inline-block;
         background-color: $main-color;
         box-shadow: 0 0 0 3px $main-color;
         border-radius: 0px;
+        .link-wrapper {
+            height: 100%;
+            p {
+                padding-top: 15px;
+                padding-bottom: 15px;
+                margin: 0px;
+            }
+        }
         .nav-buttons {
             width: $alumni-width;
             a {

@@ -1,16 +1,18 @@
 <section class="alumni">
   <% members.each do |member| %>
-  <%= link_to member_path(member) do %>
   <article class="alumnus">
-    <p><%= member.name %></p>
-    <% if user_signed_in? %>
-    <nav class="nav-buttons">
-      <%= link_to 'Edit', edit_member_path(member) %>
-      <%= link_to 'Delete', member_path(member),
-          method: :delete, data: { confirm: 'Are you sure you\'d like to delete member ' + member.name + '?' } %>
-    </nav>
+    <%= link_to member_path(member) do %>
+    <div class="link-wrapper">
+      <p><%= member.name %></p>
+      <% if user_signed_in? %>
+      <nav class="nav-buttons">
+        <%= link_to 'Edit', edit_member_path(member) %>
+        <%= link_to 'Delete', member_path(member),
+            method: :delete, data: { confirm: 'Are you sure you\'d like to delete member ' + member.name + '?' } %>
+      </nav>
+      <% end %>
+    </div>
     <% end %>
   </article>
-  <% end %>
   <% end %>
 </section>
