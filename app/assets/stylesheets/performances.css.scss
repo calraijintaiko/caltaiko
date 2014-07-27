@@ -49,7 +49,7 @@
 }
 
 .performance-image {
-    background-color: transparent;
+    background-color: $main-color;
     position: relative;
     border-bottom: 1px $border-color solid;
     img {
@@ -75,12 +75,15 @@
 }
 .performance-image:hover {
     img {
-        $contrast-percent: 20%;
-	filter: contrast($contrast-percent);
-	-webkit-filter: contrast($contrast-percent);
-	-moz-filter: contrast($contrast-percent);
-	-o-filter: contrast($contrast-percent);
-	-ms-filter: contrast($contrast-percent);
+	width: 100%; 
+	filter: alpha(opacity=30);
+        opacity: .3;
+        /* $brightness-percent: 30%; */
+	/* filter: contrast($brightness-percent); */
+	/* -webkit-filter: brightness($brightness-percent); */
+	/* -moz-filter: brightness($brightness-percent); */
+	/* -o-filter: brightness($brightness-percent); */
+	/* -ms-filter: brightness($brightness-percent); */
     }
     p {
         color: white;
@@ -116,15 +119,32 @@
             overflow: hidden;
             font-family: "Oswald";
         }
+        p.perf-date {
+            font-size: 13px;
+        }
         .details {
             background-color: $sub-color;
             padding: 2px 7px 2px 7px;
         }
         img {
             width: 280px;
-            border-top: 1px $border-color solid;
-            border-bottom: 1px $border-color solid;
             display: block;
         }
+    }
+}
+
+form.edit_performance, form.new_performance {
+    textarea {
+        width: 50%;
+        height: 60px;
+    }
+    input {
+        width: 30%;
+    }
+    input#performance_link {
+        width: 20%;
+    }
+    #date-select {
+        color: white;
     }
 }

@@ -46,6 +46,8 @@
         }
         .member-image:hover {
             img {
+	        width: 100%; 
+	        filter: alpha(opacity=30);
                 opacity: .3;
             }
             p {
@@ -136,5 +138,15 @@ $bio-width: 450px;
             padding-right: 10px;
             padding-left: 10px;
         }
+    }
+}
+
+form.edit_member, form.new_member {
+    textarea {
+        width: 50%;
+        height: 60px;
+    }
+    input#member_gen {
+        width: 30px;
     }
 }

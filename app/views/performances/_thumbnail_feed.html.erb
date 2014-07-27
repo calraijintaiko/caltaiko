@@ -15,7 +15,7 @@
            <%= (performance.title[0, 33] + " ...").upcase %>
         <% end %>
       </p>
-      <p>
+      <p class="perf-date">
         <%= performance.date.strftime("%-m/%d/%Y") %>
       </p>
       <% if user_signed_in? %>
