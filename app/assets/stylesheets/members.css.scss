@@ -57,6 +57,18 @@
         a {
             color: white;
         }
+        .edit-icons {
+            position: relative;
+            z-index: 4;
+            text-align: center;
+            top: 4px;
+            img {
+                padding-right: 3px;
+                padding-left: 3px;
+                width: 15px;
+                width: 15px;
+            }
+        }
     }
 }
 
@@ -95,11 +107,17 @@ $alumni-width: 205px;
                 padding-bottom: 15px;
                 margin: 0px;
             }
-        }
-        .nav-buttons {
-            width: $alumni-width;
-            a {
-                text-decoration: underline;
+            .edit-icons {
+                position: relative;
+                z-index: 4;
+                text-align: center;
+                img {
+                    padding-right: 2px;
+                    padding-left: 2px;
+                    width: 15px;
+                    height: 15px;
+                    display: inline-block;
+                }
             }
         }
     }
