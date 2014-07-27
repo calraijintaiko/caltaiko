@@ -77,9 +77,13 @@ body.front_page_main #nav-bar .link#home-page,
 body.members_index #nav-bar .link#members-page,
 body.members_current #nav-bar .link#members-page,
 body.members_alumni #nav-bar .link#members-page,
+body.members_edit #nav-bar .link#members-page,
+body.members_new #nav-bar .link#members-page,
 body.performances_index #nav-bar .link#performances-page,
 body.performances_upcoming #nav-bar .link#performances-page,
 body.performances_past #nav-bar .link#performances-page,
+body.performances_edit #nav-bar .link#performances-page,
+body.performances_new #nav-bar .link#performances-page,
 body.pages_about #nav-bar .link#about-page,
 body.pages_contact #nav-bar .link#contact-page {
     background-color: $main-color;
@@ -101,10 +105,10 @@ body.pages_contact #nav-bar .link#contact-page {
     margin-bottom: 10px;
     margin-left: 5px;
     .icons {
-        z-index: 100;
         img {
             width: 25px;
             height: 25px;
+            z-index: 100;
         }
         img:hover {
             position: relative;
