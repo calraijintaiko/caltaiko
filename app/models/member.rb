@@ -46,6 +46,6 @@ class Member < ActiveRecord::Base
   end
 
   def self.alumni
-    return Member.where(current: false).order('name ASC, genx')
+    return Member.where(current: false).order('name ASC, gen')
   end
 end
