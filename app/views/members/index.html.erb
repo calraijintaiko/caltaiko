@@ -14,12 +14,12 @@
 %>
 
 <header>
-  <h1 class="link-header"><%= link_to "Current Members", '/members/current' %></h1>
+  <h2 class="link-header"><%= link_to "CURRENT MEMBERS", '/members/current' %></h2>
 </header>
 <%= render 'current_members', members: @current %>
 
 <header>
-  <h1 class="link-header"><%= link_to "Alumni", '/members/alumni' %></h1>
+  <h2 class="link-header"><%= link_to "ALUMNI", '/members/alumni' %></h2>
 </header>
 <%= render 'alumni_members', members: @alumni %>
 

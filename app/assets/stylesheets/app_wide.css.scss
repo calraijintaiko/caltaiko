@@ -26,6 +26,12 @@ strong {
 h1, h2, h3 {
     text-align: left;
     font-family: $header-font;
+    font-weight: 200;
+    font-size: 20px;
+}
+
+h1 {
+    margin-bottom: -20px;
 }
 
 header {

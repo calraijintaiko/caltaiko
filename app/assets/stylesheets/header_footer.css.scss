@@ -36,23 +36,30 @@
             position: absolute;
             padding-left: 0px;
             left: -9999px;
-            background-color: white;
-            background-color: transparent;
             list-style-type: none;
             li {
-                border-bottom: 2px $main-color solid;
-                border-right: 2px $main-color solid;
-                border-left: 2px $main-color solid;
                 background-color: $main-color;
                 padding: 4px;
+                padding-bottom: 0px;
                 float: none;
-                width: 100%;
+                text-align: left;
                 a {
+                    padding-left: 8px;
                     color: white;
                 }
             }
-            li:not(:last-child) {
-                border-top: 2px $main-color solid;
+            li:last-child {
+                padding-bottom: 8px;
+            }
+        }
+        ul#members-dropdown {
+            li {
+                width: 77px;
+            }
+        }
+        ul#performances-dropdown {
+            li {
+                width: 114px;
             }
         }
     }
@@ -60,6 +67,7 @@
         ul {
             z-index: 5;
             margin-top: 5px;
+            margin-left: -10px;
             left: auto;
         }
     }
