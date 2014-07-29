@@ -23,5 +23,7 @@
 <% end %>
 
 <% if user_signed_in? %>
-<%= link_to "Add New Performance", new_performance_path, class: "add-new" %>
+<div class="add-new">
+  <%= link_to image_tag("icons/add.png"), new_performance_path %>
+</div>
 <% end %>
