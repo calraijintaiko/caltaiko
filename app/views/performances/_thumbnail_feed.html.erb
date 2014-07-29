@@ -4,8 +4,8 @@
   <article class="thumb-performance">
 
     <div class="performance-image">
-      <%= link_to image_tag(performance.banner.url(:thumb)), performance_path(performance) %>
-      <p><%= link_to "VIEW EVENT", performance_path(performance) %></p>
+      <%= link_to image_tag(performance.banner.url(:thumb)), performance.link %>
+      <p><%= link_to "VIEW EVENT", performance.link %></p>
     </div>
     <section class="details">
       <p>
@@ -20,14 +20,15 @@
       </p>
     </section>
 
-    <% if user_signed_in? %>
-    <div class="edit-icons">
+    <section class="edit-icons">
+      <%= link_to image_tag("icons/view.png"), performance_path(performance) %>
+      <% if user_signed_in? %>
       <%= link_to image_tag("icons/edit.png"), edit_performance_path(performance) %>
       <%= link_to image_tag("icons/delete.png"),
           performance_path(performance), method: :delete,
           data: { confirm: "Are you sure you'd like to delete performance '" + performance.title + "'?" } %>
-    </div>
-    <% end %>
+      <% end %>
+    </section>
 
   </article>
   <% end %>

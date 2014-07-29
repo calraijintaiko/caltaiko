@@ -22,7 +22,7 @@
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 20px;
-    box-shadow: 5px 5px 0px 1px $sub-color-2;
+    box-shadow: 5px 9px 0px 1px $sub-color-2;
     color: white;
     .performance-deets {
         background-color: $sub-color;
@@ -52,6 +52,7 @@
         text-align: right;
         top: -10px;
         z-index: 4;
+        height: 30px;
         img {
             display: inline-block;
             width: 30px;
@@ -98,6 +99,7 @@
         background-color: $sub-color;
         padding: 0px;
         .edit-icons {
+            height: 15px;
             position: relative;
             margin-top: -20px;
             z-index: 4;
@@ -116,6 +118,8 @@
         }
         .performance-image {
             p {
+                font-family: "Lato";
+                word-spacing: 2px;
                 width: 80%;
                 margin-right: 10%;
                 margin-left: 10%;

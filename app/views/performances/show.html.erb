@@ -16,8 +16,5 @@
 <%= render 'show', :performance => @performance %>
 
 <nav class="nav-buttons">
-  <%= link_to 'Back', performances_path %>
-  <% if user_signed_in? %>
-  <%= link_to 'Edit', edit_performance_path(@performance) %>
-  <% end %>
+  <%= link_to image_tag("icons/back.png"), performances_path %>
 </nav>
