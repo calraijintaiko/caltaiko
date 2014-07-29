@@ -51,6 +51,14 @@ class PerformancesController < ApplicationController
 
   def past
     @past = Performance.past_performances
+    @by_year = Hash.new false
+    @past.each do |performance|
+      if @by_year[performance.date.strftime("%Y")]
+        @by_year[performance.date.strftime("%Y")] << performance
+      else
+        @by_year[performance.date.strftime("%Y")] = [performance]
+      end
+    end
   end
 
   private

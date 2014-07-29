@@ -17,7 +17,10 @@
 <h2>PAST PERFORMANCES</h2>
 </header> 
 
-<%= render 'thumbnail_feed', performances: @past %>
+<% @by_year.keys.each do |year| %>
+<h4><%= year %></h4>
+<%= render 'thumbnail_feed', performances: @by_year[year] %>
+<% end %>
 
 <% if user_signed_in? %>
 <%= link_to "Add New Performance", new_performance_path, class: "add-new" %>

@@ -32,6 +32,10 @@ class Performance < ActiveRecord::Base
     ]
   end
 
+  def upcoming
+    return self.date >= Time.new
+  end
+
   def self.upcoming_performances
     return Performance.where("date >= ?", Time.new).order('date ASC')
   end
