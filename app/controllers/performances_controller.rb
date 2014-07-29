@@ -53,11 +53,8 @@ class PerformancesController < ApplicationController
     @past = Performance.past_performances
     @by_year = Hash.new
     @past.each do |performance|
-      if @by_year[performance.date.strftime("%Y")]
-        @by_year[performance.date.strftime("%Y")] << performance
-      else
-        @by_year[performance.date.strftime("%Y")] = [performance]
-      end
+      @by_year[performance.date.strftime("%Y")] ||= []
+      @by_year[performance.date.strftime("%Y")] << performance
     end
   end
 
