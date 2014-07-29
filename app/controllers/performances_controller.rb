@@ -1,23 +1,18 @@
+=begin rdoc
+Controller for performances resource. Handles what information is sent to the views,
+as well as creation and updating of performances.
+=end
 class PerformancesController < ApplicationController
   before_action :authenticate_user!, :except => [:show, :index, :upcoming, :past]
 
-  def index
-    @upcoming = Performance.upcoming_performances
-    @past = Performance.past_performances
-  end
-
-  def show
-    set_performance
-  end
-
+  # Creates a blank performance to be used by form.
   def new
     @performance = Performance.new
   end
 
-  def edit
-    set_performance
-  end
 
+  # Push a new performance to the database with inputted parameters.
+  # If saved successfully redirects to show performance, otherwise back to form.
   def create
     @performance = Performance.new(performance_params)
 
@@ -28,6 +23,25 @@ class PerformancesController < ApplicationController
     end
   end
 
+  # Default method for performances. Gives all upcoming and past performances.
+  def index
+    @upcoming = Performance.upcoming_performances
+    @past = Performance.past_performances
+  end
+
+  # Give performance whose ID or slug matches request.
+  def show
+    set_performance
+  end
+
+  # Give performance whose ID or slug matches request, to be used by form.
+  def edit
+    set_performance
+  end
+
+  # Find performance whose ID or slug matches request, then update parameters
+  # to new inputted values. If updates successfully redirects to show performance,
+  # otherwise back to edit form.
   def update
     set_performance
 
@@ -38,6 +52,7 @@ class PerformancesController < ApplicationController
     end
   end
 
+  # Erase performance from database, then redirect to index page.
   def destroy
     set_performance
     @performance.destroy
@@ -45,10 +60,13 @@ class PerformancesController < ApplicationController
     redirect_to performances_path
   end
 
+  # Gives all upcoming performances, as received from Performance model.
   def upcoming
     @upcoming = Performance.upcoming_performances
   end
 
+  # Gives all past performances, as received from Performance model.
+  # Also gives a hash separating them by year.
   def past
     @past = Performance.past_performances
     @by_year = Hash.new

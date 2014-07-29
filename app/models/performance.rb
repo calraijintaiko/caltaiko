@@ -17,14 +17,20 @@ class Performance < ActiveRecord::Base
   include DeletableAttachment
   validates_attachment_content_type :banner, content_type: /\Aimage\/.*\Z/
 
+  # Returns the year of a specific performance.
   def year
     return self.date.strftime("%Y")
   end
 
+  # Returns the full date of a specific performance, in format YEAR MONTH DAY.
   def full_date
     return self.date.to_date
   end
 
+  # Generates a unique slug for a performance.
+  # Default slug is title and year; if performance with same name exists in same year,
+  # uses title and full date. If performance with same name happened on same day
+  # someone messed up, but it will use title, year, and unique ID.
   def slug_candidates
     [
      [:title, year],
@@ -32,14 +38,18 @@ class Performance < ActiveRecord::Base
     ]
   end
 
-  def upcoming
+  # When called on a specific performance, returns true if performance is upcoming,
+  # or false otherwise.
+  def upcoming?
     return self.date >= Time.new
   end
 
+  # Returns all upcoming performances in order of soonest to furthest away.
   def self.upcoming_performances
     return Performance.where("date >= ?", Time.new).order('date ASC')
   end
 
+  # Returns all past performances in order of most recent to least.
   def self.past_performances
     return Performance.where("date < ?", Time.new).order('date DESC')
   end

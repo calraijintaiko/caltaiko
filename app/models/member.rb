@@ -33,18 +33,22 @@ class Member < ActiveRecord::Base
   include DeletableAttachment
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
+  # Generates a unique slug for a new member based on their name.
+  # If a member with the same name already exists, adds gen to the end.
+  # If a member with the same name and gen already exists, uses unique id.
   def slug_candidates
     [
      :name,
      [:name, :gen],
-     [:name, :id],
     ]
   end
 
+  # Returns all current members of the team, ordered by name then gen.
   def self.current_members
     return Member.where(current: true).order('name ASC, gen')
   end
 
+  # Returns all alumni of the team, ordered by name then gen.
   def self.alumni
     return Member.where(current: false).order('name ASC, gen')
   end

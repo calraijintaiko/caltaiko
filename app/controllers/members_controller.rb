@@ -1,10 +1,17 @@
+=begin rdoc
+Controller for members resource. Handles what information is sent to the views,
+as well as creation and updating of members.
+=end
 class MembersController < ApplicationController
   before_action :authenticate_user!, :except => [:show, :index, :current, :alumni]
 
+  # Create a blank member to be used by form.
   def new
     @member = Member.new
   end
 
+  # Push a new member to the database with inputted parameters.
+  # If saved successfully redirects to show member, otherwise back to form.
   def create
     @member = Member.new(member_params)
  
@@ -15,19 +22,25 @@ class MembersController < ApplicationController
     end
   end
 
+  # Default method for members. Gives all current members and alumni.
   def index
     @current = Member.current_members
     @alumni = Member.alumni
   end
 
+  # Give member whose ID or slug matches request.
   def show
     set_member
   end
 
+  # Give member whose ID or slug matches request, to be used by form.
   def edit
     set_member
   end
 
+  # Find member whose ID or slug matches request, then update parameters
+  # to new inputted values. If updates successfully redirects to show member,
+  # otherwise back to edit form.
   def update
     set_member
 
@@ -38,6 +51,7 @@ class MembersController < ApplicationController
     end
   end
 
+  # Erase member from database, then redirect to index page.
   def destroy
     set_member
     @member.destroy
@@ -45,10 +59,12 @@ class MembersController < ApplicationController
     redirect_to members_path
   end
 
+  # Gives all current members, as received from Member model.
   def current
     @current = Member.current_members
   end
 
+  # Gives all alumni, as received from Member model.
   def alumni
     @alumni = Member.alumni
   end
