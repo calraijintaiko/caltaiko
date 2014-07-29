@@ -140,7 +140,7 @@ $bio-width: 450px;
         border: 5px $main-color solid;
         border-radius: 3px;
     }
-    .bio-info {
+    .bio-block {
         width: $bio-width;
         height: auto;
         background-color: $main-color;
@@ -150,11 +150,26 @@ $bio-width: 450px;
         border: 1px $border-color solid;
         margin-top: 15px;
         padding-top: 10px;
-        p {
-            margin-top: 0px;
-            text-align: left;
-            padding-right: 10px;
-            padding-left: 10px;
+        .bio-info {
+            p {
+                margin-top: 0px;
+                text-align: left;
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+        }
+        .edit-icons {
+            position: relative;
+            text-align: right;
+            z-index: 4;
+            top: -5px;
+            img {
+                border: none;
+                margin: 0px;
+                margin-right: 10px;
+                width: 30px;
+                height: 30px;
+            }
         }
     }
 }
