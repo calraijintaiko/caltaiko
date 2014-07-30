@@ -32,7 +32,12 @@ h5 {
 }
 
 form.edit_video, form.new_video {
-    input {
-        width: 50%;
+    .field {
+        input {
+            width: 250px;
+        }
+        input#video_year {
+            width: 80px;
+        }
     }
 }
