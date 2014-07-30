@@ -27,6 +27,11 @@ class PerformancesController < ApplicationController
   def index
     @upcoming = Performance.upcoming_performances
     @past = Performance.past_performances
+    @by_year = Hash.new
+    @past.each do |performance|
+      @by_year[performance.date.strftime("%Y")] ||= []
+      @by_year[performance.date.strftime("%Y")] << performance
+    end
   end
 
   # Give performance whose ID or slug matches request.
