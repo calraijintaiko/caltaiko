@@ -1,0 +1,29 @@
+<h1>Listing performance_videos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Link</th>
+      <th>Performance</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @performance_videos.each do |performance_video| %>
+      <tr>
+        <td><%= performance_video.title %></td>
+        <td><%= performance_video.link %></td>
+        <td><%= performance_video.performance %></td>
+        <td><%= link_to 'Show', performance_video %></td>
+        <td><%= link_to 'Edit', edit_performance_video_path(performance_video) %></td>
+        <td><%= link_to 'Destroy', performance_video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Performance video', new_performance_video_path %>

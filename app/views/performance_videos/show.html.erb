@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @performance_video.title %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @performance_video.link %>
+</p>
+
+<p>
+  <strong>Performance:</strong>
+  <%= @performance_video.performance %>
+</p>
+
+<%= link_to 'Edit', edit_performance_video_path(@performance_video) %> |
+<%= link_to 'Back', performance_videos_path %>

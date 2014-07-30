@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :performance_videos
+
   resources :videos
 
   devise_for :users

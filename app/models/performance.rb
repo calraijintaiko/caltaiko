@@ -1,4 +1,5 @@
 class Performance < ActiveRecord::Base
+  has_many :performance_videos
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
   validates :date, presence: true
@@ -52,5 +53,9 @@ class Performance < ActiveRecord::Base
   # Returns all past performances in order of most recent to least.
   def self.past_performances
     return Performance.where("date < ?", Time.new).order('date DESC')
+  end
+
+  def self.videos
+    return PerformanceVideo.where(performance_id: self)
   end
 end
