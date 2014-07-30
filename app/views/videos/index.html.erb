@@ -1,0 +1,34 @@
+<%
+   title = "Videos | Cal Raijin Taiko"
+   description = "Videos of some of Cal Raijin Taiko's past performances."
+   image = URI.join(root_url, image_path("logo.png"))
+
+   meta title: title,
+   description: description,
+   og: {
+   title: title,
+   description: description,
+   image: image,
+   url: root_url + "videos"
+   }
+%>
+
+<header>
+  <h1>VIDEOS</h1>
+  <% if user_signed_in? %>
+  <%= link_to image_tag("icons/add.png"), new_video_path %>
+  <% end %>
+</header>
+
+<% @by_year.keys.each do |year| %>
+<h5><%= year %></h5>
+<% @by_year[year].each do |video| %>
+<%= render 'show', video: video %>
+<% end %>
+<% end %>
+
+<% if user_signed_in? %>
+<div class="add-new">
+  <%= link_to image_tag("icons/add.png"), new_video_path %>
+</div>
+<% end %>

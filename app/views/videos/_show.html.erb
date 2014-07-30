@@ -1,0 +1,13 @@
+<article class="video">
+  <h4><%= video.title %></h4>
+  <section class="edit-icons">
+    <% if user_signed_in? %>
+    <%= link_to image_tag("icons/edit_black.png"), edit_video_path(video) %>
+    <%= link_to image_tag("icons/delete_black.png"), video_path(video), method: :delete,
+        data: { confirm: "Are you sure you'd like to delete video '" + video.title + "'?" } %>
+    <% end %>
+  </section><br>
+
+  <iframe width="560" height="315" src="<%= video.link.sub('watch?v=', 'embed/') %>" frameborder="0" allowfullscreen></iframe>
+
+</article>

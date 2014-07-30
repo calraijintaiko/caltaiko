@@ -15,7 +15,12 @@ class VideosController < ApplicationController
   end
 
   def index
-    @videos = Video.all
+    @videos = Video.all.order('year DESC')
+    @by_year = Hash.new
+    @videos.each do |video|
+      @by_year[video.year.to_s] ||= []
+      @by_year[video.year.to_s] << video
+    end
   end
 
   def show
@@ -45,10 +50,10 @@ class VideosController < ApplicationController
 
 private
   def set_video
-    @video = Video.find(params[:id])
+    @video = Video.friendly.find(params[:id])
   end
 
   def video_params
-    params.require(:video).permit(:link)
+    params.require(:video).permit(:title, :link, :year)
   end
 end

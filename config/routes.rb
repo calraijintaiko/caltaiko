@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'members' => 'members#index'
   get 'members/current' => 'members#current'
   get 'members/alumni' => 'members#alumni'
+  get 'media' => 'videos#index'
 
   resources :performances
   resources :members

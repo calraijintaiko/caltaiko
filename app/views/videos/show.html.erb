@@ -1,0 +1,16 @@
+<%
+   title = @video.title + " | Cal Raijin Taiko"
+   description = "View the video of " + @video.title
+   image = URI.join(root_url, image_path("logo.png"))
+
+   meta title: title,
+   description: description,
+   og: {
+   title: title,
+   description: description,
+   image: image,
+   url: root_url + "videos/" + @video.slug
+   }
+   %>
+
+<%= render 'show', video: @video %>

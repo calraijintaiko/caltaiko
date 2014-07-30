@@ -1,3 +1,37 @@
 // Place all the styles related to the videos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+h5 {
+    font-family: $header-font;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.video {
+    margin-bottom: 30px;
+    h4 {
+        margin-top: 0px;
+        display: inline-block;
+    }
+    iframe {
+        border: 2px $main-color solid;
+    }
+    .edit-icons {
+        display: inline-block;
+        margin-left: 5px;
+        img {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            padding-right: 5px;
+        }
+    }
+}
+
+form.edit_video, form.new_video {
+    input {
+        width: 50%;
+    }
+}
