@@ -14,7 +14,10 @@
 %>
 
 <header>
-<h1>UPCOMING PERFORMANCES</h1>
+  <h2>UPCOMING PERFORMANCES</h2>
+  <% if user_signed_in? %>
+  <%= link_to image_tag("icons/add.png"), new_performance_path %>
+  <% end %>
 </header> 
 
 <%= render 'performances_feed', performances: @upcoming %>

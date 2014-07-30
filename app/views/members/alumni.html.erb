@@ -14,7 +14,10 @@
 %>
 
 <header>
-<h2>ALUMNI</h2>
+  <h2>ALUMNI</h2>
+  <% if user_signed_in? %>
+  <%= link_to image_tag("icons/add.png"), new_member_path %>
+  <% end %>
 </header>
 
 <%= render 'alumni_members', members: @alumni %>

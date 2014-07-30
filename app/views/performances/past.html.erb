@@ -14,7 +14,10 @@
 %>
 
 <header>
-<h2>PAST PERFORMANCES</h2>
+  <h1>PAST PERFORMANCES</h1>
+  <% if user_signed_in? %>
+  <%= link_to image_tag("icons/add.png"), new_performance_path %>
+  <% end %>
 </header> 
 
 <% @by_year.keys.each do |year| %>

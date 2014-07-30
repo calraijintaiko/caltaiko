@@ -15,6 +15,9 @@
 
 <header>
   <h2>CURRENT MEMBERS</h2>
+  <% if user_signed_in? %>
+  <%= link_to image_tag("icons/add.png"), new_member_path %>
+  <% end %>
 </header>
 
 <%= render 'current_members', members: @current %>

@@ -14,12 +14,18 @@
 %>
 
 <header>
-  <h1 class="link-header"><%= link_to "UPCOMING PERFORMANCES", '/performances/upcoming' %></h1>
+  <h2 class="link-header"><%= link_to "UPCOMING PERFORMANCES", '/performances/upcoming' %></h2>
+  <% if user_signed_in? %>
+  <%= link_to image_tag("icons/add.png"), new_performance_path %>
+  <% end %>
 </header>
 <%= render 'performances_feed', performances: @upcoming %>
 
 <header>
   <h2 class="link-header"><%= link_to "PAST PERFORMANCES", '/performances/past' %></h2>
+  <% if user_signed_in? %>
+  <%= link_to image_tag("icons/add.png"), new_performance_path %>
+  <% end %>
 </header>
 <%= render 'thumbnail_feed', performances: @past %>
 
