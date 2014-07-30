@@ -4,6 +4,7 @@ as well as creation and updating of performances.
 =end
 class PerformancesController < ApplicationController
   before_action :authenticate_user!, :except => [:show, :index, :upcoming, :past]
+  before_action :set_performance, only: [:show, :edit, :update, :destroy]
 
   # Creates a blank performance to be used by form.
   def new
@@ -36,20 +37,16 @@ class PerformancesController < ApplicationController
 
   # Give performance whose ID or slug matches request.
   def show
-    set_performance
   end
 
   # Give performance whose ID or slug matches request, to be used by form.
   def edit
-    set_performance
   end
 
   # Find performance whose ID or slug matches request, then update parameters
   # to new inputted values. If updates successfully redirects to show performance,
   # otherwise back to edit form.
   def update
-    set_performance
-
     if @performance.update(performance_params)
       redirect_to @performance
     else
@@ -59,7 +56,6 @@ class PerformancesController < ApplicationController
 
   # Erase performance from database, then redirect to index page.
   def destroy
-    set_performance
     @performance.destroy
 
     redirect_to performances_path
@@ -82,7 +78,6 @@ class PerformancesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_performance
       @performance = Performance.friendly.find(params[:id])
     end

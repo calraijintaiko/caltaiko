@@ -4,6 +4,7 @@ as well as creation and updating of members.
 =end
 class MembersController < ApplicationController
   before_action :authenticate_user!, :except => [:show, :index, :current, :alumni]
+  before_action :set_member, only: [:show, :edit, :update, :destroy]
 
   # Create a blank member to be used by form.
   def new
@@ -30,20 +31,16 @@ class MembersController < ApplicationController
 
   # Give member whose ID or slug matches request.
   def show
-    set_member
   end
 
   # Give member whose ID or slug matches request, to be used by form.
   def edit
-    set_member
   end
 
   # Find member whose ID or slug matches request, then update parameters
   # to new inputted values. If updates successfully redirects to show member,
   # otherwise back to edit form.
   def update
-    set_member
-
     if @member.update(member_params)
       redirect_to @member
     else
@@ -53,7 +50,6 @@ class MembersController < ApplicationController
 
   # Erase member from database, then redirect to index page.
   def destroy
-    set_member
     @member.destroy
     
     redirect_to members_path
