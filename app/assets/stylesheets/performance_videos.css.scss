@@ -15,3 +15,23 @@
         display: inline-block;
     }
 }
+
+form.new_performance_video,
+form.edit_performance_video {
+    #perf-slug {
+        display: none;
+    }
+}
+
+table#perf-vids {
+    border-collapse: collapse;
+    td, th {
+        text-align: left;
+        padding: 2px 5px;
+        border: 1px black solid;
+    }
+    th {
+        background-color: $main-color;
+        color: white;
+    }
+}

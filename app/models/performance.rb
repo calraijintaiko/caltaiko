@@ -56,6 +56,6 @@ class Performance < ActiveRecord::Base
   end
 
   def videos
-    return PerformanceVideo.where(performance_id: self)
+    return PerformanceVideo.where("performance_slug = ?", self.slug)
   end
 end

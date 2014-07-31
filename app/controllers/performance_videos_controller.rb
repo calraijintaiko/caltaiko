@@ -52,6 +52,6 @@ class PerformanceVideosController < ApplicationController
     end
 
     def performance_video_params
-      params.require(:performance_video).permit(:title, :link, :performance_id)
+      params.require(:performance_video).permit(:title, :link, :performance_slug)
     end
 end

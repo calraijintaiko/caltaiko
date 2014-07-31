@@ -1,6 +1,8 @@
-<h1>Listing performance_videos</h1>
+<header>
+  <h2>Listing Performance Videos</h2>
+</header>
 
-<table>
+<table id="perf-vids">
   <thead>
     <tr>
       <th>Title</th>
@@ -15,7 +17,7 @@
       <tr>
         <td><%= performance_video.title %></td>
         <td><%= performance_video.link %></td>
-        <td><%= performance_video.performance %></td>
+        <td><%= performance_video.performance_slug %></td>
         <td><%= link_to 'Show', performance_video %></td>
         <td><%= link_to 'Edit', edit_performance_video_path(performance_video) %></td>
         <td><%= link_to 'Destroy', performance_video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
