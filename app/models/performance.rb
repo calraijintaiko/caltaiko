@@ -55,7 +55,7 @@ class Performance < ActiveRecord::Base
     return Performance.where("date < ?", Time.new).order('date DESC')
   end
 
-  def self.videos
+  def videos
     return PerformanceVideo.where(performance_id: self)
   end
 end

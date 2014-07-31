@@ -10,6 +10,7 @@ class PerformanceVideosController < ApplicationController
 
   def new
     @performance_video = PerformanceVideo.new
+    @performance = Performance.friendly.find(params[:performance])
   end
 
   def edit
@@ -18,14 +19,10 @@ class PerformanceVideosController < ApplicationController
   def create
     @performance_video = PerformanceVideo.new(performance_video_params)
 
-    respond_to do |format|
-      if @performance_video.save
-        format.html { redirect_to @performance_video, notice: 'Performance video was successfully created.' }
-        format.json { render :show, status: :created, location: @performance_video }
-      else
-        format.html { render :new }
-        format.json { render json: @performance_video.errors, status: :unprocessable_entity }
-      end
+    if @performance_video.save
+      redirect_to @performance_video
+    else
+      render 'new'
     end
   end
 
@@ -35,8 +32,7 @@ class PerformanceVideosController < ApplicationController
         format.html { redirect_to @performance_video, notice: 'Performance video was successfully updated.' }
         format.json { render :show, status: :ok, location: @performance_video }
       else
-        format.html { render :edit }
-        format.json { render json: @performance_video.errors, status: :unprocessable_entity }
+        render 'edit'
       end
     end
   end

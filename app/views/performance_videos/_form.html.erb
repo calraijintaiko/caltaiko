@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :performance_id %><br>
-    <%= f.text_field :performance_id %>
+    <%= f.number_field :performance_id, value: @performance.id %>
   </div>
   <div class="actions">
     <%= f.submit %>
