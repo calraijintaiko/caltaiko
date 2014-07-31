@@ -16,7 +16,7 @@
     <% @performance_videos.each do |performance_video| %>
       <tr>
         <td><%= performance_video.title %></td>
-        <td><%= performance_video.link %></td>
+        <td><%= link_to performance_video.link, performance_video.link, target: "_blank" %></td>
         <td><%= performance_video.performance_slug %></td>
         <td><%= link_to 'Show', performance_video %></td>
         <td><%= link_to 'Edit', edit_performance_video_path(performance_video) %></td>

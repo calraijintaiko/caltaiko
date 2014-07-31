@@ -20,18 +20,19 @@ class PerformanceVideosController < ApplicationController
   def create
     @performance_video = PerformanceVideo.new(performance_video_params)
 
-    if @performance_video.save
-      redirect_to @performance_video
-    else
-      render 'new'
+    respond_to do |format|
+      if @performance_video.save
+        format.html { redirect_to performance_videos_url, notice: 'Performance video was successfully created.' }
+      else
+        render 'new'
+      end
     end
   end
 
   def update
     respond_to do |format|
       if @performance_video.update(performance_video_params)
-        format.html { redirect_to @performance_video, notice: 'Performance video was successfully updated.' }
-        format.json { render :show, status: :ok, location: @performance_video }
+        format.html { redirect_to performance_videos_url, notice: 'Performance video was successfully updated.' }
       else
         render 'edit'
       end
