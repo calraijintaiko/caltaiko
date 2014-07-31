@@ -1,4 +1,5 @@
 class PerformanceVideosController < ApplicationController
+  before_action :authenticate_user!, :except => [:show]
   before_action :set_performance_video, only: [:show, :edit, :update, :destroy]
 
   def index
