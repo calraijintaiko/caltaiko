@@ -1,6 +1,6 @@
 class Performance < ActiveRecord::Base
   has_many :performance_videos, dependent: :destroy
-  accepts_nested_attributes_for :performance_videos, allow_destroy: true,
+  accepts_nested_attributes_for :performance_videos, :allow_destroy => true,
   reject_if: :reject_videos
 
   def reject_videos(attributed)

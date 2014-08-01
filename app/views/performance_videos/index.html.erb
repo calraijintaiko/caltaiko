@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Performance</th>
+      <th>Year</th>
       <th>Title</th>
       <th>Link</th>
       <th colspan="3"></th>
@@ -15,7 +16,9 @@
   <tbody>
     <% @performance_videos.each do |performance_video| %>
       <tr>
-        <td><%= performance_video.performance_id %></td>
+        <td><%= link_to Performance.find(performance_video.performance_id).title,
+                performance_path(Performance.find(performance_video.performance_id)) %></td>
+        <td><%= Performance.find(performance_video.performance_id).date.year %></td>
         <td><%= performance_video.title %></td>
         <td><%= link_to performance_video.link, performance_video.link, target: "_blank" %></td>
         <td><%= link_to 'Show', performance_video %></td>

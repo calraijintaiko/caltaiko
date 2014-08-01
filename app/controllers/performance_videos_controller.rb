@@ -3,14 +3,10 @@ class PerformanceVideosController < ApplicationController
   before_action :set_performance_video, only: [:show, :edit, :update, :destroy]
 
   def index
-    @performance_videos = PerformanceVideo.all
+    @performance_videos = PerformanceVideo.all.order('performance_id ASC')
   end
 
   def show
-  end
-
-  def new
-    @performance_video = PerformanceVideo.new
   end
 
   def edit
@@ -52,6 +48,6 @@ class PerformanceVideosController < ApplicationController
     end
 
     def performance_video_params
-      params.require(:performance_video).permit(:title, :link, :performance_id)
+      params.require(:performance_video).permit(:title, :link)
     end
 end

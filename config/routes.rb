@@ -11,11 +11,11 @@ Rails.application.routes.draw do
   get 'members/alumni' => 'members#alumni'
   get 'media' => 'videos#index'
 
-  resources :performances
   resources :members
   resources :videos
-  resources :performance_videos
-  
+  resources :performances
+  resources :performance_videos, except: :new
+
   devise_for :users
   devise_scope :user do
     get "login", :to => "devise/sessions#new"
