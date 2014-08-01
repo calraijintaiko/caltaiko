@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  resources :performance_videos
 
-  resources :videos
-
-  devise_for :users
 
   get 'about' => 'pages#about'
   get 'contact' => 'pages#contact'
@@ -17,7 +13,10 @@ Rails.application.routes.draw do
 
   resources :performances
   resources :members
+  resources :videos
+  resources :performance_videos
   
+  devise_for :users
   devise_scope :user do
     get "login", :to => "devise/sessions#new"
     get "settings", :to => "devise/registrations#edit"

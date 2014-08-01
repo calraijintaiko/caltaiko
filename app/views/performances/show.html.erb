@@ -15,23 +15,13 @@
 
 <%= render 'show', performance: @performance %>
 
-<% if @performance.videos.length > 0 %>
+<% if @performance.performance_videos.any? %>
 <header>
   <h2>VIDEOS</h2>
 </header>
 <section class="perf-videos">
-  <% @performance.videos.each do |video| %>
-  <%= render 'performance_videos/show', video: video %>
-  <% end %>
+  <%= render @performance_videos %>
 </section>
-<% end %>
-
-<% if user_signed_in? %>
-<div class="add-new">
-  <h1>ADD NEW VIDEO</h1>
-  <%= link_to image_tag("icons/add.png"),
-      new_performance_video_path(performance: @performance.slug) %>
-</div>
 <% end %>
 
 <nav class="nav-buttons">

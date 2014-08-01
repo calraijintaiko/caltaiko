@@ -11,7 +11,6 @@ class PerformanceVideosController < ApplicationController
 
   def new
     @performance_video = PerformanceVideo.new
-    @performance = Performance.friendly.find(params[:performance])
   end
 
   def edit
@@ -53,6 +52,6 @@ class PerformanceVideosController < ApplicationController
     end
 
     def performance_video_params
-      params.require(:performance_video).permit(:title, :link, :performance_slug)
+      params.require(:performance_video).permit(:title, :link, :performance_id)
     end
 end

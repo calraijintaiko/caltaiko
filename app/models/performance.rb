@@ -1,5 +1,12 @@
 class Performance < ActiveRecord::Base
-  has_many :performance_videos
+  has_many :performance_videos, dependent: :destroy
+  accepts_nested_attributes_for :performance_videos, allow_destroy: true,
+  reject_if: :reject_videos
+
+  def reject_videos(attributed)
+    attributed['title'].blank? || attributed['link'].blank?
+  end
+
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
   validates :date, presence: true
@@ -55,7 +62,4 @@ class Performance < ActiveRecord::Base
     return Performance.where("date < ?", Time.new).order('date DESC')
   end
 
-  def videos
-    return PerformanceVideo.where("performance_slug = ?", self.slug)
-  end
 end

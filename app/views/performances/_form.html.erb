@@ -1,4 +1,4 @@
-<%= form_for(@performance) do |f| %>
+<%= form_for(setup_performance(@performance)) do |f| %>
   <% if @performance.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@performance.errors.count, "error") %> prohibited this performance from being saved:</h2>
@@ -32,12 +32,35 @@
     <%= f.text_area :description %>
   </div>
 
-    <p>
-      <%= f.label :banner %><br>
-      <%= f.file_field :banner %>
-      <%= f.label :delete_banner %>
-      <%= f.check_box :delete_banner %>
-    </p>
+  <p>
+    <%= f.label :banner %><br>
+    <%= f.file_field :banner %>
+    <%= f.label :delete_banner %>
+    <%= f.check_box :delete_banner %>
+  </p>
+
+  <h1>Videos</h1>
+  <section class="perf-videos">
+    <%= f.fields_for :performance_videos do |ff| %>
+    <article class="video-form">
+      <div class="field">
+        <%= ff.label :title %><br>
+        <%= ff.text_field :title %>
+      </div>
+      <div class="field">
+        <%= ff.label :link %><br>
+        <%= ff.text_field :link %>
+      </div>
+
+      <% if ff.object.persisted? %>
+      <div class="delete?">
+        <%= ff.check_box :_destroy %>
+        <%= ff.label :_destroy, "Destroy" %>
+      </div class="delete?">
+      <% end %>
+    </article>
+    <% end %>
+  </section>
 
   <div class="actions">
     <%= f.submit %>

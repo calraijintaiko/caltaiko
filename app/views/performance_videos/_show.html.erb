@@ -1,13 +1,13 @@
 <article class="video">
-  <h4><%= video.title %></h4>
+  <h4><%= @performance_video.title %></h4>
   <section class="edit-icons">
     <% if user_signed_in? %>
-    <%= link_to image_tag("icons/edit_black.png"), edit_performance_video_path(video) %>
-    <%= link_to image_tag("icons/delete_black.png"), performance_video_path(video), method: :delete,
-        data: { confirm: "Are you sure you'd like to delete video '" + video.title + "'?" } %>
+    <%= link_to image_tag("icons/edit_black.png"), edit_performance_video_path %>
+    <%= link_to image_tag("icons/delete_black.png"), performance_video_path, method: :delete,
+        data: { confirm: "Are you sure you'd like to delete performance video '" + @performance_video.title + "'?" } %>
     <% end %>
   </section><br>
 
-  <iframe width="432" height="243" src="<%= video.link.sub('watch?v=', 'embed/') %>" frameborder="0" allowfullscreen></iframe>
+  <iframe width="432" height="243" src="<%= @performance_video.link.sub('watch?v=', 'embed/') %>" frameborder="0" allowfullscreen></iframe>
 
 </article>

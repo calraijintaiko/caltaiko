@@ -37,6 +37,7 @@ class PerformancesController < ApplicationController
 
   # Give performance whose ID or slug matches request.
   def show
+    @performance_videos = @performance.performance_videos
   end
 
   # Give performance whose ID or slug matches request, to be used by form.
@@ -84,6 +85,7 @@ class PerformancesController < ApplicationController
 
     def performance_params
       params.require(:performance).permit(:date, :title, :location, :link, :description,
-                                          :upcoming, :banner, :delete_banner)
+                                          :upcoming, :banner, :delete_banner,
+                                          performance_videos_attributes: [:title, :link, :_destory, :performance_id])
     end
 end

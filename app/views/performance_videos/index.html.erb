@@ -15,7 +15,7 @@
   <tbody>
     <% @performance_videos.each do |performance_video| %>
       <tr>
-        <td><%= performance_video.performance_slug %></td>
+        <td><%= performance_video.performance_id %></td>
         <td><%= performance_video.title %></td>
         <td><%= link_to performance_video.link, performance_video.link, target: "_blank" %></td>
         <td><%= link_to 'Show', performance_video %></td>
