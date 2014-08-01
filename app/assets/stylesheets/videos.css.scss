@@ -9,6 +9,12 @@ h5 {
     margin-bottom: 10px;
 }
 
+#media-videos {
+    h5:not(:first-child) {
+        margin-top: 60px;
+    }
+}
+
 .video {
     margin-bottom: 30px;
     h4 {
