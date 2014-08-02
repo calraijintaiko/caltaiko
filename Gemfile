@@ -69,3 +69,6 @@ gem 'redcarpet', '~> 3.0.0'
 
 # Prettier forms
 gem 'simple_form'
+
+# Better nested forms
+gem 'cocoon'

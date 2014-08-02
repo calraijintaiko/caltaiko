@@ -1,4 +1,4 @@
-= simple_form_for(setup_performance(@performance)) do |f|
+= simple_form_for(@performance) do |f|
 
   = f.input :date, start_year: 2005, end_year: Time.new.year, ampm: true, minute_step: 15
 
@@ -14,14 +14,10 @@
   = f.input :delete_banner, as: :boolean
 
   %h1 Videos
-  %section.perf-videos
-    = f.simple_fields_for :performance_videos do |ff|
-      %article.video-form
-        = ff.input :title
-
-        = ff.input :link
-
-        - if ff.object.persisted?
-          = ff.input :_destroy, as: :boolean
+  #performance_videos
+    = f.simple_fields_for :performance_videos do |performance_video|
+      = render "performance_video_fields", f: performance_video
+    .links
+      = link_to_add_association "Add Performance Video", f, :performance_videos
 
   = f.button :submit
