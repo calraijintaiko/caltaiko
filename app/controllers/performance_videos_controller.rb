@@ -6,6 +6,10 @@ class PerformanceVideosController < ApplicationController
     @performance_videos = PerformanceVideo.all.order('performance_id ASC')
   end
 
+  def new
+    @performance_video = PerformanceVideo.new
+  end
+
   def show
   end
 
@@ -48,6 +52,6 @@ class PerformanceVideosController < ApplicationController
     end
 
     def performance_video_params
-      params.require(:performance_video).permit(:title, :link)
+      params.require(:performance_video).permit(:title, :link, :performance_id)
     end
 end

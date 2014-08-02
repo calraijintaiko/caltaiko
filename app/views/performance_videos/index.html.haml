@@ -8,7 +8,9 @@
   url: request.original_url }
 
 %header
-  %h2 Listing Performance Videos
+  %h2 Performance Videos
+  - if user_signed_in?
+    = link_to image_tag("icons/add.png"), new_performance_video_path
 
 %table#perf-vids
   %thead

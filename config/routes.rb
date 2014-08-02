@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :members
   resources :videos
   resources :performances
-  resources :performance_videos, except: :new
+  resources :performance_videos
 
   devise_for :users
   devise_scope :user do

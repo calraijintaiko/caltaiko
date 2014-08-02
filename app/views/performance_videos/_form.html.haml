@@ -1,24 +1,9 @@
-= form_for(performance_video) do |f|
-  - if performance_video.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(performance_video.errors.count, "error")
-        prohibited this performance video from being saved:
-      %ul
-        - performance_video.errors.full_messages.each do |msg|
-          %li= msg
+= simple_form_for(performance_video) do |f|
 
-  .field
-    = f.label :title
-    %br
-    = f.text_field :title
+  = f.input :title
 
-  .field
-    = f.label :link
-    %br
-    = f.text_field :link
+  = f.input :link
 
-  %p= Performance.find(performance_video.performance_id).title
+  = f.association :performance
 
-  .actions
-    = f.submit
+  = f.button :submit

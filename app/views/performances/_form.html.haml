@@ -1,63 +1,27 @@
-= form_for(setup_performance(@performance)) do |f|
-  - if @performance.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@performance.errors.count, "error")
-        prohibited this performance from being saved:
-      %ul
-        - @performance.errors.full_messages.each do |msg|
-          %li= msg
+= simple_form_for(setup_performance(@performance)) do |f|
 
-  .field#date-select
-    = f.label :date
-    %br
-    = f.datetime_select :date, ampm: true, minute_step: 15
+  = f.input :date, start_year: 2005, end_year: Time.new.year, ampm: true, minute_step: 15
 
-  .field
-    = f.label :title
-    %br
-    = f.text_field :title
+  = f.input :title
 
-  .field
-    = f.label :location
-    %br
-    = f.text_field :location
+  = f.input :location
 
-  .field
-    = f.label :link
-    %br
-    = f.text_field :link
+  = f.input :link
 
-  .field
-    = f.label :description
-    %br
-    = f.text_area :description
+  = f.input :description
 
-  %p
-    = f.label :banner
-    %br
-    = f.file_field :banner
-    = f.label :delete_banner
-    = f.check_box :delete_banner
+  = f.input :banner
+  = f.input :delete_banner, as: :boolean
 
   %h1 Videos
   %section.perf-videos
-    = f.fields_for :performance_videos do |ff|
+    = f.simple_fields_for :performance_videos do |ff|
       %article.video-form
-        .field
-          = ff.label :title
-          %br
-          = ff.text_field :title
+        = ff.input :title
 
-        .field
-          = ff.label :link
-          %br
-          = ff.text_field :link
+        = ff.input :link
 
-          - if ff.object.persisted?
-            .delete?
-            = ff.check_box :_destroy
-            = ff.label :_destroy, "Destroy"
+        - if ff.object.persisted?
+          = ff.input :_destroy, as: :boolean
 
-  .actions
-    = f.submit
+  = f.button :submit

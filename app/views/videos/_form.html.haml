@@ -1,27 +1,9 @@
-= form_for(@video) do |f|
-  - if @video.errors.any?
-    #error_explanation
-      %h2
-        pluralize(@video.errors.count, "error")
-        prohibited this video from being saved:
-      %ul
-        - @video.errors.full_messages.each do |msg|
-          %li= msg
+= simple_form_for(@video) do |f|
 
-  .field
-    = f.label :title
-    %br
-    = f.text_field :title
+  = f.input :title
 
-  .field
-    = f.label :year
-    %br
-    = f.number_field :year
+  = f.input :year
 
-  .field
-    = f.label :link
-    %br
-    = f.text_field :link
+  = f.input :link
 
-  .actions
-    = f.submit
+  = f.button :submit
