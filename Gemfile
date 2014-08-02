@@ -64,5 +64,5 @@ gem 'metamagic'
 
 # Allows for use of Haml rather than standard erb
 gem 'haml'
-gem 'haml-rails'
+gem 'haml-rails', group: :development
 gem 'redcarpet', '~> 3.0.0'
