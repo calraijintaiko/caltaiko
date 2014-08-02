@@ -1,0 +1,19 @@
+- title = @performance.title + " | Cal Raijin Taiko"
+- description = @performance.description
+- image = @performance.banner.url(:display)
+
+- meta title: title,
+  description: description,
+  og: { title: title, description: description, image: image,
+  url: request.original_url }
+
+= render "show", performance: @performance
+
+- if @performance.performance_videos.any?
+  %header
+    %h2 VIDEOS
+  %section.perf-videos
+    = render @performance_videos
+
+%nav.nav-buttons
+  = link_to image_tag("icons/back.png"), performances_path

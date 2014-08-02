@@ -1,0 +1,19 @@
+- title = "Upcoming Performances | Cal Raijin Taiko"
+- description = "Cal Raijin Taiko's upcoming performances."
+- image = URI.join(root_url, image_path("logo.png"))
+
+- meta title: title,
+  description: description,
+  og: { title: title, description: description, image: image,
+  url: request.original_url }
+
+%header
+  %h2 UPCOMING PERFORMANCES
+  - if user_signed_in?
+    = link_to image_tag("icons/add.png"), new_performance_path
+
+= render "performances_feed", performances: @upcoming
+
+- if user_signed_in?
+  .add-new
+    = link_to image_tag("icons/add.png"), new_performance_path

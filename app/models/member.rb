@@ -29,7 +29,7 @@ class Member < ActiveRecord::Base
   url: "/members/:slug/:attachment/:style/:filename",
   # default_url: "/images/members/:attachment/:style/missing.png"
   # if robohash website ever closes down, delete below and uncomment above
-  default_url: "http://robohash.org/:id?size=200x200&bgset=bgany"
+  default_url: "http://robohash.org/:id?size=300x300&bgset=bgany"
   include DeletableAttachment
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 

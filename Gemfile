@@ -61,3 +61,7 @@ gem 'friendly_id', '~> 5.0.0'
 
 # Allows for easier meta tag setting
 gem 'metamagic'
+
+# Allows for use of Haml rather than standard erb
+gem 'haml'
+gem 'haml-rails'

@@ -1,0 +1,30 @@
+- title = "Performances | Cal Raijin Taiko"
+- description = "Cal Raijin Taiko's upcoming and past performances"
+- image = URI.join(root_url, image_path("logo.png"))
+
+- meta title: title,
+  description: description,
+  og: { title: title, description: description, image: image,
+  url: request.original_url }
+
+%header
+  %h2.link-header
+    = link_to "UPCOMING PERFORMANCES", "performances/upcoming"
+  - if user_signed_in?
+    = link_to image_tag("icons/add.png"), new_performance_path
+
+= render "performances_feed", performances: @upcoming
+
+%header
+  %h1.link-header
+    = link_to "PAST PERFORMANCES", "/performances/past"
+  - if user_signed_in?
+    = link_to image_tag("icons/add.png"), new_performance_path
+
+- @by_year.keys.each do |year|
+  %h4= year
+  = render "thumbnail_feed", performances: @by_year[year]
+
+- if user_signed_in?
+  .add-new
+    = link_to image_tag("icons/add.png"), new_performance_path

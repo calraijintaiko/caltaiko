@@ -1,0 +1,30 @@
+%article.performance
+  .performance-image
+    = link_to image_tag(performance.banner.url(:display)),
+      performance.link, target: "_blank"
+    %p
+      = performance.description
+      %br
+      %br
+      = link_to "VIEW EVENT", performance.link
+
+  %section.performance-deets
+    %h3= performance.title.upcase
+    %p
+      - if performance.date.to_date >= Time.new
+        = performance.date.strftime("%A, %B %d, %l:%M%p").upcase
+        |
+        = performance.location.upcase
+      - else
+        = performance.date.strftime("%A, %B %d, %Y, %l:%M%p").upcase
+        |
+        = performance.location.upcase
+
+  %section.edit-icons
+    - if controller.action_name != "show"
+      = link_to image_tag("icons/view.png"), performance_path(performance)
+    - if user_signed_in?
+      = link_to image_tag("icons/edit.png"), edit_performance_path(performance)
+      = link_to image_tag("icons/delete.png"),
+        performance_path(performance), method: :delete,
+        data: { confirm: "Are you sure you'd like to delete performance #{performance.title}?" }

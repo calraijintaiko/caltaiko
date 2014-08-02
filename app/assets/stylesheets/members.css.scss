@@ -29,6 +29,8 @@
         .member-image {
             position: relative;
             img {
+                height: 200px;
+                width: 200px;
                 position: relative;
                 display: block;
                 z-index: 1;
@@ -46,7 +48,7 @@
         }
         .member-image:hover {
             img {
-	        width: 100%; 
+	        zoom: 1; 
 	        filter: alpha(opacity=30);
                 opacity: .3;
             }

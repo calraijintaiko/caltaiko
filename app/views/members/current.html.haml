@@ -1,0 +1,19 @@
+- title = "Current Members | Cal Raijin Taiko"
+- description = "The currently active members of Cal Raijin Taiko"
+- image = URI.join(root_url, image_path("logo.png"))
+
+- meta title: title,
+  description: description,
+  og: { title: title, description: description, image: image,
+  url: request.original_url }
+
+%header
+  %h2 CURRENT MEMBERS
+  - if user_signed_in?
+    = link_to image_tag("icons/add.png"), new_member_path
+
+= render "current_members", members: @current
+
+- if user_signed_in?
+  .add-new
+    = link_to image_tag("icons/add.png"), new_member_path

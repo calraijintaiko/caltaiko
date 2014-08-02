@@ -1,0 +1,33 @@
+- title = @member.name + " | Cal Raijin Taiko"
+- description = "View the member bio for " + @member.name
+- image = @member.avatar.url(:full)
+
+- meta title: title,
+  description: description,
+  og: { title: title, description: description, image: image,
+  url: request.original_url }
+
+%article.individual
+  = image_tag @member.avatar.url(:full)
+  .bio-block
+    %section.bio-info
+      %p
+        %strong Name:
+        = @member.name
+      %p
+        %strong Gen:
+        = number_with_precision(@member.gen, precision: 0)
+      %p
+        %strong Major:
+        = @member.major
+
+      %p= @member.bio
+
+      - if user_signed_in?
+        %section.edit-icons
+          = link_to image_tag("icons/edit.png"), edit_member_path(@member)
+          = link_to image_tag("icons/delete.png"), member_path(@member), method: :delete,
+            data: { confirm: "Are you sure you'd like to delete member #{@member.name}?" }
+
+%nav.nav-buttons
+  = link_to image_tag("icons/back.png"), members_path

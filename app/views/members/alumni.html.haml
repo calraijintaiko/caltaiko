@@ -1,0 +1,19 @@
+- title = "Alumni | Cal Raijin Taiko"
+- description = "Our Cal Raijin Taiko family of alumni"
+- image = URI.join(root_url, image_path("logo.png"))
+
+- meta title: title,
+  description: description,
+  og: { title: title, description: description, image: image,
+  url: request.original_url }
+
+%header
+  %h2 ALUMNI
+  - if user_signed_in?
+    = link_to image_tag("icons/add.png"), new_member_path
+
+= render "alumni_members", members: @alumni
+
+- if user_signed_in?
+  .add-new
+    = link_to image_tag("icons/add.png"), new_member_path
