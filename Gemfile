@@ -66,3 +66,6 @@ gem 'metamagic'
 gem 'haml'
 gem 'haml-rails', group: :development
 gem 'redcarpet', '~> 3.0.0'
+
+# Prettier forms
+gem 'simple_form'
