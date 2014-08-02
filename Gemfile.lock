@@ -118,6 +118,7 @@ GEM
     rake (10.3.2)
     rdoc (4.1.1)
       json (~> 1.4)
+    redcarpet (3.0.0)
     rubygems-update (2.3.0)
     sass (3.2.19)
     sass-rails (4.0.3)
@@ -177,6 +178,7 @@ DEPENDENCIES
   pg
   rails (= 4.1.2)
   rails_12factor
+  redcarpet (~> 3.0.0)
   rubygems-update (~> 2.3.0)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

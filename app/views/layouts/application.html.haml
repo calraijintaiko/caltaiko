@@ -1,0 +1,36 @@
+!!!
+%html(lang="en-US")
+  %head
+    %meta(charset="utf-8")
+    = metamagic title: "Cal Raijin Taiko",
+      keywords: "taiko, raijin, cal, berkeley, japanese, music, caltaiko"
+
+    %link(href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css")
+    %link(href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css")
+
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+
+    = favicon_link_tag "favicon.png", rel: "icon", type: "image/png"
+    = favicon_link_tag "favicon.png", rel: "apple-touch-icon", type: "image/png"
+
+  %body{ class: "#{controller.controller_name}_#{controller.action_name}" }
+    #page-wrapper
+      #content-wrapper
+        = link_to image_tag("banner.png", id: "banner"), root_url,
+          "data-no-turbolink" => true
+        %header#nav-header
+          = render "layouts/header"
+
+        .devise-notice
+          - if notice
+            %p.alert-success= notice
+          - if alert
+            %p.alert-danger= alert
+
+        #page-content
+          = yield
+
+      %footer#social-media
+        = render "layouts/footer"    

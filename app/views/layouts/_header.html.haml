@@ -1,0 +1,32 @@
+%nav#nav-bar
+  .link#home-page
+    = link_to "HOME", root_url, "data-no-turbolink" => true
+
+  .link#members-page
+    = link_to "MEMBERS", members_path
+    %ul#members-dropdown
+      %li
+        = link_to "CURRENT", "/members/current"
+      %li
+        = link_to "ALUMNI", "/members/alumni"
+
+  .link#performances-page
+    = link_to "PERFORMANCES", performances_path
+    %ul#performances-dropdown
+      %li
+        = link_to "UPCOMING", "/performances/upcoming"
+      %li
+        = link_to "PAST", "/performances/past"
+
+  .link#media-page
+    = link_to "MEDIA", "/media"
+
+  .link#about-page
+    = link_to "ABOUT US", "/about"
+
+  .link#contact-page
+    = link_to "CONTACT US", "/contact"
+
+  - if user_signed_in?
+    .link
+      = link_to "LOGOUT", "/logout", "data-no-turbolink" => true

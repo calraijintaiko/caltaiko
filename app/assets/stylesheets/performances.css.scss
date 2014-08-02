@@ -155,12 +155,6 @@
 	width: 100%; 
 	filter: alpha(opacity=30);
         opacity: .3;
-        /* $brightness-percent: 30%; */
-	/* filter: contrast($brightness-percent); */
-	/* -webkit-filter: brightness($brightness-percent); */
-	/* -moz-filter: brightness($brightness-percent); */
-	/* -o-filter: brightness($brightness-percent); */
-	/* -ms-filter: brightness($brightness-percent); */
     }
     p {
         color: white;
@@ -203,7 +197,7 @@ form.edit_performance, form.new_performance {
         justify-content: space-around;
         .video-form {
             border: 1px white solid;
-            margin: 5px auto;
+            margin: 15px auto;
             width: 30%;
             .field {
                 input {

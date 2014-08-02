@@ -1,0 +1,14 @@
+- title = "Contact Us | Cal Raijin Taiko"
+- description = "How to get in contact with Cal Raijin Taiko"
+- image = URI.join(root_url, image_path("logo.png"))
+
+- meta title: title,
+  description: description,
+  og: { title: title, description: description, image: image,
+  url: request.original_url }
+
+.text-wrapper
+  :markdown
+    For all general or performance inquiries, please email us at **[caltaiko@gmail.com](mailto:caltaiko@gmail.com)**
+
+    You can also reach us over the phone at **(415) 797-7871**

@@ -1,0 +1,33 @@
+- title = "Cal Raijin Taiko"
+- description = "Founded in 2005, Cal Raijin Taiko is UC Berkeley's Japanese drumming performance ensemble."
+- image = URI.join(root_url, image_path("logo.png"))
+
+- meta title: title,
+  description: description,
+  og: { title: title, description: description, image: image,
+  url: root_url }
+
+%header
+  %h2.link-header
+    = link_to "UPCOMING PERFORMANCES", "/performances/upcoming"
+    - if user_signed_in?
+      = link_to image_tag("icons/add.png"), new_performance_path
+
+= render "performances/performances_feed", performances:@performances
+
+#fb-root
+:javascript
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=699325996783664&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+#fb-stuff
+  #fb-feed
+    .fb-like-box(data-href="https://www.facebook.com/calraijintaiko" data-width="900" data-height="600" data-colorscheme="light" data-show-faces="false" data-header="true" data-stream="true" data-show-border="true")
+
+  #fb-faces
+    .fb-facepile(data-href="https://www.facebook.com/calraijintaiko" data-width="900" data-max-rows="2" data-colorscheme="light" data-size="medium" data-show-count="true")
