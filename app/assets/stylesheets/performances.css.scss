@@ -186,13 +186,22 @@ form.edit_performance, form.new_performance {
         margin-top: 20px;
     }
     #performance_videos {
+        display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox;      /* TWEENER - IE 10 */
+        display: -webkit-flex;     /* NEW - Chrome */
+        display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        flex-flow: row wrap;
+        justify-content: center;
         .links {
+            width: 100%;
+            display: block;
             padding: 20px;
         }
         .nested-fields {
             display: inline-block;
             border: 1px white solid;
-            margin: 13px;
+            margin: 10px;
             width: 30%;
             input {
                 width: 70%;
