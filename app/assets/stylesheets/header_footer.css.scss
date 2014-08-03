@@ -11,7 +11,6 @@
 }
 
 #nav-bar {
-    //border-top: 2px black solid;
     border-bottom: 2px black solid;
     border-radius: 0px;
     text-align: center;
@@ -86,6 +85,10 @@ body.performances_past #nav-bar .link#performances-page,
 body.performances_show #nav-bar .link#performances-page,
 body.performances_edit #nav-bar .link#performances-page,
 body.performances_new #nav-bar .link#performances-page,
+body.performance_videos_index #nav-bar .link#performances-page,
+body.performance_videos_show #nav-bar .link#performances-page,
+body.performance_videos_edit #nav-bar .link#performances-page,
+body.performance_videos_new #nav-bar .link#performances-page,
 body.videos_index #nav-bar .link#media-page,
 body.pages_about #nav-bar .link#about-page,
 body.pages_contact #nav-bar .link#contact-page {
