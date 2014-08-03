@@ -29,11 +29,6 @@ article.article {
             margin-top: 0px;
             display: block;
         }
-        p {
-            margin-top: 20px;
-            padding: 0px;
-            text-align: left;
-        }
         * {
             color: white;
             font-family: "Lato";
@@ -41,6 +36,14 @@ article.article {
         }
         strong {
             color: #EEF268;
+            a {
+                color: #EEF268;
+            }
+        }
+        p {
+            margin-top: 20px;
+            padding: 0px;
+            text-align: left;
         }
         blockquote {
             background-color: #E5E8D1;
