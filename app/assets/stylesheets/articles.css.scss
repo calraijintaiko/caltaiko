@@ -50,8 +50,11 @@ article.article {
             * {
                 color: $main-color;
             }
-            p:not(:last-child) {
+            p {
                 margin: 0px;
+            }
+            p:not(:first-child) {
+                margin-top: 20px;
             }
         }
     }
