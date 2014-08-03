@@ -18,6 +18,6 @@ class Article < ActiveRecord::Base
   end
 
   def self.current
-    return Article.where(current: true).order('date ASC')
+    return Article.where(current: true).order('date DESC')
   end
 end

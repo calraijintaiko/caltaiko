@@ -1,8 +1,9 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :index]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articles = Article.all.order('date ASC')
+    @articles = Article.all.order('date DESC')
   end
 
   def show
@@ -40,7 +41,7 @@ class ArticlesController < ApplicationController
 
   private
   def set_article
-    @article = Article.find(params[:id])
+    @article = Article.friendly.find(params[:id])
   end
 
   def article_params

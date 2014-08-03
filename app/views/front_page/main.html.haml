@@ -7,13 +7,15 @@
   og: { title: title, description: description, image: image,
   url: root_url }
 
+= render "articles/news_feed", articles: @articles
+
 %header
   %h2.link-header
     = link_to "UPCOMING PERFORMANCES", "/performances/upcoming"
     - if user_signed_in?
       = link_to image_tag("icons/add.png"), new_performance_path
 
-= render "performances/performances_feed", performances:@performances
+= render "performances/performances_feed", performances: @performances
 
 #fb-root
 :javascript

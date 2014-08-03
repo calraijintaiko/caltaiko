@@ -5,5 +5,6 @@ the upcoming performances feed on the home page.
 class FrontPageController < ApplicationController
   def main
     @performances = Performance.upcoming_performances
+    @articles = Article.current
   end
 end

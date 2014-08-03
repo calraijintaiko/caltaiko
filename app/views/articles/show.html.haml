@@ -1,18 +1,13 @@
-%p#notice= notice
+- title = "News | Cal Raijin Taiko"
+- description = @article.title
+- image = URI.join(root_url, image_path("logo.png"))
 
-%p
-  %b Title:
-  = @article.title
-%p
-  %b Date:
-  = @article.date
-%p
-  %b Text:
-  = @article.text
-%p
-  %b Current:
-  = @article.current
+- meta title: title,
+  description: description,
+  og: { title: title, description: description, image: image,
+  url: request.original_url }
 
-= link_to 'Edit', edit_article_path(@article)
-\|
-= link_to 'Back', articles_path
+= render "show", article: @article
+
+%nav.nav-buttons
+  = link_to image_tag("icons/back.png"), articles_path
