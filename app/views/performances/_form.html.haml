@@ -1,6 +1,6 @@
 = simple_form_for(@performance) do |f|
 
-  = f.input :date, start_year: 2005, end_year: Time.new.year, ampm: true, minute_step: 15
+  = f.input :date, start_year: 2005, end_year: Time.new.year + 1, ampm: true, minute_step: 15
 
   = f.input :title
 

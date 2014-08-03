@@ -57,47 +57,23 @@
     }
 }
 
-#edit-account {
-    margin: auto;
-    width: 400px;
-    #username-email-fields {
-    }
-    #new-passwrd {
-        text-align: center;
-        margin-bottom: 10px;
-    }
-    #confirm-new-passwrd {
-        text-align: center;
-        margin-bottom: 10px;
-    }
-    #current-passwrd {
-        text-align: center;
-    }
-    #submit-button {
-        text-align: center;
-    }
-    #cancel-account {
-        text-align: center;
-	p {
-	    color: black;
-	}
-	form {
-	    background: transparent;
-	    box-shadow: none;
-	    border: none;
-	}
-    }
-    i {
-	color: white;
-    }
-}
-
-#back-link {
-    margin-top: 10px;
+#cancel-account {
     text-align: center;
+    p {
+	color: black;
+    }
+    form {
+	background: transparent;
+	box-shadow: none;
+	border: none;
+    }
 }
 
-.email {
-    width: 800px;
+form.edit_user {
+    width: 50%;
     margin: auto;
+    margin-bottom: 30px;
+    input#user_email {
+        width: 50%;
+    }
 }
