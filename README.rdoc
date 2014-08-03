@@ -1,5 +1,3 @@
-link:../../app/assets/images/banner_skinny.png
-
 = Cal Raijin Taiko Website Revamp
 
 This is a side project I'm working on to familiarize myself with
