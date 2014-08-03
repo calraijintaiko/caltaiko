@@ -16,7 +16,7 @@
         = @member.name
       %p
         %strong Gen:
-        = number_with_precision(@member.gen, precision: 0)
+        = link_to number_with_precision(@member.gen, precision: 0), "gen/#{@member.gen}"
       %p
         %strong Major:
         = @member.major

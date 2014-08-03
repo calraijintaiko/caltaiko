@@ -52,4 +52,8 @@ class Member < ActiveRecord::Base
   def self.alumni
     return Member.where(current: false).order('name ASC, gen')
   end
+
+  def self.gen(id)
+    return Member.where("gen = ?", id).order('name ASC')
+  end
 end

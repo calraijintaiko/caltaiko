@@ -65,6 +65,11 @@ class MembersController < ApplicationController
     @alumni = Member.alumni
   end
 
+  def gen
+    @gen = params[:id]
+    @members = Member.gen(params[:id])
+  end
+
   private
   def set_member
     @member = Member.friendly.find(params[:id])

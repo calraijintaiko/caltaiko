@@ -15,8 +15,9 @@
 #media-videos
   - @by_year.keys.each do |year|
     %h5= year
-    - @by_year[year].each do |video|
-      = render "show", video: video
+    %section.years-videos
+      - @by_year[year].each do |video|
+        = render "show", video: video
 
 - if user_signed_in?
   .add-new

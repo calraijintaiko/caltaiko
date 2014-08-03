@@ -11,12 +11,23 @@ h5 {
 
 #media-videos {
     h5:not(:first-child) {
-        margin-top: 60px;
+        margin-top: 30px;
+    }
+    section.years-videos {
+        // Use flexbox to keep single / double performances centered
+        display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox;      /* TWEENER - IE 10 */
+        display: -webkit-flex;     /* NEW - Chrome */
+        display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        flex-flow: row wrap;
+        justify-content: space-between;
     }
 }
 
 .video {
     margin-bottom: 30px;
+    display: inline-block;
     h4 {
         font-family: "Lato";
         margin-top: 0px;
