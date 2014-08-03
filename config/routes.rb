@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :articles
+
   get 'about' => 'pages#about'
   get 'contact' => 'pages#contact'
   get 'performances/upcoming' => 'performances#upcoming'
@@ -9,6 +11,7 @@ Rails.application.routes.draw do
   get 'members' => 'members#index'
   get 'members/current' => 'members#current'
   get 'members/alumni' => 'members#alumni'
+  get 'news' => 'articles#index'
   get 'media' => 'videos#index'
 
   resources :members

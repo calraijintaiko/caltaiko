@@ -3,60 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
 
-.login-screen {
-    width: 300px;
-    height: auto;
-    margin-right: auto;
-    margin-left: auto;
-    #login-field {
-        margin-top: 20px;
-        text-align: center;
-    }
-    #password-field {
-        margin-top: 20px;
-        text-align: center;
-    }
-    #bottom-buttons {
-        margin-top: 20px;
-        text-align: center;
-        #sign-in-butt {
-            margin-bottom: 5px;
-        }
-        #forgot-pass-link {
-            width: auto;
-            text-align: center;
-            font-size: 12px;
-            margin-bottom: 10px;
-            a {
-                color: white;
-            }
-        }
-    }
-}
-
-#register-screen {
-    width: 200px;
-    height: auto;
-    margin: 0 auto;
-    #login-info-field {
-    }
-    #password-field {
-	text-align: center;
-        margin-bottom: 10px;
-    }
-    #sign-in-sign-up {
-	width: max-content;
-        text-align: center;
-        margin-bottom: 10px;
-	#sign-up {
-	    display: inline;
-	}
-	#sign-in {
-	    display: inline;
-	}
-    }
-}
-
 #cancel-account {
     text-align: center;
     p {
@@ -75,5 +21,50 @@ form.edit_user {
     margin-bottom: 30px;
     input#user_email {
         width: 50%;
+    }
+}
+
+form.new_user {
+    width: 40%;
+    margin: auto;
+    input {
+        width: 40%;
+    }
+    input.btn {
+        width: auto;
+    }
+    input#user_email {
+        width: 60%;
+    }
+}
+
+#shared-links {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#login {
+    form.new_user {
+        width: 40%;
+        text-align: center;
+        .input {
+            text-align: center;
+            input {
+                display: block;
+                margin: auto;
+                margin-top: 10px;
+            }
+        }
+        #forgot-pass {
+            margin-top: 20px;
+        }
+    }
+}
+
+#forgot-pass {
+    form.new_user {
+        input#user_email {
+            width: 70%;
+        }
     }
 }

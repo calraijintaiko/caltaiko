@@ -1,0 +1,10 @@
+%header
+  %h2 Sign in
+
+#login
+  = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    = f.input :login
+    = f.input :password
+    = f.button :submit, "Sign In"
+    #forgot-pass
+      = render "devise/shared/links"

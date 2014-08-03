@@ -72,26 +72,13 @@
     }
 }
 
-body.front_page_main #nav-bar .link#home-page,
-body.members_index #nav-bar .link#members-page,
-body.members_current #nav-bar .link#members-page,
-body.members_alumni #nav-bar .link#members-page,
-body.members_show #nav-bar .link#members-page,
-body.members_edit #nav-bar .link#members-page,
-body.members_new #nav-bar .link#members-page,
-body.performances_index #nav-bar .link#performances-page,
-body.performances_upcoming #nav-bar .link#performances-page,
-body.performances_past #nav-bar .link#performances-page,
-body.performances_show #nav-bar .link#performances-page,
-body.performances_edit #nav-bar .link#performances-page,
-body.performances_new #nav-bar .link#performances-page,
-body.performance_videos_index #nav-bar .link#performances-page,
-body.performance_videos_show #nav-bar .link#performances-page,
-body.performance_videos_edit #nav-bar .link#performances-page,
-body.performance_videos_new #nav-bar .link#performances-page,
-body.videos_index #nav-bar .link#media-page,
-body.pages_about #nav-bar .link#about-page,
-body.pages_contact #nav-bar .link#contact-page {
+body.front_page #nav-bar .link#home-page,
+body.members #nav-bar .link#members-page,
+body.performances #nav-bar .link#performances-page,
+body.performance_videos #nav-bar .link#performances-page,
+body.videos #nav-bar .link#media-page,
+body.pages#about #nav-bar .link#about-page,
+body.pages#contact #nav-bar .link#contact-page {
     background-color: $main-color;
     a {
         color: white;
