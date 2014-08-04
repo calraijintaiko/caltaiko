@@ -163,12 +163,58 @@ body {
     z-index: -1;
     border-radius: 0px;
     box-shadow: 0 0 0 7px $main-color;
+    padding: 20px;
+    * {
+        color: white;
+        font-family: "Lato";
+        word-spacing: 1px;
+    }
+    h1 {
+        display: inline;
+        color: white;
+        margin-bottom: 0px;
+    }
+    small {
+        color: white;
+        font-family: "Lato";
+        margin-top: 0px;
+        display: block;
+    }
     p {
-        padding: 20px;
-        margin: 0px;
+        margin-top: 20px;
+        padding: 0px;
+        text-align: left;
+    }
+    p:first-child {
+        margin-top: 0px;
+    }
+    p:last-child {
+        margin-bottom: 0px;
     }
     a {
         color: white;
+    }
+    strong {
+        color: $strong-color;
+        a {
+            color: $strong-color;
+            text-decoration: none;
+        }
+    }
+    blockquote {
+        background-color: #E5E8D1;
+        border-radius: 5px;
+        border: 2px $sub-color-2 solid;
+        padding: 20px;
+        * {
+            color: $main-color;
+        }
+        p {
+            margin: 0px;
+        }
+        p:not(:first-child) {
+            margin-top: 20px;
+        }
     }
 }
 

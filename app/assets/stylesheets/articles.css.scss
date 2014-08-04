@@ -8,7 +8,6 @@ article.article {
     .text-wrapper {
         width: 800px;
         margin: auto;
-        padding: 10px;
         .edit-icons {
             display: inline-block;
             margin-left: 10px;
@@ -16,48 +15,6 @@ article.article {
                 padding-right: 5px;
                 width: 20px;
                 height: 20px;
-            }
-        }
-        h1 {
-            display: inline;
-            color: white;
-            margin-bottom: 0px;
-        }
-        small {
-            color: white;
-            font-family: "Lato";
-            margin-top: 0px;
-            display: block;
-        }
-        * {
-            color: white;
-            font-family: "Lato";
-            word-spacing: 1px;
-        }
-        strong {
-            color: #EEF268;
-            a {
-                color: #EEF268;
-            }
-        }
-        p {
-            margin-top: 20px;
-            padding: 0px;
-            text-align: left;
-        }
-        blockquote {
-            background-color: #E5E8D1;
-            border-radius: 5px;
-            border: 2px $sub-color-2 solid;
-            padding: 20px;
-            * {
-                color: $main-color;
-            }
-            p {
-                margin: 0px;
-            }
-            p:not(:first-child) {
-                margin-top: 20px;
             }
         }
     }
