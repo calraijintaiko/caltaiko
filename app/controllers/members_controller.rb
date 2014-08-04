@@ -67,7 +67,11 @@ class MembersController < ApplicationController
 
   def gen
     @gen = params[:id]
-    @members = Member.gen(params[:id])
+    if @gen.to_i <= 0
+      redirect_to members_path
+    else
+      @members = Member.gen(params[:id])
+    end
   end
 
   private
