@@ -7,9 +7,11 @@
   og: { title: title, description: description, image: image,
   url: request.original_url }
 
-- if user_signed_in?
-  .add-new
-    = link_to image_tag("icons/add.png"), new_article_path
+%header
+  %h1.link-header
+    = link_to "NEWS", "/news"
+    - if user_signed_in?
+      = link_to image_tag("icons/add.png"), new_article_path
 
 = render "news_feed", articles: @articles
 

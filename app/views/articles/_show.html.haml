@@ -1,8 +1,8 @@
 %article.article
   .text-wrapper
     %h1= article.title
-    %section.edit-icons
-      - if user_signed_in?
+    - if user_signed_in?
+      %section.edit-icons
         = link_to image_tag("icons/edit.png"), edit_article_path(article)
         = link_to image_tag("icons/delete.png"), articles_path(article), method: :delete,
           data: { confirm: "Are you sure you'd like to delete article '#{article.title}'?" }

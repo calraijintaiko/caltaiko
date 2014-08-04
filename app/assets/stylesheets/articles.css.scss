@@ -20,6 +20,10 @@ article.article {
     }
 }
 
+article.article:first-child {
+    margin-top: 30px;
+}
+
 form.new_article, form.edit_article {
     margin-left: 7px;
     textarea {
