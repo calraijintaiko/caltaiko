@@ -260,7 +260,7 @@ DEPENDENCIES
   pg
   rails (= 4.1.2)
   rails_12factor
-  redcarpet (~> 3.0.0)
+  redcarpet (~> 3.0)
   rspec-rails
   rubygems-update (~> 2.3.0)
   sass-rails (~> 4.0.3)

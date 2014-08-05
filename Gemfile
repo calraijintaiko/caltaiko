@@ -67,7 +67,7 @@ gem 'metamagic'
 # Allows for use of Haml rather than standard erb
 gem 'haml'
 gem 'haml-rails', group: :development
-gem 'redcarpet', '~> 3.0.0'
+gem 'redcarpet', '~> 3.0'
 
 # Prettier forms
 gem 'simple_form'
