@@ -6,7 +6,9 @@ class Article < ActiveRecord::Base
   validates :text, presence: true
 
   def year
-    return self.date.strftime("%Y")
+    if !(self.date.nil?)
+      return self.date.strftime("%Y")
+    end
   end
 
   def slug_candidates

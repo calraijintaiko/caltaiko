@@ -27,12 +27,16 @@ class Performance < ActiveRecord::Base
 
   # Returns the year of a specific performance.
   def year
-    return self.date.strftime("%Y")
+    if !(self.date.nil?)
+      return self.date.strftime("%Y")
+    end
   end
 
   # Returns the full date of a specific performance, in format YEAR MONTH DAY.
   def full_date
-    return self.date.to_date
+    if !(self.date.nil?)
+      return self.date.to_date
+    end
   end
 
   # Generates a unique slug for a performance.
