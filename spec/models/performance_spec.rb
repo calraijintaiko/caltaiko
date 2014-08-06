@@ -72,4 +72,14 @@ describe Performance do
       end
     end
   end
+
+  describe "getting all videos of this performance" do
+    it "returns all videos that belong to this performance" do
+      perf = create(:performance, id: 6)
+      vid1 = create(:performance_video, performance_id: 6)
+      vid2 = create(:performance_video, performance_id: 6)
+      expect(perf.performance_videos).to include(vid1, vid2)
+      expect(perf.performance_videos.length).to eq(2)
+    end
+  end
 end
