@@ -11,7 +11,7 @@
   %section.performance-deets
     %h3= performance.title.upcase
     %p
-      - if performance.date.to_date >= Time.new
+      - if performance.upcoming?
         = performance.date.strftime("%A, %B %d, %l:%M%p").upcase
         |
         = performance.location.upcase
