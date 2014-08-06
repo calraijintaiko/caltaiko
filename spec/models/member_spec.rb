@@ -28,7 +28,7 @@ describe Member do
     expect(build(:member, bio: nil)).to_not be_valid
   end
 
-  describe "when getting either all current members or all alumni" do
+  describe "getting all current members or alumni" do
     before :each do 
       @current1 = create(:member, current: true)
       @current2 = create(:member, current: true)
@@ -51,12 +51,14 @@ describe Member do
     end
   end
 
-  it "returns all members of a certain gen" do
-    tom = create(:member, gen: 1)
-    andrew = create(:member, gen: 1)
-    butt = create(:member, gen: 10)
-    expect(Member.gen(1)).to include(tom, andrew)
-    expect(Member.gen(1)).to_not include butt
+  describe "getting all members of a certain gen" do
+    it "returns all members of that gen" do
+      tom = create(:member, gen: 1)
+      andrew = create(:member, gen: 1)
+      butt = create(:member, gen: 10)
+      expect(Member.gen(1)).to include(tom, andrew)
+      expect(Member.gen(1)).to_not include butt
+    end
   end
 
 end
