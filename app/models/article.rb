@@ -11,11 +11,17 @@ class Article < ActiveRecord::Base
     end
   end
 
+def full_date
+  if !(self.date.nil?)
+    return self.date.to_date
+  end
+end
+
   def slug_candidates
     [
      :title,
      [:title, year],
-     [:title, :date]
+     [:title, full_date]
     ]
   end
 
