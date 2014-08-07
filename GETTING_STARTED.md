@@ -24,7 +24,7 @@ All rails apps come with a very set, pre-defined setup. Generally you'll find so
 
 ## MVC Pattern
 
-The Model-View-Controller pattern is at the heart of how Rails operates. You can find a better explanation [here](http://betterexplained.com/articles/intermediate-rails-understanding-models-views-and-controllers/), but the general idea is that every url route maps to a specific method of a Controller, and each Controller method (usually, if it's a get not a post) has a corresponding view. When the controller method is called, it gets the data it needs by calling methods from the model and storing it as an instance variable, where it can be accessed by the view.
+The Model-View-Controller pattern is at the heart of how Rails operates. You can find a better explanation [here](http://betterexplained.com/articles/intermediate-rails-understanding-models-views-and-controllers/), but the general idea is that every url route maps to a specific method of a Controller, and each Controller method (usually, if it's a GET not a POST) has a corresponding view. When the controller method is called, it gets the data it needs by calling methods from the model and storing it as an instance variable, where it can be accessed by the view.
 
 **Controllers** pass the needed data from the model to the view by storing it as instance variables. Every (public) controller method has a corresponding route; if it is a GET route it has a corresponding view as well.
 
@@ -52,7 +52,7 @@ Root gets a special command, but the general layout is `get 'a_path' => 'control
 
 Any symbols used in the path will be accessible to the controller method through the params hash. For instance, the route `get 'members/gen/:id' => 'members#gen` will call the `gen` method of the MembersController no matter what `:id` is. Inside the `gen` method, calling `params[:id]` will return that corresponding portion of the path.
 
-Resources get a little helper command to more easily set up their routes. The command `resources :articles` will automatically create get routes for `article/show/:id`, `article/edit/:id`, `article/new`, and `article/index`, where each of those routes to the corresponding method in the ArticlesController (show, edit, new, or index). It also creates post routes for delete and update.
+Resources get a little helper command to more easily set up their routes. The command `resources :articles` will automatically create GET routes for `article/show/:id`, `article/edit/:id`, `article/new`, and `article/index`, where each of those routes to the corresponding method in the ArticlesController (show, edit, new, or index). It also creates POST routes for delete and update.
 
 ## Assets
 
