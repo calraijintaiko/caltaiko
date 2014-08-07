@@ -65,6 +65,7 @@ class MembersController < ApplicationController
     @alumni = Member.alumni
   end
 
+  # Gives all members of inputted gen, or returns to index if input invalid.
   def gen
     @gen = params[:id]
     if @gen.to_i <= 0
