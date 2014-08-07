@@ -26,6 +26,8 @@ All rails apps come with a very set, pre-defined setup. Generally you'll find so
 
 The Model-View-Controller pattern is at the heart of how Rails operates. You can find a better explanation [here](http://betterexplained.com/articles/intermediate-rails-understanding-models-views-and-controllers/), but the general idea is that every url route maps to a specific method of a Controller, and each Controller method (usually, if it's a get not a post) has a corresponding view. When the controller method is called, it gets the data it needs by calling methods from the model and storing it as an instance variable, where it can be accessed by the view.
 
+**Controllers** pass the needed data from the model to the view by storing it as instance variables. Every (public) controller method has a corresponding route; if it is a GET route it has a corresponding view as well.
+
 **Models** should handle all of the "business logic" of figuring out how to get certain information. They will be the ones querying the database and reformatting data to fit the controller's needs. They also handle things like input validation and slug generation.
 
 **Views** are the templates that build up the actual display users see. They should handle only formatting and view logic, ie "show this only if user logged in" or "display all members like this" kind of stuff. Though you can write ruby code in views, any kind of data-manipulation should be handled in the model.
@@ -34,7 +36,7 @@ The Model-View-Controller pattern is at the heart of how Rails operates. You can
 
 Views are generally written in html with erb, which stands for "embedded-ruby." I switched over from html & erb to [haml](http://haml.info/), since I think it's much easier to write and read. The original erb files can be found in the `erb` directory; if you're having trouble reading the haml files try finding their corresponding erb equivalent and comparing them (the erb ones might become oudated after a while though).
 
-Rather than having each view create the entire page, Rails makes it very easy to have a general page layout where only the content changes. On each webpage, the file `app/views/layouts/application.html.haml` is *always* used. This has many advantages, including that you don't need to rewrite the head every file. If you notice, in that file is a `yield` statement. This `yield` basically tells Rails to pause from reading `application.html.haml` and jump to whatever view the route specifies. 
+Rather than having each view create the entire page, Rails makes it very easy to have a general page layout where only the content changes. On each webpage, the template `app/views/layouts/application.html.haml` is *always* used. This has many advantages, including that you don't need to rewrite the head every file. If you notice, in that file is a `yield` statement. This `yield` basically tells Rails to pause from reading `application.html.haml` and jump to whatever view the route specifies. 
 
 ## Resources
 
