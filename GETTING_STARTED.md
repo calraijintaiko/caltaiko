@@ -42,7 +42,7 @@ Resources also have defined parameters that correspond to columns in their datab
 
 One of the most important files is `config/routes.rb`, which tells Rails how everything is connected. If you look at the file, you'll see the very first (non-commented) line is setting the root of the app, with `root 'front_page#main'`. This tells rails that when the user navigates to the site with nothing after the domain, ie just `www.example.com`, the `main` method of the FrontPageController wil be run.
 
-Root gets a special command, but the general layout is `get 'path' => 'controller#method', where if the user navigates to `www.example.com/path` the `method` method of the `controller` controller will be run, and the view `app/views/controller/method.html.haml` will be displayed.
+Root gets a special command, but the general layout is `get 'path' => 'controller#method'`, where if the user navigates to `www.example.com/path` the `method` method of the `controller` controller will be run, and the view `app/views/controller/method.html.haml` will be displayed.
 
 Any symbols used in the path will be accessible to the controller method through the params hash. For instance, the route `get 'members/gen/:id' => 'members#gen` will call the `gen` method of the MembersController no matter what `:id` is. Inside the `gen` method, calling params[:id] will return that corresponding portion of the path.
 
