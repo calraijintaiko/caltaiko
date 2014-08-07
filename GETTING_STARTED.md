@@ -64,11 +64,23 @@ If you look at the `app/javascripts` directory, you'll see a number of javascrip
 
 Going back to the `XXXX` whatever, this is a hash generated from the contents of the single combined `application.js` file. This lets Rails know when the contents have been changed, so that if necessary it can send the new file. Note that when it concatenates the files Rails also "uglifies" them with the `uglifier` gem. Basically this just means it strips whitespace wherever possible, so that the file is as small as possible.
 
+This whole process of concatenating and minifying only occurs in production mode, which means when you're testing your code locally in development mode each file will be linked in individually. But Rails is smart enough that any required file is still linked.
+
 ## Styling
 
-A very similar process occurs for stylesheets. the `app/assets/stylesheets` directory contains an `application.css` file with a few `require` statements, including a `require_tree .` line that ensures all files in the directory are grabbed. This one is a bit different in that you're free to add styling to the `application.css` file, with the only downside that you won't be able to use SASS.
+A very similar process occurs for stylesheets. The `app/assets/stylesheets` directory contains an `application.css` file with a few `require` statements, including a `require_tree .` line that ensures all files in the directory are bundled in. It differs a bit from the `application.js` file in that you're free to add styling to the `application.css` file, with the only downside that you won't be able to use SASS.
 
-Since all page receive only the single `application-XXXXX.css` file, every single styling file you create will apply to all pages of the website. This makes clear use of classes and ids very important, as otherwise things will affect parts of the website you didn't intend them to.
+Since all pages receive only the single `application-XXXXX.css` file, every single styling file you create will apply to all pages of the website. This makes clear use of classes and ids very important, as otherwise things will affect parts of the website you didn't intend them to.
+
+## Environments
+
+Rails has three environments: production, development, and testing. Each of these three environments is treated a bit differently, has their own databases, and even has their own gems. 
+
+**Production** is where the code is run when it's actually being deployed; assets are compiled and minified, all queries go to the production database, and the logs go into `log/production.log`. You will rarely, if ever, be in production mode yourself, unless you want to make absolutely sure something doesn't display differently in production from development (it shouldn't). If you want to, though, you can enter production mode with `rails server -e production`. Just make sure you precompile your assets with `rake assets:precompile`.
+
+**Development** is where you will almost always be working. This is the default mode, and it's what rails starts up in with the `rails s` command. Development is also the environment used when generating files through commands such as `rails g resource Article title:string`.
+
+**Testing** is used when running tests. Testing also has it's own database and gems. The tests database doesn't actually get populated though; it's flushed after every test is run.
 
 ## Testing
 
