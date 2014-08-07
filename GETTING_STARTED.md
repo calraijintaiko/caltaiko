@@ -28,9 +28,13 @@ The Model-View-Controller pattern is at the heart of how Rails operates. You can
 
 **Models** should handle all of the "business logic" of figuring out how to get certain information. They will be the ones querying the database and reformatting data to fit the controller's needs. They also handle things like input validation and slug generation.
 
-**Views** should handle only formatting and view logic, ie "show this only if user logged in" or "display all members like this" kind of stuff. Though you can write ruby code in views, any kind of data-manipulation should be handled in the model.
+**Views** are the templates that build up the actual display users see. They should handle only formatting and view logic, ie "show this only if user logged in" or "display all members like this" kind of stuff. Though you can write ruby code in views, any kind of data-manipulation should be handled in the model.
+
+### Views in more detail
 
 Views are generally written in html with erb, which stands for "embedded-ruby." I switched over from html & erb to [haml](http://haml.info/), since I think it's much easier to write and read. The original erb files can be found in the `erb` directory; if you're having trouble reading the haml files try finding their corresponding erb equivalent and comparing them (the erb ones might become oudated after a while though).
+
+Rather than having each view create the entire page, Rails makes it very easy to have a general page layout where only the content changes. On each webpage, the file `app/views/layouts/application.html.haml` is *always* used. This has many advantages, including that you don't need to rewrite the head every file. If you notice, in that file is a `yield` statement. This `yield` basically tells Rails to pause from reading `application.html.haml` and jump to whatever view the route specifies. 
 
 ## Resources
 
@@ -40,7 +44,7 @@ Resources also have defined parameters that correspond to columns in their datab
 
 ## Routing
 
-One of the most important files is `config/routes.rb`, which tells Rails how everything is connected. If you look at the file, you'll see the very first (non-commented) line is setting the root of the app, with `root 'front_page#main'`. This tells rails that when the user navigates to the site with nothing after the domain, ie just `www.example.com`, the `main` method of the FrontPageController wil be run.
+One of the most important files in a Rails app is `config/routes.rb`, which tells Rails how everything is connected. If you look at the file, you'll see the very first (non-commented) line is setting the root of the app, with `root 'front_page#main'`. This tells rails that when the user navigates to the site with nothing after the domain, ie just `www.example.com`, the `main` method of the FrontPageController wil be run.
 
 Root gets a special command, but the general layout is `get 'path' => 'controller#method'`, where if the user navigates to `www.example.com/path` the `method` method of the `controller` controller will be run, and the view `app/views/controller/method.html.haml` will be displayed.
 
@@ -50,4 +54,48 @@ Resources get a little helper command to more easily set up their routes. The co
 
 ## Assets
 
-Assets are things such as images, javascript files, or styling files, and are located in either the `app/assets`, `vendor/assets`, or `lib/assets` directories. 
+Assets are things like images, javascript files, or styling files, and are located in either the `app/assets`, `vendor/assets`, or `lib/assets` directories. Rails uses a framework known as the asset pipeline to make these assets easily available to your app, as well as to minify them as much as possible. For instance, in order to embed an image `app/assets/images/banner.png` in a view, you could use the command `image_tag("banner.png")`, and Rails will automatically look for a file named `banner.png` in all three asset locations. What happens if you have multiple files named `banner.png` you ask? ...Why would you do that? Stop trying to break things on purpose you butt.
+
+## Javascripts
+
+If you look at the `app/javascripts` directory, you'll see a number of javascript (or coffeescript rather) files. Yet if you look at the Page Source of the actual website, you'll see that only one javascript file is loaded on the page, an `application-XXXXXXXXXX.js`. Ignoring the `XXXXXXXXX` for the moment, this is because Rails concatenates all of the javascript files in your asset directories into that single file. The reason for this has to do with how browsers load webpages, but basically all you need to know is that it's faster. If you look at `app/assets/application.js` you'll see that it does not actually contain any code, but rather a bunch of require statements (or at least it shouldn't contain any code; you can put stuff in there but it's not good practice). Those `require` statements tell Rails what files it needs to smoosh into the single `application-XXX.js` file. Any files in the `app/assets/javascripts` directory are included by default, because of the `require_tree .` line. For files such as `facebook.js.coffee`, which is in the `vendor/assets/javascripts` directory, you need a `require facebook` line. Note that you only need the part of the filename before the extensions, and since `vendor/assets/javascripts` is on the asset pipeline, you don't need any more path than the filename.
+
+Going back to the `XXXX` whatever, this is a hash generated from the contents of the single combined `application.js` file. This lets Rails know when the contents have been changed, so that if necessary it can send the new file. Note that when it concatenates the files Rails also "uglifies" them with the `uglifier` gem. Basically this just means it strips whitespace wherever possible, so that the file is as small as possible.
+
+## Styling
+
+A very similar process occurs for stylesheets. the `app/assets/stylesheets` directory contains an `application.css` file with a few `require` statements, including a `require_tree .` line that ensures all files in the directory are grabbed. This one is a bit different in that you're free to add styling to the `application.css` file, with the only downside that you won't be able to use SASS.
+
+Since all page receive only the single `application-XXXXX.css` file, every single styling file you create will apply to all pages of the website. This makes clear use of classes and ids very important, as otherwise things will affect parts of the website you didn't intend them to.
+
+## Testing
+
+I set up this app to use Rspec for all testing. All test files are contained in the `spec` directory, broken down into types such as `models` or `controllers`. The main idea of Rspec tests are that they should read like a dialogue. For instance, in the `spec/models/article_spec.rb` test file, imagine a dialogue that goes something like this:
+
+>"Describe an Article"
+>
+>"It has a valid factory"
+>
+>"It is invalid without a title"
+>
+>"It is invalid without a date"
+>
+>etc
+
+The tests also use a gem called FactoryGirl to create test data. FactoryGirl uses factories to create resource instances with default values. All the factories are contained in `spec/factories`, with a factory for each resource. I used the faker gem to create random data, so that each resource instance you create is given random parameters.
+
+Looking again at `spec/models/article_spec.rb`, you'll see a number of `create(:article)` or `build(:article)` commands throughout. Those `create` and `build` commmands are actually short for `FactoryGirl.create` and `FactoryGirl.build`, usable in that short form because of the line `config.inlude FactoryGirl::Syntax::Methods` in `spec/rails_helper.rb`. Though they seem synonymous, there are a couple key differences between them:
+
+1. `create` saves the resource instance to the database with the inputted parameters, allowing it to be accessed by a later test in the same frame. It does not test validations before creation.
+
+1. `build` tests the inputted parameters for validity against the models validations before creating the instance. It does not save to the database, and thus as soon as that test finishes the instance is gone.
+
+If you create or build a resource using only `create(:resource_name)` (or build), it will be created using the default values given in the corresponding factory file. Any of those parameters can be freely overwritten, however, by simply passing them in as a symbol.
+
+The actual testing statements are written using the `expect(____).to` syntax. Looking at a few examples should make it pretty clear how it works, but basically it checks whatever is in the `expect` statement against the statement to the right. `be_valid`, one of the check statements you'll see often, checks to make sure the instance was created without raising any validation errors.
+
+Tests are run using the `rspec` command from the root directory. You can either run all the tests at once with just plain `rspec`, or you can give a specific file, such as `rspec spec/models/article_spec.rb`. You may notice that testing is generally pretty slow; to speed it up, prepend the command `spring` to your test commands. This will cause the tests to be run through Spring, an app preloader that keeps it running in the background. Spring will stop when you close the terminal window, or you can just run `spring stop` to manually kill it.
+
+If you are going to be making a lot of changes you can automate the testing to run whenever you make a change to a file that has a corresponding spec file. Run the command `guard` to enter the testing interface. Now, whenever you modify (and save) a file it's test will automically be run. You can exit out of the guard interpreter with `quit`.
+
+Make sure to always run `rspec` before pushing changes to deployment!!
