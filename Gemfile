@@ -78,7 +78,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'guard-rspec'
   gem 'spring-commands-rspec'
-  gem 'rb-fsevent' if `uname`=~ /Darwin/
+  gem 'rb-fsevent'
 end
 
 group :test do
