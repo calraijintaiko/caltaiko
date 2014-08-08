@@ -16,11 +16,8 @@ describe Article do
 
   describe "getting all current articles" do
     it "returns all articles marked current" do
-      current1 = create(:article, current: true)
-      current2 = create(:article, current: true)
-      past = create(:article, current: false)
-      expect(Article.current).to include(current1, current2)
-      expect(Article.current).to_not include past
+      created_current = create_list(:article, 14, current: true)
+      expect(Article.current).to match_array created_current
     end
   end
 

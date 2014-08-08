@@ -41,45 +41,41 @@ describe Performance do
   describe "checking if a performance is upcoming" do
     it "returns true if performance date is in the future" do
       perf = build(:performance, date: Time.new(Time.now.year + 1))
-      expect(perf.upcoming?).to be_truthy
+      expect(perf.upcoming?).to be true
     end
 
     it "returns false if performance date is in the past" do
       perf = build(:performance, date: Time.now - 1)
-      expect(perf.upcoming?).to be_falsey
+      expect(perf.upcoming?).to be false
     end
   end
 
   describe "getting all upcoming or past performances" do
     before :each do
-      @upcoming1 = create(:performance, date: Time.new(Time.now.year + 1))
-      @upcoming2 = create(:performance, date: Time.new(Time.now.year + 1))
-      @past1 = create(:performance, date: Time.now - 1)
-      @past2 = create(:performance, date: Time.now - 1)
+      @created_upcoming = create_list(:performance, rand(5..20),
+                                      date: Time.new(Time.now.year + 1))
+      @created_past = create_list(:performance, rand(5..20), date: Time.now - 1)
     end
 
     context "for upcoming performances" do
       it "returns all upcoming performances" do
-        expect(Performance.upcoming_performances).to include(@upcoming1, @upcoming2)
-        expect(Performance.upcoming_performances).to_not include(@past1, @past2)
+        expect(Performance.upcoming_performances).to match_array @created_upcoming
       end
     end
 
     context "for past performances" do
       it "returns all past performances" do
-        expect(Performance.past_performances).to include(@past1, @past2)
-        expect(Performance.past_performances).to_not include(@upcoming1, @upcoming2)
+        expect(Performance.past_performances).to match_array @created_past
       end
     end
   end
 
   describe "getting all videos of this performance" do
     it "returns all videos that belong to this performance" do
-      perf = create(:performance, id: 6)
-      vid1 = create(:performance_video, performance_id: 6)
-      vid2 = create(:performance_video, performance_id: 6)
-      expect(perf.performance_videos).to include(vid1, vid2)
-      expect(perf.performance_videos.length).to eq(2)
+      id = rand(1..100)
+      perf = create(:performance, id: id)
+      vids = create_list(:performance_video, rand(10..20), performance_id: id)
+      expect(perf.performance_videos).to match_array vids
     end
   end
 end

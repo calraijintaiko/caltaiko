@@ -30,34 +30,29 @@ describe Member do
 
   describe "getting all current members or alumni" do
     before :each do 
-      @current1 = create(:member, current: true)
-      @current2 = create(:member, current: true)
-      @alumnus1 = create(:member, current: false)
-      @alumnus2 = create(:member, current: false)
+      @created_current = create_list(:member, 23, current: true)
+      @created_alumni = create_list(:member, 14, current: false)
     end
 
     context "for current members" do
       it "returns all current members" do
-        expect(Member.current_members).to_not include(@alumnus1, @alumnus2)
-        expect(Member.current_members).to include(@current1, @current2)
+        expect(Member.current_members).to match_array @created_current
       end
     end
 
     context "for alumni" do
       it "returns all alumni" do
-        expect(Member.alumni).to include(@alumnus1, @alumnus2)
-        expect(Member.alumni).to_not include(@current1, @current2)
+        expect(Member.alumni).to match_array @created_alumni
       end
     end
   end
 
   describe "getting all members of a certain gen" do
     it "returns all members of that gen" do
-      tom = create(:member, gen: 1)
-      andrew = create(:member, gen: 1)
-      butt = create(:member, gen: 10)
-      expect(Member.gen(1)).to include(tom, andrew)
-      expect(Member.gen(1)).to_not include butt
+      gen_1 = create_list(:member, 8, gen: 1)
+      gen_10 = create_list(:member, 40, gen: 10)
+      expect(Member.gen(1)).to match_array gen_1
+      expect(Member.gen(10)).to match_array gen_10
     end
   end
 
