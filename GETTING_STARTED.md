@@ -16,7 +16,7 @@ All rails apps come with a very set, pre-defined setup. Generally you'll find so
 + `spec` contains all of the test scripts. By default these would be in a `test` directory, but since we're using [Rspec](http://rspec.info/) to test we have `spec`.
 + `vendor` contains all external assets, such as the google-analytics or facebook javascript code.
 + `.gitignore` is used by git to know which files it can ignore (duh). Anything you list here will not be checked into the version control system.
-+ `.ruby-version` is used by Heroku to know which version of ruby it should use when deploying.
++ `.ruby-version` is used by rvm to know which version of ruby to use.
 + `Gemfile` is a listing of the gems required by this app. This is what you will edit to add additional gems; when you run `bundle install` bundler is looking through it to find out what it needs to get.
 + `Gemfile.lock` is created by bundler when you run `bundle install`; it lists the exact versions of each gem you're currently using, as well as their dependencies.
 + `Procfile` I don't really understand myself; all I know is I followed the instructions [here](https://devcenter.heroku.com/articles/getting-started-with-rails4#webserver) haha
