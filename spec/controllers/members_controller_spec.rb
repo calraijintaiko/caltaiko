@@ -68,7 +68,7 @@ describe MembersController do
     end
 
     context "GET current" do
-      it "gets all current members" do
+      it "assigns @current to all current members" do
         get :current
         expect(assigns(:current)).to match_array @created_current
       end
@@ -80,7 +80,7 @@ describe MembersController do
     end
 
     context "GET alumni" do
-      it "gets all alumni" do
+      it "assigns @alumni to all alumni" do
         get :alumni
         expect(assigns(:alumni)).to match_array @created_alumni
       end
