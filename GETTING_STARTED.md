@@ -2,6 +2,8 @@
 
 Rails projects can be super intimidating at first, with all the gems and models and controllers and views to look through. Hopefully this file helps give you some understanding of how everything works!
 
+For documentation that goes into each model and controller more specifically, run the command `rake doc:app` from the root project directory, then open the generated file `doc/app/index.html`.
+
 ## General Layout
 
 All rails apps come with a very set, pre-defined setup. Here I'll go over what you'll find for this app specifically, but generally you'll find some combination of the same:
