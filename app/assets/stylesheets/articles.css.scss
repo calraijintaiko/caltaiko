@@ -3,6 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
 
+section.news-feed {
+    hr {
+        margin-top: 55px;
+        width: 60%;
+    }
+    hr:last-child {
+        display: none;
+    }
+}
+
 article.article {
     margin-top: 55px;
     .text-wrapper {
