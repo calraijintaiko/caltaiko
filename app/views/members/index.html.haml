@@ -15,7 +15,7 @@
 = render "current_members", members: @current
 
 %header
-  %h2.link-header= link_to "ALUMNI", "/members/alumni"
+  %h2.link-header.multi-headers= link_to "ALUMNI", "/members/alumni"
   - if user_signed_in?
     = link_to image_tag("icons/add.png"), new_member_path
 
