@@ -1,14 +1,14 @@
 jQuery(function() {
     return $(window).scroll(function() {
-        var navbar = document.getElementById("nav-header");
-        var distFromTop = function(elem) {
+        var navDistFromTop = function() {
             var pageTop = $(window).scrollTop();
-            //var elemTop = elem.offset().top;
-            elemTop = 215;
+            //var elemTop = $('#nav-header').offset().top;
+            var elemTop = 215;
             return(elemTop - pageTop);
         }
+        var navbar = document.getElementById("nav-header");
         var banner = document.getElementById("banner");
-        if (distFromTop(navbar) <= 0) {
+        if (navDistFromTop() <= 0) {
             banner.className = "header-fixed";
             navbar.className = "fixed";
         } else {
