@@ -16,7 +16,7 @@
 = render "performances_feed", performances: @upcoming
 
 %header
-  %h1.link-header
+  %h1.link-header.multi-headers
     = link_to "PAST PERFORMANCES", "/performances/past"
   - if user_signed_in?
     = link_to image_tag("icons/add.png"), new_performance_path

@@ -41,12 +41,7 @@ h4 {
     margin-bottom: 10px;
 }
 
-h2.form-header {
-    margin-top: 40px;
-}
-
 header {
-    margin-top: 40px;
     h1, h2 {
         display: inline-block;
     }
@@ -55,6 +50,9 @@ header {
         height: 20px;
         display: inline-block;
         margin-left: 5px;
+    }
+    .multi-headers {
+        margin-top: 40px;
     }
 }
 
@@ -224,9 +222,9 @@ body {
 }
 
 #page-content {
-    margin: 0px;
     width: 900px;
     margin: auto;
     margin-bottom: 200px;
+    margin-top: 40px;
 }
 
