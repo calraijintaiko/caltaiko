@@ -4,17 +4,12 @@
 @import "variables";
 
 section.news-feed {
-    hr {
-        margin-top: 55px;
-        width: 30%;
-    }
-    hr:last-child {
-        display: none;
+    article.article:not(:first-child) {
+        margin-top: 75px;
     }
 }
 
 article.article {
-    margin-top: 55px;
     .text-wrapper {
         margin-top: 0px;
         .edit-icons {
