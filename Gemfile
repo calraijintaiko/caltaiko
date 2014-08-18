@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby "2.1.2"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.2'
+gem 'rails', '4.1.5'
 # Use rubygems 2.3.0
 gem 'rubygems-update', '~> 2.3.0'
 # Use Postgres as database for Active Record since required by Heroku
