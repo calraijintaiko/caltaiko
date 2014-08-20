@@ -10,6 +10,7 @@
     display: -ms-flexbox;      /* TWEENER - IE 10 */
     display: -webkit-flex;     /* NEW - Chrome */
     display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
@@ -84,6 +85,7 @@ $alumni-width: 205px;
     display: -webkit-flex;     /* NEW - Chrome */
     display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
     width: 930px;
+    -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
