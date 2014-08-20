@@ -19,3 +19,6 @@
 
 # Ignore environment variable configuration
 /config/local_env.yml
+
+# Ignore text editor generated temp files
+*~
