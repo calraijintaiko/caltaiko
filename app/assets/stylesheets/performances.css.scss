@@ -65,8 +65,11 @@
     width: 925px;
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
+    -webkit-justify-content: left;
     justify-content: left;
+    -webkit-align-items: center;
     align-items: center;
+    -webkit-align-content: center;
     align-content: center;
     .thumb-performance {
         display: inline-block;
