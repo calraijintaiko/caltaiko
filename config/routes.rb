@@ -22,7 +22,12 @@ Rails.application.routes.draw do
   resources :performance_videos
   resources :articles
 
-  devise_for :users
+  if Rails.env.production?
+    devise_for :users, controllers: { registrations: "registrations" }
+  else
+    devise_for :users
+  end
+
   devise_scope :user do
     get "login", :to => "devise/sessions#new"
     get "settings", :to => "devise/registrations#edit"
