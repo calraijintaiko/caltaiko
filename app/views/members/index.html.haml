@@ -5,7 +5,7 @@
 - meta title: title,
   description: description,
   og: { title: title, description: description, image: image,
-  url: URI.join(root_url, members_path) }
+  url: request.original_url }
 
 %header
   %h2.link-header= link_to "CURRENT MEMBERS", "/members/current"
