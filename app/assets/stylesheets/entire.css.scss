@@ -195,6 +195,7 @@ body {
     }
     strong {
         color: $strong-color;
+        font-weight: normal;
         a {
             color: $strong-color;
             text-decoration: none;
