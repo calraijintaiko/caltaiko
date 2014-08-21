@@ -53,7 +53,13 @@ class Member < ActiveRecord::Base
     return Member.where(current: false).order('name ASC, gen')
   end
 
-  def self.gen(id)
-    return Member.where("gen = ?", id).order('name ASC')
+  # Returns all the members of Generation GEN
+  def self.gen(gen)
+    return Member.where("gen = ?", gen).order('name ASC')
+  end
+
+  # Returns all of the generations
+  def self.gens
+    return Member.select(:gen).distinct.order('gen ASC')
   end
 end

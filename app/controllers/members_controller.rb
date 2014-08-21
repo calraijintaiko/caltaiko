@@ -27,6 +27,7 @@ class MembersController < ApplicationController
   def index
     @current = Member.current_members
     @alumni = Member.alumni
+    @gens = Member.gens
   end
 
   # Give member whose ID or slug matches request.
