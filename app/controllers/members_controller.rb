@@ -78,6 +78,10 @@ class MembersController < ApplicationController
     end
   end
 
+  def all_gens
+    @gens = Member.gens
+  end
+
   private
   def set_member
     @member = Member.friendly.find(params[:id])

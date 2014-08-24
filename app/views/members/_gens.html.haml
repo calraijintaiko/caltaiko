@@ -4,4 +4,4 @@
       - gens.each do |gen|
         .gen(itemscope itemtype="http://schema.org/Organization")
           %span.schema-info(itemprop="name")= "Generation #{gen.gen}"
-          = link_to "GENERATION #{gen.gen}", "members/gen/#{gen.gen}", itemprop: "url"
+          = link_to "GENERATION #{gen.gen}", "/members/gen/#{gen.gen}", itemprop: "url"
