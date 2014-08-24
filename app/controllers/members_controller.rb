@@ -59,11 +59,13 @@ class MembersController < ApplicationController
   # Gives all current members, as received from Member model.
   def current
     @current = Member.current_members
+    @gens = Member.gens
   end
 
   # Gives all alumni, as received from Member model.
   def alumni
     @alumni = Member.alumni
+    @gens = Member.gens
   end
 
   # Gives all members of inputted gen, or returns to index if input invalid.

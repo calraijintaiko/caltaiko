@@ -1,0 +1,5 @@
+- if gens.length > 0
+  %header
+    .generations
+      - gens.each do |gen|
+        = link_to "GENERATION #{gen.gen}", "members/gen/#{gen.gen}"

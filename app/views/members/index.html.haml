@@ -14,11 +14,7 @@
 
 = render "current_members", members: @current
 
-- if @gens.length > 0
-  %header
-    .generations
-      - @gens.each do |gen|
-        = link_to "GENERATION #{gen.gen}", "members/gen/#{gen.gen}"
+= render "gens", gens: @gens
 
 %header
   %h2.link-header.multi-headers= link_to "ALUMNI", "/members/alumni"
