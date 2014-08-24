@@ -190,9 +190,12 @@ $bio-width: 450px;
     text-align: center;
     padding: 5px;
     margin-top: 30px;
-    a {
-	display: inline-block;
+    .gen {
+        display: inline-block;
 	margin: 5px 20px;
+    }
+    a {
+	display: block;
 	text-decoration: none;
 	font-family: "Oswald";
     }
