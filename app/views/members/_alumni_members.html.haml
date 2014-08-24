@@ -1,9 +1,9 @@
 %section.alumni
   - members.each do |member|
-    %article.alumnus
+    %article.alumnus(itemscope itemtype="http://schema.org/Person")
       = link_to member_path(member) do
         .link-wrapper
-          %p= member.name
+          %p(itemprop="name")= member.name
           - if user_signed_in?
             %section.edit-icons
               = link_to image_tag("icons/edit.png"), edit_member_path(member)

@@ -1,9 +1,9 @@
 %section.current-members
   - members.each do |member|
-    %article.member
+    %article.member(itemscope itemtype="http://schema.org/Person")
       .member-image
-        = link_to image_tag(member.avatar.url(:thumb)), member_path(member)
-        %p= member.name
+        = link_to image_tag(member.avatar.url(:thumb), itemprop: "image"), member_path(member)
+        %p(itemprop="name")= member.name
 
       - if user_signed_in?
         %section.edit-icons

@@ -7,21 +7,22 @@
   og: { title: title, description: description, image: image,
   url: request.original_url }
 
-%article.individual
-  = image_tag @member.avatar.url(:full)
+%article.individual(itemscope itemtype="http://schema.org/Person")
+  = image_tag @member.avatar.url(:full), itemprop: "image"
   .bio-block
     %section.bio-info
       %p
         %strong Name:
-        = @member.name
+        %span(itemprop="name")= @member.name
       %p
         %strong Gen:
         = link_to number_with_precision(@member.gen, precision: 0), "gen/#{@member.gen}"
+        %span.schema-info(itemprop="memberOf")= "Generation #{@member.gen}"
       %p
         %strong Major:
         = @member.major
 
-      %p= @member.bio
+      %p(itemprop="description")= @member.bio
 
       - if user_signed_in?
         %section.edit-icons
