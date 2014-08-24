@@ -26,11 +26,17 @@
         padding-right: $performance-padding;
         padding-bottom: 0px;
         p {
+            margin-top: -20px;
+            display: inline-block;
             text-align: left;
-            margin-top: -3px;
             margin-bottom: 10px;
             word-spacing: 5px;
             font-family: "Oswald";
+        }
+        p.spacer {
+            font-size: 120%;
+            margin-right: 15px;
+            margin-left: 15px;
         }
         h3 {
             text-shadow: 2px 2px 0px $sub-color-2;
@@ -148,6 +154,7 @@
         color: rgba(0, 0, 0, 0);
     }
     a {
+        z-index: 0;
         color: rgba(0, 0, 0, 0);
     }
 }
