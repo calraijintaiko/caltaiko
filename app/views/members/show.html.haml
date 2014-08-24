@@ -17,7 +17,7 @@
       %p
         %strong Gen:
         = link_to number_with_precision(@member.gen, precision: 0), "gen/#{@member.gen}"
-        %span.schema-info(itemprop="memberOf")= "Generation #{@member.gen}"
+      %span.schema-info(itemprop="memberOf")= "Generation #{@member.gen}"
       %p
         %strong Major:
         = @member.major
