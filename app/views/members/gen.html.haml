@@ -1,4 +1,7 @@
 %header
   %h2 GENERATION #{@gen}
 
-= render "current_members", members: @members
+- if @members.length > 0
+  = render "current_members", members: @members
+- else
+  %p(id="nice-try-wise-guy")= "Unfortunately, there are not yet any members of Generation #{@gen}. Please check back again in #{2004 + @gen.to_i}!"
