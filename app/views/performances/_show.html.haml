@@ -6,7 +6,7 @@
       = performance.description
       %br
       %br
-      = link_to "VIEW EVENT", performance.link, itemprop: "url"
+      = link_to "VIEW EVENT", performance.link
 
   %section.performance-deets
     %span.schema-info(itemprop="startDate" datetime="#{performance.date.to_time.iso8601}")= performance.date.to_time.iso8601
@@ -22,7 +22,7 @@
 
   %section.edit-icons
     - if controller.action_name != "show"
-      = link_to image_tag("icons/view.png"), performance_path(performance)
+      = link_to image_tag("icons/view.png"), performance_path(performance), itemprop: "url"
     - if user_signed_in?
       = link_to image_tag("icons/edit.png"), edit_performance_path(performance)
       = link_to image_tag("icons/delete.png"),
