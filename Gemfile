@@ -52,9 +52,6 @@ gem 'unicorn'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Add New Relic for data analysis
-gem 'newrelic_rpm'
-
 # Enables prettier urls, ie caltaiko.com/members/tom-hata vs caltaiko.com/members/1
 gem 'friendly_id', '~> 5.0.0'
 
