@@ -2,7 +2,7 @@
   %header
     %h2 GENERATION #{@gen}
 
-  %span.schema-info(itemprop="name")= "Generation #{@gen}"
+  %meta(itemprop="name" content="Generation #{@gen}")
 
   - if @members.length > 0
     = render "current_members", members: @members
