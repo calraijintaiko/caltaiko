@@ -1,6 +1,6 @@
 %article.performance(itemscope itemtype="http://schema.org/Event")
   .performance-image
-    = link_to image_tag(performance.banner.url(:display), itemprop: "photo"),
+    = link_to image_tag(performance.banner.url(:display), itemprop: "image"),
       performance.link, target: "_blank"
     %p(itemprop="description")
       = performance.description
@@ -10,7 +10,7 @@
 
   %section.performance-deets
     %span.schema-info(itemprop="startDate" datetime="#{performance.date.to_time.iso8601}")= performance.date.to_time.iso8601
-    %h3(itemprop="summary")= performance.title.upcase
+    %h3(itemprop="name")= performance.title.upcase
     - if performance.upcoming?
       %p= performance.date.strftime("%A, %B %d, %l:%M%p").upcase
       %p.spacer= "|"
