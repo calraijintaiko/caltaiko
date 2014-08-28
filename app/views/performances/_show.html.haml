@@ -9,14 +9,13 @@
       = link_to "VIEW EVENT", performance.link
 
   %section.performance-deets
+    %span.schema-info(itemprop="startDate" datetime="#{performance.date.to_time.iso8601}")= performance.date.to_time.iso8601
     %h3(itemprop="name")= performance.title.upcase
     - if performance.upcoming?
-      %span.schema-info(itemprop="startDate" datetime="#{performance.date.to_time.iso8601}")= performance.date.to_time.iso8601
       %p= performance.date.strftime("%A, %B %d, %l:%M%p").upcase
       %p.spacer= "|"
       %p(itemprop="location")= performance.location.upcase
     - else
-      %span.schema-info(itemprop="endDate" datetime="#{performance.date.to_time.iso8601}")= performance.date.to_time.iso8601
       %p= performance.date.strftime("%A, %B %d, %Y, %l:%M%p").upcase
       %p.spacer= "|"
       %p(itemprop="location")= performance.location.upcase
