@@ -38,6 +38,11 @@
             margin-right: 15px;
             margin-left: 15px;
         }
+	p.where, .what {
+	    // Make them uppercase here instead of in the template so that
+	    // look nicer in Google rich snippets
+	    text-transform: uppercase;
+	}
         h3 {
             text-shadow: 2px 2px 0px $sub-color-2;
             margin-top: 0px;

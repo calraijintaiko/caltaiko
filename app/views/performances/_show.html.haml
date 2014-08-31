@@ -9,17 +9,17 @@
       = link_to "VIEW EVENT", performance.link
 
   %section.performance-deets
-    %h3(itemprop="name")= performance.title.upcase
+    %h3.what(itemprop="name")= performance.title
     - if performance.upcoming?
-      %p
+      %p.when
         %time(itemprop="startDate" datetime="#{performance.date.iso8601}")= performance.date.strftime("%A, %B %d, %l:%M%p").upcase
       %p.spacer= "|"
-      %p(itemprop="location")= performance.location.upcase
+      %p.where(itemprop="location")= performance.location
     - else
-      %p
+      %p.when
         %time(itemprop="startDate" datetime="#{performance.date.iso8601}")= performance.date.strftime("%A, %B %d, %Y, %l:%M%p").upcase
       %p.spacer= "|"
-      %p(itemprop="location")= performance.location.upcase
+      %p.where(itemprop="location")= performance.location
 
   %section.edit-icons
     - if controller.action_name != "show"
