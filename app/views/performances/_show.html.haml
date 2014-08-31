@@ -12,12 +12,12 @@
     %h3(itemprop="name")= performance.title.upcase
     - if performance.upcoming?
       %p
-        %time(itemprop="startDate" datetime="#{performance.date.to_time.iso8601}")= performance.date.strftime("%A, %B %d, %l:%M%p").upcase
+        %time(itemprop="startDate" datetime="#{performance.date.iso8601}")= performance.date.strftime("%A, %B %d, %l:%M%p").upcase
       %p.spacer= "|"
       %p(itemprop="location")= performance.location.upcase
     - else
       %p
-        %time(itemprop="startDate" datetime="#{performance.date.to_time.iso8601}")= performance.date.strftime("%A, %B %d, %Y, %l:%M%p").upcase
+        %time(itemprop="startDate" datetime="#{performance.date.iso8601}")= performance.date.strftime("%A, %B %d, %Y, %l:%M%p").upcase
       %p.spacer= "|"
       %p(itemprop="location")= performance.location.upcase
 
