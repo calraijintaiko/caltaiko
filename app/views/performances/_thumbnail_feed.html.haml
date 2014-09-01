@@ -17,7 +17,7 @@
             = performance.date.strftime("%A, %-m/%-d")
 
         %section.edit-icons
-          - if performance.images_link
+          - if performance.images_link.length > 0
             = link_to image_tag("icons/images.png"), performance.images_link, target: "_blank"
           = link_to image_tag("icons/view.png"), performance_path(performance)
           - if user_signed_in?

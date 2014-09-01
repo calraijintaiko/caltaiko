@@ -22,7 +22,7 @@
       %p.where(itemprop="location")= performance.location
 
   %section.edit-icons
-    - if performance.images_link
+    - if performance.images_link.length > 0
       = link_to image_tag("icons/images.png"), performance.images_link, target: "_blank"
     - if controller.action_name != "show"
       = link_to image_tag("icons/view.png"), performance_path(performance), itemprop: "url"
