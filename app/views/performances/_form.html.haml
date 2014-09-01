@@ -13,6 +13,8 @@
   = f.input :banner
   = f.input :delete_banner, as: :boolean
 
+  = f.input :images_link
+
   %h1 Videos
   #performance_videos
     = f.simple_fields_for :performance_videos do |performance_video|
