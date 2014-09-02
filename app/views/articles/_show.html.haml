@@ -1,12 +1,11 @@
 %article.article
-  .text-wrapper
-    %h1= article.title
-    - if user_signed_in?
-      %section.edit-icons
-        = link_to image_tag("icons/edit.png"), edit_article_path(article)
-        = link_to image_tag("icons/delete.png"), articles_path(article), method: :delete,
-          data: { confirm: "Are you sure you'd like to delete article '#{article.title}'?" }
+  %h1= article.title
+  - if user_signed_in?
+    %section.edit-icons
+      = link_to image_tag("icons/edit_black.png"), edit_article_path(article)
+      = link_to image_tag("icons/delete_black.png"), articles_path(article), method: :delete,
+        data: { confirm: "Are you sure you'd like to delete article '#{article.title}'?" }
 
-    %small= article.date.strftime("%B %-d, %Y")
-    :markdown
-      #{article.text}
+  %small= article.date.strftime("%B %-d, %Y")
+  :markdown
+    #{article.text}
