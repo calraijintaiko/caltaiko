@@ -85,7 +85,7 @@ $alumni-width: 205px;
     display: -ms-flexbox;      /* TWEENER - IE 10 */
     display: -webkit-flex;     /* NEW - Chrome */
     display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
-    width: 930px;
+    width: 920px;
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
     -webkit-justify-content: center;
@@ -97,21 +97,20 @@ $alumni-width: 205px;
         color: white;
     }
     .alumnus {
-        border: 1px $border-color solid;
         width: $alumni-width;
         height: auto;
         margin-right: 25px;
         margin-bottom: 20px;
         display: inline-block;
-        background-color: $main-color;
-        box-shadow: 0 0 0 3px $main-color;
-        border-radius: 0px;
+        background-color: $sub-color-3;
+        box-shadow: 5px 5px 0 0px $sub-color-2;
         .link-wrapper {
             height: 100%;
             p {
                 padding-top: 15px;
                 padding-bottom: 15px;
                 margin: 0px;
+                color: black;
             }
             .edit-icons {
                 position: relative;
