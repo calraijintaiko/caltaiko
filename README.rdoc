@@ -1,8 +1,8 @@
 = Cal Raijin Taiko Website Revamp
 
-This is a side project I'm working on to familiarize myself with
-Rails. If it goes well enough, I might propose using it as a basis for
-our website revamp.
+This is the source code for Cal Raijin Taiko's new website, www.caltaiko.org.
+Many many thanks to {Benjamin Ortiz}[https://github.com/benortiz] for doing much
+of the design work!
 
 == Dependencies:
 
@@ -182,6 +182,12 @@ should now start up the application, and navigating to
    Where <tt>AWS_ACCESS_KEY_ID</tt> is the IAM user Access Key ID,
    <tt>AWS_SECRET_KEY_ID</tt> is the IAM user Secret Access Key, and
    <tt>YOUR_BUCKET_NAME</tt> is the name of the bucket you created.
+
+Before your next Git commit, run git status to make sure the aws_config file is
+not being included (it's listed in the gitignore so it shouldn't be, but make ABSOLUTELY
+SURE!!!). This is extremely important, since if those access keys wind up on GitHub,
+bad people can very easily use them to rack up a bill of several thousand dollars on
+your AWS account.
     
 == Enable emails to be sent through Gmail
 
