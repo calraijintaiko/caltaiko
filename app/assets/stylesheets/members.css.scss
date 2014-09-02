@@ -140,8 +140,7 @@ $alumni-width: 205px;
     img {
         margin-right: 30px;
         display: inline-block;
-        border: 3px $sub-color solid;
-        border-radius: 3px;
+        box-shadow: 5px 5px 0px 0px $sub-color-2;
     }
     .bio-block {
         width: 500px;
@@ -173,6 +172,7 @@ $alumni-width: 205px;
                 margin-right: 10px;
                 width: 30px;
                 height: 30px;
+                box-shadow: none;
             }
         }
     }
