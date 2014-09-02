@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get 'members/gen' => 'members#all_gens'
   get 'members/gen/:id' => 'members#gen'
   get 'news' => 'articles#index'
-  get 'media' => 'videos#index'
+  get 'media' => 'pages#media'
 
   resources :members
   resources :videos

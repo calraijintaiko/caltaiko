@@ -66,4 +66,8 @@ class Performance < ActiveRecord::Base
     return Performance.where("date < ?", Time.new).order('date DESC')
   end
 
+  # Returns all performances that have an images link.
+  def self.have_images
+    return Performance.where.not("images_link = ''")
+  end
 end
