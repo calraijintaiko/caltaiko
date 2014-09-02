@@ -9,26 +9,25 @@
 
 %article.individual(itemscope itemtype="http://schema.org/Person")
   = image_tag @member.avatar.url(:full), itemprop: "image"
-  .bio-block
-    %section.bio-info
-      %p
-        %strong Name:
-        %span(itemprop="name")= @member.name
-      %p
-        %strong Gen:
-        = link_to number_with_precision(@member.gen, precision: 0), "gen/#{@member.gen}"
-      %meta(itemprop="memberOf" content="Generation #{@member.gen}")
-      %p
-        %strong Major:
-        = @member.major
+  %section.bio-block
+    %p
+      %strong Name:
+      %span(itemprop="name")= @member.name
+    %p
+      %strong Gen:
+      = link_to number_with_precision(@member.gen, precision: 0), "gen/#{@member.gen}"
+    %meta(itemprop="memberOf" content="Generation #{@member.gen}")
+    %p
+      %strong Major:
+      = @member.major
 
-      %p(itemprop="description")= @member.bio
+    %p(itemprop="description")= @member.bio
 
-      - if user_signed_in?
-        %section.edit-icons
-          = link_to image_tag("icons/edit.png"), edit_member_path(@member)
-          = link_to image_tag("icons/delete.png"), member_path(@member), method: :delete,
-            data: { confirm: "Are you sure you'd like to delete member #{@member.name}?" }
+    - if user_signed_in?
+      %section.edit-icons
+        = link_to image_tag("icons/edit.png"), edit_member_path(@member)
+        = link_to image_tag("icons/delete.png"), member_path(@member), method: :delete,
+          data: { confirm: "Are you sure you'd like to delete member #{@member.name}?" }
 
 %nav.nav-buttons
   = link_to image_tag("icons/back.png"), members_path

@@ -134,39 +134,32 @@ $alumni-width: 205px;
     }
 }
 
-$bio-width: 450px;
-
 .individual {
-    width: $bio-width + 347px;
     height: auto;
     margin: auto;
     img {
-        margin: 10px;
+        margin-right: 30px;
         display: inline-block;
-        border: 5px $main-color solid;
+        border: 3px $main-color solid;
         border-radius: 3px;
     }
     .bio-block {
-        width: $bio-width;
+        margin-top: 5px;
+        width: 500px;
         height: auto;
         background-color: $main-color;
         box-shadow: 0 0 0 5px $main-color;
         display: inline-block;
         vertical-align: top;
         border: 1px $border-color solid;
-        margin-top: 15px;
-        padding-top: 10px;
-        .bio-info {
-            p {
-                margin-top: 0px;
-                text-align: left;
-                padding-right: 10px;
-                padding-left: 10px;
-            }
-            a {
-                color: white;
-                text-decoration: none;
-            }
+        padding: 25px;
+        p {
+            margin-top: 0px;
+            text-align: left;
+        }
+        a {
+            color: white;
+            text-decoration: none;
         }
         .edit-icons {
             position: relative;
