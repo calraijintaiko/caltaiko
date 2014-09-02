@@ -126,8 +126,12 @@ $alumni-width: 205px;
         }
     }
     .alumnus:hover {
+	zoom: 1; 
+	filter: alpha(opacity=40);
+        opacity: .4;
+        background-color: $main-color;
         p {
-            color: $sub-color;
+            color: white;
         }
     }
 }
