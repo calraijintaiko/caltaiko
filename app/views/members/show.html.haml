@@ -21,7 +21,7 @@
       %strong Major:
       = @member.major
 
-    %p(itemprop="description")= @member.bio
+    %p.bio(itemprop="description")= @member.bio
 
     - if user_signed_in?
       %section.edit-icons

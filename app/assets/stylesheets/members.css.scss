@@ -140,26 +140,28 @@ $alumni-width: 205px;
     img {
         margin-right: 30px;
         display: inline-block;
-        border: 3px $main-color solid;
+        border: 3px $sub-color solid;
         border-radius: 3px;
     }
     .bio-block {
-        margin-top: 5px;
         width: 500px;
         height: auto;
-        background-color: $main-color;
-        box-shadow: 0 0 0 5px $main-color;
+        background-color: $sub-color-3;
+        box-shadow: 5px 5px 0px 0px $sub-color-2;
         display: inline-block;
         vertical-align: top;
-        border: 1px $border-color solid;
         padding: 25px;
         p {
             margin-top: 0px;
             text-align: left;
+            color: black;
         }
         a {
-            color: white;
+            color: black;
             text-decoration: none;
+        }
+        p.bio {
+            margin-bottom: 0px;
         }
         .edit-icons {
             position: relative;
