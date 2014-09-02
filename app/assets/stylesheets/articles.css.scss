@@ -12,15 +12,17 @@ section.news-feed {
 article.article {
     margin-top: 0px;
     background-color: #F5F5F5;
-    //border: 1px black solid;
-    box-shadow: 5px 5px 0px 1px $sub-color-2;
+    box-shadow: 5px 5px 0px 0px $sub-color-2;
     padding: 20px;
     h1 {
 	display: inline-block;
     }
     small {
 	display: block;
-	font: $main-font;
+	font-family: $main-font;
+    }
+    ul li {
+	font-family: $main-font;
     }
     p {
 	text-align: left;
