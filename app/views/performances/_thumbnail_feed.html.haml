@@ -3,10 +3,9 @@
     - performances.each do |performance|
       %article.thumb-performance
         .performance-image
-          = link_to image_tag(performance.banner.url(:thumb)), performance.link,
-            target: "_blank"
+          = link_to image_tag(performance.banner.url(:thumb)), performance
           %p
-            = link_to "VIEW EVENT", performance.link, target: "_blank"
+            = link_to "VIEW EVENT", performance
         %section.details
           %p
             - if performance.title.length > 34
@@ -19,7 +18,6 @@
         %section.edit-icons
           - if performance.images_link.length > 0
             = link_to image_tag("icons/images_black.png"), performance.images_link, target: "_blank"
-          = link_to image_tag("icons/view_black.png"), performance_path(performance)
           - if user_signed_in?
             = link_to image_tag("icons/edit_black.png"), edit_performance_path(performance)
             = link_to image_tag("icons/delete_black.png"),
