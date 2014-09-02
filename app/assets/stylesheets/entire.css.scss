@@ -154,16 +154,16 @@ body {
 }
 
 .text-wrapper {
-    border: 1px $border-color solid;
-    background-color: $main-color;
+    //border: 1px $border-color solid;
+    background-color: $sub-color-3;
     margin-top: 50px;
     margin-left: 5px;
     z-index: -1;
-    border-radius: 0px;
-    box-shadow: 0 0 0 7px $main-color;
+    //border-radius: 0px;
+    box-shadow: 5px 5px 0px 0px $sub-color-2;
     padding: 20px;
     * {
-        color: white;
+        color: black;
         font-family: "Lato";
         word-spacing: 1px;
     }
@@ -191,15 +191,7 @@ body {
         margin-bottom: 0px;
     }
     a {
-        color: white;
-    }
-    strong {
-        color: $strong-color;
-        font-weight: normal;
-        a {
-            color: $strong-color;
-            text-decoration: none;
-        }
+        text-decoration: none;
     }
     blockquote {
         background-color: #E5E8D1;
