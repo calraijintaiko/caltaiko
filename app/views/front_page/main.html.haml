@@ -22,10 +22,14 @@
 
 = render "performances/performances_feed", performances: @performances
 
+%header
+  %h2.link-header.multi-headers.fb
+    = link_to "FACEBOOK", "https://www.facebook.com/calraijintaiko"
+
 #fb-root
 #fb-stuff
   #fb-feed
-    .fb-like-box(data-href="https://www.facebook.com/calraijintaiko" data-width="900" data-height="600" data-colorscheme="light" data-show-faces="false" data-header="true" data-stream="true" data-show-border="true")
+    .fb-like-box(data-href="https://www.facebook.com/calraijintaiko" data-width="880" data-height="600" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="false")
 
   #fb-faces
-    .fb-facepile(data-href="https://www.facebook.com/calraijintaiko" data-width="900" data-max-rows="2" data-colorscheme="light" data-size="medium" data-show-count="true")
+    .fb-facepile(data-href="https://www.facebook.com/calraijintaiko" data-width="880" data-max-rows="2" data-colorscheme="light" data-size="medium" data-show-count="true")

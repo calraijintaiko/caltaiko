@@ -23,11 +23,11 @@
 
   %section.edit-icons
     - if performance.images_link.length > 0
-      = link_to image_tag("icons/images.png"), performance.images_link, target: "_blank"
+      = link_to image_tag("icons/images_black.png"), performance.images_link, target: "_blank"
     - if controller.action_name != "show"
-      = link_to image_tag("icons/view.png"), performance_path(performance), itemprop: "url"
+      = link_to image_tag("icons/view_black.png"), performance_path(performance), itemprop: "url"
     - if user_signed_in?
-      = link_to image_tag("icons/edit.png"), edit_performance_path(performance)
-      = link_to image_tag("icons/delete.png"),
+      = link_to image_tag("icons/edit_black.png"), edit_performance_path(performance)
+      = link_to image_tag("icons/delete_black.png"),
         performance_path(performance), method: :delete,
         data: { confirm: "Are you sure you'd like to delete performance #{performance.title}?" }

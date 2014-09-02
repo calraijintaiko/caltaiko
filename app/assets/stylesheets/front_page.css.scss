@@ -15,15 +15,9 @@
 }
 
 #fb-stuff {
-    width: 900px;
-    background-color: white;
-    border: 3px $main-color solid;
+    background-color: $sub-color-3;
+    box-shadow: 5px 5px 0px 0px $sub-color-2;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 50px;
-    #fb-faces {
-        margin-left: 5px;
-        margin-right: 5px;
-        margin-bottom: 5px;
-    }
+    padding: 10px;
 }

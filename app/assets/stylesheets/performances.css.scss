@@ -18,7 +18,7 @@
     box-shadow: 5px 9px 0px 1px $sub-color-2;
     color: white;
     .performance-deets {
-        background-color: $sub-color;
+        background-color: $sub-color-3;
         width: $performance-width - 2 * $performance-padding;
         height: auto;
         display: inline-block;
@@ -32,6 +32,7 @@
             margin-bottom: 10px;
             word-spacing: 5px;
             font-family: "Oswald";
+	    color: $main-color;
         }
         p.spacer {
             font-size: 120%;
@@ -44,6 +45,7 @@
 	    text-transform: uppercase;
 	}
         h3 {
+	    color: $main-color;
             text-shadow: 2px 2px 0px $sub-color-2;
             margin-top: 0px;
             margin-bottom: 0px;
@@ -98,13 +100,14 @@
             padding-top: 2px;
             padding-bottom: 3px;
             padding-right: 7px;
+	    color: $main-color;
         }
         p.perf-date {
             margin-top: -7px;
             padding-top: 0px;
             font-size: 13px;
         }
-        background-color: $sub-color;
+        background-color: $sub-color-3;
         padding-bottom: 5px;
         .edit-icons {
             height: 15px;
