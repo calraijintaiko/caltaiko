@@ -23,7 +23,8 @@
 
   %section.edit-icons
     - if performance.images_link.length > 0
-      = link_to image_tag("icons/images_black.png"), performance.images_link, target: "_blank"
+      = link_to image_tag("icons/images_black.png"), performance.images_link,
+        target: "_blank", title: "Image gallery"
     - if controller.action_name != "show"
       = link_to image_tag("icons/view_black.png"), performance_path(performance),
         itemprop: "url", title: "Get a shareable link for this performance."
