@@ -1,5 +1,5 @@
-- title = "Videos | Cal Raijin Taiko"
-- description = "Videos of some of Cal Raijin Taiko's past performances."
+- title = "Media | Cal Raijin Taiko"
+- description = "Photos and videos of some of Cal Raijin Taiko's past performances."
 - image = URI.join(root_url, image_path("logo.png"))
 
 - meta title: title,
@@ -12,8 +12,5 @@
   - if user_signed_in?
     = link_to image_tag("icons/add.png"), new_video_path
 
-= render "videos_feed", by_year: @by_year
+= render "videos/videos_feed", by_year: @videos_by_year
 
-- if user_signed_in?
-  .add-new
-    = link_to image_tag("icons/add.png"), new_video_path

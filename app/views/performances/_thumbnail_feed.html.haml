@@ -16,6 +16,8 @@
             = performance.date.strftime("%A, %-m/%-d")
 
         %section.edit-icons
+          - if performance.performance_videos.any?
+            = link_to image_tag("icons/videos_black.png"), performance
           - if performance.images_link.length > 0
             = link_to image_tag("icons/images_black.png"), performance.images_link,
               target: "_blank", title: "Image gallery"
