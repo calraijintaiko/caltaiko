@@ -16,18 +16,17 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    width: 1000px;
+    width: 998px;
     margin-left: -50px;
-    margin-right: 0px;
     .member {
         width: auto;
         height: auto;
         display: inline-block;
         padding: 0px;
-        margin: 0px 10px 20px 10px;
+        margin: 0px 12px 24px 12px;
         background-color: $dark-bg;
-        border: 5px $main-color solid;
-        border-radius: 5px;
+        border: 3px $main-color solid;
+        border-radius: 3px;
         .member-image {
             position: relative;
             img {
