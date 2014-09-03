@@ -2,8 +2,8 @@
   - performances.each do |performance|
     %article.thumb-performance
       .performance-image
-        = link_to image_tag(performance.banner.url(:thumb)), performance.images_link, target: "_blank"
-        = link_to "VIEW GALLERY", performance.images_link, target: "_blank", class: "text-link"
+        = link_to image_tag(performance.banner.url(:thumb)), performance.images_link
+        = link_to "VIEW GALLERY", performance.images_link, class: "text-link"
       %section.details
         %p
           - if performance.title.length > 34
