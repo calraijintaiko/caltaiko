@@ -1,4 +1,4 @@
-%section.thumbnail-feed.galleries-feed
+%section.thumbnail-feed
   - performances.each do |performance|
     %article.thumb-performance
       .performance-image
@@ -11,5 +11,5 @@
             = (performance.title[0, 32] + "...").upcase
           - else
             = performance.title.upcase
-        %p.perf-date
-          = performance.date.strftime("%A, %-m/%-d")
+        -# %p.perf-date
+        -#   = performance.date.strftime("%A, %-m/%-d")
