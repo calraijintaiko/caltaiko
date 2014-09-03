@@ -148,6 +148,17 @@
 	font-family: "Lato";
 	word-spacing: 2px;
     }
+    a.upcoming-perf {
+	text-decoration: none;
+	p.underlined {
+	    text-decoration: underline;
+	}
+	p {
+	    color: rgba(0, 0, 0, 0);
+	    padding: 0px 10%;
+	    margin: 0px auto;
+	}
+    }
 }
 
 .performance-image:hover {
@@ -161,12 +172,8 @@
         color: white;
     }
     a.upcoming-perf {
-	text-decoration: none;
-	p.underlined {
-	    text-decoration: underline;
-	}
 	p {
-	    margin: 0px auto;
+	    color: white;
 	}
     }
 }
