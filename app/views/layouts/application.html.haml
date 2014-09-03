@@ -14,6 +14,9 @@
 
     = favicon_link_tag "favicon.png", rel: "icon", type: "image/png"
     = favicon_link_tag "favicon.png", rel: "apple-touch-icon", type: "image/png"
+    %meta(name="mobile-web-app-capable" content="yes")
+    %meta(name="viewport" content="width=device-width")
+    %link(rel="icon" sizes="192x192" href="#{image_path('icon.png')}")
 
   %body{ class: "#{controller.controller_name}", id: "#{controller.action_name}" }
     #page-wrapper
