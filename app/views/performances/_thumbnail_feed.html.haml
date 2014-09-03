@@ -19,7 +19,7 @@
             = link_to image_tag("icons/videos_black.png"), performance
           - if performance.images_link.length > 0
             = link_to image_tag("icons/images_black.png"), performance.images_link,
-              target: "_blank", title: "Image gallery"
+              title: "Image gallery"
           - if user_signed_in?
             = link_to image_tag("icons/edit_black.png"), edit_performance_path(performance)
             = link_to image_tag("icons/delete_black.png"),
