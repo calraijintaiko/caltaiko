@@ -1,6 +1,6 @@
 #media-videos
   - by_year.keys.each do |year|
-    %h5= year
+    %h4= year
     %section.years-videos
       - by_year[year].each do |video|
         = render "videos/show", video: video

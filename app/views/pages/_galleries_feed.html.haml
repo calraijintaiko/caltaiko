@@ -1,0 +1,14 @@
+%section.thumbnail-feed
+  - performances.each do |performance|
+    %article.thumb-performance
+      .performance-image
+        = link_to image_tag(performance.banner.url(:thumb)), performance.images_link
+        = link_to "VIEW GALLERY", performance.images_link, class: "text-link"
+      %section.details
+        %p
+          - if performance.title.length > 34
+            = (performance.title[0, 32] + "...").upcase
+          - else
+            = performance.title.upcase
+        -# %p.perf-date
+        -#   = performance.date.strftime("%A, %-m/%-d")
