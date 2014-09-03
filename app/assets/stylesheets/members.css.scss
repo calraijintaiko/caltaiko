@@ -133,6 +133,10 @@ $alumni-width: 205px;
         p {
             color: white;
         }
+	img {
+	    filter: invert(1);
+	    -webkit-filter: invert(1);
+	}
     }
 }
 
