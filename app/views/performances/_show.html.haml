@@ -2,11 +2,11 @@
   .performance-image
     = link_to image_tag(performance.banner.url(:display), itemprop: "image"),
       performance.link, target: "_blank"
-    %p(itemprop="description")
-      = performance.description
+    = link_to performance.link, class: "text-link upcoming-perf" do
+      %p(itemprop="description")= performance.description
       %br
       %br
-      = link_to "VIEW EVENT", performance.link
+      %p.underlined VIEW EVENT
 
   %section.performance-deets
     %h3.what(itemprop="name")= performance.title

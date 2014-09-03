@@ -4,8 +4,7 @@
       %article.thumb-performance
         .performance-image
           = link_to image_tag(performance.banner.url(:thumb)), performance
-          %p
-            = link_to "VIEW EVENT", performance
+          = link_to "VIEW EVENT", performance, class: "text-link"
         %section.details
           %p
             - if performance.title.length > 34
