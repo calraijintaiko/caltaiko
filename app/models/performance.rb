@@ -70,4 +70,13 @@ class Performance < ActiveRecord::Base
   def self.have_images
     return Performance.where.not("images_link = ''")
   end
+
+  def self.by_year(performances)
+    by_year = Hash.new
+    performances.each do |performance|
+      by_year[performance.date.strftime("%Y")] ||= []
+      by_year[performance.date.strftime("%Y")] << performance
+    end
+    return by_year
+  end
 end

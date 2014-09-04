@@ -16,11 +16,7 @@ class VideosController < ApplicationController
 
   def index
     @videos = Video.all.order('year DESC')
-    @by_year = Hash.new
-    @videos.each do |video|
-      @by_year[video.year.to_s] ||= []
-      @by_year[video.year.to_s] << video
-    end
+    @by_year = Video.by_year(@videos)
   end
 
   def show

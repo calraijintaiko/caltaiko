@@ -13,4 +13,12 @@ class Video < ActiveRecord::Base
     ]
   end
 
+  def self.by_year(videos)
+    by_year = Hash.new
+    videos.each do |video|
+      by_year[video.year.to_s] ||= []
+      by_year[video.year.to_s] << video
+    end
+    return by_year
+  end
 end
