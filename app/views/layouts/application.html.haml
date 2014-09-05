@@ -12,11 +12,38 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
 
-    = favicon_link_tag "favicon.png", rel: "icon", type: "image/png"
-    = favicon_link_tag "favicon.png", rel: "apple-touch-icon", type: "image/png"
+    -# This is all from the amazing realfavicongenerator.net
+    = favicon_link_tag "favicons/apple-touch-icon-57x57.png", rel: "apple-touch-icon",
+      sizes: "57x57", type: "image/png"
+    = favicon_link_tag "favicons/apple-touch-icon-114x114.png", rel: "apple-touch-icon",
+      sizes: "114x114", type: "image/png"
+    = favicon_link_tag "favicons/apple-touch-icon-72x72.png", rel: "apple-touch-icon",
+      sizes: "72x72", type: "image/png"
+    = favicon_link_tag "favicons/apple-touch-icon-144x144.png", rel: "apple-touch-icon",
+      sizes: "144x144", type: "image/png"
+    = favicon_link_tag "favicons/apple-touch-icon-60x60.png", rel: "apple-touch-icon",
+      sizes: "60x60", type: "image/png"
+    = favicon_link_tag "favicons/apple-touch-icon-120x120.png", rel: "apple-touch-icon",
+      sizes: "120x120", type: "image/png"
+    = favicon_link_tag "favicons/apple-touch-icon-76x76.png", rel: "apple-touch-icon",
+      sizes: "76x76", type: "image/png"
+    = favicon_link_tag "favicons/apple-touch-icon-152x152.png", rel: "apple-touch-icon",
+      sizes: "152x152", type: "image/png"
+    = favicon_link_tag "favicons/favicon-196x196.png", rel: "icon",
+      sizes: "196x196", type: "image/png"
+    = favicon_link_tag "favicons/favicon-160x160.png", rel: "icon",
+      sizes: "160x160", type: "image/png"
+    = favicon_link_tag "favicons/favicon-96x96.png", rel: "icon",
+      sizes: "96x96", type: "image/png"
+    = favicon_link_tag "favicons/favicon-16x16.png", rel: "icon",
+      sizes: "16x16", type: "image/png"
+    = favicon_link_tag "favicons/favicon-32x32.png", rel: "icon",
+      sizes: "32x32", type: "image/png"
+    %meta(name="msapplication-TileColor" content="#ffffff")
+    %meta(name="msapplication-TileImage" content="#{image_path('favicons/mstile-144x144.png')}")
+
     %meta(name="mobile-web-app-capable" content="yes")
     %meta(name="viewport" content="width=device-width")
-    %link(rel="icon" sizes="192x192" href="#{image_path('logo.png')}")
 
   %body{ class: "#{controller.controller_name}", id: "#{controller.action_name}" }
     #page-wrapper
