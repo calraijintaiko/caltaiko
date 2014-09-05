@@ -15,11 +15,12 @@
 
   = f.input :images_link
 
-  %h1 Videos
-  #performance_videos
-    = f.simple_fields_for :performance_videos do |performance_video|
-      = render "performance_video_fields", f: performance_video
-    .links
-      = link_to_add_association "Add Performance Video", f, :performance_videos
+  %section#nested_fields
+    %h1 Videos
+    #performance_videos
+      = f.simple_fields_for :performance_videos do |performance_video|
+        = render "performance_video_fields", f: performance_video
+      .links
+        = link_to_add_association "Add Performance Video", f, :performance_videos
 
   = f.button :submit

@@ -202,18 +202,6 @@ $alumni-width: 205px;
     }
 }
 
-form.edit_member, form.new_member {
-    width: 884px;
-    margin-left: 7px;
-    textarea {
-        width: 50%;
-        height: 60px;
-    }
-    input#member_gen {
-        width: 30px;
-    }
-}
-
 p#nice-try-wise-guy {
     color: $main-color;
     text-align: left;

@@ -62,49 +62,6 @@ header {
     }
 }
 
-form {
-    border: 1px $border-color solid;
-    background: $main-color;
-    box-shadow: 0 0 0 7px $main-color;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    a {
-        color: white;
-    }
-    label {
-        vertical-align: top;
-        color: white;
-        margin-right: 10px;
-	font-family: $main-font;
-        abbr {
-            vertical-align: top;
-        }
-    }
-    p {
-        text-align: center;
-    }
-    .input {
-        text-align: left;
-        margin: 15px auto;
-        padding: 10px 20px 10px 20px;
-        span {
-            vertical-align: top;
-            margin-left: 10px;
-            color: red;
-        }
-        input.file {
-            color: white;
-        }
-    }
-    input.btn {
-        display: block;
-        margin: 10px auto;
-    }
-    .actions {
-        text-align: center;
-    }
-}
-
 body {
     margin: 0px;
     z-index: 0;
