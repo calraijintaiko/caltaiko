@@ -7,7 +7,7 @@
   og: { title: title, description: description, image: image, url: root_url }
 
 %header
-  %h1.link-header
+  %h2.link-header
     = link_to "NEWS", "/news"
     - if user_signed_in?
       = link_to image_tag("icons/add.png"), new_article_path

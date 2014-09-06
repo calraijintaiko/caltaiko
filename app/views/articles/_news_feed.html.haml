@@ -2,3 +2,6 @@
   - if articles.length > 0
     - articles.each do |article|
       = render "/articles/show", article: article
+  - else
+    .text-wrapper
+      %p Stay tuned for more information soon!

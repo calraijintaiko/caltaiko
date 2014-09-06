@@ -8,6 +8,9 @@ section.news-feed {
     article.article:not(:first-child) {
         margin-top: 75px;
     }
+    .text-wrapper {
+        margin-top: 0px;
+    }
 }
 
 article.article {
