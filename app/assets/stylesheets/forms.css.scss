@@ -29,9 +29,6 @@ form {
             color: red;
         }
     }
-    .input:first-child {
-        margin-top: 0px;
-    }
     input {
         padding: 7px;
         font-family: $main-font;
@@ -70,6 +67,7 @@ form {
 }
 
 section#nested_fields {
+    margin-top: 50px;
     h1 {
         text-align: center;
     }
@@ -87,11 +85,13 @@ section#nested_fields {
     .nested-fields {
         display: inline-block;
         width: 35%;
-        border: 1px black solid;
+        //border: 1px black solid;
+        background-color: lightgray;
+        box-shadow: 4px 4px 0px 0px $sub-color-2;
         margin: 2%;
         padding: 3%;
         input {
-            width: 50%;
+            width: 71%;
         }
         a.remove_fields {
             display: block;
