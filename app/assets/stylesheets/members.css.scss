@@ -113,16 +113,8 @@ $alumni-width: 205px;
                 color: black;
             }
             .edit-icons {
-                position: relative;
                 z-index: 4;
-                text-align: center;
-                img {
-                    padding-right: 2px;
-                    padding-left: 2px;
-                    width: 15px;
-                    height: 15px;
-                    display: inline-block;
-                }
+                @include edit-icons($icon-size: 15px, $icon-padding: 4px);
             }
         }
     }
@@ -144,12 +136,13 @@ $alumni-width: 205px;
 .individual {
     height: auto;
     margin: auto;
-    img {
+    img.bio-pic {
         margin-right: 30px;
         display: inline-block;
         @include box-style;
     }
     .bio-block {
+        position: relative;
         width: 515px;
         height: auto;
         @include box-style;
@@ -170,17 +163,11 @@ $alumni-width: 205px;
             margin-bottom: 0px;
         }
         .edit-icons {
-            position: relative;
-            text-align: right;
+            position: absolute;
+            top: 20px;
+            right: 20px;
             z-index: 4;
-            img {
-                border: none;
-                margin: 0px;
-                margin-right: 10px;
-                width: 30px;
-                height: 30px;
-                box-shadow: none;
-            }
+            @include edit-icons($icon-size: 30px, $icon-padding: 10px);
         }
     }
 }

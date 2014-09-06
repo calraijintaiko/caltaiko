@@ -4,3 +4,14 @@
     background-color: $bg-color;
     box-shadow: $width $width 0px $offset $shadow-color;
 }
+
+@mixin edit-icons($icon-size: 30px, $icon-padding: 0px) {
+    display: inline;
+    float: right;
+    img {
+        width: $icon-size;
+        height: $icon-size;
+        display: inline-block;
+        padding-right: $icon-padding;
+    }
+}

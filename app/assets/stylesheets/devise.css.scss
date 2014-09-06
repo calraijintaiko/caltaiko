@@ -13,16 +13,11 @@
 	box-shadow: none;
 	border: none;
     }
-}
-
-form.edit_user {
-    width: 50%;
-    margin: auto;
-    margin-bottom: 30px;
-    input#user_email {
-        width: 50%;
+    input {
+        width: initial;
     }
 }
+
 
 form.new_user {
     width: 40%;
@@ -57,6 +52,7 @@ form.new_user {
         }
         #forgot-pass {
             margin-top: 20px;
+            font-size: 80%;
         }
     }
 }

@@ -14,12 +14,8 @@
 .performance {
     width: $performance-width;
     height: auto;
-    margin-left: 0px;
-    margin-right: 0px;
-    box-shadow: 5px 9px 0px 1px $sub-color-2;
-    color: white;
+    @include box-style;
     .performance-deets {
-        background-color: $sub-color-3;
         width: $performance-width - 2 * $performance-padding;
         height: auto;
         display: inline-block;
@@ -54,18 +50,10 @@
         }
     }
     .edit-icons {
-        margin-top: -34px;
         position: relative;
-        text-align: right;
-        top: -10px;
+        top: -40px;
         z-index: 4;
-        height: 30px;
-        img {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            padding-right: 10px;
-        }
+        @include edit-icons($icon-padding: 10px);
     }
 }
 
@@ -108,18 +96,10 @@
             padding-top: 0px;
             font-size: 13px;
         }
-        padding-bottom: 5px;
         .edit-icons {
-            height: 15px;
-            position: relative;
+            @include edit-icons($icon-size: 15px, $icon-padding: 3px);
             margin-top: -20px;
             z-index: 4;
-            text-align: right;
-            img {
-                width: 15px;
-                padding-right: 3px;
-                display: inline-block;
-            }
         }
         img {
             width: 280px;

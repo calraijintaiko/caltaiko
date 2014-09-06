@@ -105,3 +105,15 @@ section#nested_fields {
         margin: 20px auto;
     }
 }
+
+form.edit_user {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 30px;
+    input.password {
+        width: 40%;
+    }
+    .user_current_password {
+        margin-top: 70px;
+    }
+}

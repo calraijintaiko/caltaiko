@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
+@import "mixins";
 
 .devise-notice {
     .alert-success {
@@ -15,8 +16,7 @@
 }
 
 #fb-stuff {
-    background-color: $sub-color-3;
-    box-shadow: 5px 5px 0px 0px $sub-color-2;
+    @include box-style;
     margin-right: auto;
     margin-left: auto;
     padding: 10px;

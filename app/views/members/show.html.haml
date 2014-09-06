@@ -8,7 +8,7 @@
   url: request.original_url }
 
 %article.individual(itemscope itemtype="http://schema.org/Person")
-  = image_tag @member.avatar.url(:full), itemprop: "image"
+  = image_tag @member.avatar.url(:full), itemprop: "image", class: "bio-pic"
   %section.bio-block
     %p
       %strong Name:

@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
+@import "mixins";
 
 h5 {
     font-family: $header-font;
@@ -39,24 +40,6 @@ h5 {
         border: 2px $main-color solid;
     }
     .edit-icons {
-        display: inline-block;
-        margin-left: 5px;
-        img {
-            width: 20px;
-            height: 20px;
-            display: inline-block;
-            padding-right: 5px;
-        }
-    }
-}
-
-form.edit_video, form.new_video {
-    .field {
-        input {
-            width: 250px;
-        }
-        input#video_year {
-            width: 80px;
-        }
+        @include edit-icons($icon-size: 20px);
     }
 }
