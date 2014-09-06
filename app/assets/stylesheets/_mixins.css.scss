@@ -1,0 +1,6 @@
+@import "variables";
+
+@mixin box-style($bg-color: $sub-color-3, $shadow-color: $sub-color-2, $width: 5px, $offset: 0px) {
+    background-color: $bg-color;
+    box-shadow: $width $width 0px $offset $shadow-color;
+}

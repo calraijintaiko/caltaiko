@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
+@import "mixins";
 
 section.news-feed {
     article.article:not(:first-child) {
@@ -11,9 +12,8 @@ section.news-feed {
 
 article.article {
     margin-top: 0px;
-    background-color: $sub-color-3;
-    box-shadow: 5px 5px 0px 0px $sub-color-2;
     padding: 20px;
+    @include box-style($sub-color-3, $sub-color-2);
     h1 {
 	display: inline-block;
     }

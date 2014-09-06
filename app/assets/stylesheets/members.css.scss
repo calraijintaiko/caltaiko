@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
+@import "mixins";
 
 .current-members {
     // Use flexbox to keep centered
@@ -55,6 +56,7 @@
             }
             p {
                 z-index: 3;
+                color: white;
             }
         }
         a {
@@ -101,8 +103,7 @@ $alumni-width: 205px;
         margin-right: 25px;
         margin-bottom: 20px;
         display: inline-block;
-        background-color: $sub-color-3;
-        box-shadow: 3px 3px 0 0px $sub-color-2;
+        @include box-style($width: 3px);
         .link-wrapper {
             height: 100%;
             p {
@@ -146,13 +147,12 @@ $alumni-width: 205px;
     img {
         margin-right: 30px;
         display: inline-block;
-        box-shadow: 5px 5px 0px 0px $sub-color-2;
+        @include box-style;
     }
     .bio-block {
         width: 515px;
         height: auto;
-        background-color: $sub-color-3;
-        box-shadow: 5px 5px 0px 0px $sub-color-2;
+        @include box-style;
         display: inline-block;
         vertical-align: top;
         padding: 25px;

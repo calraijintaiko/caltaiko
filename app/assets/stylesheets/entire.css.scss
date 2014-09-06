@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
+@import "mixins";
 
 // Below are the new HTML5 elements; need this line to ensure backwards compatability
 header, hgroup, nav, section, article, aside, footer { display:block; }
@@ -15,7 +16,6 @@ a {
 
 p {
     font-family: $main-font;
-    color: white;
     text-align: center;
 }
 
@@ -112,30 +112,14 @@ body {
 }
 
 .text-wrapper {
-    //border: 1px $border-color solid;
-    background-color: $sub-color-3;
     margin-top: 50px;
-    margin-left: 5px;
     z-index: -1;
-    //border-radius: 0px;
-    box-shadow: 5px 5px 0px 0px $sub-color-2;
     padding: 20px;
+    @include box-style;
     * {
         color: black;
-        font-family: "Lato";
+        font-family: $main-font;
         word-spacing: 1px;
-    }
-    h1 {
-        display: inline;
-        color: white;
-        margin-bottom: 0px;
-    }
-    small {
-        color: white;
-        font-family: "Lato";
-        margin-top: 0px;
-        display: block;
-        font-weight: light;
     }
     p {
         margin-top: 20px;
@@ -150,21 +134,6 @@ body {
     }
     a {
         text-decoration: none;
-    }
-    blockquote {
-        background-color: #E5E8D1;
-        border-radius: 5px;
-        border: 2px $sub-color-2 solid;
-        padding: 20px;
-        * {
-            color: $main-color;
-        }
-        p {
-            margin: 0px;
-        }
-        p:not(:first-child) {
-            margin-top: 20px;
-        }
     }
 }
 
