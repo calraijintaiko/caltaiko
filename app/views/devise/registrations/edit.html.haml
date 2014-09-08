@@ -11,8 +11,8 @@
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     %div= "Currently awaiting confirmation for #{resource.unconfirmed_email}"
 
-  = f.input :new_password
-  = f.input :password_confirmation
+  = f.input :password, label: "New Password"
+  = f.input :password_confirmation, label: "Confirm New Password"
 
   = f.input :current_password
 

@@ -33,8 +33,6 @@ Rails.application.routes.draw do
     get "login", :to => "devise/sessions#new"
     get "settings", :to => "devise/registrations#edit"
     get "logout",   :to => "devise/sessions#destroy"
-    # MUST BE REMOVED BEFORE DISTRIBUTING; there should be no way to register new users
-    # Included purely for testing reasons
     get "register", to: "devise/registrations#new"
   end
 
