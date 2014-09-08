@@ -43,6 +43,14 @@ class Member < ActiveRecord::Base
     ]
   end
 
+  def first_name
+    return self.name.split.first
+  end
+
+  def last_name
+    return self.name.split.last
+  end
+
   # Returns all current members of the team, ordered by name then gen.
   def self.current_members
     return Member.where(current: true).order('name ASC, gen')
