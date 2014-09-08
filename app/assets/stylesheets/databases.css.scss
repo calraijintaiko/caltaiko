@@ -1,0 +1,21 @@
+@import "variables";
+@import "mixins";
+
+section.member-data {
+    margin-bottom: 50px;
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: $sub-color-3;
+        td, th {
+            text-align: left;
+            padding: 5px;
+            border: 1px black solid;
+            font-family: $main-font;
+        }
+        th {
+            background-color: $main-color;
+            color: white;
+        }
+    }
+}

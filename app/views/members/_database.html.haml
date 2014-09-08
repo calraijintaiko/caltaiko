@@ -1,0 +1,13 @@
+%section.member-data
+  %table
+    %tr
+      %th Name
+      %th Gen
+      %th Major
+      %th Email
+    - members.each do |member|
+      %tr
+        %td= member.name
+        %td= member.gen
+        %td= member.major
+        %td= member.email

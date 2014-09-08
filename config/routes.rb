@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'members/alumni' => 'members#alumni'
   get 'members/gen' => 'members#all_gens'
   get 'members/gen/:id' => 'members#gen'
+  get 'members/database' => 'members#database'
   get 'news' => 'articles#index'
   get 'media' => 'pages#media'
 
@@ -31,7 +32,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get "login", :to => "devise/sessions#new"
-    get "settings", :to => "devise/registrations#edit"
+    get "settings", :to => "devise/registrations#edit" 
     get "logout",   :to => "devise/sessions#destroy"
     get "register", to: "devise/registrations#new"
   end

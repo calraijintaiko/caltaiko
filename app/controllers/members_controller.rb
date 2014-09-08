@@ -82,13 +82,18 @@ class MembersController < ApplicationController
     @gens = Member.gens
   end
 
+  def database
+    @current = Member.current_members
+    @alumni = Member.alumni
+  end
+
   private
   def set_member
     @member = Member.friendly.find(params[:id])
   end
 
   def member_params
-    params.require(:member).permit(:name, :gen, :major, :bio, :avatar,
+    params.require(:member).permit(:name, :email, :gen, :major, :bio, :avatar,
                                    :current, :delete_avatar)
   end
 end
