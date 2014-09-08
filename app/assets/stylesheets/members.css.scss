@@ -36,6 +36,7 @@
                 position: relative;
                 display: block;
                 z-index: 1;
+                @include transition;
             }
             p {
                 display: block;
@@ -46,6 +47,8 @@
                 top: 80%;
                 margin: auto 20px;
                 text-align: center;
+                color: rgba(0, 0, 0, 0);
+                @include transition($effect: color);
             }
         }
         .member-image:hover {

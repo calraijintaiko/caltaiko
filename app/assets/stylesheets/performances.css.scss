@@ -119,10 +119,12 @@
         position: relative;
         display: block;
         z-index: 1;
+        @include transition;
     }
     a.text-link {
         z-index: 0;
         color: rgba(0, 0, 0, 0);
+        @include transition($effect: color);
 	display: block;
 	position: absolute;
 	top: 40%;
@@ -137,6 +139,7 @@
 	    text-decoration: underline;
 	}
 	p {
+            @include transition($effect: color);
 	    color: rgba(0, 0, 0, 0);
 	    padding: 0px 10%;
 	    margin: 0px auto;

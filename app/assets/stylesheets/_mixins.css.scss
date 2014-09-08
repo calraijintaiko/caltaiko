@@ -15,3 +15,11 @@
         padding-right: $icon-padding;
     }
 }
+
+@mixin transition($effect: opacity, $time: .25s) {
+    -webkit-transition: $effect $time ease-in-out;
+    -moz-transition: $effect $time ease-in-out;
+    -ms-transition: $effect $time ease-in-out;
+    -o-transition: $effect $time ease-in-out;
+    transition: $effect $time ease-in-out;
+}
