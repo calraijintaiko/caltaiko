@@ -1,3 +1,8 @@
 class MemberMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "caltaiko@gmail.com"
+
+  def email_member(member)
+    @member = member
+    mail(to: @member.email, subject: "Notice - Cal Raijin Taiko")
+  end
 end
