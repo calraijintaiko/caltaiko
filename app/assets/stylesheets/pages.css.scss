@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
+@import "mixins";
 
 #team-pic {
     background-color: $dark-bg;
@@ -14,16 +15,20 @@
         z-index: 1;
         display: block;
         width: 850px;
+        @include transition;
     }
-    p {
+    a.text-link {
+        text-decoration: none;
+        font-family: $main-font;
         display: block;
         position: absolute;
         z-index: 0;
-        width: 80%;
-        top: 50%;
-        margin: 0px 10%;
+        width: 100%;
+        top: 47%;
+        margin: 0px;
         text-align: center;
         color: rgba(0, 0, 0, 0);
+        @include transition($effect: color);
     }
 }
 
@@ -33,7 +38,7 @@
         filter: alpha(opacity=50);
         opacity: .5;
     }
-    p {
+    a.text-link {
         color: white;
         z-index: 3;
     }

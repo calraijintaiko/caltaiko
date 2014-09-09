@@ -9,7 +9,7 @@
 
 #team-pic
   = link_to image_tag("team_photo.jpg"), members_path
-  %p Meet the team!
+  = link_to "Meet the team!", members_path, class: "text-link"
 
 .text-wrapper
   :markdown
