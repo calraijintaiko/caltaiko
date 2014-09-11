@@ -69,6 +69,10 @@ gem 'simple_form'
 # Better nested forms
 gem 'cocoon'
 
+# Enables Foundation framework
+gem 'modernizr-rails'
+gem 'foundation-rails'
+
 # Testing-suite gems
 group :development, :test do 
   gem 'rspec-rails'
