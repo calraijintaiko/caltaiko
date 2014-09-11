@@ -20,4 +20,3 @@
 //= require facebook
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
