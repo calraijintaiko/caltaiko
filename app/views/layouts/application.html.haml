@@ -47,20 +47,15 @@
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
 
   %body{ class: "#{controller.controller_name}", id: "#{controller.action_name}" }
-    #page-wrapper
-      #content-wrapper
-        = link_to image_tag("banner.png", id: "banner"), root_url
-        %header#nav-header.not-fixed
-          = render "layouts/header"
+    %header#nav-header
+      = render "layouts/header"
+    = link_to image_tag("banner.png", id: "banner"), root_url
 
-        .devise-notice
-          - if notice
-            %p.alert-success= notice
-          - if alert
-            %p.alert-danger= alert
+    .devise-notice
+      - if notice
+        %p.alert-success= notice
+      - if alert
+        %p.alert-danger= alert
 
-        #page-content
-          = yield
-
-      %footer#social-media
-        = render "layouts/footer"    
+    #page-content
+      = yield

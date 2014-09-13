@@ -1,18 +1,26 @@
 = simple_form_for @member do |f|
+  .row
+    .large-6.column
+      = f.input :name, placeholder: "Full Name"
+    .large-1.column
+      = f.input :gen
+    .large-5.column
+      = f.input :major, placeholder: "Major"
 
-  = f.input :name
+  .row
+    .large-7.column
+      = f.input :email, placeholder: "Email Address"
 
-  = f.input :email
+  .row
+    .large-12.column
+      = f.input :bio
 
-  = f.input :gen
-
-  = f.input :major
-
-  = f.input :bio
-
-  = f.input :avatar
-  = f.input :delete_avatar, as: :boolean
-
-  = f.input :current
+  .row
+    .large-7.column
+      = f.input :avatar
+    .large-2.column
+      = f.input :delete_avatar, as: :boolean
+    .large-2.column
+      = f.input :current
 
   = f.button :submit
