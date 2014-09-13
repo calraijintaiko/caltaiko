@@ -1,5 +1,5 @@
 .fixed
-  %nav#nav-bar.top-bar(data-topbar role="navigation")
+  %nav#nav-bar.top-bar.show-for-large-up(data-topbar role="navigation")
     %ul.title-area
       %li.name
         %h1
@@ -33,3 +33,23 @@
         - if user_signed_in?
           %li
             = link_to "Logout", "/logout"
+
+.fixed.show-for-small-up.hidden-for-large-up
+  .off-canvas-wrap(data-offcanvas)
+    .inner-wrap
+      %nav.tab-bar
+        %section.left-small
+          %a.left-off-canvas-toggle.menu-icon
+            %span
+
+        %section.middle.tab-bar-section
+          %h1.title Cal Raijin Taiko
+
+      %aside.left-off-canvas-menu
+        %ul.off-canvas-list
+          %li
+            %label Members
+          %li
+            = link_to "Current", "/members/current"
+          %li
+            = link_to "Alumni", "/members/alumni"
