@@ -24,12 +24,12 @@ class Member < ActiveRecord::Base
     attachment.instance.slug
   end
 
-  has_attached_file :avatar, :styles => { thumb: "200x200#", full: "300x9999" },
+  has_attached_file :avatar, :styles => { thumb: "500x500#", full: "500x9999" },
   path: "/members/:slug/:attachment/:style/:filename",
   url: "/members/:slug/:attachment/:style/:filename",
   # default_url: "/images/members/:attachment/:style/missing.png"
   # if robohash website ever closes down, delete below and uncomment above
-  default_url: "http://robohash.org/:id?size=300x300&bgset=bgany"
+  default_url: "http://robohash.org/:id?size=500x500&bgset=bgany"
   include DeletableAttachment
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 

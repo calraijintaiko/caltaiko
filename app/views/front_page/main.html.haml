@@ -9,16 +9,16 @@
 %header
   %h2.link-header
     = link_to "NEWS", "/news"
-    - if user_signed_in?
-      = link_to "Add Article", new_article_path, class: "button small round"
+  - if user_signed_in?
+    = link_to "Add Article", new_article_path, class: "button small round"
 
 = render "articles/news_feed", articles: @articles
 
 %header
   %h2.link-header.multi-headers
     = link_to "UPCOMING PERFORMANCES", "/performances/upcoming"
-    - if user_signed_in?
-      = link_to "Add Performance", new_performance_path, class: "button small round"
+  - if user_signed_in?
+    = link_to "Add Performance", new_performance_path, class: "button small round"
 
 = render "performances/performances_feed", performances: @performances
 

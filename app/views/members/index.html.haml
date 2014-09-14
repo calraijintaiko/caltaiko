@@ -8,20 +8,23 @@
   url: request.original_url }
 
 %header
-  %h2.link-header= link_to "CURRENT MEMBERS", "/members/current"
-  - if user_signed_in?
-    = link_to "Add Member", new_member_path, class: "button small round"
+  .row
+    %h2.link-header.small-11.column= link_to "CURRENT MEMBERS", "/members/current"
+    - if user_signed_in?
+      = link_to "Add Member", new_member_path, class: "button small round column small-1"
 
 = render "current_members", members: @current
 
 = render "gens", gens: @gens
 
 %header
-  %h2.link-header.multi-headers= link_to "ALUMNI", "/members/alumni"
-  - if user_signed_in?
-    = link_to "Add Member", new_member_path, class: "button small round"
+  .row
+    %h2.link-header.multi-headers.small-11.column= link_to "ALUMNI", "/members/alumni"
+    - if user_signed_in?
+      = link_to "Add Member", new_member_path, class: "button small round column small-1"
 
 = render "alumni_members", members: @alumni
 
 - if user_signed_in?
-  = link_to "Add Member", new_member_path, class: "button small round"
+  .row
+    = link_to "Add Member", new_member_path, class: "button small round small-1 column"

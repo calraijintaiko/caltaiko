@@ -26,5 +26,4 @@
   = render "thumbnail_feed", performances: @by_year[year]
 
 - if user_signed_in?
-  .add-new
-    = link_to "Add Performance", new_performance_path, class: "button small round"
+  = link_to "Add Performance", new_performance_path, class: "button small round"
