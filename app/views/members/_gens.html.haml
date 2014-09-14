@@ -1,6 +1,7 @@
 - if gens.length > 0
-  %header
-    .generations
-      - gens.each do |gen|
-        .gen
-          = link_to "GENERATION #{gen.gen}", "/members/gen/#{gen.gen}"
+  .row
+    %header.small-12.column
+      .generations
+        - gens.each do |gen|
+          .gen
+            = link_to "GENERATION #{gen.gen}", "/members/gen/#{gen.gen}"

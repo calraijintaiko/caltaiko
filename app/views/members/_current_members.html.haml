@@ -1,15 +1,16 @@
-%section.current-members
-  %ul.small-block-grid-1.medium-block-grid-3.large-block-grid-4.xlarge-block-grid-5
-    - members.each do |member|
-      %li
-        %article.member
-          .member-image
-            = link_to image_tag(member.avatar.url(:thumb)), member_path(member), class: "th"
-            %p= member.name
+.row
+  %section.current-members.small-12.large
+    %ul.small-block-grid-1.medium-block-grid-3.large-block-grid-4.xlarge-block-grid-5
+      - members.each do |member|
+        %li
+          %article.member
+            .member-image
+              = link_to image_tag(member.avatar.url(:thumb)), member_path(member), class: "th"
+              %p= member.name
 
-          - if user_signed_in?
-            %section.edit-icons
-              = link_to image_tag("icons/edit.png"), edit_member_path(member)
-              = link_to image_tag("icons/delete.png"),
-                member_path(member), method: :delete,
-                data: { confirm: "Are you sure you'd like to delete member #{member.name}?" }
+            - if user_signed_in?
+              %section.edit-icons
+                = link_to image_tag("icons/edit.png"), edit_member_path(member)
+                = link_to image_tag("icons/delete.png"),
+                  member_path(member), method: :delete,
+                  data: { confirm: "Are you sure you'd like to delete member #{member.name}?" }

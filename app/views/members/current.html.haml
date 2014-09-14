@@ -8,13 +8,15 @@
   url: request.original_url }
 
 %header
-  %h2 CURRENT MEMBERS
-  - if user_signed_in?
-    = link_to "Add Member", new_member_path, class: "button small round"
+  .row
+    %h2.small-10.large-11.column CURRENT MEMBERS
+    - if user_signed_in?
+      = link_to "Add Member", new_member_path, class: "button small round small-2 large-1 column"
 
 = render "current_members", members: @current
 
 = render "gens", gens: @gens
 
 - if user_signed_in?
-  = link_to "Add Member", new_member_path, class: "button small round"
+  .row
+    = link_to "Add Member", new_member_path, class: "button small round small-2 column"
