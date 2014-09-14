@@ -25,7 +25,8 @@ Rails.application.routes.draw do
   resources :articles
 
   if Rails.env.production?
-    devise_for :users, controllers: { registrations: "registrations" }
+    # devise_for :users, controllers: { registrations: "registrations" }
+    devise_for :users
   else
     devise_for :users
   end
