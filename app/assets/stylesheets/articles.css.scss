@@ -6,15 +6,11 @@
 
 section.news-feed {
     article.article:not(:first-child) {
-        margin-top: 75px;
-    }
-    .text-wrapper {
-        margin-top: 0px;
+        margin-top: 7%;
     }
 }
 
 article.article {
-    margin-top: 0px;
     padding: 20px;
     @include box-style($sub-color-3, $sub-color-2);
     h1 {
@@ -40,5 +36,5 @@ article.article {
 }
 
 article.article:first-child {
-    margin-top: 30px;
+    margin-top: 2%;
 }

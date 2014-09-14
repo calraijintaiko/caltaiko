@@ -7,14 +7,15 @@
   og: { title: title, description: description, image: image,
   url: request.original_url }
 
-#team-pic
-  = link_to image_tag("team_photo.jpg"), members_path
-  = link_to "Meet the team!", members_path, class: "text-link"
+.row
+  .small-12.column
+    :markdown
+      In the Spring of 2005, a small-but-committed group of students pooled together their resources and formed UC Berkeley's first taiko group. Since then, **Cal Raijin Taiko** has gone on to become Berkeley's premier Japanese drumming performance ensemble. With a repertoire consisting entirely of original compositions, Cal Raijin Taiko performs to spread the **knowledge**, **love**, and **passion** of taiko to both the campus and the surrounding communities.
 
-.text-wrapper
-  :markdown
-    In the Spring of 2005, a small-but-committed group of students pooled together their resources and formed UC Berkeley's first taiko group. Since then, **Cal Raijin Taiko** has gone on to become Berkeley's premier Japanese drumming performance ensemble. With a repertoire consisting entirely of original compositions, Cal Raijin Taiko performs to spread the **knowledge**, **love**, and **passion** of taiko to both the campus and the surrounding communities.
-
-.text-wrapper
-  :markdown
-    In the decade since it's inception, the members of Cal Raijin Taiko have composed over a dozen unique and vibrant songs, and performed for scores of audiences large and small. Our **[alumni](#{URI.join(root_url, "members/alumni")})** have spread throughout the country, many of them founding entirely new taiko groups in the cities where they settle. Every Fall we accept new members to make up the next Generation of our Cal Rajin Taiko family.
+.row
+  #team-pic.small-12.medium-7.column
+    = link_to image_tag("team_photo.jpg"), members_path
+    = link_to "Meet the team!", members_path, class: "text-link"
+  .column.small-12.medium-5
+    :markdown
+      In the decade since it's inception, the members of Cal Raijin Taiko have composed over a dozen unique and vibrant songs, and performed for scores of audiences large and small. Our **[alumni](#{URI.join(root_url, "members/alumni")})** have spread throughout the country, many of them founding entirely new taiko groups in the cities where they settle. Every Fall we accept new members to make up the next Generation of our Cal Rajin Taiko family.

@@ -7,23 +7,23 @@
   og: { title: title, description: description, image: image,
   url: request.original_url }
 
-%header
-  %h2.link-header
+%header.row
+  %h2.link-header.small-9.column
     = link_to "UPCOMING PERFORMANCES", "performances/upcoming"
   - if user_signed_in?
-    = link_to "Add Performance", new_performance_path, class: "button small round"
+    = link_to "Add Performance", new_performance_path,
+      class: "button small round column small-3 large-2"
 
 = render "performances_feed", performances: @upcoming
 
-%header
-  %h1.link-header.multi-headers
+%header.row
+  %h1.link-header.multi-headers.small-9.column
     = link_to "PAST PERFORMANCES", "/performances/past"
   - if user_signed_in?
-    = link_to "Add Performance", new_performance_path, class: "button small round"
+    = link_to "Add Performance", new_performance_path,
+      class: "button small round small-3 large-2 column"
 
 - @by_year.keys.each do |year|
-  %h4= year
+  .row
+    %h4.small-12.column= year
   = render "thumbnail_feed", performances: @by_year[year]
-
-- if user_signed_in?
-  = link_to "Add Performance", new_performance_path, class: "button small round"

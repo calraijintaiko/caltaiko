@@ -1,6 +1,8 @@
 #media-videos
   - by_year.keys.each do |year|
-    %h4= year
+    .row
+      %h4.small-12.column= year
     %section.years-videos
-      - by_year[year].each do |video|
-        = render "videos/show", video: video
+      .row
+        - by_year[year].each do |video|
+          = render "videos/show", video: video

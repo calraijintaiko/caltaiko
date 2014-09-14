@@ -7,7 +7,8 @@
   og: { title: title, description: description, image: image,
   url: request.original_url }
 
-= render "show", article: @article
+.row
+  = render "show", article: @article
 
 %nav.nav-buttons
   = link_to image_tag("icons/back.png"), "/news"

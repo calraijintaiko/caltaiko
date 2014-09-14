@@ -6,15 +6,16 @@
 
 #team-pic {
     background-color: $dark-bg;
-    position: relative;
+    padding: 0px;
+    //position: relative;
     border: 3px $main-color solid;
-    margin: 40px auto 0px auto;
-    width: 850px;
+    //margin: 40px auto 0px auto;
+    //width: 850px;
     img {
-        position: relative;
+        //position: relative;
         z-index: 1;
-        display: block;
-        width: 850px;
+        //display: block;
+        //width: 850px;
         @include transition;
     }
     a.text-link {

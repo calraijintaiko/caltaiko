@@ -26,6 +26,8 @@
 
         %section.top-bar-section
           %ul.right
+            %li
+              = link_to "News", "/news"
             %li.has-dropdown
               = link_to "Performances", performances_path
               %ul.dropdown
@@ -47,11 +49,20 @@
             %li
               = link_to "Contact", "/contact"
             - if user_signed_in?
-              %li
-                = link_to "Logout", "/logout"
+              %li.has-dropdown
+                = link_to "Admin", "#"
+                %ul.dropdown
+                  %li
+                    = link_to "Add Member", new_member_path
+                  %li
+                    = link_to "Add Performance", new_performance_path
+                  %li
+                    = link_to "Logout", "/logout"
 
     %aside.left-off-canvas-menu
       %ul.off-canvas-list
+        %li
+          = link_to "News", "/news"
         %li
           %label Members
         %li

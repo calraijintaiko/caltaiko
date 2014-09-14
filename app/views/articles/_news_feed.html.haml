@@ -1,7 +1,7 @@
 %section.news-feed
-  - if articles.length > 0
-    - articles.each do |article|
-      = render "/articles/show", article: article
-  - else
-    .text-wrapper
-      %p Stay tuned for more information soon!
+  .row
+    - if articles.length > 0
+      - articles.each do |article|
+        = render "/articles/show", article: article
+    - else
+      %p.small-12.column Stay tuned for more information soon!

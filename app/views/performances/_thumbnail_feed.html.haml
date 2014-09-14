@@ -1,31 +1,28 @@
-%section.thumbnail-feed
-  - if performances.length > 0
+%section.thumbnail-feed.row
+  %ul.small-block-grid-2.medium-block-grid-3.xlarge-block-grid-4
     - performances.each do |performance|
-      %article.thumb-performance
-        .performance-image
-          = link_to image_tag(performance.banner.url(:thumb)), performance
-          = link_to "VIEW EVENT", performance, class: "text-link"
-        %section.details
-          %p
-            - if performance.title.length > 34
-              = (performance.title[0, 32] + "...").upcase
-            - else
-              = performance.title.upcase
-          %p.perf-date
-            = performance.date.strftime("%A, %-m/%-d")
+      %li
+        %article.thumb-performance
+          .performance-image
+            = link_to image_tag(performance.banner.url(:thumb)), performance
+            = link_to "VIEW EVENT", performance, class: "text-link"
+          %section.details
+            %p
+              - if performance.title.length > 34
+                = (performance.title[0, 32] + "...").upcase
+              - else
+                = performance.title.upcase
+            %p.perf-date
+              = performance.date.strftime("%A, %-m/%-d")
 
-        %section.edit-icons
-          - if performance.performance_videos.any?
-            = link_to image_tag("icons/videos_black.png"), performance
-          - if performance.images_link.length > 0
-            = link_to image_tag("icons/images_black.png"), performance.images_link,
-              title: "Image gallery"
-          - if user_signed_in?
-            = link_to image_tag("icons/edit_black.png"), edit_performance_path(performance)
-            = link_to image_tag("icons/delete_black.png"),
-            performance_path(performance), method: :delete,
-            data: { confirm: "Are you sure you'd like to delete performance #{performance.title}?" }
-
-  - else
-    .text-wrapper
-      %p Stay tuned for more information soon!
+          %section.edit-icons
+            - if performance.performance_videos.any?
+              = link_to image_tag("icons/videos_black.png"), performance
+            - if performance.images_link.length > 0
+              = link_to image_tag("icons/images_black.png"), performance.images_link,
+                title: "Image gallery"
+            - if user_signed_in?
+              = link_to image_tag("icons/edit_black.png"), edit_performance_path(performance)
+              = link_to image_tag("icons/delete_black.png"),
+                performance_path(performance), method: :delete,
+                data: { confirm: "Are you sure you'd like to delete performance #{performance.title}?" }

@@ -7,13 +7,15 @@
   og: { title: title, description: description, image: image,
   url: request.original_url }
 
-%header
-  %h1 PAST PERFORMANCES
+%header.row
+  %h1.small-9.column PAST PERFORMANCES
   - if user_signed_in?
-    = link_to "Add Performance", new_performance_path, class: "button small round"
+    = link_to "Add Performance", new_performance_path,
+      class: "button small round small-3 large-2 column"
 
 - @by_year.keys.each do |year|
-  %h4= year
+  .row
+    %h4.small-12.column= year
   = render "thumbnail_feed", performances: @by_year[year]
 
 - if user_signed_in?

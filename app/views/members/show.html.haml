@@ -7,28 +7,7 @@
   og: { title: title, description: description, image: image,
   url: request.original_url }
 
-%article.individual(itemscope itemtype="http://schema.org/Person")
-  .row
-    = image_tag @member.avatar.url(:full), itemprop: "image", class: "bio-pic small-12 large-4 column"
-    %section.bio-block.large-8.small-12.column
-      %p
-        %strong Name:
-        %span(itemprop="name")= @member.name
-      %p
-        %strong Gen:
-        = link_to number_with_precision(@member.gen, precision: 0), "gen/#{@member.gen}"
-      %meta(itemprop="memberOf" content="Generation #{@member.gen}")
-      %p
-        %strong Major:
-        = @member.major
-
-      %p.bio(itemprop="description")= @member.bio
-
-      - if user_signed_in?
-        %section.edit-icons
-          = link_to image_tag("icons/edit_black.png"), edit_member_path(@member)
-          = link_to image_tag("icons/delete_black.png"), member_path(@member), method: :delete,
-            data: { confirm: "Are you sure you'd like to delete member #{@member.name}?" }
+= render "members/show", member: @member
 
 .row
   = link_to "Back", members_path, class: "button small round small-1 column"

@@ -8,13 +8,15 @@
   url: request.original_url }
 
 %header
-  %h1.link-header
-    = link_to "NEWS", "/news"
+  .row
+    %h1.link-header.small-8.column
+      = link_to "NEWS", "/news"
     - if user_signed_in?
-      = link_to "Add Article", new_article_path, class: "button small round"
+      = link_to "Add Article", new_article_path,
+        class: "button small round small-2 large-1 column"
 
 = render "news_feed", articles: @articles
 
 - if user_signed_in?
-  .add-new
-    = link_to "Add Article", new_article_path, class: "button small round"
+  .row
+    = link_to "Add Article", new_article_path, class: "button small round small-2 large-1 column"
