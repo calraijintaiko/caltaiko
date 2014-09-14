@@ -1,12 +1,13 @@
 .off-canvas-wrap(data-offcanvas)
   .inner-wrap
-    %nav.tab-bar.hide-for-large-up
+    %nav.tab-bar.hide-for-xlarge-up
       %section.left-small
         %a.left-off-canvas-toggle.menu-icon
           %span
 
       %section.middle.tab-bar-section
-        %h1.title Cal Raijin Taiko
+        %h1.title
+          = link_to "Cal Raijin Taiko", root_url
 
       - if user_signed_in?
         %section.right-small
@@ -14,7 +15,7 @@
             %span
 
     .fixed
-      %nav.top-bar.hide-for-medium-down(data-topbar role="navigation")
+      %nav.top-bar.hide-for-large-down(data-topbar role="navigation")
         %ul.title-area
           %li.name
             %h1
