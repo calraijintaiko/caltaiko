@@ -1,0 +1,87 @@
+.off-canvas-wrap(data-offcanvas)
+  .inner-wrap
+    %nav.tab-bar.hide-for-large-up
+      %section.left-small
+        %a.left-off-canvas-toggle.menu-icon
+          %span
+
+      %section.middle.tab-bar-section
+        %h1.title Cal Raijin Taiko
+
+      - if user_signed_in?
+        %section.right-small
+          %a.right-off-canvas-toggle.menu-icon
+            %span
+
+    .fixed
+      %nav.top-bar.hide-for-medium-down(data-topbar role="navigation")
+        %ul.title-area
+          %li.name
+            %h1
+              = link_to "Cal Raijin Taiko", root_url
+          %li.toggle-topbar.menu-icon
+            %a(href="#{root_url}")
+              %span Menu
+
+        %section.top-bar-section
+          %ul.right
+            %li.has-dropdown
+              = link_to "Performances", performances_path
+              %ul.dropdown
+                %li
+                  = link_to "Upcoming", "/performances/upcoming"
+                %li
+                  = link_to "Past", "/performances/past"
+            %li.has-dropdown
+              = link_to "Members", members_path
+              %ul.dropdown
+                %li
+                  = link_to "Current", "/members/current"
+                %li
+                  = link_to "Alumni", "/members/alumni"
+            %li
+              = link_to "Media", "/media"
+            %li
+              = link_to "About", "/about"
+            %li
+              = link_to "Contact", "/contact"
+            - if user_signed_in?
+              %li
+                = link_to "Logout", "/logout"
+
+    %aside.left-off-canvas-menu
+      %ul.off-canvas-list
+        %li
+          %label Members
+        %li
+          = link_to "Current", "/members/current"
+        %li
+          = link_to "Alumni", "/members/alumni"
+        %li
+          %label Performances
+        %li
+          = link_to "Upcoming", "/performances/upcoming"
+        %li
+          = link_to "Past", "/performances/past"
+        %li
+          %label
+        %li
+          = link_to "About Us", "/about"
+        %li
+          = link_to "Contact Us", "/contact"
+
+    %aside.right-off-canvas-menu
+      %ul.off-canvas-list
+        %li
+          = link_to "Add Performance", new_performance_path
+        %li
+          = link_to "Add Member", new_member_path
+        %li
+          %label
+        %li
+          = link_to "Logout", "/logout"
+
+    %section.main-section
+      = yield
+
+    %a.exit-off-canvas
