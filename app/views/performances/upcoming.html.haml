@@ -10,10 +10,10 @@
 %header
   %h2 UPCOMING PERFORMANCES
   - if user_signed_in?
-    = link_to image_tag("icons/add.png"), new_performance_path
+    = link_to "Add Performance", new_performance_path, class: "button small round"
 
 = render "performances_feed", performances: @upcoming
 
 - if user_signed_in?
   .add-new
-    = link_to image_tag("icons/add.png"), new_performance_path
+    = link_to "Add Performance", new_performance_path, class: "button small round"

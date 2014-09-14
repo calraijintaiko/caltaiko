@@ -10,7 +10,7 @@
 %header
   %h2.link-header= link_to "CURRENT MEMBERS", "/members/current"
   - if user_signed_in?
-    = link_to image_tag("icons/add.png"), new_member_path
+    = link_to "Add Member", new_member_path, class: "button small round"
 
 = render "current_members", members: @current
 
@@ -19,10 +19,9 @@
 %header
   %h2.link-header.multi-headers= link_to "ALUMNI", "/members/alumni"
   - if user_signed_in?
-    = link_to image_tag("icons/add.png"), new_member_path
+    = link_to "Add Member", new_member_path, class: "button small round"
 
 = render "alumni_members", members: @alumni
 
 - if user_signed_in?
-  .add-new
-    = link_to image_tag("icons/add.png"), new_member_path
+  = link_to "Add Member", new_member_path, class: "button small round"

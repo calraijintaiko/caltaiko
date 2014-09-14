@@ -10,10 +10,10 @@
 %header
   %h1 VIDEOS
   - if user_signed_in?
-    = link_to image_tag("icons/add.png"), new_video_path
+    = link_to "Add Video", new_video_path, class: "button small round"
 
 = render "videos_feed", by_year: @by_year
 
 - if user_signed_in?
   .add-new
-    = link_to image_tag("icons/add.png"), new_video_path
+    = link_to "Add Video", new_video_path, class: "button small round"

@@ -11,10 +11,10 @@
   %h1.link-header
     = link_to "NEWS", "/news"
     - if user_signed_in?
-      = link_to image_tag("icons/add.png"), new_article_path
+      = link_to "Add Article", new_article_path, class: "button small round"
 
 = render "news_feed", articles: @articles
 
 - if user_signed_in?
   .add-new
-    = link_to image_tag("icons/add.png"), new_article_path
+    = link_to "Add Article", new_article_path, class: "button small round"

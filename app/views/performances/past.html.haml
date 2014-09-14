@@ -10,7 +10,7 @@
 %header
   %h1 PAST PERFORMANCES
   - if user_signed_in?
-    = link_to image_tag("icons/add.png"), new_performance_path
+    = link_to "Add Performance", new_performance_path, class: "button small round"
 
 - @by_year.keys.each do |year|
   %h4= year
@@ -18,4 +18,4 @@
 
 - if user_signed_in?
   .add-new
-    = link_to image_tag("icons/add.png"), new_performance_path
+    = link_to "Add Performance", new_performance_path, class: "button small round"
