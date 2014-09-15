@@ -4,6 +4,10 @@
 @import "variables";
 @import "mixins";
 
+.reveal-modal{
+    position : fixed;
+}
+
 .current-members {
     // Use flexbox to keep centered
     //display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */

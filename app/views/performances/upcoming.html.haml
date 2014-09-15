@@ -11,6 +11,6 @@
   %h2.small-9.column UPCOMING PERFORMANCES
   - if user_signed_in?
     = link_to "Add Performance", new_performance_path,
-      class: "button small round small-3 large-2 column"
+      class: "button small round hide-for-medium-down large-2 column"
 
 = render "performances_feed", performances: @upcoming

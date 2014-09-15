@@ -11,12 +11,9 @@
   .row
     %h2.small-10.large-11.column CURRENT MEMBERS
     - if user_signed_in?
-      = link_to "Add Member", new_member_path, class: "button small round small-2 large-1 column"
+      = link_to "Add Member", new_member_path,
+        class: "button small round column hide-for-medium-down large-1"
 
 = render "current_members", members: @current
 
 = render "gens", gens: @gens
-
-- if user_signed_in?
-  .row
-    = link_to "Add Member", new_member_path, class: "button small round small-2 column"

@@ -12,11 +12,9 @@
     %h2.small-12-column ALUMNI
     - if user_signed_in?
       .row
-        = link_to "Add Member", new_member_path, class: "button small round small-3 large-2 column"
+        = link_to "Add Member", new_member_path,
+          class: "button small round column hide-for-medium-down large-2"
 
 = render "alumni_members", members: @alumni
 
 = render "gens", gens: @gens
-
-- if user_signed_in?
-  = link_to "Add Member", new_member_path, class: "button small round"
