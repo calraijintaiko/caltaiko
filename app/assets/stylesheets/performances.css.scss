@@ -17,25 +17,10 @@
 .performance {
     @include box-style;
     .performance-deets {
-        //width: $performance-width - 2 * $performance-padding;
-        //height: auto;
-        //display: inline-block;
-        //padding-left: $performance-padding;
-        //padding-right: $performance-padding;
-        //padding-bottom: 0px;
         p {
-            margin-top: -20px;
-            display: inline-block;
-            text-align: left;
-            margin-bottom: 10px;
             word-spacing: 5px;
             font-family: "Oswald";
 	    color: $main-color;
-        }
-        p.spacer {
-            font-size: 120%;
-            margin-right: 15px;
-            margin-left: 15px;
         }
 	p.where, .what {
 	    // Make them uppercase here instead of in the template so that
@@ -47,16 +32,16 @@
             text-shadow: 2px 2px 0px $sub-color-2;
             margin-top: 0px;
             margin-bottom: 0px;
-            font-size: 40px;
+            font-size: 300%;
         }
     }
     .icons {
-        position: relative;
-        top: -40px;
-        z-index: 4;
-        @include edit-icons($icon-padding: 10px);
-        .edit-icons {
-            @include edit-icons($icon-padding: 10px);
+        a {
+            margin-left: 15%;
+        }
+        i {
+            color: $main-color;
+            font-size: 300%;
         }
     }
 }

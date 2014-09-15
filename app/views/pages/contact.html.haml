@@ -18,11 +18,14 @@
         %h3 Find us on social media!
       .social-media
         .column.small-4
-          = link_to image_tag("icons/facebook.png"), "https://www.facebook.com/calraijintaiko"
+          %a(href="https://www.facebook.com/calraijintaiko")
+            %i.fi-social-facebook
         .column.small-4
-          = link_to image_tag("icons/instagram.png"), "http://instagram.com/calraijintaiko"
+          %a(href="http://instagram.com/calraijintaiko")
+            %i.fi-social-instagram
         .column.small-4
-          = link_to image_tag("icons/youtube.png"), "https://www.youtube.com/user/CALtaiko/"
+          %a(href="https://www.youtube.com/user/CALtaiko/")
+            %i.fi-social-youtube
 
   .column.small-12.medium-5
     = image_tag("team_playing.jpg", class: "team-pic")
