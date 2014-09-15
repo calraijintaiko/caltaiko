@@ -11,7 +11,7 @@
     = link_to "NEWS", "/news"
   - if user_signed_in?
     = link_to "Add Article", new_article_path,
-      class: "button small round small-2 large-1 column"
+      class: "button small round hide-for-medium-down large-1 column"
 
 = render "articles/news_feed", articles: @articles
 
@@ -20,7 +20,7 @@
     = link_to "UPCOMING PERFORMANCES", "/performances/upcoming"
   - if user_signed_in?
     = link_to "Add Performance", new_performance_path,
-      class: "button small round small-4 large-2 column"
+      class: "button small round hide-for-medium-down large-2 column"
 
 = render "performances/performances_feed", performances: @performances
 

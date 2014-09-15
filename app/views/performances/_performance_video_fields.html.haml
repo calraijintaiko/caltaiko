@@ -1,7 +1,7 @@
 .nested-fields
   .row
-    .small-5.column
+    .small-12.large-5.column
       = f.input :title, placeholder: "Video Title"
-    .small-5.column
+    .small-9.large-5.column
       = f.input :link, placeholder: "Video Link"
-    = link_to_remove_association "Remove video", f, class: "small-2 column"
+    = link_to_remove_association "Remove video", f, class: "small-3 large-2 column"

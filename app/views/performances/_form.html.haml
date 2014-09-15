@@ -1,17 +1,17 @@
 = simple_form_for(@performance) do |f|
 
   .row
-    .small-3.column
+    .small-5.large-3.column
       = f.input :date, start_year: 2005, end_year: Time.new.year + 1, ampm: true, minute_step: 15
 
   .row
-    .small-9.column
+    .small-12.large-9.column
       = f.input :title
 
   .row
-    .small-7.column
+    .small-12.large-7.column
       = f.input :location
-    .small-5.column
+    .small-12.large-5.column
       = f.input :link
 
   .row
@@ -25,7 +25,7 @@
       = f.input :delete_banner, as: :boolean
 
   .row
-    .small-8.column
+    .small-12.large-8.column
       = f.input :images_link
 
   %section#nested_fields
