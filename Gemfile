@@ -72,7 +72,6 @@ gem 'cocoon'
 # Enables Foundation framework
 gem 'modernizr-rails'
 gem 'foundation-rails'
-gem 'foundation-icons-sass-rails'
 
 # Testing-suite gems
 group :development, :test do 
