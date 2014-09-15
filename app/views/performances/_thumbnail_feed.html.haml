@@ -1,7 +1,7 @@
 .thumbnail-feed.row
   %ul.small-block-grid-1.medium-block-grid-2.large-block-grid-3.xlarge-block-grid-4
     - performances.each do |performance|
-      %li
+      %li.text-center
         %article.thumb-performance
           .performance-image
             = link_to image_tag(performance.banner.url(:thumb)), performance
