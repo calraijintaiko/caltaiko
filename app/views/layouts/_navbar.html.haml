@@ -1,6 +1,6 @@
 .off-canvas-wrap(data-offcanvas)
   .inner-wrap
-    %nav.tab-bar.hide-for-xlarge-up
+    %nav.tab-bar.hide-for-large-up
       %section.left-small
         %a.left-off-canvas-toggle.menu-icon
           %span
@@ -15,7 +15,7 @@
             %span
 
     .fixed
-      %nav.top-bar.hide-for-large-down(data-topbar role="navigation")
+      %nav.top-bar.hide-for-medium-down(data-topbar role="navigation")
         %ul.title-area
           %li.name
             %h1
@@ -53,6 +53,8 @@
                 = link_to "Admin", "#"
                 %ul.dropdown
                   %li
+                    = link_to "Add Article", new_article_path
+                  %li
                     = link_to "Add Member", new_member_path
                   %li
                     = link_to "Add Performance", new_performance_path
@@ -86,18 +88,61 @@
         %li
           = link_to "Contact Us", "/contact"
 
-    %aside.right-off-canvas-menu
-      %ul.off-canvas-list
-        %li
-          = link_to "Add Member", new_member_path
-        %li
-          = link_to "Add Performance", new_performance_path
-        %li
-          = link_to "Add Video", new_video_path
-        %li
-          %label
-        %li
-          = link_to "Logout", "/logout"
+    - if user_signed_in?
+      %aside.right-off-canvas-menu
+        %ul.off-canvas-list
+          %li
+            %label Articles
+          %li
+            = link_to "Add Article", new_article_path
+          %li.has-submenu
+            = link_to "Edit Article", "#"
+            %ul.right-submenu
+              %li.back
+                = link_to "Back", "#"
+              - Article.all.each do |article|
+                %li
+                  = link_to article.title, edit_article_path(article)
+          %li
+            %label Members
+          %li
+            = link_to "Add Member", new_member_path
+          %li.has-submenu
+            = link_to "Edit Member", "#"
+            %ul.right-submenu
+              %li.back
+                = link_to "Back", "#"
+              - Member.all.each do |member|
+                %li
+                  = link_to member.name, edit_member_path(member)
+          %li
+            %label Performances
+          %li
+            = link_to "Add Performance", new_performance_path
+          %li.has-submenu
+            = link_to "Edit Performance", "#"
+            %ul.right-submenu
+              %li.back
+                = link_to "Back", "#"
+              - Performance.all.each do |performance|
+                %li
+                  = link_to performance.title, edit_performance_path(performance)
+          %li
+            %label Videos
+          %li
+            = link_to "Add Video", new_video_path
+          %li.has-submenu
+            = link_to "Edit Video", "#"
+            %ul.right-submenu
+              %li.back
+                = link_to "Back", "#"
+              - Video.all.each do |video|
+                %li
+                  = link_to "#{video.title} (#{video.year})", edit_video_path(video)
+          %li
+            %label
+          %li
+            = link_to "Logout", "/logout"
 
     %section.main-section
       = yield

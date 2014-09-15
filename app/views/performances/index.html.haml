@@ -8,7 +8,7 @@
   url: request.original_url }
 
 %header.row
-  %h2.link-header.small-9.column
+  %h2.small-10.column
     = link_to "UPCOMING PERFORMANCES", "performances/upcoming"
   - if user_signed_in?
     = link_to "Add Performance", new_performance_path,
@@ -17,7 +17,7 @@
 = render "performances_feed", performances: @upcoming
 
 %header.row
-  %h1.link-header.multi-headers.small-9.column
+  %h1.column.small-10
     = link_to "PAST PERFORMANCES", "/performances/past"
   - if user_signed_in?
     = link_to "Add Performance", new_performance_path,

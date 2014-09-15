@@ -8,8 +8,21 @@
   url: request.original_url }
 
 .row
-  .small-12.column.text-center
-    :markdown
-      For all general or performance inquiries, please email us at **[caltaiko@gmail.com](mailto:caltaiko@gmail.com)**
+  .small-12.medium-7.column.text-left
+    .row
+      .column.small-12
+        :markdown
+          For all general or performance inquiries, please feel free to contact us at **[caltaiko@gmail.com](mailto:caltaiko@gmail.com)**
 
-      You can also reach us over the phone at **(415) 797-7871**
+      .column.small-12
+        %h3 Find us on social media!
+      .social-media
+        .column.small-4
+          = link_to image_tag("icons/facebook.png"), "https://www.facebook.com/calraijintaiko"
+        .column.small-4
+          = link_to image_tag("icons/instagram.png"), "http://instagram.com/calraijintaiko"
+        .column.small-4
+          = link_to image_tag("icons/youtube.png"), "https://www.youtube.com/user/CALtaiko/"
+
+  .column.small-12.medium-5
+    = image_tag("team_playing.jpg", class: "team-pic")

@@ -7,15 +7,12 @@
     .large-5.small-9.column
       = f.input :major, placeholder: "Major"
 
-  .row
     .large-7.small-12.column
       = f.input :email, placeholder: "Email Address"
 
-  .row
     .large-12.small-12.column
       = f.input :bio
 
-  .row
     .small-7.column
       = f.input :avatar
     .small-2.column
@@ -23,6 +20,5 @@
     .small-2.column
       = f.input :current
 
-  .row
     .small-12.column
-      = f.button :submit
+      = f.button :submit, class: "button small"

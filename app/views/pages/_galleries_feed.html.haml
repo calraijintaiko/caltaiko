@@ -1,4 +1,4 @@
-%section.thumbnail-feed.row
+.thumbnail-feed.row
   %ul.small-block-grid-1.medium-block-grid-3.xlarge-block-grid-4
     - performances.each do |performance|
       %li
@@ -6,7 +6,7 @@
           .performance-image
             = link_to image_tag(performance.banner.url(:thumb)), performance.images_link
             = link_to "VIEW GALLERY", performance.images_link, class: "text-link"
-          %section.details
+          .details
             %p
               - if performance.title.length > 34
                 = (performance.title[0, 32] + "...").upcase

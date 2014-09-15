@@ -1,9 +1,13 @@
 = simple_form_for(@video) do |f|
+  .row
+    .column.small-10
+      = f.input :title, placeholder: "Video Title"
 
-  = f.input :title
+    .column.small-2
+      = f.input :year, placeholder: "Video Year"
 
-  = f.input :year
+    .column.small-12
+      = f.input :link, placeholder: "Video Link"
 
-  = f.input :link
-
-  = f.button :submit
+    .column.small-12
+      = f.button :submit, class: "button small"

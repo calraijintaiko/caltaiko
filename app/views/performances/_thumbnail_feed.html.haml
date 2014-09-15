@@ -1,4 +1,4 @@
-%section.thumbnail-feed.row
+.thumbnail-feed.row
   %ul.small-block-grid-1.medium-block-grid-3.xlarge-block-grid-4
     - performances.each do |performance|
       %li
@@ -6,7 +6,7 @@
           .performance-image
             = link_to image_tag(performance.banner.url(:thumb)), performance
             = link_to "VIEW EVENT", performance, class: "text-link"
-          %section.details
+          .details
             %p
               - if performance.title.length > 34
                 = (performance.title[0, 32] + "...").upcase
@@ -15,14 +15,15 @@
             %p.perf-date
               = performance.date.strftime("%A, %-m/%-d")
 
-          %section.edit-icons
+          .icons
             - if performance.performance_videos.any?
               = link_to image_tag("icons/videos_black.png"), performance
             - if performance.images_link.length > 0
               = link_to image_tag("icons/images_black.png"), performance.images_link,
                 title: "Image gallery"
             - if user_signed_in?
-              = link_to image_tag("icons/edit_black.png"), edit_performance_path(performance)
-              = link_to image_tag("icons/delete_black.png"),
-                performance_path(performance), method: :delete,
-                data: { confirm: "Are you sure you'd like to delete performance #{performance.title}?" }
+              .edit-icons.hide-for-medium-down
+                = link_to image_tag("icons/edit_black.png"), edit_performance_path(performance)
+                = link_to image_tag("icons/delete_black.png"),
+                  performance_path(performance), method: :delete,
+                  data: { confirm: "Are you sure you'd like to delete performance #{performance.title}?" }

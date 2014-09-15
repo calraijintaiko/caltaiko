@@ -2,7 +2,7 @@
   - by_year.keys.each do |year|
     .row
       %h4.small-12.column= year
-    %section.years-videos
+    .years-videos
       .row
         - by_year[year].each do |video|
           = render "videos/show", video: video

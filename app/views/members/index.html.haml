@@ -7,22 +7,20 @@
   og: { title: title, description: description, image: image,
   url: request.original_url }
 
-%header
-  .row
-    %h2.link-header.small-10.column= link_to "CURRENT MEMBERS", "/members/current"
-    - if user_signed_in?
-      = link_to "Add Member", new_member_path,
-        class: "button small round column hide-for-medium-down large-1"
+%header.row
+  %h2.large-11.column= link_to "CURRENT MEMBERS", "/members/current"
+  - if user_signed_in?
+    = link_to "Add Member", new_member_path,
+      class: "button small round column hide-for-medium-down large-1"
 
 = render "current_members", members: @current
 
 = render "gens", gens: @gens
 
-%header
-  .row
-    %h2.link-header.multi-headers.small-10.column= link_to "ALUMNI", "/members/alumni"
-    - if user_signed_in?
-      = link_to "Add Member", new_member_path,
-        class: "button small round column hide-for-medium-down large-1"
+%header.row
+  %h2.large-11.column= link_to "ALUMNI", "/members/alumni"
+  - if user_signed_in?
+    = link_to "Add Member", new_member_path,
+      class: "button small round column hide-for-medium-down large-1"
 
 = render "alumni_members", members: @alumni

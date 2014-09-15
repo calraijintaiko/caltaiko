@@ -1,11 +1,16 @@
 = simple_form_for(@article) do |f|
-  = f.error_notification
+  .row
+    = f.error_notification
 
-  .form-inputs
-    = f.input :title
-    = f.input :date, discard_hour: true, order: [:month, :day, :year]
-    = f.input :text
-    = f.input :current
+    .form-inputs
+      .column.small-8
+        = f.input :title
+      .column.small-4
+        = f.input :date, discard_hour: true, order: [:month, :day, :year]
+      .column.small-12
+        = f.input :text
+      .column.small-12
+        = f.input :current
 
-  .form-actions
-    = f.button :submit
+    .form-actions.column.small-12
+      = f.button :submit, class: "button small"

@@ -1,7 +1,7 @@
 %article.video.small-12.large-6.column
   %h4= video.title
   - if user_signed_in?
-    %section.edit-icons
+    .edit-icons
       = link_to image_tag("icons/edit_black.png"), edit_video_path(video)
       = link_to image_tag("icons/delete_black.png"), video_path(video), method: :delete,
         data: { confirm: "Are you sure you'd like to delete video #{video.title}?" }

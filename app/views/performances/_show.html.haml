@@ -1,34 +1,34 @@
 %article.performance.small-12.column(itemscope itemtype="http://schema.org/Event")
-  .performance-image
-    = link_to image_tag(performance.banner.url(:display), itemprop: "image"),
-      performance.link, target: "_blank"
-    = link_to performance.link, class: "text-link upcoming-perf" do
-      %p(itemprop="description")= performance.description
-      %br
-      %br
-      %p.underlined VIEW EVENT
+  .row
+    .performance-image
+      = link_to image_tag(performance.banner.url(:display), itemprop: "image"),
+        performance.link, target: "_blank"
+      = link_to performance.link, class: "text-link upcoming-perf" do
+        %p(itemprop="description")= performance.description
+        %br
+        %br
+        %p.underlined VIEW EVENT
 
-  %section.performance-deets
-    %h3.what(itemprop="name")= performance.title
-    - if performance.upcoming?
-      %p.when
-        %time(itemprop="startDate" datetime="#{performance.date.iso8601}")= performance.date.strftime("%A, %B %d, %l:%M%p").upcase
+    .performance-deets.column.small-12
+      %h3.what(itemprop="name")= performance.title
+      - if performance.upcoming?
+        %p.when
+          %time(itemprop="startDate" datetime="#{performance.date.iso8601}")= performance.date.strftime("%A, %B %d, %l:%M%p").upcase
+      - else
+        %p.when
+          %time(itemprop="startDate" datetime="#{performance.date.iso8601}")= performance.date.strftime("%A, %B %d, %Y, %l:%M%p").upcase
       %p.spacer= "|"
       %p.where(itemprop="location")= performance.location
-    - else
-      %p.when
-        %time(itemprop="startDate" datetime="#{performance.date.iso8601}")= performance.date.strftime("%A, %B %d, %Y, %l:%M%p").upcase
-      %p.spacer= "|"
-      %p.where(itemprop="location")= performance.location
 
-  %section.edit-icons
+  .icons
     - if performance.images_link.length > 0
       = link_to image_tag("icons/images_black.png"), performance.images_link, title: "Image gallery"
     - if controller.action_name != "show"
       = link_to image_tag("icons/view_black.png"), performance_path(performance),
         itemprop: "url", title: "Get a shareable link for this performance."
     - if user_signed_in?
-      = link_to image_tag("icons/edit_black.png"), edit_performance_path(performance)
-      = link_to image_tag("icons/delete_black.png"),
-        performance_path(performance), method: :delete,
-        data: { confirm: "Are you sure you'd like to delete performance #{performance.title}?" }
+      .edit-icons.hide-for-medium-down
+        = link_to image_tag("icons/edit_black.png"), edit_performance_path(performance)
+        = link_to image_tag("icons/delete_black.png"),
+          performance_path(performance), method: :delete,
+          data: { confirm: "Are you sure you'd like to delete performance #{performance.title}?" }

@@ -8,7 +8,7 @@
               .link-wrapper
                 %p.text-center= member.name
                 - if user_signed_in?
-                  %section.edit-icons
+                  .edit-icons
                     = link_to image_tag("icons/edit_black.png"), edit_member_path(member)
                     = link_to image_tag("icons/delete_black.png"),
                       member_path(member), method: :delete,

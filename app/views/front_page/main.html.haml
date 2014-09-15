@@ -6,34 +6,31 @@
   description: description,
   og: { title: title, description: description, image: image, url: root_url }
 
-%header
-  .row
-    %h2.link-header.small-10.column
-      = link_to "NEWS", "/news"
-    - if user_signed_in?
-      = link_to "Add Article", new_article_path,
-        class: "button small round small-2 large-1 column"
+%header.row
+  %h1.small-10.column
+    = link_to "NEWS", "/news"
+  - if user_signed_in?
+    = link_to "Add Article", new_article_path,
+      class: "button small round small-2 large-1 column"
 
 = render "articles/news_feed", articles: @articles
 
-%header
-  .row
-    %h2.link-header.multi-headers.small-8.column
-      = link_to "UPCOMING PERFORMANCES", "/performances/upcoming"
-    - if user_signed_in?
-      = link_to "Add Performance", new_performance_path,
-        class: "button small round small-4 large-2 column"
+%header.row
+  %h1.small-8.column
+    = link_to "UPCOMING PERFORMANCES", "/performances/upcoming"
+  - if user_signed_in?
+    = link_to "Add Performance", new_performance_path,
+      class: "button small round small-4 large-2 column"
 
 = render "performances/performances_feed", performances: @performances
 
-%header
-  .row
-    %h2.link-header.multi-headers.fb.small-12.column
-      = link_to "FACEBOOK", "https://www.facebook.com/calraijintaiko"
+%header.row.hide-for-medium-down
+  %h1.small-12.column
+    = link_to "FACEBOOK", "https://www.facebook.com/calraijintaiko"
 
 #fb-root
 .row
-  #fb-stuff.small-12.column
+  #fb-stuff.column.large-12.hide-for-medium-down
     #fb-feed
       .fb-like-box(data-href="https://www.facebook.com/calraijintaiko" data-width="880" data-height="600" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="false")
 

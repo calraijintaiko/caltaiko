@@ -1,26 +1,31 @@
-%header
-  %h2= "Edit #{resource_name.to_s.humanize}"
+%header.row
+  %h2.column.small-12= "Edit #{resource_name.to_s.humanize}"
 
 = simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
   html: { method: :put }) do |f|
+  .row
+    .column.small-12.medium-4
+      = f.input :username
 
-  = f.input :username
+    .column.small-12.medium-6
+      = f.input :email
 
-  = f.input :email
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      %div.column.small-12= "Currently awaiting confirmation for #{resource.unconfirmed_email}"
 
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %div= "Currently awaiting confirmation for #{resource.unconfirmed_email}"
+    .column.small-12.medium-6
+      = f.input :password, label: "New Password"
+    .column.small-12.medium-6
+      = f.input :password_confirmation, label: "Confirm New Password"
+    .column.small-12.medium-6
+      = f.input :current_password
 
-  = f.input :password, label: "New Password"
-  = f.input :password_confirmation, label: "Confirm New Password"
+    .column.small-12
+      = f.button :submit, class: "button small"
 
-  = f.input :current_password
+#cancel-account.row
+  %p.column.small-12 Unhappy?
+  = button_to "Cancel my account", registration_path(resource_name), data: {confirm: "Are you sure?" }, method: :delete, class: "button small column small-3"
 
-  = f.button :submit
-
-#cancel-account
-  %p Unhappy?
-  = button_to "Cancel my account", registration_path(resource_name), data: {confirm: "Are you sure?" }, method: :delete
-
-%nav.nav-buttons
-  = link_to image_tag("icons/back.png"), :back
+%nav.nav-buttons.row
+  = link_to image_tag("icons/back.png"), :back, class: "column small-1"

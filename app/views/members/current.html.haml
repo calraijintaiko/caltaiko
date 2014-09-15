@@ -7,12 +7,11 @@
   og: { title: title, description: description, image: image,
   url: request.original_url }
 
-%header
-  .row
-    %h2.small-10.large-11.column CURRENT MEMBERS
-    - if user_signed_in?
-      = link_to "Add Member", new_member_path,
-        class: "button small round column hide-for-medium-down large-1"
+%header.row
+  %h2.large-11.column CURRENT MEMBERS
+  - if user_signed_in?
+    = link_to "Add Member", new_member_path,
+      class: "button small round column hide-for-medium-down large-1"
 
 = render "current_members", members: @current
 

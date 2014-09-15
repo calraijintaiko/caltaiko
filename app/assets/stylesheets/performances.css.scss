@@ -15,8 +15,6 @@
 }
 
 .performance {
-    //width: $performance-width;
-    //height: auto;
     @include box-style;
     .performance-deets {
         //width: $performance-width - 2 * $performance-padding;
@@ -52,11 +50,14 @@
             font-size: 40px;
         }
     }
-    .edit-icons {
+    .icons {
         position: relative;
         top: -40px;
         z-index: 4;
         @include edit-icons($icon-padding: 10px);
+        .edit-icons {
+            @include edit-icons($icon-padding: 10px);
+        }
     }
 }
 
@@ -81,10 +82,13 @@
             padding-top: 0px;
             font-size: 13px;
         }
-        .edit-icons {
+        .icons {
             @include edit-icons($icon-size: 15px, $icon-padding: 3px);
             margin-top: -20px;
             z-index: 4;
+            .edit-icons {
+                @include edit-icons($icon-size: 15px, $icon-padding: 3px);
+            }
         }
     }
 }
