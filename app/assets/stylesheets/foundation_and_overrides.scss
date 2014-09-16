@@ -99,7 +99,7 @@ $include-xl-html-grid-classes: true;
 // We use these to control various global styles
 $body-bg: url(http://subtlepatterns.com/patterns/cream_dust.png);
 // $body-font-color: $jet;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family: 'Lato', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
 
@@ -139,6 +139,7 @@ $body-bg: url(http://subtlepatterns.com/patterns/cream_dust.png);
 // $oil         : #333333;
 // $jet         : #222222;
 // $black       : #000000;
+$yellow : #FFC600;
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
@@ -1365,7 +1366,7 @@ $button-sml: rem-calc(8);
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: 45px;
+$topbar-height: 45px;
 $topbar-margin-bottom: 1%;
 
 // Controlling the styles for the title in the top bar
@@ -1374,7 +1375,7 @@ $topbar-margin-bottom: 1%;
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: $oil;
-// $topbar-dropdown-link-color: $white;
+$topbar-dropdown-link-color: $yellow;
 // $topbar-dropdown-link-bg: $oil;
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
@@ -1382,21 +1383,21 @@ $topbar-margin-bottom: 1%;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: $white;
-// $topbar-link-color-hover: $white;
-// $topbar-link-color-active: $white;
-// $topbar-link-color-active-hover: $white;
+$topbar-link-color: $yellow;
+$topbar-link-color-hover: $yellow;
+$topbar-link-color-active: $yellow;
+$topbar-link-color-active-hover: $yellow;
 // $topbar-link-weight: $font-weight-normal;
-// $topbar-link-font-size: rem-calc(13);
+$topbar-link-font-size: rem-calc(20);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
 // $topbar-link-bg-color-hover: $charcoal;
 // $topbar-link-bg-hover: #272727;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
-// $topbar-link-font-family: $body-font-family;
+$topbar-link-font-family: 'Oswald', $body-font-family;
 // $topbar-link-text-transform: none;
-// $topbar-link-padding: $topbar-height / 3;
+$topbar-link-padding: $topbar-height / 3 * 1.2;
 // $topbar-back-link-size: $h5-font-size;
 // $topbar-link-dropdown-padding: 20px;
 
@@ -1404,13 +1405,13 @@ $topbar-margin-bottom: 1%;
 // $topbar-button-top: 7px;
 
 // $topbar-dropdown-label-color: $monsoon;
-// $topbar-dropdown-label-text-transform: uppercase;
+$topbar-dropdown-label-text-transform: uppercase;
 // $topbar-dropdown-label-font-weight: $font-weight-bold;
 // $topbar-dropdown-label-font-size: rem-calc(10);
 // $topbar-dropdown-label-bg: $oil;
 
 // Top menu icon styles
-// $topbar-menu-link-transform: uppercase;
+$topbar-menu-link-transform: uppercase;
 // $topbar-menu-link-font-size: rem-calc(13);
 // $topbar-menu-link-weight: $font-weight-bold;
 // $topbar-menu-link-color: $white;
