@@ -12,12 +12,14 @@
 .top-bar ul.title-area li.name {
     img {
         height: 100%;
-        display: inline-block;
+        position: absolute;
         padding-left: 10px;
     }
     h1 {
         font-size: 118%;
-        margin-left: -10px;
-        display: inline-block;
+        padding-left: 45px;
+        a {
+            color: white;
+        }
     }
 }
