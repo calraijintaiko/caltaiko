@@ -8,7 +8,7 @@
   url: request.original_url }
 
 %header.row
-  %h2.large-11.column ALUMNI
+  %h1.large-11.column ALUMNI
   - if user_signed_in?
     = link_to "Add Member", new_member_path,
       class: "button small round column hide-for-medium-down large-1"

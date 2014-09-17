@@ -8,7 +8,7 @@
   url: request.original_url }
 
 %header.row
-  %h2 UPCOMING PERFORMANCES
+  %h1.column.small-10 UPCOMING PERFORMANCES
   - if user_signed_in?
     = link_to "Add Performance", new_performance_path,
       class: "button small round hide-for-medium-down large-2 column"
