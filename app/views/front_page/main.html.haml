@@ -19,7 +19,7 @@
 = render "articles/news_feed", articles: @articles
 
 %header.row
-  %h1.small-8.column
+  %h1
     = link_to "UPCOMING PERFORMANCES", "/performances/upcoming"
   - if user_signed_in?
     = link_to "Add Performance", new_performance_path,
