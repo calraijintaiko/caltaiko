@@ -8,7 +8,7 @@
   url: request.original_url }
 
 %header.row
-  %h1= link_to "CURRENT MEMBERS", "/members/current"
+  %h1.large-11.column= link_to "CURRENT MEMBERS", "/members/current"
   - if user_signed_in?
     = link_to "Add Member", new_member_path,
       class: "button small round column hide-for-medium-down large-1"

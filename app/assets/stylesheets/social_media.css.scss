@@ -1,6 +1,8 @@
 @import "variables";
 @import "mixins";
 
+$text-link-color: #45619D;
+
 .social-media {
     i {
         font-size: 450%;
@@ -22,6 +24,9 @@
         position: absolute;
         margin-left: 33%;
         top: 10px;
-        color: #45619D;
+        color: $text-link-color;
+    }
+    .text-link:hover {
+        color: darken($text-link-color, 15%);
     }
 }
