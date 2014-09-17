@@ -18,7 +18,7 @@
     @include box-style;
     .performance-deets {
         p {
-            word-spacing: 5px;
+            word-spacing: 2px;
             font-family: "Oswald";
 	    color: $main-color;
             margin-bottom: 1%;
@@ -40,7 +40,6 @@
             margin-left: 15%;
         }
         i {
-            color: $main-color;
             font-size: 300%;
         }
     }

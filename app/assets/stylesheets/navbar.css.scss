@@ -18,6 +18,7 @@
     h1 {
         font-size: 118%;
         padding-left: 45px;
+        letter-spacing: 1px;
     }
 }
 
@@ -25,5 +26,6 @@
     h1.title a {
         text-transform: uppercase;
         color: $yellow;
+        letter-spacing: 1px;
     }
 }

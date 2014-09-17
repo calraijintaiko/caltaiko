@@ -13,25 +13,13 @@ section.news-feed {
 article.article {
     padding: 20px;
     @include box-style($sub-color-3, $sub-color-2);
-    h1 {
-	display: inline-block;
-    }
-    small {
-	display: block;
-	font-family: $main-font;
-    }
-    li {
-	font-family: $main-font;
-    }
-    p {
-	text-align: left;
-	color: black;
-    }
-    a {
-	text-decoration: none;
-    }
-    .edit-icons {
-        @include edit-icons($icon-size: 20px, $icon-padding: 5px);
+    .icons {
+        a {
+            margin-left: 15%;
+            i {
+                font-size: 270%;
+            }
+        }
     }
 }
 
