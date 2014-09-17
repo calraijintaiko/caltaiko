@@ -8,7 +8,7 @@
   url: request.original_url }
 
 #show-vid
-  = render "show"
+  = render "show", performance_video: @performance_video
 
 %nav.nav-buttons
   = link_to image_tag("icons/back.png"), performances_path

@@ -11,10 +11,11 @@
   = render "show", performance: @performance
 
 - if @performance.performance_videos.any?
-  %header
-    %h2.multi-headers VIDEOS
-  %section.perf-videos
-    = render @performance_videos
+  %header.row
+    %h2.column.small-12 VIDEOS
+  %section.perf-videos.row.text-left
+    - @performance_videos.each do |perf_vid|
+      = render "performance_videos/show", performance_video: perf_vid
 
 %nav.nav-buttons.row
   .small-6.column
