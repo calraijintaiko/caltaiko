@@ -1,6 +1,10 @@
+@import "variables";
+@import "mixins";
+
 .social-media {
     i {
         font-size: 450%;
+        @include transition($effect: font, $time: .1s);
     }
     i.fi-social-facebook {
         color: #45619D;
@@ -10,5 +14,8 @@
     }
     i.fi-social-instagram {
         color: black;
+    }
+    i:hover {
+        font-size: 500%;
     }
 }

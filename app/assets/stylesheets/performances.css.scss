@@ -21,18 +21,18 @@
             word-spacing: 5px;
             font-family: "Oswald";
 	    color: $main-color;
+            margin-bottom: 1%;
         }
 	p.where, .what {
 	    // Make them uppercase here instead of in the template so that
 	    // look nicer in Google rich snippets
 	    text-transform: uppercase;
 	}
-        h3 {
+        .what {
 	    color: $main-color;
             text-shadow: 2px 2px 0px $sub-color-2;
             margin-top: 0px;
             margin-bottom: 0px;
-            font-size: 300%;
         }
     }
     .icons {
@@ -117,7 +117,6 @@
 
 .performance-image:hover {
     img {
-	//width: 100%; 
 	filter: alpha(opacity=30);
         opacity: .3;
     }

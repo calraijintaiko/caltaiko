@@ -6,6 +6,9 @@
   description: description,
   og: { title: title, description: description, image: image, url: root_url }
 
+.row
+  = image_tag("banner.png", class: "small-12 column")
+
 %header.row
   %h1.small-10.column
     = link_to "NEWS", "/news"
@@ -33,7 +36,4 @@
 .row
   #fb-stuff.column.large-12.hide-for-medium-down
     #fb-feed
-      .fb-like-box(data-href="https://www.facebook.com/calraijintaiko" data-width="880" data-height="600" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="false")
-
-    #fb-faces
-      .fb-facepile(data-href="https://www.facebook.com/calraijintaiko" data-width="880" data-max-rows="2" data-colorscheme="light" data-size="medium" data-show-count="true")
+      .fb-like-box(data-href="https://www.facebook.com/calraijintaiko" data-width="970" data-height="600" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="true")

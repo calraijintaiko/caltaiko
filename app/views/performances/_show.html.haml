@@ -3,15 +3,35 @@
     .performance-image
       = link_to image_tag(performance.banner.url(:display), itemprop: "image"),
         performance.link, target: "_blank"
-      = link_to performance.link, class: "text-link upcoming-perf" do
+      = link_to performance.link, class: "text-link upcoming-perf hide-for-medium-down" do
         %p(itemprop="description")= performance.description
         %br
         %br
         %p.underlined VIEW EVENT
+      = link_to performance.link, class: "text-link upcoming-perf hide-for-large-up" do
+        %p.underlined VIEW EVENT
 
     .performance-deets.column.small-12
       .row
-        %h3.what.column.small-10(itemprop="name")= performance.title
+        %h2.what.column.small-10(itemprop="name")= performance.title
+        .icons.column.small-2
+          - if controller.action_name != "show"
+            = link_to performance_path(performance),
+              itemprop: "url", title: "Get a shareable link for this performance.",
+              class: "right hide-for-medium-down" do
+              %i.fi-link
+          - if performance.images_link.length > 0
+            = link_to performance.images_link, title: "Image gallery", class: "right" do
+              %i.fi-photo
+
+        - if performance.upcoming?
+          %p.when.column.small-12.medium-4
+            %time(itemprop="startDate" datetime="#{performance.date.iso8601}")= performance.date.strftime("%A, %B %d, %l:%M%p").upcase
+        - else
+          %p.when.column.small-12.medium-4
+            %time(itemprop="startDate" datetime="#{performance.date.iso8601}")= performance.date.strftime("%A, %B %d, %Y, %l:%M%p").upcase
+        %p.where.column.small-12.medium-8(itemprop="location")= performance.location
+
         - if user_signed_in?
           .icons.column.large-2.hide-for-medium-down
             = link_to performance_path(performance), method: :delete,
@@ -19,20 +39,3 @@
               %i.fi-trash
             = link_to edit_performance_path(performance), class: "right" do
               %i.fi-pencil
-        - if performance.upcoming?
-          %p.when.column.small-12.medium-4
-            %time(itemprop="startDate" datetime="#{performance.date.iso8601}")= performance.date.strftime("%A, %B %d, %l:%M%p").upcase
-        - else
-          %p.when.column.small-12.medium-4
-            %time(itemprop="startDate" datetime="#{performance.date.iso8601}")= performance.date.strftime("%A, %B %d, %Y, %l:%M%p").upcase
-        %p.where.column.small-12.medium-6(itemprop="location")= performance.location
-
-        .icons.column.small-12.medium-2
-          - if controller.action_name != "show"
-            = link_to performance_path(performance),
-              itemprop: "url", title: "Get a shareable link for this performance.",
-              class: "right" do
-              %i.fi-link
-          - if performance.images_link.length > 0
-            = link_to performance.images_link, title: "Image gallery", class: "right" do
-              %i.fi-photo

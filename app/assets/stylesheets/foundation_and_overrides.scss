@@ -1,3 +1,5 @@
+@import "variables";
+
 // Foundation by ZURB
 // foundation.zurb.com
 // Licensed under MIT Open Source
@@ -97,7 +99,8 @@ $include-xl-html-grid-classes: true;
 // $font-weight-bold: bold !default;
 
 // We use these to control various global styles
-$body-bg: url(http://subtlepatterns.com/patterns/cream_dust.png);
+// $body-bg: url(http://subtlepatterns.com/patterns/cream_dust.png);
+$body-bg: #fafafa;
 // $body-font-color: $jet;
 $body-font-family: 'Lato', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: $font-weight-normal;
@@ -112,8 +115,10 @@ $body-font-family: 'Lato', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans
 // $default-float: left;
 // $last-child-float: $opposite-direction;
 
+$yellow : #FFC600;
+
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+$primary-color: black;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -139,7 +144,7 @@ $body-font-family: 'Lato', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans
 // $oil         : #333333;
 // $jet         : #222222;
 // $black       : #000000;
-$yellow : #FFC600;
+// $blye        : #008CBA;
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
@@ -197,10 +202,10 @@ $yellow : #FFC600;
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-// $header-font-family: $body-font-family;
+$header-font-family: "Oswald", $body-font-family;
 // $header-font-weight: $font-weight-normal;
 // $header-font-style: normal;
-// $header-font-color: $jet;
+$header-font-color: black;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -230,7 +235,7 @@ $yellow : #FFC600;
 // $subheader-bottom-margin: .5rem;
 
 // A general <small> styling
-// $small-font-size: 60%;
+$small-font-size: 80%;
 // $small-font-color: scale-color($header-font-color, $lightness: 35%);
 
 // We use these to style paragraphs

@@ -18,8 +18,12 @@
     h1 {
         font-size: 118%;
         padding-left: 45px;
-        a {
-            color: white;
-        }
+    }
+}
+
+.tab-bar .tab-bar-section {
+    h1.title a {
+        text-transform: uppercase;
+        color: #FFC600;
     }
 }

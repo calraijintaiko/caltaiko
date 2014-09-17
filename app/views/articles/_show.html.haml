@@ -1,5 +1,5 @@
 %article.article.small-12.column
-  %h1= article.title
+  %h3= article.title
   - if user_signed_in?
     %section.edit-icons
       = link_to image_tag("icons/edit_black.png"), edit_article_path(article)
