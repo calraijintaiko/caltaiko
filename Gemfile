@@ -35,8 +35,6 @@ gem 'devise'
 
 # Use Paperclip to attach images
 gem 'paperclip', '~> 4.1'
-# Paperclip requires cocaine
-gem 'cocaine', '~> 0.5.4'
 # Enable AWS support
 gem 'aws-sdk'
 
@@ -72,6 +70,9 @@ gem 'cocoon'
 # Enables Foundation framework
 gem 'modernizr-rails'
 gem 'foundation-rails'
+
+# Enable Slick carousel
+gem 'slick_rails'
 
 # Testing-suite gems
 group :development, :test do 
