@@ -7,7 +7,11 @@
   og: { title: title, description: description, image: image, url: root_url }
 
 .row
-  = image_tag("banner.png", class: "small-12 column")
+  .column.medium-2.hide-for-small
+    %p
+  = image_tag("banner.png", class: "small-12 medium-8 column")
+  .column.medium-2.hide-for-small
+    %p
 
 %header.row
   %h1.small-10.column
