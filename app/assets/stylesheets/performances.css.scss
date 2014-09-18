@@ -50,7 +50,7 @@
         display: inline-block;
         @include box-style($width: 3px);
         .details {
-            padding: 3px 8px 0px 8px;
+            padding: 3px 8px;
             .date-and-icons {
                 position: relative;
             }
