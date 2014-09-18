@@ -141,7 +141,7 @@ $primary-color: black;
 // $steel       : #666666;
 // $charcoal    : #555555;
 // $tuatara     : #444444;
-// $oil         : #333333;
+$oil         : #333333;
 // $jet         : #222222;
 // $black       : #000000;
 // $blye        : #008CBA;
@@ -456,7 +456,7 @@ $button-sml: rem-calc(8);
 // We use these to control button border and hover styles.
 // $button-border-width: 0px;
 // $button-border-style: solid;
-// $button-bg-color: $primary-color;
+$button-bg-color: $oil;
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);

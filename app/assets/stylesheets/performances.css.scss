@@ -4,18 +4,9 @@
 @import "variables";
 @import "mixins";
 
-.perf-feed {
-    article {
-        margin-bottom: 50px;
-        margin-top: 0px;
-    }
-    .text-wrapper {
-        margin-top: 0px;
-    }
-}
-
 .performance {
     @include box-style;
+    margin-bottom: 50px;
     .performance-deets {
         p {
             word-spacing: 2px;
