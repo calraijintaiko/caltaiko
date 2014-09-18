@@ -7,7 +7,7 @@
             .member-image
               %a(href="#" data-reveal-id="#{member.slug}")
                 = image_tag(member.avatar.url(:thumb))
-              = link_to member.name, member, class: "text-link hide-for-medium-down"
+              %a.text-link.hide-for-medium-down(href="#" data-reveal-id="#{member.slug}")= member.name
 
             - if user_signed_in?
               .icons.hide-for-medium-down.row
