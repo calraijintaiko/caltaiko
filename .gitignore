@@ -23,5 +23,5 @@
 # Ignore text editor generated temp files
 # Do it here instead of globally since many people will be handling this code.
 *~
-#*
+*#
 .#*

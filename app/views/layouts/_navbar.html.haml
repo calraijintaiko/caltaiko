@@ -146,6 +146,16 @@
             = link_to "Logout", "/logout"
 
     %section.main-section
+      .devise-notice
+        - if notice
+          .alert-box.success(data-alert)
+            .row
+              = notice
+        - if alert
+          .alert-box.alert(data-alert)
+            .row
+              = alert
+
       = yield
 
     %a.exit-off-canvas

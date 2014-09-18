@@ -50,7 +50,9 @@
     = render "layouts/navbar"
     .devise-notice
       - if notice
-        %p.alert-success= notice
+        .alert-box.success(data-alert)
+          = notice
       - if alert
-        %p.alert-danger= alert
+        .alert-box.alert(data-alert)
+          = alert
 
