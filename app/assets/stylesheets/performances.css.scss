@@ -49,29 +49,28 @@
     .thumb-performance {
         display: inline-block;
         @include box-style($width: 3px);
+        .details {
+            padding: 3px 8px 0px 8px;
+            .date-and-icons {
+                position: relative;
+            }
+        }
         p {
-            text-align: left;
-            margin: 0px;
             white-space: nowrap;
             overflow: hidden;
             font-family: "Oswald";
-            padding-left: 7px;
-            padding-top: 2px;
-            padding-bottom: 3px;
-            padding-right: 7px;
-	    color: $main-color;
+            margin-bottom: 0px;
         }
         p.perf-date {
-            margin-top: -7px;
-            padding-top: 0px;
             font-size: 13px;
         }
         .icons {
-            @include edit-icons($icon-size: 15px, $icon-padding: 3px);
-            margin-top: -20px;
-            z-index: 4;
-            .edit-icons {
-                @include edit-icons($icon-size: 15px, $icon-padding: 3px);
+            position: absolute;
+            top: -10px;
+            right: 0px;
+            i {
+                margin-left: 8px;
+                font-size: 140%;
             }
         }
     }

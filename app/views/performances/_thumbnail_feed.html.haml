@@ -7,23 +7,26 @@
             = link_to image_tag(performance.banner.url(:thumb)), performance
             = link_to "VIEW EVENT", performance, class: "text-link"
           .details
-            %p
+            %p.text-left
               - if performance.title.length > 34
                 = (performance.title[0, 32] + "...").upcase
               - else
                 = performance.title.upcase
-            %p.perf-date
-              = performance.date.strftime("%A, %-m/%-d")
+            .row.date-and-icons
+              %p.perf-date.column.small-5.text-left
+                = performance.date.strftime("%A, %-m/%-d")
 
-          .icons
-            - if performance.performance_videos.any?
-              = link_to image_tag("icons/videos_black.png"), performance
-            - if performance.images_link.length > 0
-              = link_to image_tag("icons/images_black.png"), performance.images_link,
-                title: "Image gallery"
-            - if user_signed_in?
-              .edit-icons.hide-for-medium-down
-                = link_to image_tag("icons/edit_black.png"), edit_performance_path(performance)
-                = link_to image_tag("icons/delete_black.png"),
-                  performance_path(performance), method: :delete,
-                  data: { confirm: "Are you sure you'd like to delete performance #{performance.title}?" }
+              .icons.column.small-7
+                - if user_signed_in?
+                  .edit-icons.hide-for-medium-down
+                    = link_to performance_path(performance), method: :delete,
+                      data: { confirm: "Are you sure you'd like to delete performance #{performance.title}?" }, class: "right hide-for-medium-down" do
+                      %i.fi-trash
+                    = link_to edit_performance_path(performance), class: "right hide-for-medium-down" do
+                      %i.fi-pencil
+                - if performance.images_link.length > 0
+                  %a.right.has-tip.tip-top(data-tooltip title="View images from this performance" aria-haspopup="true")
+                    %i.fi-photo
+                - if performance.performance_videos.any?
+                  %a.right.has-tip.tip-top(data-tooltip title="View videos from this performance" aria-haspopup="true" href="#{performance}")
+                    %i.fi-video

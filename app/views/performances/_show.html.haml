@@ -16,12 +16,10 @@
         %h2.what.column.small-10(itemprop="name")= performance.title
         .icons.column.small-2
           - if controller.action_name != "show"
-            = link_to performance_path(performance),
-              itemprop: "url", title: "Get a shareable link for this performance.",
-              class: "right hide-for-medium-down" do
+            %a.right.hide-for-medium-down.has-tip.tip-top(itemprop="url" data-tooltip title="Get a shareable link for this performance" aria-haspopup="true")
               %i.fi-link
           - if performance.images_link.length > 0
-            = link_to performance.images_link, title: "Image gallery", class: "right" do
+            %a.right.has-tip.tip-top(data-tooltip title="View images from this performance" aria-haspopup="true")
               %i.fi-photo
           - if user_signed_in?
             = link_to performance_path(performance), method: :delete,
