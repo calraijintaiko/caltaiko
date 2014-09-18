@@ -48,11 +48,3 @@
 
   %body{ class: "#{controller.controller_name}", id: "#{controller.action_name}" }
     = render "layouts/navbar"
-    .devise-notice
-      - if notice
-        .alert-box.success(data-alert)
-          = notice
-      - if alert
-        .alert-box.alert(data-alert)
-          = alert
-
