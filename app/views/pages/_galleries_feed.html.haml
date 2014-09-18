@@ -7,7 +7,7 @@
             = link_to image_tag(performance.banner.url(:thumb)), performance.images_link
             = link_to "VIEW GALLERY", performance.images_link, class: "text-link"
           .details
-            %p
+            %p.text-left
               - if performance.title.length > 34
                 = (performance.title[0, 32] + "...").upcase
               - else
