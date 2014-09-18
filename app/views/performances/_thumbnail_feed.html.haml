@@ -25,8 +25,8 @@
                     = link_to edit_performance_path(performance), class: "right hide-for-medium-down" do
                       %i.fi-pencil
                 - if performance.images_link.length > 0
-                  %a.right.has-tip.tip-top(data-tooltip title="View images from this performance" aria-haspopup="true")
+                  %a.right.has-tip.tip-top(data-tooltip title="View images from this performance" aria-haspopup="true" href="#{performance.images_link}")
                     %i.fi-photo
                 - if performance.performance_videos.any?
-                  %a.right.has-tip.tip-top(data-tooltip title="View videos from this performance" aria-haspopup="true" href="#{performance}")
+                  %a.right.has-tip.tip-top(data-tooltip title="View videos from this performance" aria-haspopup="true" href="#{performance_path(performance)}")
                     %i.fi-video
