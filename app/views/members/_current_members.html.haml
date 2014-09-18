@@ -22,3 +22,4 @@
   - members.each do |member|
     .reveal-modal.medium(data-reveal id="#{member.slug}")
       = render "members/show", member: member
+      %a.close-reveal-modal.hide-for-large-up &#215;

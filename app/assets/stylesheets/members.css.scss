@@ -4,10 +4,6 @@
 @import "variables";
 @import "mixins";
 
-.reveal-modal{
-    position : fixed;
-}
-
 .current-members {
     .member {
         background-color: $dark-bg;
