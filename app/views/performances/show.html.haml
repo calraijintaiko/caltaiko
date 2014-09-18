@@ -17,9 +17,5 @@
     - @performance_videos.each do |perf_vid|
       = render "performance_videos/show", performance_video: perf_vid
 
-%nav.nav-buttons.row
-  .small-6.column
-    %p
-  = link_to image_tag("icons/back.png"), performances_path, class: "small-1 column"
-  .small-6.column
-    %p
+.back
+  = link_to "Back", members_path, class: "button small radius"

@@ -12,5 +12,7 @@
       .column.small-12
         = f.input :current
 
-    .form-actions.column.small-12
+    .column.small-5.large-4
       = f.button :submit, class: "button small"
+    .column.small-7.large-8
+      = link_to "Cancel", performances_path, class: "button small disabled"
