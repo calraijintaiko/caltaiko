@@ -71,6 +71,8 @@ gem 'cocoon'
 gem 'modernizr-rails'
 # Don't upgrade to 5.4.4!! Currently errors out
 gem 'foundation-rails', '~>5.4.3.0'
+# Use Foundation icons
+gem 'foundation-icons-sass-rails'
 
 # Enable Slick carousel
 gem 'slick_rails'

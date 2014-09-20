@@ -10,9 +10,29 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
- *= require foundation_and_overrides
  *= require slick
 
  */
+
+// Foundation Framework
+@import 'foundation-icons';
+@import "foundation_and_overrides";
+
+// Resources
+@import "videos";
+@import "articles";
+@import "members";
+@import "pages";
+@import "performance_videos";
+@import "performances";
+
+// Elements
+@import "buttons";
+@import "databases";
+@import "facebook";
+@import "navbar";
+@import "sections";
+@import "text";
+@import "pictures";
+@import "social_media";

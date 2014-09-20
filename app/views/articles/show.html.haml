@@ -10,5 +10,5 @@
 .row
   = render "show", article: @article
 
-%nav.nav-buttons
-  = link_to image_tag("icons/back.png"), "/news"
+.back
+  = link_to "Back", members_path, class: "button small radius"

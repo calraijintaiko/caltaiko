@@ -13,6 +13,7 @@ module Caltaiko
     # -- all .rb files in that directory are automatically loaded.
 
     # Add font files to asset pipeline
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
