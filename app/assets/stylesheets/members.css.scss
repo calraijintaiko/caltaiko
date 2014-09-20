@@ -14,6 +14,7 @@
             img {
                 z-index: 1;
                 @include transition;
+                width: 100%;
             }
             a.text-link {
                 text-decoration: none;
@@ -30,7 +31,6 @@
         }
         .member-image:hover {
             img {
-	        zoom: 1; 
 	        filter: alpha(opacity=40);
                 opacity: .4;
             }
