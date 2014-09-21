@@ -12,6 +12,7 @@
         .member-image {
             position: relative;
             img {
+                width: 100%;
                 z-index: 1;
                 @include transition;
             }
@@ -30,7 +31,6 @@
         }
         .member-image:hover {
             img {
-	        zoom: 1; 
 	        filter: alpha(opacity=40);
                 opacity: .4;
             }
