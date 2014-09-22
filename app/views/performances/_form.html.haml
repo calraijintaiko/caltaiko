@@ -1,22 +1,22 @@
 = simple_form_for(@performance) do |f|
 
   .row
-    .small-5.large-3.column
-      = f.input :date, start_year: 2005, end_year: Time.new.year + 1, ampm: true, minute_step: 15
-
-  .row
-    .small-12.large-9.column
-      = f.input :title
-
-  .row
-    .small-12.large-7.column
-      = f.input :location
-    .small-12.large-5.column
-      = f.input :link
+    .column.small-12
+      = f.input :date, start_year: 2005, end_year: Time.new.year + 1, ampm: true, minute_step: 15, input_html: { class: "column small-4 left" }
 
   .row
     .small-12.column
-      = f.input :description
+      = f.input :title, placeholder: "Performance Title"
+
+  .row
+    .small-12.large-7.column
+      = f.input :location, placeholder: "Performance Location"
+    .small-12.large-5.column
+      = f.input :link, placeholder: "Link to event page"
+
+  .row
+    .small-12.column
+      = f.input :description, placeholder: "Performance Description"
 
   .row
     .small-7.column
@@ -26,7 +26,7 @@
 
   .row
     .small-12.large-8.column
-      = f.input :images_link
+      = f.input :images_link, placeholder: "Link to image gallery"
 
   %section#nested_fields
     .row

@@ -1,0 +1,11 @@
+@import "variables";
+@import "mixins";
+
+form {
+    textarea {
+        height: 200px;
+    }
+    div.datetime {
+        color: transparent;
+    }
+}

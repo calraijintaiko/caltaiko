@@ -3,12 +3,12 @@
     = f.error_notification
 
     .form-inputs
-      .column.small-8
-        = f.input :title
-      .column.small-4
-        = f.input :date, discard_hour: true, order: [:month, :day, :year]
       .column.small-12
-        = f.input :text
+        = f.input :title, placeholder: "Article Title"
+      .column.small-12
+        = f.input :date, discard_hour: true, order: [:month, :day, :year], input_html: { class: "column small-4 left" }
+      .column.small-12
+        = f.input :text, placeholder: "Article Text"
       .column.small-12
         = f.input :current
 
