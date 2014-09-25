@@ -43,10 +43,12 @@ class Member < ActiveRecord::Base
     ]
   end
 
+  # Return the first name of the member
   def first_name
     return self.name.split.first
   end
 
+  # Return the last name of the member
   def last_name
     return self.name.split.last
   end
