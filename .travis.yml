@@ -1,8 +1,8 @@
 language: ruby
 rvm:
   - "2.1.2"
-# uncomment this line if your project needs to run something other than `rake`:
-script: bundle exec rspec spec
 bundler_args: --without production
 before_script:
   - psql -c 'create database caltaiko_test;' -U postgres
+
+script: bundle exec rspec spec
