@@ -1,38 +1,41 @@
-%article.performance.small-12.column(itemscope itemtype="http://schema.org/Event")
-  .row
-    .performance-image
-      = link_to image_tag(performance.banner.url(:display), itemprop: "image"),
-        performance.link
-      = link_to performance.link, class: "text-link upcoming-perf hide-for-medium-down" do
-        %p(itemprop="description")= performance.description
-        %br
-        %br
-        %p.underlined VIEW EVENT
-      = link_to performance.link, class: "text-link upcoming-perf hide-for-large-up" do
-        %p.underlined VIEW EVENT
-
-    .performance-deets.column.small-12
+.row
+  .column.small-12
+    %article.performance(itemscope itemtype="http://schema.org/Event")
       .row
-        %h2.what.column.small-10(itemprop="name")= performance.title
-        .icons.column.small-2
-          - if controller.action_name != "show"
-            %a.right.hide-for-medium-down.has-tip.tip-top(itemprop="url" data-tooltip title="Get a shareable link for this performance" data-options="disable_for_touch:true" aria-haspopup="true" href="#{performance_path(performance)}")
-              %i.fi-link
-          - if performance.images_link.length > 0
-            %a.right.has-tip.tip-top(data-tooltip title="View images from this performance" aria-haspopup="true" data-options="disable_for_touch:true" href="#{performance.images_link}")
-              %i.fi-photo
-          - if user_signed_in?
-            = link_to performance_path(performance), method: :delete,
-              data: { confirm: "Are you sure you'd like to delete performance #{performance.title}?" }, class: "right hide-for-medium-down" do
-              %i.fi-trash
-            = link_to edit_performance_path(performance), class: "right hide-for-medium-down" do
-              %i.fi-pencil
+        .column.small-12
+          .performance-image
+            = link_to image_tag(performance.banner.url(:display), itemprop: "image"),
+              performance.link
+            = link_to performance.link, class: "text-link upcoming-perf hide-for-medium-down" do
+              %p(itemprop="description")= performance.description
+              %br
+              %br
+              %p.underlined VIEW EVENT
+            = link_to performance.link, class: "text-link upcoming-perf hide-for-large-up" do
+              %p.underlined VIEW EVENT
+
+        .column.small-12
+          .performance-deets
+            %h2.what.column.small-10(itemprop="name")= performance.title
+            .icons.column.small-2
+              - if controller.action_name != "show"
+                %a.right.hide-for-medium-down.has-tip.tip-top(itemprop="url" data-tooltip title="Get a shareable link for this performance" data-options="disable_for_touch:true" aria-haspopup="true" href="#{performance_path(performance)}")
+                  %i.fi-link
+              - if performance.images_link.length > 0
+                %a.right.has-tip.tip-top(data-tooltip title="View images from this performance" aria-haspopup="true" data-options="disable_for_touch:true" href="#{performance.images_link}")
+                  %i.fi-photo
+              - if user_signed_in?
+                = link_to performance_path(performance), method: :delete,
+                  data: { confirm: "Are you sure you'd like to delete performance #{performance.title}?" }, class: "right hide-for-medium-down" do
+                  %i.fi-trash
+                = link_to edit_performance_path(performance), class: "right hide-for-medium-down" do
+                  %i.fi-pencil
 
 
-        - if performance.upcoming?
-          %p.when.column.small-12.medium-4
-            %time(itemprop="startDate" datetime="#{performance.date.iso8601}")= performance.date.strftime("%A, %B %d, %l:%M%p").upcase
-        - else
-          %p.when.column.small-12.medium-4
-            %time(itemprop="startDate" datetime="#{performance.date.iso8601}")= performance.date.strftime("%A, %B %d, %Y, %l:%M%p").upcase
-        %p.where.column.small-12.medium-8(itemprop="location")= performance.location
+            - if performance.upcoming?
+              %p.when.column.small-12.medium-4
+                %time(itemprop="startDate" datetime="#{performance.date.iso8601}")= performance.date.strftime("%A, %B %d, %l:%M%p").upcase
+            - else
+              %p.when.column.small-12.medium-4
+                %time(itemprop="startDate" datetime="#{performance.date.iso8601}")= performance.date.strftime("%A, %B %d, %Y, %l:%M%p").upcase
+            %p.where.column.small-12.medium-8(itemprop="location")= performance.location

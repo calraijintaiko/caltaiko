@@ -22,8 +22,8 @@
       = link_to "Add Article", new_article_path,
         class: "button small round hide-for-medium-down large-1 column"
 
-  .news
-    .carousel.row
+  .news.row
+    .carousel.column.small-12
       %ul(data-orbit)
         - @articles.each do |article|
           %li
