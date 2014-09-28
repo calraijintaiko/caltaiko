@@ -5,7 +5,7 @@
         %h3.small-12.large-10.column= article.title
         - if user_signed_in?
           .icons.hide-for-medium-down.column.large-2
-            = link_to articles_path(article), method: :delete, class: "right",
+            = link_to article_path(article), method: :delete, class: "right",
               data: { confirm: "Are you sure you'd like to delete article '#{article.title}'?" } do
               %i.fi-trash
             = link_to edit_article_path(article), class: "right" do
