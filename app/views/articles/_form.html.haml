@@ -9,8 +9,13 @@
         = f.input :date, discard_hour: true, order: [:month, :day, :year], input_html: { class: "column small-4 left" }
       .column.small-12
         = f.input :text, placeholder: "Article Text"
-      .column.small-12
-        = f.input :current
+
+    .small-7.column
+      = f.input :image
+    .small-2.column
+      = f.input :delete_image, as: :boolean
+    .small-2.column
+      = f.input :current
 
     .column.small-5.large-4
       = f.button :submit, class: "button small"

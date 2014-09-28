@@ -13,6 +13,17 @@ class Article < ActiveRecord::Base
   validates :date, presence: true
   validates :text, presence: true
 
+  Paperclip.interpolates :slug do |attachment, style|
+    attachment.instance.slug
+  end
+
+  has_attached_file :image, :styles => { thumb: "700x500#", full: "1000x300#" },
+  path: "/articles/:slug/:attachment/:style/:filename",
+  url: "/articles/:slug/:attachment/:style/:filename",
+  default_url: "/images/articles/:attachment/:style/missing.png"
+  include DeletableAttachment
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
   # Returns the year of the articles date as a String
   def year
     if !(self.date.nil?)

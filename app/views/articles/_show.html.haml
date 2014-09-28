@@ -10,5 +10,7 @@
           %i.fi-pencil
 
   %small= article.date.strftime("%B %-d, %Y")
+  .article-image.row
+    = image_tag article.image.url(:full), class: "column small-12"
   :markdown
     #{article.text}

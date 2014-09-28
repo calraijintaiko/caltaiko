@@ -13,6 +13,10 @@ section.news-feed {
 article.article {
     padding: 20px;
     @include box-style($sub-color-3, $sub-color-2);
+    .article-image {
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
     .icons {
         a {
             margin-left: 15%;
