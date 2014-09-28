@@ -17,7 +17,7 @@ class Article < ActiveRecord::Base
     attachment.instance.slug
   end
 
-  has_attached_file :image, :styles => { thumb: "700x500#", full: "1000x300#" },
+  has_attached_file :image, :styles => { thumb: "700x500#", full: "1000x300#", carousel: "1000x450#" },
   path: "/articles/:slug/:attachment/:style/:filename",
   url: "/articles/:slug/:attachment/:style/:filename",
   default_url: "/images/articles/:attachment/:style/missing.png"

@@ -28,7 +28,7 @@
         - @articles.each do |article|
           %li
             %a(href="#{article_path(article)}")
-              = image_tag article.image.url(:full)
+              = image_tag article.image.url(:carousel)
             .orbit-caption
               = article.title
 
