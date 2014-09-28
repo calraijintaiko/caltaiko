@@ -22,7 +22,7 @@
       = link_to "Add Article", new_article_path,
         class: "button small round hide-for-medium-down large-1 column"
 
-  %section.news
+  .news
     .carousel.row
       %ul(data-orbit)
         - @articles.each do |article|
@@ -31,8 +31,6 @@
               = image_tag article.image.url(:full)
             .orbit-caption
               = article.title
-
--#= render "articles/news_feed", articles: @articles
 
 %header.row
   %h1.small-10.column

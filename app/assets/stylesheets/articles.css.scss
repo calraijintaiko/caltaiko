@@ -4,6 +4,10 @@
 @import "variables";
 @import "mixins";
 
+.news {
+    margin-bottom: 30px;
+}
+
 article.article {
     padding: 20px;
     @include box-style($sub-color-3, $sub-color-2);
