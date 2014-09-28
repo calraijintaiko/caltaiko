@@ -30,3 +30,7 @@ article.article {
 article.article:first-child {
     margin-top: 2%;
 }
+
+.carousel {
+    @include box-style($sub-color-3, $sub-color-2);
+}

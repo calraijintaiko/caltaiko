@@ -13,14 +13,26 @@
   .column.medium-2.hide-for-small
     %p
 
-%header.row
-  %h1.small-10.column
-    = link_to "NEWS", "/news"
-  - if user_signed_in?
-    = link_to "Add Article", new_article_path,
-      class: "button small round hide-for-medium-down large-1 column"
 
-= render "articles/news_feed", articles: @articles
+- if @articles.length > 0
+  %header.row
+    %h1.small-10.column
+      = link_to "NEWS", "/news"
+    - if user_signed_in?
+      = link_to "Add Article", new_article_path,
+        class: "button small round hide-for-medium-down large-1 column"
+
+  %section.news
+    .carousel.row
+      %ul(data-orbit)
+        - @articles.each do |article|
+          %li
+            %a(href="#{article_path(article)}")
+              = image_tag article.image.url(:full)
+            .orbit-caption
+              = article.title
+
+-#= render "articles/news_feed", articles: @articles
 
 %header.row
   %h1.small-10.column
