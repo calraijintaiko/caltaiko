@@ -4,15 +4,10 @@
 @import "variables";
 @import "mixins";
 
-section.news-feed {
-    .news-article:not(:first-child) {
-        margin-top: 5%;
-    }
-}
-
 article.article {
     padding: 20px;
     @include box-style($sub-color-3, $sub-color-2);
+    margin-bottom: 5%;
     .article-image {
         margin-top: 10px;
         margin-bottom: 15px;
