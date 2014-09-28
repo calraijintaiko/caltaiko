@@ -1,7 +1,7 @@
 %section.news-feed
-  .row
-    - if articles.length > 0
-      - articles.each do |article|
+  - if articles.length > 0
+    - articles.each do |article|
+      .news-article
         = render "/articles/show", article: article
-    - else
-      %p.small-12.column Stay tuned for more information soon!
+  - else
+    %p.small-12.column Stay tuned for more information soon!

@@ -5,8 +5,8 @@
 @import "mixins";
 
 section.news-feed {
-    article.article:not(:first-child) {
-        margin-top: 7%;
+    .news-article:not(:first-child) {
+        margin-top: 5%;
     }
 }
 
@@ -32,5 +32,5 @@ article.article:first-child {
 }
 
 .carousel {
-    @include box-style($sub-color-3, $sub-color-2);
+    //@include box-style($sub-color-3, $sub-color-2);
 }
