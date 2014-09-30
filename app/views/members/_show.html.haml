@@ -1,8 +1,10 @@
 %article.individual(itemscope itemtype="http://schema.org/Person")
   .row
     = image_tag member.avatar.url(:full), itemprop: "image",
-      class: "bio-pic small-12 large-4 column"
-    .bio-block.large-8.small-12.column
+      class: "bio-pic small-12 large-5 column"
+    .spacer.column.small-12.hide-for-large-up
+      %p
+    .bio-block.large-7.small-12.column
       .row
         %p.column.small-12
           %strong Name:

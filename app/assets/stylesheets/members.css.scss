@@ -92,9 +92,10 @@ $alumni-width: 205px;
 
 .individual {
     img.bio-pic {
-        //@include box-style;
+        margin-left: -15px;
     }
     .bio-block {
+        padding-top: 15px;
         @include box-style;
         .edit-icons {
             position: absolute;
