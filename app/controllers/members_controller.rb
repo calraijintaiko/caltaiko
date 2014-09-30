@@ -3,7 +3,7 @@ Controller for members resource. Handles what information is sent to the views,
 as well as creation and updating of members.
 =end
 class MembersController < ApplicationController
-  before_action :authenticate_user!, :except => [:show, :index, :current, :alumni, :gen]
+  before_action :authenticate_user!, :except => [:show, :index, :current, :alumni, :gen, :all_gens]
   before_action :set_member, only: [:show, :edit, :update, :destroy]
 
   # Create a blank member to be used by form.
