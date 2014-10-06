@@ -11,7 +11,7 @@
           %span(itemprop="name")= member.name
         %p.column.small-4
           %strong Gen:
-          = link_to number_with_precision(member.gen, precision: 0), "gen/#{member.gen}"
+          = link_to number_with_precision(member.gen, precision: 0), "members/gen/#{member.gen}"
         %meta(itemprop="memberOf" content="Generation #{member.gen}")
         %p.column.small-8
           %strong Major:

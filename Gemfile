@@ -72,9 +72,6 @@ gem 'modernizr-rails'
 # Don't upgrade to 5.4.4!! Currently errors out
 gem 'foundation-rails', '~>5.4.3.0'
 
-# Enable Slick carousel
-gem 'slick_rails'
-
 # Testing-suite gems
 group :development, :test do 
   gem 'rspec-rails'

@@ -14,7 +14,6 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require foundation
-//= require slick
 //= require turbolinks
 //= require cocoon
 //= require google_analytics

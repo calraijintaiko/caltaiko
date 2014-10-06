@@ -25,3 +25,6 @@
 *~
 *#
 .#*
+
+# Ignore Mac generated DS_Store binaries
+.DS_Store
