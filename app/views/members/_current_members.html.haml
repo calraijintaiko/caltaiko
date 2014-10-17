@@ -13,7 +13,7 @@
               .icons.hide-for-medium-down.row
                 = link_to edit_member_path(member), class: "text-right column small-6" do
                   %i.fi-pencil
-                = link_to members_path(member), method: :delete, class: "column small-6",
+                = link_to member_path(member), method: :delete, class: "column small-6",
                   data: { confirm: "Are you sure you'd like to delete member '#{member.name}'?" } do
                   %i.fi-trash
             .hide-for-large-up
