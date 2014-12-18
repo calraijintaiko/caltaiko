@@ -4,10 +4,10 @@ To create a member, all of the fields except the avatar must be present.
 * The name must be at least two characters long
 * The gen must be an integer greater than 0
 * The major must also be at least two characters long
-If no avatar is given, an image is provided by http://robohash.org, 
+If no avatar is given, an image is provided by http://robohash.org,
 which hashes input to pictures of robots.
 
-Should robohash.org ever close down, there are also regular 
+Should robohash.org ever close down, there are also regular
 default images available to be used.
 They can be found in
     /public/images/:style/missing.png
@@ -19,6 +19,8 @@ class Member < ActiveRecord::Base
   validates :gen, presence: true, numericality: {only_integer: true, greater_than: 0 }
   validates :major, presence: true, length: {minimum: 2}
   validates :bio, presence: true
+  validates :email, format: { with: /(\A\w+@\w+\.\w+\z)|(\A\z)/,
+                              message: 'Please enter a valid email address.' }
 
   Paperclip.interpolates :slug do |attachment, style|
     attachment.instance.slug

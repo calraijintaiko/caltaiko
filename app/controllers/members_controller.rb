@@ -15,7 +15,7 @@ class MembersController < ApplicationController
   # If saved successfully redirects to show member, otherwise back to form.
   def create
     @member = Member.new(member_params)
- 
+
     if @member.save
       redirect_to @member
     else
@@ -52,7 +52,7 @@ class MembersController < ApplicationController
   # Erase member from database, then redirect to index page.
   def destroy
     @member.destroy
-    
+
     redirect_to members_path
   end
 

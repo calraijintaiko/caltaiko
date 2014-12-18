@@ -1,9 +1,9 @@
 =begin rdoc
 Users are the accounts that can be used to add and edit members and performances.
-Both a username and email address are required when creating a new account, 
+Both a username and email address are required when creating a new account,
 and both must be unique (ie we can't use caltaiko@gmail.com for every account.
 
-Account settings (username, email, password) can be easily modified by logging in 
+Account settings (username, email, password) can be easily modified by logging in
 then going to <tt>localhost:3000/settings</tt>
 === Note:
 After deployment, the +registerable+ tag will be removed, so that someone couldn't just create an account.

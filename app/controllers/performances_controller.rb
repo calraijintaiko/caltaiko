@@ -16,7 +16,6 @@ class PerformancesController < ApplicationController
   # If saved successfully redirects to show performance, otherwise back to form.
   def create
     @performance = Performance.new(performance_params)
-
     if @performance.save
       redirect_to @performance
     else

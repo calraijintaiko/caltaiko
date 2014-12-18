@@ -4,7 +4,8 @@ class Performance < ActiveRecord::Base
   reject_if: :reject_videos
 
   def reject_videos(attributed)
-    attributed['title'].blank? || attributed['link'].blank?
+    attributed['title'].blank? or attributed['link'].blank? or
+    not attributed['link'].start_with? 'http://'
   end
 
   extend FriendlyId
@@ -13,6 +14,10 @@ class Performance < ActiveRecord::Base
   validates :location, presence: true
   validates :description, presence: true
   validates :title, presence: true
+  validates :link, format: { with: /(\Ahttp:\/\/\w+\..*\z)|(\A\z)/,
+                             message: "URL must begin with 'http://'" }
+  validates :images_link, format: { with: /(\Ahttp:\/\/\w+\..*\z)|(\A\z)/,
+                             message: "URL must begin with 'http://'" }
 
   Paperclip.interpolates :slug do |attachment, style|
     attachment.instance.slug # or whatever you've named your User's login/username/etc. attribute
