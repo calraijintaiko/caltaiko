@@ -11,22 +11,28 @@
         p {
             word-spacing: 2px;
             font-family: "Oswald";
-	    color: $main-color;
+            color: $main-color;
             margin-bottom: 1%;
         }
-	p.where, .what {
-	    // Make them uppercase here instead of in the template so that
-	    // look nicer in Google rich snippets
-	    text-transform: uppercase;
-	}
+        p.where, .what {
+            text-transform: uppercase;
+            // Make them uppercase here instead of in the template so that
+            // look nicer in Google rich snippets
+        }
         .what {
-	    color: $main-color;
+            color: $main-color;
             text-shadow: 2px 2px 0px $sub-color-2;
             margin-top: 0px;
             margin-bottom: 0px;
         }
+        span.divider {
+            margin-right: 25px;
+            margin-left: 25px;
+            font-size: 115%;
+        }
     }
     .icons {
+        margin-top: -10px;
         a {
             margin-left: 15%;
         }
@@ -82,40 +88,40 @@
         z-index: 0;
         color: rgba(0, 0, 0, 0);
         @include transition($effect: color);
-	display: block;
-	position: absolute;
-	top: 40%;
-	width: 100%;
-	text-align: center;
-	font-family: "Lato";
-	word-spacing: 2px;
+        display: block;
+        position: absolute;
+        top: 40%;
+        width: 100%;
+        text-align: center;
+        font-family: "Lato";
+        word-spacing: 2px;
     }
     a.upcoming-perf {
-	text-decoration: none;
-	p.underlined {
-	    text-decoration: underline;
-	}
-	p {
+        text-decoration: none;
+        p.underlined {
+            text-decoration: underline;
+        }
+        p {
             @include transition($effect: color);
-	    color: rgba(0, 0, 0, 0);
-	    padding: 0px 10%;
-	    margin: 0px auto;
-	}
+            color: rgba(0, 0, 0, 0);
+            padding: 0px 10%;
+            margin: 0px auto;
+        }
     }
 }
 
 .performance-image:hover {
     img {
-	filter: alpha(opacity=30);
+        filter: alpha(opacity=30);
         opacity: .3;
     }
     a.text-link {
-	z-index: 3;
+        z-index: 3;
         color: white;
     }
     a.upcoming-perf {
-	p {
-	    color: white;
-	}
+        p {
+            color: white;
+        }
     }
 }
