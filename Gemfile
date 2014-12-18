@@ -69,11 +69,10 @@ gem 'cocoon'
 
 # Enables Foundation framework
 gem 'modernizr-rails'
-# Don't upgrade to 5.4.4!! Currently errors out
-gem 'foundation-rails', '~>5.4.3.0'
+gem 'foundation-rails', '~>5.4.4'
 
 # Testing-suite gems
-group :development, :test do 
+group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'guard-rspec'
