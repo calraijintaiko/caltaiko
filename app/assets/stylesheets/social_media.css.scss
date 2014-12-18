@@ -1,18 +1,21 @@
-@import "variables";
-@import "mixins";
+@import 'variables';
+@import 'mixins';
 
-$text-link-color: #45619D;
+$text-link-color: #45619d;
+
+#fb-feed {
+    box-shadow: 5px 5px 0 $sub-color-2;
+}
 
 .social-media {
     i {
         font-size: 450%;
-        @include transition($effect: font, $time: .1s);
     }
     i.fi-social-facebook {
-        color: #45619D;
+        color: #45619d;
     }
     i.fi-social-youtube {
-        color: #CC181E;
+        color: #cc181e;
     }
     i.fi-social-instagram {
         color: black;
@@ -21,10 +24,10 @@ $text-link-color: #45619D;
         font-size: 500%;
     }
     .text-link {
-        position: absolute;
-        margin-left: 33%;
-        top: 10px;
         color: $text-link-color;
+        margin-left: 33%;
+        position: absolute;
+        top: 10px;
     }
     .text-link:hover {
         color: darken($text-link-color, 15%);

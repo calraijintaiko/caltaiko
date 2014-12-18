@@ -1,11 +1,11 @@
-@import "mixins";
+@import 'mixins';
 
 .text-block {
     @include box-style;
-    margin-bottom:30px;
+    margin-bottom: 30px;
     padding: 20px;
     p {
-        margin-bottom: 0px;
+        margin-bottom: 0;
     }
 }
 

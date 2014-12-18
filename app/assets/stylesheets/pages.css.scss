@@ -1,36 +1,36 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import "variables";
-@import "mixins";
+@import 'variables';
+@import 'mixins';
 
 #team-pic {
     background-color: $dark-bg;
-    padding: 0px;
     border: 3px $main-color solid;
+    padding: 0;
     img {
         @include transition;
     }
     a.text-link {
-        text-decoration: none;
-        font-family: $main-font;
-        display: block;
-        position: absolute;
-        z-index: 0;
-        width: 100%;
-        top: 47%;
-        margin: 0px;
-        text-align: center;
-        color: rgba(0, 0, 0, 0);
         @include transition($effect: color);
+        color: rgba(0, 0, 0, 0);
+        display: block;
+        font-family: $main-font;
+        margin: 0;
+        position: absolute;
+        text-align: center;
+        text-decoration: none;
+        top: 47%;
+        width: 100%;
+        z-index: 0;
     }
 }
 
 #team-pic:hover {
     img {
-        zoom: 1;
         filter: alpha(opacity=50);
         opacity: .5;
+        zoom: 1;
     }
     a.text-link {
         color: white;

@@ -1,18 +1,18 @@
-@import "variables";
+@import 'variables';
 
-@mixin box-style($bg-color: $sub-color-3, $shadow-color: $sub-color-2, $width: 5px, $offset: 0px) {
+@mixin box-style($bg-color: $sub-color-3, $shadow-color: $sub-color-2, $width: 5px, $offset: 0) {
     background-color: $bg-color;
-    box-shadow: $width $width 0px $offset $shadow-color;
+    box-shadow: $width $width 0 $offset $shadow-color;
 }
 
-@mixin edit-icons($icon-size: 30px, $icon-padding: 0px) {
+@mixin edit-icons($icon-size: 30px, $icon-padding: 0) {
     display: inline;
     float: right;
     img {
-        width: $icon-size;
-        height: $icon-size;
         display: inline-block;
+        height: $icon-size;
         margin-right: $icon-padding;
+        width: $icon-size;
     }
 }
 

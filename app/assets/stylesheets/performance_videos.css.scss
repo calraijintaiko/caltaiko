@@ -1,14 +1,14 @@
 // Place all the styles related to the performance_videos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import "variables";
+@import 'variables';
 
 table#perf-vids {
     border-collapse: collapse;
     td, th {
-        text-align: left;
-        padding: 2px 5px;
         border: 1px black solid;
+        padding: 2px 5px;
+        text-align: left;
     }
     th {
         background-color: $main-color;

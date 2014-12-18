@@ -1,8 +1,8 @@
 // Place all the styles related to the members controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import "variables";
-@import "mixins";
+@import 'variables';
+@import 'mixins';
 
 .current-members {
     .member {
@@ -12,26 +12,26 @@
         .member-image {
             position: relative;
             img {
+                @include transition;
                 width: 100%;
                 z-index: 1;
-                @include transition;
             }
             a.text-link {
-                text-decoration: none;
-                display: block;
-                position: absolute;
-                z-index: 0;
-                width: 100%;
-                bottom: 5%;
-                margin: 0px;
-                text-align: center;
-                color: rgba(0, 0, 0, 0);
                 @include transition($effect: color);
+                bottom: 5%;
+                color: rgba(0, 0, 0, 0);
+                display: block;
+                margin: 0;
+                position: absolute;
+                text-align: center;
+                text-decoration: none;
+                width: 100%;
+                z-index: 0;
             }
         }
         .member-image:hover {
             img {
-	        filter: alpha(opacity=40);
+                filter: alpha(opacity=40);
                 opacity: .4;
             }
             a.text-link {
@@ -40,9 +40,9 @@
             }
         }
         p.name {
-            text-align: center;
             color: $yellow;
-            margin-bottom: 0px;
+            margin-bottom: 0;
+            text-align: center;
         }
         a {
             color: white;
@@ -57,36 +57,36 @@ $alumni-width: 205px;
 
 .alumni {
     a {
-        text-decoration: none;
         color: white;
+        text-decoration: none;
     }
     .alumnus {
         @include box-style($width: 3px);
         .link-wrapper {
             p {
-                padding-top: 15px;
-                padding-bottom: 15px;
-                margin: 0px;
                 color: black;
+                margin: 0;
+                padding-bottom: 15px;
+                padding-top: 15px;
             }
             .edit-icons {
-                z-index: 4;
                 @include edit-icons($icon-size: 15px, $icon-padding: 4px);
+                z-index: 4;
             }
         }
     }
     .alumnus:hover {
-	zoom: 1; 
-	filter: alpha(opacity=40);
-        opacity: .4;
         background-color: $main-color;
+        filter: alpha(opacity=40);
+        opacity: .4;
+        zoom: 1;
         p {
             color: white;
         }
-	img {
-	    filter: invert(1);
-	    -webkit-filter: invert(1);
-	}
+        img {
+            -webkit-filter: invert(1);
+            filter: invert(1);
+        }
     }
 }
 
@@ -95,36 +95,36 @@ $alumni-width: 205px;
         margin-left: -15px;
     }
     .bio-block {
-        padding-top: 15px;
         @include box-style;
+        padding-top: 15px;
         .edit-icons {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 4;
             @include edit-icons($icon-size: 30px, $icon-padding: 10px);
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            z-index: 4;
         }
     }
 }
 
 .generations {
-    border-top: 1px $main-color solid;
     border-bottom: 1px $main-color solid;
-    text-align: center;
+    border-top: 1px $main-color solid;
     padding: 5px;
+    text-align: center;
     .gen {
         display: inline-block;
-	margin: 5px 20px;
+        margin: 5px 20px;
     }
     a {
-	display: block;
-	text-decoration: none;
-	font-family: "Oswald";
+        display: block;
+        font-family: 'Oswald';
+        text-decoration: none;
     }
 }
 
 p#nice-try-wise-guy {
     color: $main-color;
-    text-align: left;
     font-size: 120%;
+    text-align: left;
 }

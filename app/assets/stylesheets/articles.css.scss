@@ -1,20 +1,21 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import "variables";
-@import "mixins";
+@import 'variables';
+@import 'mixins';
 
 .carousel {
     margin-bottom: 30px;
+    //@include box-style($sub-color-3, $sub-color-2);
 }
 
 article.article {
-    padding: 20px;
     @include box-style($sub-color-3, $sub-color-2);
     margin-bottom: 5%;
+    padding: 20px;
     .article-image {
-        margin-top: 10px;
         margin-bottom: 15px;
+        margin-top: 10px;
     }
     a.continue-reading {
         text-decoration: underline;
@@ -31,8 +32,4 @@ article.article {
 
 article.article:first-child {
     margin-top: 2%;
-}
-
-.carousel {
-    //@include box-style($sub-color-3, $sub-color-2);
 }

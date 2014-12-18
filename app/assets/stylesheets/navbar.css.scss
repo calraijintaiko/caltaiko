@@ -1,7 +1,7 @@
 // Place all the styles related to the header and footer here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import "variables";
+@import 'variables';
 
 .top-bar, .top-bar-section li:not(.has-form) {
     a {
@@ -12,21 +12,21 @@
 .top-bar ul.title-area li.name {
     img {
         height: 100%;
-        position: absolute;
         padding-left: 10px;
+        position: absolute;
     }
     h1 {
         font-size: 118%;
-        padding-left: 45px;
         letter-spacing: 1px;
+        padding-left: 45px;
     }
 }
 
 .tab-bar .tab-bar-section {
     h1.title a {
-        text-transform: uppercase;
         color: $yellow;
         letter-spacing: 1px;
+        text-transform: uppercase;
     }
 }
 

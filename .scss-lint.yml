@@ -1,0 +1,44 @@
+linters:
+  ColorKeyword:
+    enabled: false
+  Comment:
+    enabled: true
+    exclude: 'app/assets/stylesheets/foundation-icons.css.scss'
+  DeclarationOrder:
+    enabled: true
+  EmptyLineBetweenBlocks:
+    enabled: false
+  FinalNewline:
+    enabled: false
+  HexLength:
+    enabled: true
+  HexNotation:
+    enabled: true
+  IdSelector:
+    enabled: false
+  Indentation:
+    enabled: true
+    width: 4
+    exclude: 'app/assets/stylesheets/foundation-icons.css.scss'
+  MergeableSelector:
+    enabled: false
+  NestingDepth:
+    enabled: true
+    max_depth: 4
+  PropertySortOrder:
+    enabled: true
+  QualifyingElement:
+    enabled: false
+  SelectorDepth:
+    enabled: true
+    max_depth: 4
+  SingleLinePerSelector:
+    enabled: false
+  SpaceAfterPropertyColon:
+    enabled: true
+  StringQuotes:
+    enabled: true
+  VendorPrefixes:
+    enabled: false
+  ZeroUnit:
+    enabled: true
