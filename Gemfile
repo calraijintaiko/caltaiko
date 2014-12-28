@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby "2.1.2"
+ruby "2.1.5"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.5'
+gem 'rails', '~> 4.2.0'
 # Use rubygems 2.3.0
 gem 'rubygems-update', '~> 2.3.0'
 # Use Postgres as database for Active Record since required by Heroku
@@ -84,4 +84,8 @@ group :test do
   gem 'faker'
   gem 'capybara'
   gem 'launchy'
+end
+
+group :development do
+  gem 'web-console'
 end
