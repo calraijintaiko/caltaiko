@@ -1,0 +1,6 @@
+PreCommit:
+  Reek:
+    enabled: false
+
+  HamlLint:
+    include: 'app/views/**/*.haml'

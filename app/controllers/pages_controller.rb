@@ -1,7 +1,13 @@
 =begin
-This controller simply provides a route for static pages like "About Us" or "Contact Us"
+This controller controls pages not associated with a resource,
+such as the front page, "About Us", or "Contact Us" pages.
 =end
 class PagesController < ApplicationController
+  def front
+    @performances = Performance.upcoming_performances
+    @articles = Article.current
+  end
+
   def about
   end
 

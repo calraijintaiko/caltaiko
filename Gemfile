@@ -8,7 +8,7 @@ gem 'rubygems-update', '~> 2.3.0'
 # Use Postgres as database for Active Record since required by Heroku
 gem 'pg'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -69,7 +69,7 @@ gem 'cocoon'
 
 # Enables Foundation framework
 gem 'modernizr-rails'
-gem 'foundation-rails', '~>5.4.4'
+gem 'foundation-rails', '~> 5.4.5.0'
 
 # Testing-suite gems
 group :development, :test do
@@ -87,5 +87,10 @@ group :test do
 end
 
 group :development do
+  gem 'scss-lint', '~>0.30'
+  gem 'haml-lint', '~>0.10'
+  gem 'reek', '~>1.5.0'
+  gem 'overcommit'
+  gem 'ruby-lint'
   gem 'web-console'
 end
