@@ -1,7 +1,5 @@
-=begin
-This controller controls pages not associated with a resource,
-such as the front page, "About Us", or "Contact Us" pages.
-=end
+# This controller controls pages not associated with a resource,
+# such as the front page, "About Us", or "Contact Us" pages.
 class PagesController < ApplicationController
   def front
     @performances = Performance.upcoming_performances

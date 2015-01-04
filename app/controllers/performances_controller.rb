@@ -1,16 +1,13 @@
-=begin rdoc
-Controller for performances resource. Handles what information is sent to the views,
-as well as creation and updating of performances.
-=end
+# Controller for performances resource. Handles what information is sent
+# to the views, as well as creation and updating of performances.
 class PerformancesController < ApplicationController
-  before_action :authenticate_user!, :except => [:show, :index, :upcoming, :past]
+  before_action :authenticate_user!, except: [:show, :index, :upcoming, :past]
   before_action :set_performance, only: [:show, :edit, :update, :destroy]
 
   # Creates a blank performance to be used by form.
   def new
     @performance = Performance.new
   end
-
 
   # Push a new performance to the database with inputted parameters.
   # If saved successfully redirects to show performance, otherwise back to form.
@@ -40,8 +37,8 @@ class PerformancesController < ApplicationController
   end
 
   # Find performance whose ID or slug matches request, then update parameters
-  # to new inputted values. If updates successfully redirects to show performance,
-  # otherwise back to edit form.
+  # to new inputted values. If updates successfully redirects to show
+  # performance, otherwise back to edit form.
   def update
     if @performance.update(performance_params)
       redirect_to @performance
@@ -52,8 +49,8 @@ class PerformancesController < ApplicationController
 
   # Erase performance from database, then redirect to index page.
   def destroy
+    @performance.delete_banner
     @performance.destroy
-
     redirect_to performances_path
   end
 
@@ -70,14 +67,17 @@ class PerformancesController < ApplicationController
   end
 
   private
-    def set_performance
-      @performance = Performance.friendly.find(params[:id])
-    end
 
-    def performance_params
-      params.require(:performance).permit(:date, :title, :location, :link, :description,
-                                          :upcoming, :banner, :delete_banner, :images_link,
-                                          performance_videos_attributes: [:title, :link,
-                                                                          :id, :_destroy])
-    end
+  def set_performance
+    @performance = Performance.friendly.find(params[:id])
+  end
+
+  # rubocop:disable Metrics/LineLength
+  def performance_params
+    params.require(:performance).permit(:date, :title, :location, :link,
+                                        :description, :upcoming, :banner,
+                                        :delete_banner, :images_link,
+                                        performance_videos_attributes: [:title, :link, :id, :_destroy])
+  end
+  # rubocop:enable Metrics/LineLength
 end

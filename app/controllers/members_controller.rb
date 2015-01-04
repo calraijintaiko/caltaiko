@@ -1,9 +1,8 @@
-=begin rdoc
-Controller for members resource. Handles what information is sent to the views,
-as well as creation and updating of members.
-=end
+# Controller for members resource. Handles what information is sent to the
+# views, as well as creation and updating of members.
 class MembersController < ApplicationController
-  before_action :authenticate_user!, :except => [:show, :index, :current, :alumni, :gen, :all_gens]
+  before_action :authenticate_user!,
+                except: [:show, :index, :current, :alumni, :gen, :all_gens]
   before_action :set_member, only: [:show, :edit, :update, :destroy]
 
   # Create a blank member to be used by form.
@@ -88,6 +87,7 @@ class MembersController < ApplicationController
   end
 
   private
+
   def set_member
     @member = Member.friendly.find(params[:id])
   end
