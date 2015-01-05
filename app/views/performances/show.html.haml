@@ -13,8 +13,8 @@
   %header.row
     %h2.column.small-12 VIDEOS
   %section.perf-videos.row.text-left
-    - @performance_videos.each do |perf_vid|
-      = render 'performance_videos/show', performance_video: perf_vid
+    - @performance_videos.each do |video|
+      = render 'performance_videos/show', performance_video: video
 
 .comments.row
   .column.small-12

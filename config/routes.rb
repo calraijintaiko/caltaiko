@@ -24,7 +24,6 @@ Rails.application.routes.draw do
   resources :members
   resources :videos
   resources :performances
-  resources :performance_videos
   resources :articles
 
   if Rails.env.production?
