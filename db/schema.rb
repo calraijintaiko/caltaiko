@@ -51,10 +51,12 @@ ActiveRecord::Schema.define(version: 20140928053240) do
   create_table "performance_videos", force: true do |t|
     t.string   "title"
     t.string   "link"
+    t.integer  "performance_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "performance_id"
   end
+
+  add_index "performance_videos", ["performance_id"], name: "index_performance_videos_on_performance_id", using: :btree
 
   create_table "performances", force: true do |t|
     t.datetime "date"

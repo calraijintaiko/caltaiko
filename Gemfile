@@ -6,6 +6,7 @@ gem 'rails', '4.1.5'
 # Use rubygems 2.3.0
 gem 'rubygems-update', '~> 2.3.0'
 # Use Postgres as database for Active Record since required by Heroku
+# If having trouble installing, probably need to install Postgress.app first
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
