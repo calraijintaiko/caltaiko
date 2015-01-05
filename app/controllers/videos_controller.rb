@@ -8,7 +8,7 @@ class VideosController < ApplicationController
     @video = Video.new(video_params)
 
     if @video.save
-      redirect_to @video
+      redirect_to media_path
     else
       render 'new'
     end

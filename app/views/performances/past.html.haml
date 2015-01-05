@@ -1,19 +1,19 @@
-- title = "Past Performances | Cal Raijin Taiko"
-- description = "A few of Cal Raijin Taiko's past performances."
-- image = URI.join(root_url, image_path("logo.png"))
+:ruby
+  title = 'Past Performances | Cal Raijin Taiko'
+  description = "A few of Cal Raijin Taiko's past performances."
+  image = URI.join(root_url, image_path('logo.png'))
 
-- meta title: title,
-  description: description,
-  og: { title: title, description: description, image: image,
-  url: request.original_url }
+  meta title: title, description: description,
+       og: { title: title, description: description, image: image,
+             url: request.original_url }
 
 %header.row
   %h1.small-10.column PAST PERFORMANCES
   - if user_signed_in?
-    = link_to "Add Performance", new_performance_path,
-      class: "button small round hide-for-medium-down large-2 column"
+    = link_to 'Add Performance', new_performance_path,
+      class: 'button small round hide-for-medium-down large-2 column'
 
 - @by_year.keys.each do |year|
   .row
     %h4.small-12.column= year
-  = render "thumbnail_feed", performances: @by_year[year]
+  = render 'thumbnail_feed', performances: @by_year[year]

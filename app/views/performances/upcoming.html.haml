@@ -1,16 +1,16 @@
-- title = "Upcoming Performances | Cal Raijin Taiko"
-- description = "Cal Raijin Taiko's upcoming performances."
-- image = URI.join(root_url, image_path("logo.png"))
+:ruby
+  title = 'Upcoming Performances | Cal Raijin Taiko'
+  description = "Cal Raijin Taiko's upcoming performances."
+  image = URI.join(root_url, image_path('logo.png'))
 
-- meta title: title,
-  description: description,
-  og: { title: title, description: description, image: image,
-  url: request.original_url }
+  meta title: title, description: description,
+       og: { title: title, description: description, image: image,
+             url: request.original_url }
 
 %header.row
   %h1.column.small-10 UPCOMING PERFORMANCES
   - if user_signed_in?
-    = link_to "Add Performance", new_performance_path,
-      class: "button small round hide-for-medium-down large-2 column"
+    = link_to 'Add Performance', new_performance_path,
+      class: 'button small round hide-for-medium-down large-2 column'
 
-= render "performances_feed", performances: @upcoming
+= render 'performances_feed', performances: @upcoming

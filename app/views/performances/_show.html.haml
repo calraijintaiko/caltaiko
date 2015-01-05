@@ -1,41 +1,57 @@
+- banner = image_tag(performance.banner.url(:display), itemprop: 'image')
+
 .row
   .column.small-12
-    %article.performance(itemscope itemtype="http://schema.org/Event")
+    %article.performance{ itemscope: '', itemtype: 'http://schema.org/Event' }
       .row
         .column.small-12
           .performance-image
-            = link_to image_tag(performance.banner.url(:display), itemprop: "image"),
-              performance.link
-            = link_to performance.link, class: "text-link upcoming-perf hide-for-medium-down" do
-              %p(itemprop="description")= performance.description
+            = link_to banner, performance.link
+            = link_to performance.link,
+              class: 'text-link upcoming-perf hide-for-medium-down' do
+              %p{ itemprop: 'description' }= performance.description
               %br
               %br
               %p.underlined VIEW EVENT
-            = link_to performance.link, class: "text-link upcoming-perf hide-for-large-up" do
+            = link_to performance.link,
+              class: 'text-link upcoming-perf hide-for-large-up' do
               %p.underlined VIEW EVENT
 
         .column.small-12.performance-deets
           .performance-deets-top
-            %h2.what.column.small-10(itemprop="name")= performance.title
+            %h2.what.column.small-10{ itemprop: 'name' }= performance.title
             .icons.column.small-2
-              - if controller.action_name != "show"
-                %a.right.hide-for-medium-down.has-tip.tip-top(itemprop="url" data-tooltip title="Get a shareable link for this performance" data-options="disable_for_touch:true" aria-haspopup="true" href="#{performance_path(performance)}")
+              - if controller.action_name != 'show'
+                = link_to performance_path(performance),
+                  title: 'Get a shareable link for this performance',
+                  data: { tooltip: '', options: 'disable_for_touch:true' },
+                  aria: { haspopup: 'true' }, itemprop: 'url',
+                  class: 'right hide-for-medium-down has-tip tip-top' do
                   %i.fi-link
               - if performance.images_link.length > 0
-                %a.right.has-tip.tip-top(data-tooltip title="View images from this performance" aria-haspopup="true" data-options="disable_for_touch:true" href="#{performance.images_link}")
+                = link_to performance.images_link, aria: { haspopup: 'true' },
+                  data: { tooltip: '', options: 'disable_for_touch:true' },
+                  title: 'View images from this performance',
+                  class: 'right has-tip tip-top' do
                   %i.fi-photo
               - if user_signed_in?
                 = link_to performance_path(performance), method: :delete,
-                  data: { confirm: "Are you sure you'd like to delete performance #{performance.title}?" }, class: "right hide-for-medium-down" do
+                  data: { confirm: "Delete performance #{performance.title}?" },
+                  class: 'right hide-for-medium-down' do
                   %i.fi-trash
-                = link_to edit_performance_path(performance), class: "right hide-for-medium-down" do
+                = link_to edit_performance_path(performance),
+                  class: 'right hide-for-medium-down' do
                   %i.fi-pencil
 
           .performance-deets-bottom
             %p.when.column.small-12.medium-10
               - if performance.upcoming?
-                %time(itemprop="startDate" datetime="#{performance.date.iso8601}")= performance.date.strftime("%A, %B %d, %l:%M%p").upcase
+                %time{ itemprop: 'startDate',
+                  datetime: "#{performance.date.iso8601}" }
+                  = performance.date.strftime('%A, %B %d, %l:%M%p').upcase
               - else
-                %time(itemprop="startDate" datetime="#{performance.date.iso8601}")= performance.date.strftime("%A, %B %d, %Y, %l:%M%p").upcase
-              %span.divider= "|"
-              %span.where(itemprop="location")= performance.location
+                %time{ itemprop: 'startDate',
+                  datetime: "#{performance.date.iso8601}" }
+                  = performance.date.strftime('%A, %B %d, %Y, %l:%M%p').upcase
+              %span.divider= '|'
+              %span.where{ itemprop: 'location' }= performance.location

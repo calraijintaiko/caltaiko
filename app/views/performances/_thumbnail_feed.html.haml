@@ -1,32 +1,42 @@
 %section.thumbnail-feed.row
   %ul.small-block-grid-1.medium-block-grid-2.large-block-grid-3
     - performances.each do |performance|
+      - title = performance.title
       %li.text-center
         %article.thumb-performance
           .performance-image
             = link_to image_tag(performance.banner.url(:thumb)), performance
-            = link_to "VIEW EVENT", performance, class: "text-link"
+            = link_to 'VIEW EVENT', performance, class: 'text-link'
           .details
             %p.text-left
-              - if performance.title.length > 34
-                = (performance.title[0, 32] + "...").upcase
+              - if title.length > 34
+                = (title[0, 32] + '...').upcase
               - else
-                = performance.title.upcase
+                = title.upcase
             .row.date-and-icons
               %p.perf-date.column.small-5.text-left
-                = performance.date.strftime("%A, %-m/%-d")
+                = performance.date.strftime('%A, %-m/%-d')
 
               .icons.column.small-7
                 - if user_signed_in?
                   .edit-icons.hide-for-medium-down
                     = link_to performance_path(performance), method: :delete,
-                      data: { confirm: "Are you sure you'd like to delete performance #{performance.title}?" }, class: "right hide-for-medium-down" do
+                      data: { confirm: "Delete performance #{title}?" },
+                      class: 'right hide-for-medium-down' do
                       %i.fi-trash
-                    = link_to edit_performance_path(performance), class: "right hide-for-medium-down" do
+                    = link_to edit_performance_path(performance),
+                      class: 'right hide-for-medium-down' do
                       %i.fi-pencil
                 - if performance.images_link.length > 0
-                  %a.right.has-tip.tip-top(data-tooltip title="View images from this performance" aria-haspopup="true" data-options="disable_for_touch:true" href="#{performance.images_link}")
+                  = link_to performance.images_link, aria: { haspopup: 'true' },
+                    title: 'View images from this performance',
+                    data: { tooltip: '', options: 'disable_for_touch:true' },
+                    class: 'right has-tip tip-top' do
                     %i.fi-photo
                 - if performance.performance_videos.any?
-                  %a.right.has-tip.tip-top(data-tooltip title="View videos from this performance" aria-haspopup="true" data-options="disable_for_touch:true" href="#{performance_path(performance)}")
+                  = link_to performance_path(performance),
+                    title: 'View videos from this performance',
+                    data: { tooltip: '', options: 'disable_for_touch:true' },
+                    aria: { haspopup: 'true' },
+                    class: 'right has-tip tip-top' do
                     %i.fi-video

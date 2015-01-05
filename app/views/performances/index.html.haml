@@ -1,29 +1,29 @@
-- title = "Performances | Cal Raijin Taiko"
-- description = "Cal Raijin Taiko's upcoming and past performances"
-- image = URI.join(root_url, image_path("logo.png"))
+:ruby
+  title = 'Performances | Cal Raijin Taiko'
+  description = "Cal Raijin Taiko's upcoming and past performances"
+  image = URI.join(root_url, image_path('logo.png'))
 
-- meta title: title,
-  description: description,
-  og: { title: title, description: description, image: image,
-  url: request.original_url }
-
-%header.row
-  %h1.column.small-10
-    = link_to "UPCOMING PERFORMANCES", "performances/upcoming"
-  - if user_signed_in?
-    = link_to "Add Performance", new_performance_path,
-      class: "button small round column hide-for-medium-down large-2"
-
-= render "performances_feed", performances: @upcoming
+  meta title: title, description: description,
+       og: { title: title, description: description, image: image,
+             url: request.original_url }
 
 %header.row
   %h1.column.small-10
-    = link_to "PAST PERFORMANCES", "/performances/past"
+    = link_to 'UPCOMING PERFORMANCES', 'performances/upcoming'
   - if user_signed_in?
-    = link_to "Add Performance", new_performance_path,
-      class: "button small round hide-for-medium-down large-2 column"
+    = link_to 'Add Performance', new_performance_path,
+      class: 'button small round column hide-for-medium-down large-2'
+
+= render 'performances_feed', performances: @upcoming
+
+%header.row
+  %h1.column.small-10
+    = link_to 'PAST PERFORMANCES', '/performances/past'
+  - if user_signed_in?
+    = link_to 'Add Performance', new_performance_path,
+      class: 'button small round hide-for-medium-down large-2 column'
 
 - @by_year.keys.each do |year|
   .row
     %h4.column.small-12= year
-  = render "thumbnail_feed", performances: @by_year[year]
+  = render 'thumbnail_feed', performances: @by_year[year]

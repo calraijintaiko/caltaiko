@@ -4,18 +4,20 @@
       = f.error_notification
 
     .column.small-12
-      = f.input :date, start_year: 2005, end_year: Time.new.year + 1, ampm: true, minute_step: 15, input_html: { class: "column small-4 left" }
+      = f.input :date, start_year: 2005, end_year: Time.new.year + 1,
+        ampm: true, minute_step: 15,
+        input_html: { class: 'column small-4 left' }
 
     .small-12.column
-      = f.input :title, placeholder: "Performance Title"
+      = f.input :title, placeholder: 'Performance Title'
 
     .small-12.large-7.column
-      = f.input :location, placeholder: "Performance Location"
+      = f.input :location, placeholder: 'Performance Location'
     .small-12.large-5.column
-      = f.input :link, placeholder: "Link to event page"
+      = f.input :link, placeholder: 'Link to event page'
 
     .small-12.column
-      = f.input :description, placeholder: "Performance Description"
+      = f.input :description, placeholder: 'Performance Description'
 
     .small-7.column
       = f.input :banner
@@ -24,20 +26,20 @@
 
   .row
     .small-12.large-8.column
-      = f.input :images_link, placeholder: "Link to image gallery"
+      = f.input :images_link, placeholder: 'Link to image gallery'
 
   %section#nested_fields
     .row
       %h1.small-12.column Videos
     #performance_videos
       = f.simple_fields_for :performance_videos do |performance_video|
-        = render "performance_video_fields", f: performance_video
+        = render 'performance_video_fields', f: performance_video
       .row
-        = link_to_add_association "Add Performance Video", f, :performance_videos,
-          class: "small-12 column"
+        = link_to_add_association 'Add Performance Video', f,
+          :performance_videos, class: 'small-12 column'
 
   .row
     .column.small-5.large-4
-      = f.button :submit, class: "button small"
+      = f.button :submit, class: 'button small'
     .column.small-7.large-8
-      = link_to "Cancel", performances_path, class: "button small disabled"
+      = link_to 'Cancel', performances_path, class: 'button small disabled'

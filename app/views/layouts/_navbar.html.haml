@@ -7,7 +7,7 @@
 
       %section.middle.tab-bar-section
         %h1.title
-          = link_to "Cal Raijin Taiko", root_url
+          = link_to 'Cal Raijin Taiko', root_url
 
       - if user_signed_in?
         %section.right-small
@@ -15,79 +15,80 @@
             %span
 
     .fixed
-      %nav.top-bar.hide-for-medium-down(data-topbar role="navigation")
+      %nav.top-bar.hide-for-medium-down{ data: { topbar: '' },
+        role: 'navigation' }
         %ul.title-area
           %li.name
-            = link_to image_tag("logo_transparent_white.png"), root_url
+            = link_to image_tag('logo_transparent_white.png'), root_url
             %h1
-              = link_to "Cal Raijin Taiko", root_url
+              = link_to 'Cal Raijin Taiko', root_url
           %li.toggle-topbar.menu-icon
-            %a(href="#{root_url}")
+            %a{ href: "#{root_url}" }
               %span Menu
 
         %section.top-bar-section
           %ul.right
             %li
-              = link_to "News", "/news"
+              = link_to 'News', news_path
             %li.has-dropdown
-              = link_to "Performances", performances_path
+              = link_to 'Performances', performances_path
               %ul.dropdown
                 %li
-                  = link_to "Upcoming", "/performances/upcoming"
+                  = link_to 'Upcoming', upcoming_performances_path
                 %li
-                  = link_to "Past", "/performances/past"
+                  = link_to 'Past', past_performances_path
             %li.has-dropdown
-              = link_to "Members", members_path
+              = link_to 'Members', members_path
               %ul.dropdown
                 %li
-                  = link_to "Current", "/members/current"
+                  = link_to 'Current', current_members_path
                 %li
-                  = link_to "Alumni", "/members/alumni"
+                  = link_to 'Alumni', alumni_members_path
             %li
-              = link_to "Media", "/media"
+              = link_to 'Media', media_path
             %li
-              = link_to "About", "/about"
+              = link_to 'About', about_path
             %li
-              = link_to "Contact", "/contact"
+              = link_to 'Contact', contact_path
             - if user_signed_in?
               %li.has-dropdown
-                = link_to "Admin", "#"
+                = link_to 'Admin', '#'
                 %ul.dropdown
                   %li
-                    = link_to "Add Article", new_article_path
+                    = link_to 'Add Article', new_article_path
                   %li
-                    = link_to "Add Member", new_member_path
+                    = link_to 'Add Member', new_member_path
                   %li
-                    = link_to "Add Performance", new_performance_path
+                    = link_to 'Add Performance', new_performance_path
                   %li
-                    = link_to "Add Video", new_video_path
+                    = link_to 'Add Video', new_video_path
                   %li
-                    = link_to "Logout", "/logout"
+                    = link_to 'Logout', logout_path
 
     %aside.left-off-canvas-menu
       %ul.off-canvas-list
         %li
-          = link_to "News", "/news"
+          = link_to 'News', news_path
         %li
-          = link_to "Media", "/media"
+          = link_to 'Media', media_path
         %li
           %label Members
         %li
-          = link_to "Current", "/members/current"
+          = link_to 'Current', current_members_path
         %li
-          = link_to "Alumni", "/members/alumni"
+          = link_to 'Alumni', alumni_members_path
         %li
           %label Performances
         %li
-          = link_to "Upcoming", "/performances/upcoming"
+          = link_to 'Upcoming', upcoming_performances_path
         %li
-          = link_to "Past", "/performances/past"
+          = link_to 'Past', past_performances_path
         %li
           %label
         %li
-          = link_to "About Us", "/about"
+          = link_to 'About Us', about_path
         %li
-          = link_to "Contact Us", "/contact"
+          = link_to 'Contact Us', contact_path
 
     - if user_signed_in?
       %aside.right-off-canvas-menu
@@ -95,55 +96,57 @@
           %li
             %label Articles
           %li
-            = link_to "Add Article", new_article_path
+            = link_to 'Add Article', new_article_path
           %li.has-submenu
-            = link_to "Edit Article", "#"
+            = link_to 'Edit Article', '#'
             %ul.right-submenu
               %li.back
-                = link_to "Back", "#"
+                = link_to 'Back', '#'
               - Article.all.each do |article|
                 %li
                   = link_to article.title, edit_article_path(article)
           %li
             %label Members
           %li
-            = link_to "Add Member", new_member_path
+            = link_to 'Add Member', new_member_path
           %li.has-submenu
-            = link_to "Edit Member", "#"
+            = link_to 'Edit Member', '#'
             %ul.right-submenu
               %li.back
-                = link_to "Back", "#"
+                = link_to 'Back', '#'
               - Member.all.each do |member|
                 %li
                   = link_to member.name, edit_member_path(member)
           %li
             %label Performances
           %li
-            = link_to "Add Performance", new_performance_path
+            = link_to 'Add Performance', new_performance_path
           %li.has-submenu
-            = link_to "Edit Performance", "#"
+            = link_to 'Edit Performance', '#'
             %ul.right-submenu
               %li.back
-                = link_to "Back", "#"
+                = link_to 'Back', '#'
               - Performance.all.each do |performance|
                 %li
-                  = link_to performance.title, edit_performance_path(performance)
+                  = link_to performance.title,
+                    edit_performance_path(performance)
           %li
             %label Videos
           %li
-            = link_to "Add Video", new_video_path
+            = link_to 'Add Video', new_video_path
           %li.has-submenu
-            = link_to "Edit Video", "#"
+            = link_to 'Edit Video', '#'
             %ul.right-submenu
               %li.back
-                = link_to "Back", "#"
+                = link_to 'Back', '#'
               - Video.all.each do |video|
                 %li
-                  = link_to "#{video.title} (#{video.year})", edit_video_path(video)
+                  = link_to "#{video.title} (#{video.year})",
+                    edit_video_path(video)
           %li
             %label
           %li
-            = link_to "Logout", "/logout"
+            = link_to 'Logout', logout_path
 
     .devise-notice
       - if notice

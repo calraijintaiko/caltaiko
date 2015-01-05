@@ -3,6 +3,7 @@ class Video < ActiveRecord::Base
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
   validates :title, presence: true
+  # TODO: validate link for correct Youtube URL
   validates :link, presence: true
   validates :year, presence: true,
                    numericality: { only_integer: true,
