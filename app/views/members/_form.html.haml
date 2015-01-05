@@ -1,14 +1,16 @@
 = simple_form_for @member do |f|
   .row
+    .column.small-12
+      = f.error_notification
     .large-6.small-12.column
-      = f.input :name, placeholder: "Full Name"
+      = f.input :name, placeholder: 'Full Name'
     .large-1.small-3.column
       = f.input :gen
     .large-5.small-9.column
-      = f.input :major, placeholder: "Major"
+      = f.input :major, placeholder: 'Major'
 
     .large-7.small-12.column
-      = f.input :email, placeholder: "Email Address"
+      = f.input :email, placeholder: 'Email Address'
 
     .large-12.small-12.column
       = f.input :bio
@@ -20,7 +22,8 @@
     .small-2.column
       = f.input :current
 
+  .row
     .column.small-5.large-4
-      = f.button :submit, class: "button small"
+      = f.button :submit, class: 'button small'
     .column.small-7.large-8
-      = link_to "Cancel", performances_path, class: "button small disabled"
+      = link_to 'Cancel', performances_path, class: 'button small disabled'

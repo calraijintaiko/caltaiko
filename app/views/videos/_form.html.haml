@@ -1,5 +1,8 @@
 = simple_form_for(@video) do |f|
   .row
+    .column.small-12
+      = f.error_notification
+
     .column.small-10
       = f.input :title, placeholder: "Video Title"
 

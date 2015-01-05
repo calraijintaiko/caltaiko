@@ -1,12 +1,22 @@
-%header
-  %h2 Sign Up
+%header.row
+  %h2.column.small-12 Sign Up
 
 = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = f.input :username
-  = f.input :email
-  = f.input :password
-  = f.input :password_confirmation
-  = f.button :submit
+  .row
+    .column.small-12
+      = f.error_notification
 
-#shared-links
-  = render "devise/shared/links"
+    .column.small-12.medium-6
+      = f.input :username, placeholder: 'Username'
+    .column.small-12.medium-6
+      = f.input :email, placeholder: 'E-mail Address'
+    .column.small-12.medium-6
+      = f.input :password, placeholder: 'Password (at least 6 characters long)'
+    .column.small-12.medium-6
+      = f.input :password_confirmation, placeholder: 'Confirm Password'
+    .column.small-12
+      = f.button :submit, class: 'button small'
+
+#shared-links.row
+  .column.small-12
+    = render "devise/shared/links"

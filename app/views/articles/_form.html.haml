@@ -1,14 +1,16 @@
 = simple_form_for(@article) do |f|
   .row
-    = f.error_notification
+    .column.small-12
+      = f.error_notification
 
     .form-inputs
       .column.small-12
-        = f.input :title, placeholder: "Article Title"
+        = f.input :title, placeholder: 'Article Title'
       .column.small-12
-        = f.input :date, discard_hour: true, order: [:month, :day, :year], input_html: { class: "column small-4 left" }
+        = f.input :date, discard_hour: true, order: [:month, :day, :year],
+          input_html: { class: 'column small-4 left' }
       .column.small-12
-        = f.input :text, placeholder: "Article Text"
+        = f.input :text, placeholder: 'Article Text'
 
     .small-7.column
       = f.input :image
@@ -17,7 +19,8 @@
     .small-2.column
       = f.input :current
 
+  .row
     .column.small-5.large-4
-      = f.button :submit, class: "button small"
+      = f.button :submit, class: 'button small'
     .column.small-7.large-8
-      = link_to "Cancel", articles_path, class: "button small disabled"
+      = link_to 'Cancel', articles_path, class: 'button small disabled'
