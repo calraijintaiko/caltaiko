@@ -1,0 +1,25 @@
+PreCommit:
+  Rubocop:
+    on_warn: fail
+
+  CssLint:
+    enabled: false
+
+  ScssLint:
+    on_warn: fail
+    include: 'app/assets/stylesheets/**/*.scss'
+
+  Reek:
+    enabled: false
+
+  HamlLint:
+    on_warn: fail
+    include: 'app/views/**/*.haml'
+
+  HardTabs:
+    exclude: 'vendor/**/*'
+
+  TrailingWhitespace:
+    exclude:
+      - 'vendor/**/*'
+      - 'erb/**/*'

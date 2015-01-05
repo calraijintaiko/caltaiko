@@ -1,5 +1,5 @@
+# Videos Controller
 class VideosController < ApplicationController
-
   def new
     @video = Video.new
   end
@@ -44,7 +44,8 @@ class VideosController < ApplicationController
     redirect_to videos_path
   end
 
-private
+  private
+
   def set_video
     @video = Video.friendly.find(params[:id])
   end

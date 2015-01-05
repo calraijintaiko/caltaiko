@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  root 'front_page#main'
+  root 'pages#front'
 
   get 'about' => 'pages#about'
   get 'contact' => 'pages#contact'
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get "login", :to => "devise/sessions#new"
-    get "settings", :to => "devise/registrations#edit" 
+    get "settings", :to => "devise/registrations#edit"
     get "logout",   :to => "devise/sessions#destroy"
     get "register", to: "devise/registrations#new"
   end

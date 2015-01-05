@@ -4,32 +4,32 @@
 $text-link-color: #45619d;
 
 #fb-feed {
-    box-shadow: 5px 5px 0 $sub-color-2;
+  box-shadow: 5px 5px 0 $sub-color-2;
 }
 
 .social-media {
-    i {
-        font-size: 450%;
-    }
-    i.fi-social-facebook {
-        color: #45619d;
-    }
-    i.fi-social-youtube {
-        color: #cc181e;
-    }
-    i.fi-social-instagram {
-        color: black;
-    }
-    i:hover {
-        font-size: 500%;
-    }
-    .text-link {
-        color: $text-link-color;
-        margin-left: 33%;
-        position: absolute;
-        top: 10px;
-    }
-    .text-link:hover {
-        color: darken($text-link-color, 15%);
-    }
+  i {
+    font-size: 450%;
+  }
+  i.fi-social-facebook {
+    color: #45619d;
+  }
+  i.fi-social-youtube {
+    color: #cc181e;
+  }
+  i.fi-social-instagram {
+    color: black;
+  }
+  i:hover {
+    font-size: 500%;
+  }
+  .text-link {
+    color: $text-link-color;
+    margin-left: 33%;
+    position: absolute;
+    top: 25px;
+  }
+  .text-link:hover {
+    color: darken($text-link-color, 15%);
+  }
 }

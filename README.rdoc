@@ -69,7 +69,7 @@ d. Add the line
 
    to your <tt>~/.bash_profile</tt> file.
 
-=== On Ubuntu:   
+=== On Ubuntu:
 a. Go to the {ImageMagick website}[http://www.imagemagick.org/script/download.php]
    and select a mirror, then download the latest version.
 
@@ -137,7 +137,7 @@ instructions provided here[https://help.ubuntu.com/community/PostgreSQL#Installa
 
         psql --version
 
-   It should return something along the lines of 
+   It should return something along the lines of
 
         psql (PostgreSQL) 9.3.4
 
@@ -170,7 +170,7 @@ should now start up the application, and navigating to
    create a new IAM user.
 
    When the success notification pops up, be sure to either download
-   the security credentials or otherwise store them in a secure location.    
+   the security credentials or otherwise store them in a secure location.
 
 5. Create the file <tt>config/aws_config.yml</tt> and fill it with the following:
 
@@ -188,7 +188,7 @@ not being included (it's listed in the gitignore so it shouldn't be, but make AB
 SURE!!!). This is extremely important, since if those access keys wind up on GitHub,
 bad people can very easily use them to rack up a bill of several thousand dollars on
 your AWS account.
-    
+
 == Enable emails to be sent through Gmail
 
 Create the file <tt>/config/local_env.yml</tt> and fill it with the

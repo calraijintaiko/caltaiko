@@ -1,11 +1,12 @@
-- title = "Contact Us | Cal Raijin Taiko"
-- description = "How to get in contact with Cal Raijin Taiko"
-- image = URI.join(root_url, image_path("logo.png"))
+:ruby
+  title = 'Contact Us | Cal Raijin Taiko'
+  description = 'How to get in contact with Cal Raijin Taiko'
+  image = URI.join(root_url, image_path('logo.png'))
 
-- meta title: title,
-  description: description,
-  og: { title: title, description: description, image: image,
-  url: request.original_url }
+  meta title: title,
+       description: description,
+       og: { title: title, description: description, image: image,
+             url: request.original_url }
 
 .row
   .small-12.medium-7.column.text-left
@@ -13,26 +14,26 @@
       .column.small-12
         .text-block
           :markdown
-            For all general or performance inquiries, please feel free to contact us at **[caltaiko@gmail.com](mailto:caltaiko@gmail.com)**
+            For all general or performance inquiries, please feel free to
+            contact us at **[caltaiko@gmail.com](mailto:caltaiko@gmail.com)**
 
-      .column.small-12
-        %h3 Find us on social media!
+      %h3.column.small-12 Find us on social media!
       .social-media
         .column.small-4
-          %a(href="https://www.facebook.com/calraijintaiko")
+          %a{ href: 'https://www.facebook.com/calraijintaiko' }
             %i.fi-social-facebook
-          = link_to "@calraijintaiko", "https://facebook.com/calraijintaiko",
-            class: "text-link fb hide-for-medium-down"
+          = link_to '@calraijintaiko', 'https://facebook.com/calraijintaiko',
+            class: 'text-link fb hide-for-medium-down'
         .column.small-4
-          %a(href="http://instagram.com/calraijintaiko")
+          %a{ href: 'http://instagram.com/calraijintaiko' }
             %i.fi-social-instagram
-          = link_to "@calraijintaiko", "https://instagram.com/calraijintaiko",
-            class: "text-link insta hide-for-medium-down"
+          = link_to '@calraijintaiko', 'https://instagram.com/calraijintaiko',
+            class: 'text-link insta hide-for-medium-down'
         .column.small-4
-          %a(href="https://www.youtube.com/user/CALtaiko/")
+          %a{ href: 'https://www.youtube.com/user/CALtaiko/' }
             %i.fi-social-youtube
-          = link_to "@CALtaiko", "https://www.youtube.com/user/CALtaiko",
-            class: "text-link yt hide-for-medium-down"
+          = link_to '@CALtaiko', 'https://www.youtube.com/user/CALtaiko',
+            class: 'text-link yt hide-for-medium-down'
 
   .column.small-12.medium-5
-    = image_tag("team_playing.jpg", class: "team-pic")
+    = image_tag('team_playing.jpg', class: 'team-pic')

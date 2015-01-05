@@ -1,11 +1,11 @@
-- title = "Media | Cal Raijin Taiko"
-- description = "Photos and videos of some of Cal Raijin Taiko's past performances."
-- image = URI.join(root_url, image_path("logo.png"))
+:ruby
+  title = 'Media | Cal Raijin Taiko'
+  description = "Photos and videos of Cal Raijin Taiko's past performances."
+  image = URI.join(root_url, image_path('logo.png'))
 
-- meta title: title,
-  description: description,
-  og: { title: title, description: description, image: image,
-  url: request.original_url }
+  meta title: title, description: description,
+       og: { title: title, description: description, image: image,
+             url: request.original_url }
 
 - if @performances.length > 0
   %header.row
@@ -15,11 +15,12 @@
     - @performances_by_year.keys.each do |year|
       .row
         %h4.small-12.column= year
-      = render "pages/galleries_feed", performances: @performances_by_year[year]
+      = render 'pages/galleries_feed', performances: @performances_by_year[year]
 
 %header.row
   %h1.small-10.column VIDEOS
   - if user_signed_in?
-    = link_to "Add Video", new_video_path, class: "button small round column small-2 large-1"
+    = link_to 'Add Video', new_video_path,
+      class: 'button small round column small-2 large-1'
 
-= render "videos/videos_feed", by_year: @videos_by_year
+= render 'videos/videos_feed', by_year: @videos_by_year

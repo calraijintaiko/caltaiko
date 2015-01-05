@@ -1,3 +1,4 @@
+# Performance Videos
 class PerformanceVideo < ActiveRecord::Base
   belongs_to :performance
   validates :title, presence: true

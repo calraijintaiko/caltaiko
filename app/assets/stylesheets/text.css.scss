@@ -1,16 +1,16 @@
 @import 'mixins';
 
 .text-block {
-    @include box-style;
-    margin-bottom: 30px;
-    padding: 20px;
-    p {
-        margin-bottom: 0;
-    }
+  @include box-style;
+  margin-bottom: 30px;
+  padding: 20px;
+  p {
+    margin-bottom: 0;
+  }
 }
 
 .group-description {
-    p {
-        font-size: 123%;
-    }
+  p {
+    font-size: 123%;
+  }
 }

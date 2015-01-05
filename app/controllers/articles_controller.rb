@@ -1,3 +1,4 @@
+# Articles Controller
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
@@ -30,21 +31,24 @@ class ArticlesController < ApplicationController
     if @article.update(article_params)
       redirect_to @article
     else
-      render "edit"
+      render 'edit'
     end
   end
 
   def destroy
+    @article.delete_image
     @article.destroy
     redirect_to articles_path
   end
 
   private
+
   def set_article
     @article = Article.friendly.find(params[:id])
   end
 
   def article_params
-    params.require(:article).permit(:title, :date, :text, :current, :image, :delete_image)
+    params.require(:article).permit(:title, :date, :text, :current, :image,
+                                    :delete_image)
   end
 end
