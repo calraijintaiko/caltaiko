@@ -4,19 +4,19 @@
 @import 'variables';
 
 table#perf-vids {
-    border-collapse: collapse;
-    td, th {
-        border: 1px black solid;
-        padding: 2px 5px;
-        text-align: left;
+  border-collapse: collapse;
+  td, th {
+    border: 1px black solid;
+    padding: 2px 5px;
+    text-align: left;
+  }
+  th {
+    background-color: $main-color;
+    color: white;
+  }
+  td {
+    a {
+      text-decoration: none;
     }
-    th {
-        background-color: $main-color;
-        color: white;
-    }
-    td {
-        a {
-            text-decoration: none;
-        }
-    }
+  }
 }

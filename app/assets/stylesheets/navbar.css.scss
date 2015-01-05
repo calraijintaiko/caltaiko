@@ -4,32 +4,32 @@
 @import 'variables';
 
 .top-bar, .top-bar-section li:not(.has-form) {
-    a {
-        text-transform: uppercase;
-    }
+  a {
+    text-transform: uppercase;
+  }
 }
 
 .top-bar ul.title-area li.name {
-    img {
-        height: 100%;
-        padding-left: 10px;
-        position: absolute;
-    }
-    h1 {
-        font-size: 118%;
-        letter-spacing: 1px;
-        padding-left: 45px;
-    }
+  img {
+    height: 100%;
+    padding-left: 10px;
+    position: absolute;
+  }
+  h1 {
+    font-size: 118%;
+    letter-spacing: 1px;
+    padding-left: 45px;
+  }
 }
 
 .tab-bar .tab-bar-section {
-    h1.title a {
-        color: $yellow;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
+  h1.title a {
+    color: $yellow;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
 }
 
 .main-section {
-    margin-top: 3%;
+  margin-top: 3%;
 }

@@ -5,126 +5,126 @@
 @import 'mixins';
 
 .current-members {
-    .member {
-        background-color: $dark-bg;
-        border: 3px $main-color solid;
-        border-radius: 3px;
-        .member-image {
-            position: relative;
-            img {
-                @include transition;
-                width: 100%;
-                z-index: 1;
-            }
-            a.text-link {
-                @include transition($effect: color);
-                bottom: 5%;
-                color: rgba(0, 0, 0, 0);
-                display: block;
-                margin: 0;
-                position: absolute;
-                text-align: center;
-                text-decoration: none;
-                width: 100%;
-                z-index: 0;
-            }
-        }
-        .member-image:hover {
-            img {
-                filter: alpha(opacity=40);
-                opacity: .4;
-            }
-            a.text-link {
-                color: white;
-                z-index: 3;
-            }
-        }
-        p.name {
-            color: $yellow;
-            margin-bottom: 0;
-            text-align: center;
-        }
-        a {
-            color: white;
-        }
-        .edit-icons {
-            @include edit-icons($icon-size: 15px, $icon-padding: 3px);
-        }
+  .member {
+    background-color: $dark-bg;
+    border: 3px $main-color solid;
+    border-radius: 3px;
+    .member-image {
+      position: relative;
+      img {
+        @include transition;
+        width: 100%;
+        z-index: 1;
+      }
+      a.text-link {
+        @include transition($effect: color);
+        bottom: 5%;
+        color: rgba(0, 0, 0, 0);
+        display: block;
+        margin: 0;
+        position: absolute;
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+        z-index: 0;
+      }
     }
+    .member-image:hover {
+      img {
+        filter: alpha(opacity=40);
+        opacity: .4;
+      }
+      a.text-link {
+        color: white;
+        z-index: 3;
+      }
+    }
+    p.name {
+      color: $yellow;
+      margin-bottom: 0;
+      text-align: center;
+    }
+    a {
+      color: white;
+    }
+    .edit-icons {
+      @include edit-icons($icon-size: 15px, $icon-padding: 3px);
+    }
+  }
 }
 
 $alumni-width: 205px;
 
 .alumni {
-    a {
-        color: white;
-        text-decoration: none;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  .alumnus {
+    @include box-style($width: 3px);
+    .link-wrapper {
+      p {
+        color: black;
+        margin: 0;
+        padding-bottom: 15px;
+        padding-top: 15px;
+      }
+      .edit-icons {
+        @include edit-icons($icon-size: 15px, $icon-padding: 4px);
+        z-index: 4;
+      }
     }
-    .alumnus {
-        @include box-style($width: 3px);
-        .link-wrapper {
-            p {
-                color: black;
-                margin: 0;
-                padding-bottom: 15px;
-                padding-top: 15px;
-            }
-            .edit-icons {
-                @include edit-icons($icon-size: 15px, $icon-padding: 4px);
-                z-index: 4;
-            }
-        }
+  }
+  .alumnus:hover {
+    background-color: $main-color;
+    filter: alpha(opacity=40);
+    opacity: .4;
+    zoom: 1;
+    p {
+      color: white;
     }
-    .alumnus:hover {
-        background-color: $main-color;
-        filter: alpha(opacity=40);
-        opacity: .4;
-        zoom: 1;
-        p {
-            color: white;
-        }
-        img {
-            -webkit-filter: invert(1);
-            filter: invert(1);
-        }
+    img {
+      -webkit-filter: invert(1);
+      filter: invert(1);
     }
+  }
 }
 
 .individual {
-    img.bio-pic {
-        margin-left: -15px;
+  img.bio-pic {
+    margin-left: -15px;
+  }
+  .bio-block {
+    @include box-style;
+    padding-top: 15px;
+    .edit-icons {
+      @include edit-icons($icon-size: 30px, $icon-padding: 10px);
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      z-index: 4;
     }
-    .bio-block {
-        @include box-style;
-        padding-top: 15px;
-        .edit-icons {
-            @include edit-icons($icon-size: 30px, $icon-padding: 10px);
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            z-index: 4;
-        }
-    }
+  }
 }
 
 .generations {
-    border-bottom: 1px $main-color solid;
-    border-top: 1px $main-color solid;
-    padding: 5px;
-    text-align: center;
-    .gen {
-        display: inline-block;
-        margin: 5px 20px;
-    }
-    a {
-        display: block;
-        font-family: 'Oswald';
-        text-decoration: none;
-    }
+  border-bottom: 1px $main-color solid;
+  border-top: 1px $main-color solid;
+  padding: 5px;
+  text-align: center;
+  .gen {
+    display: inline-block;
+    margin: 5px 20px;
+  }
+  a {
+    display: block;
+    font-family: 'Oswald';
+    text-decoration: none;
+  }
 }
 
 p#nice-try-wise-guy {
-    color: $main-color;
-    font-size: 120%;
-    text-align: left;
+  color: $main-color;
+  font-size: 120%;
+  text-align: left;
 }

@@ -5,31 +5,31 @@
 @import 'mixins';
 
 .carousel {
-    margin-bottom: 30px;
-    //@include box-style($sub-color-3, $sub-color-2);
+  margin-bottom: 30px;
+  //@include box-style($sub-color-3, $sub-color-2);
 }
 
 article.article {
-    @include box-style($sub-color-3, $sub-color-2);
-    margin-bottom: 5%;
-    padding: 20px;
-    .article-image {
-        margin-bottom: 15px;
-        margin-top: 10px;
-    }
-    a.continue-reading {
-        text-decoration: underline;
-    }
-    .icons {
-        a {
-            margin-left: 15%;
-            i {
-                font-size: 270%;
-            }
+  @include box-style($sub-color-3, $sub-color-2);
+  margin-bottom: 5%;
+  padding: 20px;
+  .article-image {
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+  a.continue-reading {
+    text-decoration: underline;
+  }
+  .icons {
+    a {
+      margin-left: 15%;
+      i {
+        font-size: 270%;
         }
     }
+  }
 }
 
 article.article:first-child {
-    margin-top: 2%;
+  margin-top: 2%;
 }

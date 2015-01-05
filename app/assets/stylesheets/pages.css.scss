@@ -5,35 +5,35 @@
 @import 'mixins';
 
 #team-pic {
-    background-color: $dark-bg;
-    border: 3px $main-color solid;
-    padding: 0;
-    img {
-        @include transition;
-    }
-    a.text-link {
-        @include transition($effect: color);
-        color: rgba(0, 0, 0, 0);
-        display: block;
-        font-family: $main-font;
-        margin: 0;
-        position: absolute;
-        text-align: center;
-        text-decoration: none;
-        top: 47%;
-        width: 100%;
-        z-index: 0;
-    }
+  background-color: $dark-bg;
+  border: 3px $main-color solid;
+  padding: 0;
+  img {
+    @include transition;
+  }
+  a.text-link {
+    @include transition($effect: color);
+    color: rgba(0, 0, 0, 0);
+    display: block;
+    font-family: $main-font;
+    margin: 0;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    top: 47%;
+    width: 100%;
+    z-index: 0;
+  }
 }
 
 #team-pic:hover {
-    img {
-        filter: alpha(opacity=50);
-        opacity: .5;
-        zoom: 1;
-    }
-    a.text-link {
-        color: white;
-        z-index: 3;
-    }
+  img {
+    filter: alpha(opacity=50);
+    opacity: .5;
+    zoom: 1;
+  }
+  a.text-link {
+    color: white;
+    z-index: 3;
+  }
 }

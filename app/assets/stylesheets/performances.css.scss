@@ -5,123 +5,123 @@
 @import 'mixins';
 
 .performance {
-    @include box-style;
-    margin-bottom: 50px;
-    .performance-deets {
-        p {
-            color: $main-color;
-            font-family: 'Oswald';
-            margin-bottom: 1%;
-            word-spacing: 2px;
-        }
-        .where, .what {
-            text-transform: uppercase;
-            // Make them uppercase here instead of in the template so that
-            // look nicer in Google rich snippets
-        }
-        .what {
-            color: $main-color;
-            margin-bottom: 0;
-            margin-top: 0;
-            text-shadow: 2px 2px 0 $sub-color-2;
-        }
-        span.divider {
-            font-size: 115%;
-            margin-left: 25px;
-            margin-right: 25px;
-        }
+  @include box-style;
+  margin-bottom: 50px;
+  .performance-deets {
+    p {
+      color: $main-color;
+      font-family: 'Oswald';
+      margin-bottom: 1%;
+      word-spacing: 2px;
     }
-    .icons {
-        margin-top: -10px;
-        a {
-            margin-left: 15%;
-        }
-        i {
-            font-size: 300%;
-        }
+    .where, .what {
+      text-transform: uppercase;
+      // Make them uppercase here instead of in the template so that
+      // look nicer in Google rich snippets
     }
+    .what {
+      color: $main-color;
+      margin-bottom: 0;
+      margin-top: 0;
+      text-shadow: 2px 2px 0 $sub-color-2;
+    }
+    span.divider {
+      font-size: 115%;
+      margin-left: 25px;
+      margin-right: 25px;
+    }
+  }
+  .icons {
+    margin-top: -10px;
+    a {
+      margin-left: 15%;
+    }
+    i {
+      font-size: 300%;
+    }
+  }
 }
 
 .thumbnail-feed {
-    .thumb-performance {
-        @include box-style($width: 3px);
-        display: inline-block;
-        .details {
-            padding: 3px 8px;
-            .date-and-icons {
-                position: relative;
-            }
-        }
-        p {
-            font-family: 'Oswald';
-            margin-bottom: 0;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-        .perf-date {
-            font-size: 13px;
-        }
-        .icons {
-            position: absolute;
-            right: 0;
-            top: -10px;
-            i {
-                font-size: 140%;
-                margin-left: 8px;
-            }
-        }
+  .thumb-performance {
+    @include box-style($width: 3px);
+    display: inline-block;
+    .details {
+      padding: 3px 8px;
+      .date-and-icons {
+        position: relative;
+      }
     }
+    p {
+      font-family: 'Oswald';
+      margin-bottom: 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .perf-date {
+      font-size: 13px;
+    }
+    .icons {
+      position: absolute;
+      right: 0;
+      top: -10px;
+      i {
+        font-size: 140%;
+        margin-left: 8px;
+      }
+    }
+  }
 }
 
 .performance-image {
-    background-color: $dark-bg;
-    border-bottom: 1px $border-color solid;
+  background-color: $dark-bg;
+  border-bottom: 1px $border-color solid;
+  position: relative;
+  img {
+    @include transition;
+    display: block;
     position: relative;
-    img {
-        @include transition;
-        display: block;
-        position: relative;
-        width: 100%;
-        z-index: 1;
+    width: 100%;
+    z-index: 1;
+  }
+  a.text-link {
+    @include transition($effect: color);
+    color: rgba(0, 0, 0, 0);
+    display: block;
+    font-family: 'Lato';
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    width: 100%;
+    word-spacing: 2px;
+    z-index: 0;
+  }
+  a.upcoming-perf {
+    text-decoration: none;
+    .underlined {
+      text-decoration: underline;
     }
-    a.text-link {
-        @include transition($effect: color);
-        color: rgba(0, 0, 0, 0);
-        display: block;
-        font-family: 'Lato';
-        position: absolute;
-        text-align: center;
-        top: 40%;
-        width: 100%;
-        word-spacing: 2px;
-        z-index: 0;
+    p {
+      @include transition($effect: color);
+      color: rgba(0, 0, 0, 0);
+      margin: 0 auto;
+      padding: 0 10%;
     }
-    a.upcoming-perf {
-        text-decoration: none;
-        .underlined {
-            text-decoration: underline;
-        }
-        p {
-            @include transition($effect: color);
-            color: rgba(0, 0, 0, 0);
-            margin: 0 auto;
-            padding: 0 10%;
-        }
-    }
+  }
 }
 
 .performance-image:hover {
-    img {
-        filter: alpha(opacity=30);
-        opacity: .3;
+  img {
+    filter: alpha(opacity=30);
+    opacity: .3;
+  }
+  a.text-link {
+    color: white;
+    z-index: 3;
+  }
+  a.upcoming-perf {
+    p {
+      color: white;
     }
-    a.text-link {
-        color: white;
-        z-index: 3;
-    }
-    a.upcoming-perf {
-        p {
-            color: white;
-        }
-    }
+  }
 }
