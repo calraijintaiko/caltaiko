@@ -52,7 +52,7 @@
               = link_to 'Contact', contact_path
             - if user_signed_in?
               %li.has-dropdown
-                = link_to 'Admin', '#'
+                = link_to 'Admin', '#', id: 'admin-link'
                 %ul.dropdown
                   %li
                     = link_to 'Add Article', new_article_path

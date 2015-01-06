@@ -3,6 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'variables';
 
+#admin-link {
+  background-color: $yellow;
+  color: #333;
+}
+
 .top-bar, .tab-bar {
   -moz-box-shadow: 0 0 30px 0 black;
   -webkit-box-shadow: 0 0 30px 0 black;

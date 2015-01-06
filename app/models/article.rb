@@ -47,6 +47,15 @@ class Article < ActiveRecord::Base
     ]
   end
 
+  # Returns a short snippet of the article text.
+  # Generally returns first paragraph, but if first paragraph is too long,
+  # will serve up only first 500 characters.
+  def snippet
+    snippet = text.split("\r\n\r\n")[0]
+    snippet = snippet[0, 500] + ' **[. . .]**' if snippet.length > 550
+    snippet
+  end
+
   # Returns all current articles.
   def self.current
     Article.where(current: true).order('date DESC')

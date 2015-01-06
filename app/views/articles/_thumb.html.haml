@@ -8,11 +8,8 @@
           = link_to article_path(article) do
             %h3= article.title
           %small=  article.date.strftime('%B %-d, %Y')
-          - text = article.text
-          - if text.length > 300
-            - text = text[0, 255] + '[. . .]'
           :markdown
-            #{text}
+            #{article.snippet}
           - if article.text.length > 300
             = link_to 'Continue reading', article_path(article),
               class: 'continue-reading'
