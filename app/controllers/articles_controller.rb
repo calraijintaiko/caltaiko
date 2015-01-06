@@ -36,9 +36,8 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article.delete_image
     @article.destroy
-    redirect_to articles_path
+    redirect_to news_path
   end
 
   private
