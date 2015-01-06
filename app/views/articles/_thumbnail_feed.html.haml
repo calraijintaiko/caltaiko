@@ -1,6 +1,6 @@
 %section.news-feed
   - if articles.length > 0
     - articles.each do |article|
-      = render "/articles/thumb", article: article
+      = render '/articles/thumb', article: article
   - else
     %p.column.small-12 Stay tuned for more information soon!

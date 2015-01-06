@@ -4,17 +4,18 @@
       - members.each do |member|
         %li
           %article.alumnus
-            %a(href="#" data-reveal-id="#{member.slug}")
+            %a{ href: '#', data: { reveal: { id: "#{member.slug}" } } }
               .link-wrapper
                 %p.text-center= member.name
                 - if user_signed_in?
                   .edit-icons
-                    = link_to image_tag("icons/edit_black.png"), edit_member_path(member)
-                    = link_to image_tag("icons/delete_black.png"),
+                    = link_to image_tag('icons/edit_black.png'),
+                      edit_member_path(member)
+                    = link_to image_tag('icons/delete_black.png'),
                       member_path(member), method: :delete,
-                      data: { confirm: "Are you sure you'd like to delete member #{member.name}?" }
+                      data: { confirm: "Delete member #{member.name}?" }
 
   - members.each do |member|
-    .reveal-modal.medium(data-reveal id="#{member.slug}")
-      = render "members/show", member: member
+    .reveal-modal.medium{ data: { reveal: '' }, id: "#{member.slug}" }
+      = render 'members/show', member: member
       %a.close-reveal-modal.hide-for-large-up &#215;

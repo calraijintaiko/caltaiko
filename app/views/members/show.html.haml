@@ -1,13 +1,13 @@
-- title = @member.name + " | Cal Raijin Taiko"
-- description = "View the member bio for " + @member.name
-- image = @member.avatar.url(:full)
+:ruby
+  title = @member.name + ' | Cal Raijin Taiko'
+  description = "View the member bio for #{@member.name}"
+  image = @member.avatar.url(:full)
 
-- meta title: title,
-  description: description,
-  og: { title: title, description: description, image: image,
-  url: request.original_url }
+  meta title: title, description: description,
+       og: { title: title, description: description, image: image,
+             url: request.original_url }
 
-= render "members/show", member: @member
+= render 'members/show', member: @member
 
 .back
-  = link_to "Back", members_path, class: "button small radius"
+  = link_to 'Back', members_path, class: 'button small radius'

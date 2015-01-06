@@ -1,11 +1,23 @@
-.generation(itemscope itemtype="http://schema.org/Organization")
+:ruby
+  title = "Generation #{@gen} | Cal Raijin Taiko"
+  description = "The members of Generation #{@gen} joined the Cal Raijin" \
+    " Taiko family in #{2004 + @gen.to_i}."
+  image = URI.join(root_url, image_path('logo.png'))
+
+  meta title: title, description: description,
+       og: { title: title, description: description, image: image,
+             url: request.original_url }
+
+.generation(itemscope itemtype='http://schema.org/Organization')
   %header.row
     %h2.column.small-12 GENERATION #{@gen}
 
-  %meta(itemprop="name" content="Generation #{@gen}")
+  %meta{ itemprop: 'name', content: "Generation #{@gen}" }
 
   - if @members.length > 0
-    = render "current_members", members: @members
+    = render 'current_members', members: @members
   - else
     .row
-      %p.column.small-12(id="nice-try-wise-guy")= "Unfortunately, there are not yet any members of Generation #{@gen}. Please check back again in #{2005 + @gen.to_i}!"
+      %p.column.small-12#nice-try-wise-guy
+        Unfortunately, there are not yet any members of Generation #{@gen}.
+        Please check back again in #{2005 + @gen.to_i}!

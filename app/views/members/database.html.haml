@@ -1,9 +1,18 @@
-%header
-  %h2 CURRENT MEMBERS
+:ruby
+  title = 'Member Database | Cal Raijin Taiko'
+  description = 'A database of member bio information.'
+  image = URI.join(root_url, image_path('logo.png'))
 
-= render "database", members: @current
-  
-%header
-  %h2 ALUMNI
+  meta title: title, description: description,
+       og: { title: title, description: description, image: image,
+             url: request.original_url }
 
-= render "database", members: @alumni
+.row
+  %h2.column.small-12 CURRENT MEMBERS
+  .column.small-12
+    = render 'database', members: @current
+
+.row
+  %h2.column.small-12 ALUMNI
+  .column.small-12
+    = render 'database', members: @alumni

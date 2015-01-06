@@ -1,8 +1,8 @@
 %header.row
-  %h2.column.small-12= "Edit #{resource_name.to_s.humanize} Settings"
+  %h2.column.small-12 Edit #{resource_name.to_s.humanize} Settings
 
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
-  html: { method: :put }) do |f|
+= simple_form_for(resource, as: resource_name,
+  url: registration_path(resource_name), html: { method: :put }) do |f|
   .row
     .column.small-12
       = f.error_notification
@@ -14,7 +14,8 @@
       = f.input :email
 
     - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-      %div.column.small-12= 'Currently awaiting confirmation for #{resource.unconfirmed_email}'
+      .column.small-12
+        Currently awaiting confirmation for #{resource.unconfirmed_email}
 
     .column.small-12.medium-6
       = f.input :password, label: 'New Password',
@@ -28,8 +29,8 @@
     .column.small-12
       = f.button :submit, class: 'button small'
 
-#cancel-account.row
+.row#cancel-account
   %p.column.small-12 Unhappy?
   .column.small-12
     = button_to 'Cancel my account', registration_path(resource_name),
-      data: {confirm: 'Are you sure?' }, method: :delete, class: 'button small'
+      data: { confirm: 'Are you sure?' }, method: :delete, class: 'button small'

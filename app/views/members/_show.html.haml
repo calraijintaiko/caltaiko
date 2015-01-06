@@ -1,26 +1,29 @@
-%article.individual(itemscope itemtype="http://schema.org/Person")
+%article.individual{ itemscope: '', itemtype: 'http://schema.org/Person' }
   .row
-    = image_tag member.avatar.url(:full), itemprop: "image",
-      class: "bio-pic small-12 large-5 column"
+    = image_tag member.avatar.url(:full), itemprop: 'image',
+      class: 'bio-pic small-12 large-5 column'
     .spacer.column.small-12.hide-for-large-up
       %p
     .bio-block.large-7.small-12.column
       .row
         %p.column.small-12
           %strong Name:
-          %span(itemprop="name")= member.name
+          %span{ itemprop: 'name' }= member.name
         %p.column.small-4
           %strong Gen:
-          = link_to number_with_precision(member.gen, precision: 0), "#{root_url}members/gen/#{member.gen}"
-        %meta(itemprop="memberOf" content="Generation #{member.gen}")
+          = link_to number_with_precision(member.gen, precision: 0),
+            "#{root_url}members/gen/#{member.gen}"
+        %meta{ itemprop: 'memberOf', content: "Generation #{member.gen}" }
         %p.column.small-8
           %strong Major:
           = member.major
 
-        %p.bio.text-justify.column.small-12(itemprop="description")= member.bio
+        %p.bio.text-justify.column.small-12{ itemprop: 'description' }
+          #{member.bio}
 
       - if user_signed_in?
         .edit-icons.hide-for-medium-down
-          = link_to image_tag("icons/edit_black.png"), edit_member_path(member)
-          = link_to image_tag("icons/delete_black.png"), member_path(member), method: :delete,
-            data: { confirm: "Are you sure you'd like to delete member #{member.name}?" }
+          = link_to image_tag('icons/edit_black.png'), edit_member_path(member)
+          = link_to image_tag('icons/delete_black.png'), member_path(member),
+            method: :delete,
+            data: { confirm: "Delete member #{member.name}?" }

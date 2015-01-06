@@ -17,7 +17,9 @@ PreCommit:
     include: 'app/views/**/*.haml'
 
   HardTabs:
-    exclude: 'vendor/**/*'
+    exclude:
+      - 'vendor/**/*'
+      - 'erb/**/*'
 
   TrailingWhitespace:
     exclude:

@@ -1,13 +1,14 @@
 %header.row
   %h2.column.small-12 Sign in
 
-= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+= simple_form_for(resource, as: resource_name,
+  url: session_path(resource_name)) do |f|
   .row
     .column.small-12.medium-6
-      = f.input :login, placeholder: "Username or email address"
+      = f.input :login, placeholder: 'Username or email address'
     .column.small-12.medium-6
-      = f.input :password, placeholder: "Password"
+      = f.input :password, placeholder: 'Password'
     .column.small-12.medium-6
-      = f.button :submit, "Sign In", class: "button small"
+      = f.button :submit, 'Sign In', class: 'button small'
     .column.small-12.medium-6
-      = render "devise/shared/links"
+      = render 'devise/shared/links'

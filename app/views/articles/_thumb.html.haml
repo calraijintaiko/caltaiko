@@ -3,15 +3,16 @@
     %article.article
       .row
         = link_to image_tag(article.image.url(:thumb)), article_path(article),
-          class: "column small-12 medium-6 large-4"
+          class: 'column small-12 medium-6 large-4'
         .column.small-12.medium-6.large-8
           = link_to article_path(article) do
             %h3= article.title
-          %small=  article.date.strftime("%B %-d, %Y")
+          %small=  article.date.strftime('%B %-d, %Y')
           - text = article.text
           - if text.length > 300
-            - text = text[0, 255] + ". . ."
+            - text = text[0, 255] + '[. . .]'
           :markdown
             #{text}
           - if article.text.length > 300
-            = link_to "Continue reading", article_path(article), class: "continue-reading"
+            = link_to 'Continue reading', article_path(article),
+              class: 'continue-reading'

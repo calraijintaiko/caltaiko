@@ -1,16 +1,16 @@
-- title = "News | Cal Raijin Taiko"
-- description = "Cal Raijin Taiko's latest news"
-- image = URI.join(root_url, image_path("logo.png"))
+:ruby
+  title = 'News | Cal Raijin Taiko'
+  description = 'The latest news from Cal Raijin Taiko.'
+  image = URI.join(root_url, image_path('logo.png'))
 
-- meta title: title,
-  description: description,
-  og: { title: title, description: description, image: image,
-  url: request.original_url }
+  meta title: title, description: description,
+       og: { title: title, description: description, image: image,
+             url: request.original_url }
 
 %header.row
   %h1.small-8.column NEWS
   - if user_signed_in?
-    = link_to "Add Article", new_article_path,
-      class: "button small round hide-for-medium-down large-1 column"
+    = link_to 'Add Article', new_article_path,
+      class: 'button small round hide-for-medium-down large-1 column'
 
-= render "thumbnail_feed", articles: @articles
+= render 'thumbnail_feed', articles: @articles

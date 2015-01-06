@@ -1,18 +1,18 @@
-- title = "Current Members | Cal Raijin Taiko"
-- description = "The currently active members of Cal Raijin Taiko."
-- image = URI.join(root_url, image_path("logo.png"))
+:ruby
+  title = 'Current Members | Cal Raijin Taiko'
+  description = 'The currently active members of Cal Raijin Taiko.'
+  image = URI.join(root_url, image_path('logo.png'))
 
-- meta title: title,
-  description: description,
-  og: { title: title, description: description, image: image,
-  url: request.original_url }
+  meta title: title, description: description,
+       og: { title: title, description: description, image: image,
+             url: request.original_url }
 
 %header.row
   %h1.large-11.column CURRENT MEMBERS
   - if user_signed_in?
-    = link_to "Add Member", new_member_path,
-      class: "button small round column hide-for-medium-down large-1"
+    = link_to 'Add Member', new_member_path,
+      class: 'button small round column hide-for-medium-down large-1'
 
-= render "current_members", members: @current
+= render 'current_members', members: @current
 
-= render "gens", gens: @gens
+= render 'gens', gens: @gens
