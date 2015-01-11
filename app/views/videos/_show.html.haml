@@ -4,9 +4,8 @@
     .edit-icons
       = link_to image_tag('icons/edit_black.png'), edit_video_path(video)
       = link_to image_tag('icons/delete_black.png'), video_path(video),
-        method: :delete,
-        data: { confirm: "You sure you'd like to delete video #{video.title}?" }
+        method: :delete, data: { confirm: "Delete video #{video.title}?" }
   %br
 
   %iframe{ width: '464', height: '261', frameborder: '0', allowfullscreen: '',
-    src: video.link.sub('watch?v=', 'embed/') }
+    src: video.embed_link }

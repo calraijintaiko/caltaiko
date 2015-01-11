@@ -17,6 +17,10 @@ class Video < ActiveRecord::Base
     ]
   end
 
+  def embed_link
+    link.sub('watch?v=', 'embed/')
+  end
+
   def self.by_year(videos)
     by_year = {}
     videos.each do |video|
