@@ -1,6 +1,3 @@
-@import 'variables';
-@import 'mixins';
-
 $text-link-color: #45619d;
 
 #fb-feed {
@@ -10,6 +7,11 @@ $text-link-color: #45619d;
 .social-media {
   i {
     font-size: 450%;
+    -moz-transition: font-size .1s;
+    -ms-transition: font-size .1s;
+    -o-transition: font-size .1s;
+    -webkit-transition: font-size .1s;
+    transition: font-size .1s;
   }
   i.fi-social-facebook {
     color: #45619d;
