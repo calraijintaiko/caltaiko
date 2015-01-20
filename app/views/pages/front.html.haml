@@ -26,7 +26,7 @@
 - if @articles.length > 0
   %header.row
     %h1.small-10.column
-      = link_to 'NEWS', '/news'
+      = link_to 'NEWS', articles_path
     - if user_signed_in?
       = link_to 'Add Article', new_article_path,
         class: 'button small round hide-for-medium-down large-1 column'
