@@ -31,7 +31,7 @@ class VideosController < ApplicationController
     set_video
 
     if @video.update(video_params)
-      redirect_to @video
+      redirect_to media_path
     else
       render 'edit'
     end
@@ -41,7 +41,7 @@ class VideosController < ApplicationController
     set_video
     @video.destroy
 
-    redirect_to videos_path
+    redirect_to media_path
   end
 
   private
