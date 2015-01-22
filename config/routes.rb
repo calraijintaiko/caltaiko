@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get 'about' => :about, as: :about
     get 'contact' => :contact, as: :contact
     get 'media' => :media, as: :media
+    get 'showcase' => :showcase, as: :showcase
   end
 
   resources :members do

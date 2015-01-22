@@ -18,4 +18,8 @@ class PagesController < ApplicationController
     @performances = Performance.images?.order('date DESC')
     @performances_by_year = Performance.by_year(@performances)
   end
+
+  def showcase
+    redirect_to 'http://caltaiko-showcase-2015.eventbrite.com'
+  end
 end
