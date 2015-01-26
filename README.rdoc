@@ -1,4 +1,4 @@
-= Cal Raijin Taiko Website Revamp
+= Cal Raijin Taiko Website
 
 This is the source code for Cal Raijin Taiko's new website, www.caltaiko.org.
 Many many thanks to {Benjamin Ortiz}[https://github.com/benortiz] for doing much
@@ -12,7 +12,7 @@ of the design work!
 
 * {Ruby 2.1.*}[https://www.ruby-lang.org/en/]
 
-* {Rails 4.1.*}[http://rubyonrails.org/]
+* {Rails 4.2.*}[http://rubyonrails.org/]
 
 * ImageMagick[http://www.imagemagick.org/]
 
@@ -31,10 +31,10 @@ idea if it will work.
 
 2. Run the commands
 
-       rvm install ruby-2.1.2
-       rvm use ruby-2.1.2
+       rvm install ruby-2.1.5
+       rvm use ruby-2.1.5
 
-   to download ruby v2.1.2 and begin using it.
+   to download ruby v2.1.5 and begin using it.
 
 3. If you encounter the error
 
@@ -65,9 +65,10 @@ c. Install Postgres.app[http://postgresapp.com/]
 
 d. Add the line
 
-       export PATH=/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH
+       export PATH=/Applications/Postgres.app/Contents/Versions/VERSION_NUMBER/bin:$PATH
 
-   to your <tt>~/.bash_profile</tt> file.
+   to your <tt>~/.bash_profile</tt> file, where VERSION_NUMBER is whatever version of
+   Postgres.app you have.
 
 === On Ubuntu:
 a. Go to the {ImageMagick website}[http://www.imagemagick.org/script/download.php]
@@ -129,7 +130,7 @@ instructions provided here[https://help.ubuntu.com/community/PostgreSQL#Installa
 
          gem install bundler
 
-5. Download the appropriate gems using Bundler[http://bundler.io/rails3.html]:
+5. Download the appropriate gems using Bundler[http://bundler.io]:
 
             bundle install
 
