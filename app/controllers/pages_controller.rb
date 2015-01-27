@@ -22,4 +22,7 @@ class PagesController < ApplicationController
   def showcase
     redirect_to 'http://caltaiko-showcase-2015.eventbrite.com'
   end
+
+  def collegiate_taiko
+  end
 end

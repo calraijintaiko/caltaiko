@@ -48,8 +48,13 @@
                   = link_to 'Alumni', alumni_members_path
             %li
               = link_to 'Media', media_path
-            %li
+            %li.has-dropdown
               = link_to 'About', about_path
+              %ul.dropdown
+                %li
+                  = link_to 'Our Team', about_path
+                %li
+                  = link_to 'Collegiate Taiko', collegiate_taiko_path
             %li
               = link_to 'Contact', contact_path
             - if user_signed_in?

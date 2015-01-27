@@ -1,0 +1,55 @@
+:ruby
+  title = 'Collegiate Taiko | Cal Raijin Taiko'
+  description = 'A brief history of collegiate taiko in the United States,'\
+                ' with links to collegiate taiko groups across the country.'
+  image = URI.join(root_url, image_path('logo.png'))
+
+  meta title: title, description: description,
+       og: { title: title, description: description, image: image,
+             url: request.original_url }
+.row
+  .column.small-12
+    %h3 A History of Collegiate Taiko
+  .column.small-12.medium-8
+    :markdown
+      Though taiko drumming has existed in Japan for over a thousand years,
+      taiko drumming in the U.S. is a much more recent phenomenon. It was only
+      in 1968, with the founding of the
+      **[San Francisco Taiko Dojo](http://www.sftaiko.com)** by Grandmaster
+      **Seiichi Tanaka** that taiko began emerging in the United States. Since
+      then, the artform has spread throughout the country, with hundreds of
+      groups studying the way of taiko from coast to coast.
+
+      It would be another 20 years before the very first collegiate taiko group
+      was founded. In 1990, **Mark Honda** created
+      **[Kyodo Taiko](http://www.kyodotaiko.org/)** as part of the **University
+      of California, Los Angeles'** Nikkei Student Union. In the years since,
+      more and more groups have been started at colleges across the country.
+
+      In 1995, **[Stanford Taiko](http://taiko.stanford.edu)** hosted the very
+      first **Intercollegiate Taiko Invitationals**, bringing together a host
+      of collegiate groups for a weekend of performances and workshops with
+      taiko professionals. Intercollegiate Taiko Invitationals has gone on to
+      become an annual event, hosted by a different school each year.
+  .column.small-12.medium-4
+    = image_tag('collegiate_collage.png', class: 'team-pic')
+
+.row#collegiate-links
+  .column.small-12
+    %h3 Collegiate Taiko Groups
+  .column.medium-6
+    %ul
+      %li= link_to 'Ahiru Daiko', 'http://pages.uoregon.edu/ahiru/'
+      %li= link_to 'Bakuhatsu Taiko Dan', 'http://www.bakuhatsutaikodan.com/'
+      %li= link_to 'CSUN Jishin Taiko', 'http://jishintaiko.blogspot.com/'
+      %li= link_to 'Jodaiko', 'http://www.jodaiko.com/'
+      %li= link_to 'Kyodo Taiko', 'http://www.kyodotaiko.org/'
+      %li= link_to 'Oberlin College Taiko', 'http://www.oberlin.edu/stuorg/oct/'
+  .column.medium-6
+    %ul
+      %li= link_to 'Yukai Daiko', 'http://www.yukaidaiko.com/'
+      %li= link_to 'Senryu Taiko', 'http://2010.senryutaiko.com/'
+      %li= link_to 'Asayake Taiko', 'http://asayaketaiko.ucsd.edu/'
+      %li= link_to 'USC Kazan Taiko', 'https://usckazantaiko.wordpress.com/'
+      %li= link_to 'Yamatai', 'http://yamatai-taiko.com/'
+      %li= link_to 'Stanford Taiko', 'http://stanford.taiko.edu'
