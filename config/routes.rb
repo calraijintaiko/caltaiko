@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   scope controller: :pages do
     get 'about' => :about, as: :about
-    get 'about/collegiate_taiko' => :collegiate_taiko, as: :collegiate_taiko
+    get 'about/collegiate-taiko' => :collegiate_taiko, as: :collegiate_taiko
     get 'contact' => :contact, as: :contact
     get 'media' => :media, as: :media
     get 'showcase' => :showcase, as: :showcase
