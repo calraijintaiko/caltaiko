@@ -99,4 +99,5 @@ group :development do
   gem 'overcommit'
   gem 'ruby-lint'
   gem 'web-console'
+  gem 'pry-rails'
 end
