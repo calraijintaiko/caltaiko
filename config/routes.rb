@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'errors/file_not_found'
-
-  get 'errors/unprocessable'
-
-  get 'errors/internal_server_error'
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
   # See how all your routes lay out with "rake routes".

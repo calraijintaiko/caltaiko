@@ -12,7 +12,10 @@ describe Video do
     expect(build(:video, year: 2004)).to_not be_valid
     expect(build(:video, year: Time.now.year + 1)).to_not be_valid
   end
-  it 'is invalid without a link' do
+  it 'is invalid without a link that begins with http:// or https://' do
     expect(build(:video, link: nil)).to_not be_valid
+    expect(build(:video, link: 'www.google.com')).to_not be_valid
+    expect(build(:video, link: 'http://www.google.com')).to be_valid
+    expect(build(:video, link: 'https://www.google.com')).to be_valid
   end
 end

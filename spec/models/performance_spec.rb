@@ -10,11 +10,34 @@ describe Performance do
   it 'is invalid without a date' do
     expect(build(:performance, date: nil)).to_not be_valid
   end
-  it 'has a location' do
+  it 'is invalid without a location' do
     expect(build(:performance, location: nil)).to_not be_valid
   end
-  it 'has a description' do
+  it 'is invalid without a description' do
     expect(build(:performance, description: nil)).to_not be_valid
+  end
+
+  describe 'adding an external URL' do
+    context 'when adding a link to the performance page' do
+      it 'must begin with either http:// or https://' do
+        expect(build(:performance, link: 'www.google.com')).to_not be_valid
+        expect(build(:performance,
+                     link: 'http://www.google.com')).to be_valid
+        expect(build(:performance,
+                     link: 'https://www.google.com')).to be_valid
+      end
+    end
+
+    context 'when adding a link to the images gallery' do
+      it 'must begin with either http:// or https://' do
+        expect(build(:performance,
+                     images_link: 'www.google.com')).to_not be_valid
+        expect(build(:performance,
+                     images_link: 'http://www.google.com')).to be_valid
+        expect(build(:performance,
+                     images_link: 'https://www.google.com')).to be_valid
+      end
+    end
   end
 
   describe 'generating a slug' do
