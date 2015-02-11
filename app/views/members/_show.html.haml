@@ -6,7 +6,7 @@
       %p
     .bio-block.large-7.small-12.column
       .row
-        %p.column.small-12
+        %p.column.small-10
           %strong Name:
           %span{ itemprop: 'name' }= member.name
         %p.column.small-4
@@ -22,8 +22,9 @@
           #{member.bio}
 
       - if user_signed_in?
-        .edit-icons.hide-for-medium-down
-          = link_to image_tag('icons/edit_black.png'), edit_member_path(member)
-          = link_to image_tag('icons/delete_black.png'), member_path(member),
-            method: :delete,
-            data: { confirm: "Delete member #{member.name}?" }
+        .icons.hide-for-medium-down
+          = link_to member_path(member), method: :delete, class: 'right',
+            data: { confirm: "Delete member '#{member.name}'?" } do
+            %i.fi-trash
+          = link_to edit_member_path(member), class: 'right' do
+            %i.fi-pencil

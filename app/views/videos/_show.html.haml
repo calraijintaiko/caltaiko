@@ -1,10 +1,12 @@
 %article.video.small-12.large-6.column
   %h4= video.title
   - if user_signed_in?
-    .edit-icons
-      = link_to image_tag('icons/edit_black.png'), edit_video_path(video)
-      = link_to image_tag('icons/delete_black.png'), video_path(video),
-        method: :delete, data: { confirm: "Delete video #{video.title}?" }
+    .icons
+      = link_to video_path(video), method: :delete, class: 'right',
+        data: { confimr: "Delete video '#{video.title}'?" } do
+        %i.fi-trash
+      = link_to edit_video_path(video), class: 'right' do
+        %i.fi-pencil
   %br
 
   %iframe{ width: '464', height: '261', frameborder: '0', allowfullscreen: '',

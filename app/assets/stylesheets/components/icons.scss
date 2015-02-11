@@ -1,0 +1,50 @@
+.individual {
+  .icons {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    width: 100%;
+    a {
+      font-size: 210%;
+      margin-left: 20px;
+    }
+  }
+}
+
+.performance {
+  .icons {
+    margin-top: -10px;
+    a {
+      margin-left: 15%;
+    }
+    i {
+      font-size: 300%;
+    }
+  }
+}
+
+.thumbnail-feed {
+  .icons {
+    position: absolute;
+    right: 0;
+    top: -10px;
+    i {
+      font-size: 140%;
+      margin-left: 8px;
+    }
+  }
+}
+
+#media-videos {
+  .video {
+    .icons {
+      position: absolute;
+      right: 1rem;
+      top: 0;
+      a {
+        font-size: 150%;
+        margin-left: 15px;
+      }
+    }
+  }
+}

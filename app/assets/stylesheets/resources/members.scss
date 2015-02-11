@@ -95,13 +95,6 @@ $alumni-width: 205px;
   .bio-block {
     @include box-style;
     padding-top: 15px;
-    .edit-icons {
-      @include edit-icons($icon-size: 30px, $icon-padding: 10px);
-      position: absolute;
-      right: 20px;
-      top: 20px;
-      z-index: 4;
-    }
   }
 }
 
