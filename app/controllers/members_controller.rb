@@ -68,12 +68,14 @@ class MembersController < ApplicationController
   end
 
   # Gives all members of inputted gen, or returns to index if input invalid.
+  # Note: don't need to check validity of params[:gen] here, because
+  # input constrained by config/routes.rb
   def gen
-    @gen = params[:id]
-    if @gen.to_i <= 0
+    @gen = params[:gen]
+    if @gen <= 0
       redirect_to members_path
     else
-      @members = Member.gen(params[:id])
+      @members = Member.gen(@gen)
     end
   end
 

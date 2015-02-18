@@ -5,12 +5,14 @@ Rails.application.routes.draw do
 
   root 'pages#front'
 
+  get 'showcase', to: redirect('http://caltaiko-showcase-2015.eventbrite.com'),
+    as: :showcase
+
   scope controller: :pages do
     get 'about' => :about, as: :about
     get 'about/collegiate-taiko' => :collegiate_taiko, as: :collegiate_taiko
     get 'contact' => :contact, as: :contact
     get 'media' => :media, as: :media
-    get 'showcase' => :showcase, as: :showcase
   end
 
   resources :members do
@@ -18,7 +20,7 @@ Rails.application.routes.draw do
       get 'current'
       get 'alumni'
       get 'gen' => :all_gens
-      get 'gen/:id' => :gen
+      get 'gen/:gen' => :gen, constraints: { gen: /\d+/ }
       get 'database'
     end
   end
