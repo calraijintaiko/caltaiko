@@ -25,3 +25,6 @@ PreCommit:
     exclude:
       - 'vendor/**/*'
       - 'erb/**/*'
+
+  TravisLint:
+    enabled: false

@@ -44,14 +44,8 @@ gem 'paperclip', '~> 4.1'
 # Enable AWS support
 gem 'aws-sdk'
 
-# Allows more features in Heroku
-gem 'rails_12factor', group: :production
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -77,6 +71,13 @@ gem 'cocoon'
 gem 'modernizr-rails'
 gem 'foundation-rails', '~> 5.4.5.0'
 
+group :production do
+  # Use unicorn as the app server
+  gem 'unicorn'
+  # Allows more features in Heroku
+  gem 'rails_12factor'
+end
+
 # Testing-suite gems
 group :development, :test do
   gem 'rspec-rails'
@@ -98,6 +99,7 @@ group :development do
   gem 'reek', '~>1.5.0'
   gem 'overcommit'
   gem 'ruby-lint'
+  gem 'travis'
   gem 'web-console'
   gem 'pry-rails'
 end
