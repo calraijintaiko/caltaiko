@@ -3,6 +3,8 @@ rvm:
   - 2.1.5
 bundler_args: --without production
 before_script:
+  - echo 'Canada/Pacific' | sudo tee /etc/timezone
+  - sudo dpkg-reconfigure --frontend noninteractive tzdata
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database travis_ci_test;' -U postgres
 
