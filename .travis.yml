@@ -1,6 +1,11 @@
 language: ruby
 rvm:
   - 2.1.5
+
+addons:
+  code_climate:
+    repo_token: b9165103f6c63f92856906b6d59202451f9bbba2a0973ae6adf732d7fdd34386
+
 bundler_args: --without production
 before_script:
   - echo 'Canada/Pacific' | sudo tee /etc/timezone

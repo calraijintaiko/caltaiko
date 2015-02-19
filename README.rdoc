@@ -1,6 +1,7 @@
 = Cal Raijin Taiko Website
 
-<b>Build Status:</b> {<img src="https://travis-ci.org/greytoyota/caltaiko.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/greytoyota/caltaiko]
+* <b>Build Status:</b> {<img src="https://travis-ci.org/greytoyota/caltaiko.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/greytoyota/caltaiko]
+* <b>Code Climate:</b> {<img src="https://codeclimate.com/github/greytoyota/caltaiko/badges/gpa.svg" />}[https://codeclimate.com/github/greytoyota/caltaiko]
 
 This is the source code for Cal Raijin Taiko's new website, www.caltaiko.org.
 Many many thanks to {Benjamin Ortiz}[https://github.com/benortiz] for doing much
