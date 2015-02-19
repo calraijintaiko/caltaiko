@@ -100,22 +100,21 @@ describe MembersController do
     end
 
     it 'returns all members of a certain gen' do
-      get :gen, id: @gens[0]
+      get :gen, gen: @gens[0]
       expect(assigns(:members)).to match_array @gen0
-      get :gen, id: @gens[1]
+      get :gen, gen: @gens[1]
       expect(assigns(:members)).to match_array @gen1
     end
 
-    it 'fails silently when given non-integer gen' do
-      expect { get :gen, id: 'yo mmama' }.to_not raise_error
-      expect { get :gen, id: 2.1231 }.to_not raise_error
+    it 'fails when given non-integer gen' do
+      expect { get :gen, gen: 'yo mmama' }.to raise_error
+      expect { get :gen, gen: 2.1231 }.to raise_error
+      expect { get :gen, gen: -1 }.to raise_error
     end
 
-    it 'redirects to index when given gen other than integer greater than 0' do
-      get :gen, id: 'yo mama'
-      expect(response).to redirect_to '/members'
-      get :gen, id: -1
-      expect(response).to redirect_to '/members'
+    it 'redirects to index when given gen of 0' do
+      get :gen, gen: '0'
+      expect(response).to redirect_to members_path
     end
   end
 end
