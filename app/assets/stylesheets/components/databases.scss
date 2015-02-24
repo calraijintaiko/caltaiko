@@ -1,18 +1,14 @@
 section.member-data {
   margin-bottom: 50px;
-  table {
-    background-color: $sub-color-3;
-    border-collapse: collapse;
-    width: 100%;
-    td, th {
-      border: 1px black solid;
-      font-family: $main-font;
-      padding: 5px;
-      text-align: left;
+}
+
+.data-table {
+  thead {
+    tr {
+      background-color: $dark-bg;
     }
     th {
-      background-color: $main-color;
-      color: white;
+      color: $yellow;
     }
   }
 }

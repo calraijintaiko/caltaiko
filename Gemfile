@@ -70,6 +70,7 @@ gem 'cocoon'
 # Enables Foundation framework
 gem 'modernizr-rails'
 gem 'foundation-rails', '~> 5.4.5.0'
+gem 'jquery-datatables-rails', '~> 3.1.1'
 
 group :production do
   # Use unicorn as the app server
