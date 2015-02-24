@@ -18,7 +18,7 @@ class Member < ActiveRecord::Base
                   numericality: { only_integer: true, greater_than: 0 }
   validates :major, presence: true, length: { minimum: 2 }
   validates :bio, presence: true
-  validates :email, format: { with: /(\A\w+@\w+\.\w+\z)|(\A\z)/,
+  validates :email, format: { with: /(\A.+@\w+\.\w+\z)|(\A\z)/,
                               message: 'Please enter a valid email address.' }
 
   Paperclip.interpolates :slug do |attachment, _style|
