@@ -13,7 +13,7 @@ of the design work!
 
 * Git[https://help.github.com/articles/set-up-git]
 
-* {Ruby 2.1.5}[https://www.ruby-lang.org/en/]
+* {Ruby 2.2.0}[https://www.ruby-lang.org/en/]
 
 * {Rails 4.2.0}[http://rubyonrails.org/]
 
@@ -34,10 +34,10 @@ idea if it will work.
 
 2. Run the commands
 
-       rvm install ruby-2.1.5
-       rvm use ruby-2.1.5
+       rvm install ruby-2.2.0
+       rvm use ruby-2.2.0
 
-   to download ruby v2.1.5 and begin using it.
+   to download ruby v2.2.0 and begin using it.
 
 3. If you encounter the error
 
