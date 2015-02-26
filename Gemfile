@@ -36,7 +36,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-# Use Device for authentification
+# Use Devise for authentification
 gem 'devise'
 
 # Use Paperclip to attach images
