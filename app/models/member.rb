@@ -1,11 +1,29 @@
-# Members have name, gen, major, bio, and avatar fields.
+# == Schema Information
+#
+# Table name: members
+#
+#  id                  :integer          not null, primary key
+#  name                :string(255)
+#  bio                 :text
+#  created_at          :datetime
+#  updated_at          :datetime
+#  avatar_file_name    :string(255)
+#  avatar_content_type :string(255)
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
+#  gen                 :integer
+#  major               :string(255)
+#  current             :boolean
+#  slug                :string(255)
+#  email               :string(255)
+#
 # To create a member, all of the fields except the avatar must be present.
 # * The name must be at least two characters long
 # * The gen must be an integer greater than 0
 # * The major must also be at least two characters long
 # If no avatar is given, an image is provided by http://robohash.org,
 # which hashes input to pictures of robots.
-
+#
 # Should robohash.org ever close down, there are also regular
 # default images available to be used.
 # They can be found in

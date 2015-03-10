@@ -96,6 +96,7 @@ group :test do
 end
 
 group :development do
+  gem 'annotate', '~> 2.6.5'
   gem 'scss-lint', '~>0.30'
   gem 'haml-lint', '~>0.10'
   gem 'reek', '~>1.5.0'

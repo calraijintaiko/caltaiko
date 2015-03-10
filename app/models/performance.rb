@@ -1,4 +1,21 @@
-# Performance model
+# == Schema Information
+#
+# Table name: performances
+#
+#  id                  :integer          not null, primary key
+#  date                :datetime
+#  title               :string(255)
+#  location            :string(255)
+#  description         :text
+#  created_at          :datetime
+#  updated_at          :datetime
+#  banner_file_name    :string(255)
+#  banner_content_type :string(255)
+#  banner_file_size    :integer
+#  banner_updated_at   :datetime
+#  slug                :string(255)
+#  link                :string(255)
+#  images_link         :string(255)
 class Performance < ActiveRecord::Base
   has_many :performance_videos, dependent: :destroy
   accepts_nested_attributes_for :performance_videos, allow_destroy: true,

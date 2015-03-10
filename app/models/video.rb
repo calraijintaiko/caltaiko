@@ -1,4 +1,14 @@
-# Methods relating to videos.
+# == Schema Information
+#
+# Table name: videos
+#
+#  id         :integer          not null, primary key
+#  created_at :datetime
+#  updated_at :datetime
+#  link       :string(255)
+#  title      :string(255)
+#  slug       :string(255)
+#  year       :integer
 class Video < ActiveRecord::Base
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged

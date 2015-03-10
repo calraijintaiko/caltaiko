@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: videos
+#
+#  id         :integer          not null, primary key
+#  created_at :datetime
+#  updated_at :datetime
+#  link       :string(255)
+#  title      :string(255)
+#  slug       :string(255)
+#  year       :integer
+#
+
 require 'faker'
 
 FactoryGirl.define do

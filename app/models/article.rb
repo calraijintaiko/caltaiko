@@ -1,7 +1,21 @@
-# Articles have a title, date, and text. They also have a boolean flag
-# to mark them as current or not.
-# All current articles will show up on the homepage.
+# == Schema Information
 #
+# Table name: articles
+#
+#  id                 :integer          not null, primary key
+#  title              :string(255)
+#  date               :datetime
+#  text               :text
+#  current            :boolean
+#  created_at         :datetime
+#  updated_at         :datetime
+#  slug               :string(255)
+#  image_file_name    :string(255)
+#  image_content_type :string(255)
+#  image_file_size    :integer
+#  image_updated_at   :datetime
+#
+# All current articles will show up on the homepage.
 # Articles can be accessed using either their id or a slug
 # assigned to them when they are created.
 class Article < ActiveRecord::Base
