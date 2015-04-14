@@ -13,10 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140928053240) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "articles", force: true do |t|
+  create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.datetime "date"
     t.text     "text"
@@ -30,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140928053240) do
     t.datetime "image_updated_at"
   end
 
-  create_table "members", force: true do |t|
+  create_table "members", force: :cascade do |t|
     t.string   "name"
     t.text     "bio"
     t.datetime "created_at"
@@ -39,16 +36,16 @@ ActiveRecord::Schema.define(version: 20140928053240) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.integer  "gen",                 limit: 2
+    t.integer  "gen"
     t.string   "major"
     t.boolean  "current"
     t.string   "slug"
     t.string   "email"
   end
 
-  add_index "members", ["slug"], name: "index_members_on_slug", unique: true, using: :btree
+  add_index "members", ["slug"], name: "index_members_on_slug", unique: true
 
-  create_table "performance_videos", force: true do |t|
+  create_table "performance_videos", force: :cascade do |t|
     t.string   "title"
     t.string   "link"
     t.integer  "performance_id"
@@ -56,9 +53,9 @@ ActiveRecord::Schema.define(version: 20140928053240) do
     t.datetime "updated_at"
   end
 
-  add_index "performance_videos", ["performance_id"], name: "index_performance_videos_on_performance_id", using: :btree
+  add_index "performance_videos", ["performance_id"], name: "index_performance_videos_on_performance_id"
 
-  create_table "performances", force: true do |t|
+  create_table "performances", force: :cascade do |t|
     t.datetime "date"
     t.string   "title"
     t.string   "location"
@@ -74,9 +71,9 @@ ActiveRecord::Schema.define(version: 20140928053240) do
     t.string   "images_link"
   end
 
-  add_index "performances", ["slug"], name: "index_performances_on_slug", unique: true, using: :btree
+  add_index "performances", ["slug"], name: "index_performances_on_slug", unique: true
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -92,11 +89,11 @@ ActiveRecord::Schema.define(version: 20140928053240) do
     t.string   "username"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["username"], name: "index_users_on_username", unique: true
 
-  create_table "videos", force: true do |t|
+  create_table "videos", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "link"

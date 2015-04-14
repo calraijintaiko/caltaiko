@@ -64,15 +64,6 @@ b. Run the command
 
        brew install imagemagick
 
-c. Install Postgres.app[http://postgresapp.com/]
-
-d. Add the line
-
-       export PATH=/Applications/Postgres.app/Contents/Versions/VERSION_NUMBER/bin:$PATH
-
-   to your <tt>~/.bash_profile</tt> file, where VERSION_NUMBER is whatever version of
-   Postgres.app you have.
-
 === On Ubuntu:
 a. Go to the {ImageMagick website}[http://www.imagemagick.org/script/download.php]
    and select a mirror, then download the latest version.
@@ -90,18 +81,6 @@ c. From within the uncompressed folder, run the following:
    the binaries will be downloaded to <tt>/usr/bin/</tt>, rather than
    <tt>/usr/local/bin/</tt>, requiring more configuration later and
    loss of compability with any future changes.
-
-d. Install Postgresql with the command
-
-           sudo apt-get install postgresql psql-dev
-
-e. Give your user account the ablility to create the
-   database with the command
-
-        sudo -u postgres createuser --superuser USERNAME
-
-If you are having trouble getting Postgres set up, try following the
-instructions provided here[https://help.ubuntu.com/community/PostgreSQL#Installation]
 
 == Installation:
 
@@ -137,18 +116,9 @@ instructions provided here[https://help.ubuntu.com/community/PostgreSQL#Installa
 
             bundle install
 
-6. Ensure your installation of Postgresql is set up correctly by running
+6. Create the development and test databases by running
 
-        psql --version
-
-   It should return something along the lines of
-
-        psql (PostgreSQL) 9.3.4
-
-7. Create the database by running
-
-          rake db:create
-          rake db:migrate
+          rake db:schema:load
 
 And now you should be all set! Running the command
 
@@ -188,10 +158,10 @@ should now start up the application, and navigating to
    <tt>YOUR_BUCKET_NAME</tt> is the name of the bucket you created.
 
 Before your next Git commit, run git status to make sure the aws_config file is
-not being included (it's listed in the gitignore so it shouldn't be, but make ABSOLUTELY
-SURE!!!). This is extremely important, since if those access keys wind up on GitHub,
-bad people can very easily use them to rack up a bill of several thousand dollars on
-your AWS account.
+not being included (it's listed in the gitignore so it shouldn't be, but make
+ABSOLUTELY SURE!!!). This is extremely important, since if those access keys
+wind up on GitHub, bad people can very easily use them to rack up a bill of
+several thousand dollars on your AWS account.
 
 == Enable emails to be sent through Gmail
 

@@ -5,12 +5,6 @@ ruby '2.2.0'
 gem 'rails', '~> 4.2.0'
 # Use rubygems 2.3.0
 gem 'rubygems-update', '~> 2.3.0'
-# Use Postgres as database for Active Record since required by Heroku
-# If having trouble installing, probably need to install Postgres.app first
-# Also make sure that your PATH environment variable includes the Postgres
-# bin, ie make sure your startup script includes something like the following:
-# export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin/
-gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -31,10 +25,6 @@ gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
-
-# Spring speeds up development by keeping your application running in the
-# background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
 
 # Use Devise for authentification
 gem 'devise'
@@ -73,6 +63,8 @@ gem 'foundation-rails', '~> 5.4.5.0'
 gem 'jquery-datatables-rails', '~> 3.1.1'
 
 group :production do
+  # Use Postgres as database for Active Record since required by Heroku
+  gem 'pg'
   # Use unicorn as the app server
   gem 'unicorn'
   # Allows more features in Heroku
@@ -81,6 +73,7 @@ end
 
 # Testing-suite gems
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'guard-rspec'
@@ -96,6 +89,7 @@ group :test do
 end
 
 group :development do
+  gem 'spring'
   gem 'annotate', '~> 2.6.5'
   gem 'scss-lint', '~>0.30'
   gem 'haml-lint', '~>0.10'
