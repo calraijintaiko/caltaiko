@@ -25,9 +25,9 @@ describe Article do
     before :each do
       @go_us = create(:article, title: 'cal taiko the best')
       @go_us_again = create(:article, title: 'Cal Taiko the Best',
-                                      date: Time.new(2014))
+                                      date: Time.zone.local(2014))
       @keep_going_us = create(:article, title: 'Cal taIKO THE best',
-                                        date: Time.new(2014, 3, 25))
+                                        date: Time.zone.local(2014, 3, 25))
     end
 
     context 'no other article by same name exists' do

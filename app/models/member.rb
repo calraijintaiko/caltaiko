@@ -52,7 +52,7 @@ class Member < ActiveRecord::Base
     default_url: 'http://robohash.org/:id?size=500x500&bgset=bgany'
   # rubocop:enable Style/AlignHash
   include DeletableAttachment
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+  validates_attachment_content_type :avatar, content_type: %r{\Aimage/.*\Z}
 
   # Generates a unique slug for a new member based on their name.
   # If a member with the same name already exists, adds gen to the end.

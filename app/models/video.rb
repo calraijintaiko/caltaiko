@@ -20,7 +20,7 @@ class Video < ActiveRecord::Base
   validates :year, presence: true,
                    numericality: { only_integer: true,
                                    greater_than_or_equal_to: 2005,
-                                   less_than_or_equal_to: Time.new.year }
+                                   less_than_or_equal_to: Time.zone.now.year }
 
   def slug_candidates
     [

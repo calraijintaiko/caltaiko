@@ -1,6 +1,6 @@
 linters:
-  ColorKeyword:
-    enabled: false
+  ColorVariable:
+    enabled: true
   Comment:
     enabled: true
     exclude: 'app/assets/stylesheets/foundation-icons.css.scss'
@@ -38,7 +38,7 @@ linters:
     enabled: true
   StringQuotes:
     enabled: true
-  VendorPrefixes:
+  VendorPrefix:
     enabled: false
   ZeroUnit:
     enabled: true

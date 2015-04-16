@@ -33,7 +33,7 @@
         opacity: .4;
       }
       a.text-link {
-        color: white;
+        color: $white;
         z-index: 3;
       }
     }
@@ -43,7 +43,7 @@
       text-align: center;
     }
     a {
-      color: white;
+      color: $white;
     }
     .edit-icons {
       @include edit-icons($icon-size: 15px, $icon-padding: 3px);
@@ -55,14 +55,14 @@ $alumni-width: 205px;
 
 .alumni {
   a {
-    color: white;
+    color: $white;
     text-decoration: none;
   }
   .alumnus {
     @include box-style($width: 3px);
     .link-wrapper {
       p {
-        color: black;
+        color: $black;
         margin: 0;
         padding-bottom: 15px;
         padding-top: 15px;
@@ -79,7 +79,7 @@ $alumni-width: 205px;
     opacity: .4;
     zoom: 1;
     p {
-      color: white;
+      color: $white;
     }
     img {
       -webkit-filter: invert(1);

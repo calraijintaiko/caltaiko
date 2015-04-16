@@ -3,8 +3,9 @@ require 'rails_helper'
 describe PagesController do
   describe 'GET front' do
     before :each do
+      year = Time.zone.now.year + 1
       @upcoming_perfs = create_list(:performance, rand(5..20),
-                                    date: Time.new(Time.now.year + 1))
+                                    date: Time.zone.local(year))
       @current_articles = create_list(:article, rand(5..20), current: true)
     end
 

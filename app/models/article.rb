@@ -37,7 +37,7 @@ class Article < ActiveRecord::Base
                             default_url: '/images/articles/:attachment/:style/missing.png'
   # rubocop:enable Metrics/LineLength
   include DeletableAttachment
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  validates_attachment_content_type :image, content_type: %r{\Aimage/.*\Z}
 
   # Returns the year of the articles date as a String
   def year

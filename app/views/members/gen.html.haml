@@ -8,7 +8,7 @@
        og: { title: title, description: description, image: image,
              url: request.original_url }
 
-.generation(itemscope itemtype='http://schema.org/Organization')
+.generation{ itemscope: '', itemtype: 'http://schema.org/Organization' }
   %header.row
     %h2.column.small-12 GENERATION #{@gen}
 

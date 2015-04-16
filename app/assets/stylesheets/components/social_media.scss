@@ -14,13 +14,13 @@ $text-link-color: #45619d;
     transition: font-size .1s;
   }
   i.fi-social-facebook {
-    color: #45619d;
+    color: $fb-color;
   }
   i.fi-social-youtube {
-    color: #cc181e;
+    color: $youtube-color;
   }
   i.fi-social-instagram {
-    color: black;
+    color: $black;
   }
   i:hover {
     font-size: 500%;

@@ -49,7 +49,7 @@ class Performance < ActiveRecord::Base
     default_url: '/images/performances/:attachment/:style/missing.png'
   # rubocop:enable Style/AlignHash
   include DeletableAttachment
-  validates_attachment_content_type :banner, content_type: /\Aimage\/.*\Z/
+  validates_attachment_content_type :banner, content_type: %r{\Aimage/.*\Z}
 
   # Returns the year of a specific performance.
   def year
@@ -75,17 +75,17 @@ class Performance < ActiveRecord::Base
   # When called on a specific performance, returns true if performance
   # is upcoming, or false otherwise.
   def upcoming?
-    date >= Time.new
+    date >= Time.zone.now
   end
 
   # Returns all upcoming performances in order of soonest to furthest away.
   def self.upcoming_performances
-    Performance.where('date >= ?', Time.new).order('date ASC')
+    Performance.where('date >= ?', Time.zone.now).order('date ASC')
   end
 
   # Returns all past performances in order of most recent to least.
   def self.past_performances
-    Performance.where('date < ?', Time.new).order('date DESC')
+    Performance.where('date < ?', Time.zone.now).order('date DESC')
   end
 
   # Returns all performances that have an images link.

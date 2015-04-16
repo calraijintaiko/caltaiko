@@ -4,12 +4,13 @@ describe PerformancesController do
   describe 'GET index' do
     before :each do
       @years = %w(2005 2008)
+      future_year = Time.zone.now.year + 1
       @created_upcoming = create_list(:performance, rand(5..20),
-                                      date: Time.new(Time.now.year + 1))
+                                      date: Time.zone.local(future_year))
       @created_past_year0 = create_list(:performance, rand(5..20),
-                                        date: Time.new(@years[0]))
+                                        date: Time.zone.local(@years[0]))
       @created_past_year1 = create_list(:performance, rand(5..20),
-                                        date: Time.new(@years[1]))
+                                        date: Time.zone.local(@years[1]))
       @created_past = @created_past_year0 + @created_past_year1
     end
 
@@ -40,7 +41,7 @@ describe PerformancesController do
     before :each do
       @id = rand(1..100)
       @itf = create(:performance, title: 'international taiko festival',
-                                  date: Time.new(2010), id: @id)
+                                  date: Time.zone.local(2010), id: @id)
       signed_in_as_a_valid_user
     end
 
@@ -82,12 +83,13 @@ describe PerformancesController do
   describe 'getting all upcoming or past performances' do
     before :each do
       @years = %w(2005 2008)
+      future_year = Time.zone.now.year + 1
       @created_upcoming = create_list(:performance, rand(5..20),
-                                      date: Time.new(Time.now.year + 1))
+                                      date: Time.zone.local(future_year))
       @created_past_year0 = create_list(:performance, rand(5..20),
-                                        date: Time.new(@years[0]))
+                                        date: Time.zone.local(@years[0]))
       @created_past_year1 = create_list(:performance, rand(5..20),
-                                        date: Time.new(@years[1]))
+                                        date: Time.zone.local(@years[1]))
       @created_past = @created_past_year0 + @created_past_year1
     end
 

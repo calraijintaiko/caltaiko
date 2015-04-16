@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     users = ['/login', '/logout', '/settings', '/register']
     html = request.format == 'text/html' || request.content_type == 'text/html'
     if !path.match('/users') && html && !request.xhr? && !users.include?(path)
-      session[:last_request_time] = Time.now.utc.to_i
+      session[:last_request_time] = Time.zone.now.utc.to_i
       session[:previous_url] = path
     end
   end
@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
     prev_url = session[:previous_url]
     last_request_time = session[:last_request_time]
     if prev_url && last_request_time &&
-       (Time.now.utc.to_i - last_request_time < 21_600)
+       (Time.zone.now.utc.to_i - last_request_time < 21_600)
       prev_url
     else
       root_path

@@ -4,13 +4,13 @@
 
 #admin-link {
   background-color: $yellow;
-  color: #333;
+  color: $admin-link;
 }
 
 .top-bar, .tab-bar {
-  -moz-box-shadow: 0 0 12px 0 black;
-  -webkit-box-shadow: 0 0 12px 0 black;
-  box-shadow: 0 0 12px 0 black;
+  -moz-box-shadow: 0 0 12px 0 $black;
+  -webkit-box-shadow: 0 0 12px 0 $black;
+  box-shadow: 0 0 12px 0 $black;
 }
 
 .top-bar, .top-bar-section li:not(.has-form) {

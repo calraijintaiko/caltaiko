@@ -45,7 +45,7 @@
       font-family: 'Oswald';
       margin-bottom: 0;
       overflow: hidden;
-      white-space: nowrap;
+      $white-space: nowrap;
     }
     .perf-date {
       font-size: 13px;
@@ -96,12 +96,12 @@
     opacity: .3;
   }
   a.text-link {
-    color: white;
+    color: $white;
     z-index: 3;
   }
   a.upcoming-perf {
     p {
-      color: white;
+      color: $white;
     }
   }
 }
