@@ -74,10 +74,9 @@ end
 # Testing-suite gems
 group :development, :test do
   gem 'sqlite3'
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
   gem 'guard-rspec'
   gem 'spring-commands-rspec'
+  gem 'spring-commands-cucumber'
   gem 'rb-fsevent'
 end
 
@@ -85,7 +84,12 @@ group :test do
   gem 'faker'
   gem 'capybara'
   gem 'launchy'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
   gem 'codeclimate-test-reporter', require: nil
+  gem 'cucumber-rails', require: false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
 end
 
 group :development do

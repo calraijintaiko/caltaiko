@@ -11,4 +11,6 @@ before_script:
   - echo 'Canada/Pacific' | sudo tee /etc/timezone
   - sudo dpkg-reconfigure --frontend noninteractive tzdata
 
-script: bundle exec rspec spec
+script:
+  - bundle exec rspec spec
+  - bundle exec cucumber -f progress
