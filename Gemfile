@@ -60,6 +60,8 @@ gem 'cocoon'
 # Enables Foundation framework
 gem 'modernizr-rails'
 gem 'foundation-rails', '~> 5.4.5.0'
+
+# Use the DataTables jQuey plug-in for sortable, beautiful tables
 gem 'jquery-datatables-rails', '~> 3.1.1'
 
 group :production do

@@ -10,6 +10,9 @@ AllCops:
     - 'script/**/*'
     - !ruby/regexp /old_and_unused\.rb$/
     - 'spec/spec_helper.rb'
+    - 'lib/tasks/cucumber.rake'
+    - 'features/step_definitions/web_steps.rb'
+    - 'features/support/*'
 
 Metrics/MethodLength:
   Max: 20
@@ -17,6 +20,14 @@ Metrics/MethodLength:
 Metrics/ClassLength:
   Max: 150
 
+Metrics/LineLength:
+  Exclude:
+    - 'features/**/*'
+
 Style/FileName:
   Exclude:
     - 'Gemfile'
+
+Lint/AmbiguousRegexpLiteral:
+  Exclude:
+    - 'features/**/*'
