@@ -1,5 +1,7 @@
 # Videos Controller
 class VideosController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :index]
+
   def new
     @video = Video.new
   end

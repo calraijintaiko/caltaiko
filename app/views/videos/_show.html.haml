@@ -3,7 +3,7 @@
   - if user_signed_in?
     .icons
       = link_to video_path(video), method: :delete, class: 'right',
-        data: { confimr: "Delete video '#{video.title}'?" } do
+        data: { confirm: "Delete video '#{video.title}'?" } do
         %i.fi-trash
       = link_to edit_video_path(video), class: 'right' do
         %i.fi-pencil

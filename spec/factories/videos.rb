@@ -15,7 +15,7 @@ require 'faker'
 
 FactoryGirl.define do
   factory :video do |f|
-    f.title { Faker::Company.bs }
+    sequence(:title) { |n| "Video #{n}" }
     f.link { Faker::Internet.url('www.youtube.com') }
     f.year { rand(2005..Time.zone.now.year) }
   end

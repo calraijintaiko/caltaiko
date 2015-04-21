@@ -79,11 +79,13 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'spring-commands-rspec'
   gem 'spring-commands-cucumber'
+  gem 'simplecov'
   gem 'rb-fsevent'
 end
 
 group :test do
   gem 'faker'
+  gem 'timecop'
   gem 'capybara'
   gem 'launchy'
   gem 'rspec-rails'

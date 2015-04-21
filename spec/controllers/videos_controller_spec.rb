@@ -50,6 +50,10 @@ describe VideosController do
     end
 
     context 'GET edit' do
+      before :each do
+        signed_in_as_a_valid_user
+      end
+
       it 'gets video using slug' do
         get :edit, id: 'cal-raijin-taiko-sazanami'
         expect(assigns(:video)).to eq @vid

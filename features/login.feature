@@ -5,7 +5,6 @@ Feature: Registered users can login to the administrative account
 
   Background:
     Given I have an account with username "caltaiko" and password "secret" and email "test@example.com"
-    And I am on the login page
 
   Scenario: I can enter my login using my username
     When I try to log in with username "caltaiko" and password "secret"

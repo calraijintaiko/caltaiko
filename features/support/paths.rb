@@ -13,7 +13,27 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
-    when /^the login page$/ then login_path
+    when /^the home page$/ then root_path
+    when /^the login page$/ then new_user_session_path
+    when /^the performances page$/ then performances_path
+    when /^the past performances page$/ then past_performances_path
+    when /^the upcoming performances page$/ then upcoming_performances_path
+    when /^the new member page$/ then new_member_path
+    when /^the new article page$/ then new_article_path
+    when /^the new performance page$/ then new_performance_path
+    when /^the new video page$/ then new_video_path
+    when /^the edit page for member "(.+)"$/ then
+      @member = Member.find_by_name($1)
+      edit_member_path(@member)
+    when /^the edit page for article "(.+)"$/ then
+      @article = Article.find_by_title($1)
+      edit_article_path(@article)
+    when /^the edit page for performance "(.+)"$/ then
+      @performance = Performance.find_by_title($1)
+      edit_performance_path(@performance)
+    when /^the edit page for video "(.+)"$/ then
+      @video = Video.find_by_title($1)
+      edit_video_path(@video)
 
     else
       begin
