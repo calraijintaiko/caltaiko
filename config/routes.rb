@@ -7,12 +7,15 @@ Rails.application.routes.draw do
 
   get 'showcase', to: redirect('http://caltaiko-showcase-2015.eventbrite.com'),
     as: :showcase
+  get 'videos', to: redirect('media/videos')
 
   scope controller: :pages do
     get 'about' => :about, as: :about
     get 'about/collegiate-taiko' => :collegiate_taiko, as: :collegiate_taiko
     get 'contact' => :contact, as: :contact
     get 'media' => :media, as: :media
+    get 'media/videos' => :media_videos, as: :media_videos
+    get 'media/galleries' => :media_galleries, as: :media_galleries
   end
 
   resources :members do
@@ -33,7 +36,7 @@ Rails.application.routes.draw do
   end
 
   resources :articles, path: 'news'
-  resources :videos
+  resources :videos, except: [:index, :show]
 
   if Rails.env.production?
     devise_for :users, controllers: { registrations: 'registrations' }

@@ -1,6 +1,6 @@
 # Videos Controller
 class VideosController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!
 
   def new
     @video = Video.new
@@ -10,19 +10,10 @@ class VideosController < ApplicationController
     @video = Video.new(video_params)
 
     if @video.save
-      redirect_to media_path
+      redirect_to media_videos_path
     else
       render 'new'
     end
-  end
-
-  def index
-    @videos = Video.all.order('year DESC')
-    @by_year = Video.by_year(@videos)
-  end
-
-  def show
-    set_video
   end
 
   def edit
@@ -33,7 +24,7 @@ class VideosController < ApplicationController
     set_video
 
     if @video.update(video_params)
-      redirect_to media_path
+      redirect_to media_videos_path
     else
       render 'edit'
     end
@@ -43,7 +34,7 @@ class VideosController < ApplicationController
     set_video
     @video.destroy
 
-    redirect_to media_path
+    redirect_to media_videos_path
   end
 
   private

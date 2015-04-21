@@ -19,6 +19,16 @@ class PagesController < ApplicationController
     @performances_by_year = Performance.by_year(@performances)
   end
 
+  def media_videos
+    @videos = Video.all.order('year DESC')
+    @videos_by_year = Video.by_year(@videos)
+  end
+
+  def media_galleries
+    @performances = Performance.images?.order('date DESC')
+    @performances_by_year = Performance.by_year(@performances)
+  end
+
   def collegiate_taiko
   end
 end

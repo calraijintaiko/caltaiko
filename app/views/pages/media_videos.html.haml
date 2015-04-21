@@ -8,9 +8,9 @@
              url: request.original_url }
 
 %header.row
-  %h1.column.small-9 VIDEOS
+  %h1.small-10.column VIDEOS
   - if user_signed_in?
     = link_to 'Add Video', new_video_path,
-      class: 'button small round column hide-for-medium-down large-2'
+      class: 'button small round column small-2 large-1'
 
-= render 'videos_feed', by_year: @by_year
+= render 'videos/videos_feed', by_year: @videos_by_year
