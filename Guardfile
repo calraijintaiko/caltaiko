@@ -31,3 +31,12 @@ guard :rspec, cmd: 'spring rspec' do
   watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
 end
 
+
+guard 'cucumber', command_prefix: 'spring', bundler: false do
+  watch(%r{^features/.+\.feature$})
+  watch(%r{^features/support/.+$})          { "features" }
+
+  watch(%r{^features/step_definitions/(.+)_steps\.rb$}) do |m|
+    Dir[File.join("**/#{m[1]}.feature")][0] || "features"
+  end
+end

@@ -59,4 +59,80 @@ describe ArticlesController do
       end
     end
   end
+
+  describe 'POST create' do
+    context 'all required attributes are present and valid' do
+      it 'adds a new video with the given parameters to the database' do
+        signed_in_as_a_valid_user
+        attributes = {
+          'title' => 'Cal Raijin Taiko is the bestest yo!',
+          'date' => Time.zone.local('April 25th, 2011'),
+          'text' => 'Cal Raijin Taiko proved to be the bestest evar',
+          'current' => true
+        }
+        post :create, article: attributes
+        attributes.each do |key, value|
+          expect(assigns(:article).attributes[key]).to eq value
+        end
+      end
+    end
+
+    context 'not all required attributes are present or valid' do
+      before :each do
+        signed_in_as_a_valid_user
+        attributes = {
+          'title' => 'Cal Raijin Taiko is the bestest yo!',
+          'date' => Time.zone.now,
+          'current' => true
+        }
+        post :create, article: attributes
+      end
+
+      it 'renders the new template' do
+        expect(response).to render_template 'new'
+      end
+
+      it 'does not save the workshift to the database' do
+        expect(Article.first).to be_nil
+      end
+    end
+  end
+
+  describe 'DELETE destroy' do
+    it 'removes an article from the database' do
+      signed_in_as_a_valid_user
+      create(:article, id: 1)
+      delete :destroy, id: 1
+      expect(Article.find_by_id(1)).to be_nil
+    end
+  end
+
+  describe 'when user not logged in' do
+    it 'GET new redirects to the login page' do
+      get :new
+      expect(response).to redirect_to(new_user_session_path)
+    end
+
+    it 'GET edit redirects to the login page' do
+      get :edit, id: 1
+      expect(response).to redirect_to(new_user_session_path)
+    end
+
+    it 'POST create redirects to the login page' do
+      attributes = {
+        'title' => 'Cute Cats',
+        'link' => 'https://www.youtube.com/watch?v=p2H5YVfZVFw',
+        'year' => 2012
+      }
+      post :create, article: attributes
+      expect(response).to redirect_to(new_user_session_path)
+    end
+
+    it 'DELETE destroy redirects to the login page' do
+      create(:article, id: 1)
+      delete :destroy, id: 1
+      expect(Article.find_by_id(1)).to_not be_nil
+      expect(response).to redirect_to(new_user_session_path)
+    end
+  end
 end

@@ -77,6 +77,7 @@ end
 group :development, :test do
   gem 'sqlite3'
   gem 'guard-rspec'
+  gem 'guard-cucumber'
   gem 'spring-commands-rspec'
   gem 'spring-commands-cucumber'
   gem 'simplecov'

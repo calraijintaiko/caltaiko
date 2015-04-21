@@ -117,4 +117,102 @@ describe MembersController do
       expect(response).to redirect_to members_path
     end
   end
+
+  describe 'GET all_gens' do
+    before :each do
+      @gens = [rand(1..5), rand(6..10), rand(11..15)]
+      @gen0 = create_list(:member, rand(5..20), gen: @gens[0])
+      @gen1 = create_list(:member, rand(5..20), gen: @gens[1])
+      @gen2 = create_list(:member, rand(5..20), gen: @gens[2])
+      get :all_gens
+    end
+
+    it 'renders the all_gens template' do
+      expect(response).to render_template 'all_gens'
+    end
+
+    it 'returns all the gens that members currently belong to' do
+      assigns(:gens).each do |gen|
+        expect(@gens).to include gen.gen
+      end
+    end
+  end
+
+  describe 'POST create' do
+    context 'all required attributes are present and valid' do
+      it 'adds a new video with the given parameters to the database' do
+        signed_in_as_a_valid_user
+        attributes = {
+          'name' => 'Tom Hata',
+          'major' => 'Taiko Drumming',
+          'gen' => 1,
+          'bio' => 'Tom Hata founder man',
+          'current' => false
+        }
+        post :create, member: attributes
+        attributes.each do |key, value|
+          expect(assigns(:member).attributes[key]).to eq value
+        end
+      end
+    end
+
+    context 'not all required attributes are present or valid' do
+      before :each do
+        signed_in_as_a_valid_user
+        attributes = {
+          'major' => 'Taiko Drumming',
+          'gen' => 1,
+          'bio' => 'Tom Hata founder man',
+          'current' => false
+        }
+        post :create, member: attributes
+      end
+
+      it 'renders the new template' do
+        expect(response).to render_template 'new'
+      end
+
+      it 'does not save the workshift to the database' do
+        expect(Member.first).to be_nil
+      end
+    end
+  end
+
+  describe 'DELETE destroy' do
+    it 'removes an member from the database' do
+      signed_in_as_a_valid_user
+      create(:member, id: 1)
+      delete :destroy, id: 1
+      expect(Member.find_by_id(1)).to be_nil
+    end
+  end
+
+  describe 'when user not logged in' do
+    it 'GET new redirects to the login page' do
+      get :new
+      expect(response).to redirect_to(new_user_session_path)
+    end
+
+    it 'GET edit redirects to the login page' do
+      get :edit, id: 1
+      expect(response).to redirect_to(new_user_session_path)
+    end
+
+    it 'POST create redirects to the login page' do
+      attributes = {
+        'title' => 'Cute Cats',
+        'link' => 'https://www.youtube.com/watch?v=p2H5YVfZVFw',
+        'year' => 2012
+      }
+      post :create, member: attributes
+      expect(response).to redirect_to(new_user_session_path)
+    end
+
+    it 'DELETE destroy redirects to the login page' do
+      create(:member, id: 1)
+      delete :destroy, id: 1
+      expect(Member.find_by_id(1)).to_not be_nil
+      expect(response).to redirect_to(new_user_session_path)
+    end
+  end
 end
