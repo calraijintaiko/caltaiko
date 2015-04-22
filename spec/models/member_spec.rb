@@ -55,4 +55,14 @@ describe Member do
       expect(Member.gen(10)).to match_array gen_10
     end
   end
+
+  it "can get a member's first name" do
+    member = create(:member, name: 'Quinn Z Shen')
+    expect(member.first_name).to eq 'Quinn'
+  end
+
+  it "can get a member's last name" do
+    member = create(:member, name: 'Quinn Z Shen')
+    expect(member.last_name).to eq 'Shen'
+  end
 end

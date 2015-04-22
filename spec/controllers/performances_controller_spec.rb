@@ -131,7 +131,7 @@ describe PerformancesController do
           'title' => 'Showcase',
           'location' => 'Berkeley Playhouse',
           'description' => 'Come watch our spring showcase!',
-          'date' => Time.zone.local('April 20th, 2014')
+          'date' => Time.zone.local(2011, 6, 19)
         }
         post :create, performance: attributes
         attributes.each do |key, value|
@@ -146,7 +146,7 @@ describe PerformancesController do
         attributes = {
           'location' => 'Berkeley Playhouse',
           'description' => 'Come watch our spring showcase!',
-          'date' => Time.zone.local('April 20th, 2014')
+          'date' => Time.zone.local(2011, 6, 19)
         }
         post :create, performance: attributes
       end

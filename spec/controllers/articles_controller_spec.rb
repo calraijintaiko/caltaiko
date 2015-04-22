@@ -66,7 +66,7 @@ describe ArticlesController do
         signed_in_as_a_valid_user
         attributes = {
           'title' => 'Cal Raijin Taiko is the bestest yo!',
-          'date' => Time.zone.local('April 25th, 2011'),
+          'date' => Time.zone.local(2012, 6, 19),
           'text' => 'Cal Raijin Taiko proved to be the bestest evar',
           'current' => true
         }
