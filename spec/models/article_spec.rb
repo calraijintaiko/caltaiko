@@ -48,4 +48,32 @@ describe Article do
       end
     end
   end
+
+  describe 'getting a snippet of the article text' do
+    context 'when the first paragraph is shorter than 500 characters' do
+      it 'returns the first paragraph of the article' do
+        text = "First paragraph\r\n\r\nSecond paragraph\r\n\r\nThird"
+        article = create(:article, text: text)
+        expect(article.snippet).to eq 'First paragraph'
+      end
+    end
+
+    context 'the first paragraph is longer than 500 characters' do
+      it 'returns the first 500 characters of the paragraph' do
+        par1 = 'The first paragraph of this article is quite long; indeed, ' \
+          'one might even say it is too long. Unfortunately, that cannot be ' \
+          'helped, as the point of this test is to ensure that even when ' \
+          'the first paragraph is very, very long, the correct snippet is ' \
+          'still generated. How sad! If only there were some way to properly' \
+          'test this code without such an ugly block of text polluting this ' \
+          'beautiful spec. If you happen to find a way, definitely let me ' \
+          'know, so this monstrosity of a test can be made more beautiful ' \
+          'and I can sleep easier at night. Oh how it hurts to look upon ' \
+          'such ugliness, and know that it is I how gave it life!'
+        article = create(:article, text: par1 + "\r\n\r\npar2")
+        expect(article.snippet).to include par1[0, 500]
+        expect(article.snippet).to_not include par1[500..-1]
+      end
+    end
+  end
 end

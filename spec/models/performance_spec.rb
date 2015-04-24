@@ -101,4 +101,26 @@ describe Performance do
       expect(perf.performance_videos).to match_array vids
     end
   end
+
+  it 'returns performances separated by year' do
+    years = %w(2006 2007 2010)
+    perf_year0 = create_list(:performance, rand(5..20),
+                             date: Time.zone.local(years[0]))
+    perf_year1 = create_list(:performance, rand(5..20),
+                             date: Time.zone.local(years[1]))
+    perf_year2 = create_list(:performance, rand(5..20),
+                             date: Time.zone.local(years[2]))
+    by_year = Performance.by_year(perf_year0 + perf_year1 + perf_year2)
+    expect(by_year.keys).to match_array years
+    expect(by_year[years[0]]).to match_array perf_year0
+    expect(by_year[years[1]]).to match_array perf_year1
+    expect(by_year[years[2]]).to match_array perf_year2
+  end
+
+  it 'can return all performances with an image link' do
+    create_list(:performance, rand(15..30))
+    with_images = create_list(:performance, rand(15..30),
+                              images_link: 'http://images.com')
+    expect(Performance.images?).to match_array with_images
+  end
 end
