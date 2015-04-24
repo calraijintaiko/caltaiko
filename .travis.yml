@@ -4,7 +4,7 @@ rvm:
 
 addons:
   code_climate:
-    repo_token: b9165103f6c63f92856906b6d59202451f9bbba2a0973ae6adf732d7fdd34386
+    repo_token: 73bdd89da2ab3fecea83dbd973bbb186f3926f00d1d2bba8a73176d6e8561ba4
 
 bundler_args: --without production
 before_script:

@@ -62,7 +62,7 @@ gem 'modernizr-rails'
 gem 'foundation-rails', '~> 5.4.5.0'
 
 # Use the DataTables jQuey plug-in for sortable, beautiful tables
-gem 'jquery-datatables-rails', '~> 3.1.1'
+gem 'jquery-datatables-rails', '~> 3.2.0'
 
 group :production do
   # Use Postgres as database for Active Record since required by Heroku
