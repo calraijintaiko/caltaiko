@@ -1,5 +1,6 @@
 # get code coverage statistics from SimpleCov gem
 require 'simplecov'
+SimpleCov.start 'rails'
 # Integrate Code Climate with Travis CI
 require "codeclimate-test-reporter"
 CodeClimate::TestReporter.start

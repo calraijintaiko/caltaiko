@@ -12,5 +12,5 @@ before_script:
   - sudo dpkg-reconfigure --frontend noninteractive tzdata
 
 script:
-  - bundle exec rspec spec
   - bundle exec cucumber -f progress
+  - bundle exec rspec spec
