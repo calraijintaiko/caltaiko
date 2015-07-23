@@ -1,0 +1,112 @@
+#!/bin/bash
+red=`tput setaf 1`
+green=`tput setaf 2`
+bold=`tput bold`
+reset=`tput sgr0`
+
+function log_right {
+    LEFT="$1"
+    RIGHT="$2"
+    COLOR=$3
+    RESET=${reset}
+    let COLS=$(tput cols)-${#LEFT}+${#COLOR}+${#RESET}
+    printf "%${COLS}s\n" "$COLOR$RIGHT$RESET"
+}
+
+MSG="Checking operating system..."
+echo -n $MSG
+os=`uname -s`
+if [ $os == "Darwin" ]; then
+    log_right "$MSG" "Mac OS X" $bold
+    MSG="Verifying Homebrew is installed..."
+    echo -n $MSG
+    brew --version &> /dev/null
+    if [ $? -eq 0 ]; then
+        log_right "$MSG" "Ok" $green
+        MSG="Checking Homebrew is up to date..."
+        echo -n $MSG
+        brew update &> /dev/null
+        if [ $? -eq 0 ]; then
+            log_right "$MSG" "Ok" $green
+        else
+            log_right "$MSG" "Error" $green
+            echo "${red}There was a problem updating Homebrew. Please ensure the following command completes successfully:${reset}"
+            echo -e "\t${bold}brew update${reset}"
+            exit 1
+        fi
+    else
+        log_right "$MSG" "Not installed" $red
+        read -p "Homebrew is not installed. Install now? [y/n]: " -n 1 -r
+        echo
+        if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+            exit
+        fi
+        echo "Installing Homebrew..."
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        if [ $? -ne 0 ]; then
+            echo "${red}There was a problem installing Homebrew. Please ensure the following command completes successfully:${reset}"
+            echo -e "\t${bold}ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\"${reset}"
+            exit 1
+        fi
+    fi
+else
+    # Currently only support Macs; will update over time
+    log_right "$MSG" "Could not detect operating system" $red
+fi
+exit
+
+echo "Installing rvm..."
+rvm --version &> /dev/null
+if [ $? -eq 0 ]; then
+    echo "${green}rvm is already installed.${reset}"
+else
+    read -p "rvm is not installed. Install now? [y/n]: " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        exit
+    fi
+    echo "Installing rvm..."
+    \curl -sSL https://get.rvm.io | bash
+    if [ $? -ne 0 ]; then
+        exit
+    fi
+    echo "${green}rvm successfully installed.${reset}"
+fi
+
+echo "Installing correct ruby version..."
+rvm install $RUBY_VERSION 2> /dev/null
+if [ $? -eq 0 ]; then
+    echo "${green}Correct ruby version successfully installed.${reset}"
+else
+    echo "${red}Correct ruby version could not be installed.${reset} Please ensure the following command completes successfully:"
+    echo -e "\t${bold}rvm install $RUBY_VERSION${reset}"
+    exit
+fi
+
+echo "Installing Bundler..."
+gem install bundler
+if [ $? -eq 0 ]; then
+    echo "${green}Bundler successfully installed.${reset}"
+else
+    echo "${red}Bundler could not be installed.${reset} Please ensure the following command completes successfully:"
+    echo -e "\t${bold}gem install bundler${reset}"
+    exit
+fi
+
+echo "Installing third-party gems..."
+bundle install --without production
+if [ $? -ne 0 ]; then
+    exit
+fi
+
+echo "Installing git hooks..."
+overcommit --install
+if [ $? -ne 0 ]; then
+    exit
+fi
+
+echo "Setting up development database..."
+bin/rake db:setup
+if [ $? -ne 0 ]; then
+    exit
+fi
