@@ -10,8 +10,7 @@ addons:
 
 bundler_args: --without production
 before_script:
-  - echo 'Canada/Pacific' | sudo tee /etc/timezone
-  - sudo dpkg-reconfigure --frontend noninteractive tzdata
+  - export TZ=Canada/Pacific
 
 script:
   - bundle exec cucumber -f progress
