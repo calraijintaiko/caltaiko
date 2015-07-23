@@ -8,6 +8,17 @@
        og: { title: title, description: description, image: image,
              url: root_url }
 
+#fb-root
+:javascript
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&" +
+      "version=v2.4&appId=699325996783664";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
 .row
   .column.medium-2.hide-for-small
     %p
@@ -51,14 +62,22 @@
 = render 'performances/performances_feed', performances: @performances
 
 
-%header.row.hide-for-medium-down
-  %h1.small-12.column
-    = link_to 'FACEBOOK', 'https://www.facebook.com/calraijintaiko'
+.row.hide-for-small-down
+  .column.small-12.large-6
+    %h1
+      = link_to 'FACEBOOK', 'https://www.facebook.com/calraijintaiko'
+    .fb-page{ data: { href: 'https://www.facebook.com/calraijintaiko',
+      width: '480px', height: '685px', small_header: 'false',
+      adapt_container_width: 'true', hide_cover: 'false',
+      show_facepile: 'true', show_posts: 'true' } }
+      .fb-xfbml-parse-ignore
+        %blockquote{ cite: 'https://www.facebook.com/calraijintaiko' }
+          = link_to 'Cal Raijin Taiko',
+            'https://www.facebook.com/calraijintaiko'
 
-#fb-root
-.row
-  .column.large-12.hide-for-medium-down#fb-stuff
-    #fb-feed
-      .fb-like-box{ data: { href: 'https://www.facebook.com/calraijintaiko',
-        width: '970', height: '600', colorscheme: 'light', header: 'false',
-        stream: 'true', show: { border: 'true', faces: 'false' } } }
+  .column.small-12.large-6
+    %h1
+      = link_to 'INSTAGRAM', 'https://instagram.com/calraijintaiko/'
+    %iframe#instagram-feed{ allowtransparency: 'true',
+      src: 'http://widget.websta.me/in/calraijintaiko/?s=100&w=4&h=6&b=1&p=5',
+      frameborder: '0', scrolling: 'no' }

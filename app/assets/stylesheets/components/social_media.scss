@@ -1,7 +1,14 @@
 $text-link-color: #45619d;
 
-#fb-feed {
-  box-shadow: 5px 5px 0 $sub-color-2;
+.fb-page {
+  margin-bottom: 30px;
+}
+
+#instagram-feed {
+  border: 0;
+  height: 690px;
+  overflow: hidden;
+  width: 460px;
 }
 
 .social-media {
