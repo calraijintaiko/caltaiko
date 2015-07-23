@@ -19,7 +19,6 @@
 //= require turbolinks
 //= require cocoon
 //= require google_analytics
-//= require facebook
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
