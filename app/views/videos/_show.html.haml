@@ -1,4 +1,4 @@
-%article.video.small-12.large-6.column
+%article.video.small-12.medium-6.column.left
   %h4= video.title
   - if user_signed_in?
     .icons
@@ -9,5 +9,6 @@
         %i.fi-pencil
   %br
 
-  %iframe{ width: '464', height: '261', frameborder: '0', allowfullscreen: '',
-    src: video.embed_link }
+  .video-container
+    %iframe{ width: '464', height: '261', frameborder: '0', allowfullscreen: '',
+      src: video.embed_link }
