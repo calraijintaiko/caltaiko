@@ -13,12 +13,15 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.foundation
 //= require foundation
-//= require turbolinks
 //= require cocoon
 //= require google_analytics
+//= require slick
 //= require_tree .
+//
+//= require turbolinks
 
 $(function(){ $(document).foundation(); });
