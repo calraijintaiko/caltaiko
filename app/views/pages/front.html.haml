@@ -8,8 +8,15 @@
        og: { title: title, description: description, image: image,
              url: root_url }
 
-#fb-root
 :javascript
+  $(document).on('page:change', function() {
+    $('.slick-carousel').slick({
+      dots: true,
+      autoplay: true,
+      autoplaySpeed: 6000
+    });
+  });
+
   (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -18,6 +25,12 @@
       "version=v2.4&appId=699325996783664";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
+
+= stylesheet_link_tag 'slick', media: 'all', 'data-turbolinks-track' => true
+= stylesheet_link_tag 'slick-theme', media: 'all',
+  'data-turbolinks-track' => true
+
+#fb-root
 
 .row
   .column.medium-2.hide-for-small
@@ -43,14 +56,13 @@
         class: 'button small round hide-for-medium-down large-1 column'
 
   .news.row
-    .carousel.column.small-12
-      %ul{ data: { orbit: '' } }
-        - @articles.each do |article|
-          %li
-            %a{ href: "#{article_path(article)}" }
-              = image_tag article.image.url(:carousel)
-            .orbit-caption
-              = article.title
+    .slick-carousel.column.small-12
+      - @articles.each do |article|
+        .carousel-item
+          %a{ href: "#{article_path(article)}" }
+            = image_tag article.image.url(:carousel)
+          .caption
+            = article.title
 
 %header.row
   %h1.small-10.column
