@@ -7,6 +7,23 @@
        og: { title: title, description: description, image: image,
              url: request.original_url }
 
+- if user_signed_in?
+  .row
+    .column.small-12
+      %ul.button-group.radius
+        - unless @performance.published?
+          %li
+            = link_to 'Publish', performance_publish_path(@performance),
+              class: 'button small success', method: :post,
+              data: { confirm: 'Publish this performance?' }
+        %li
+          = link_to 'Edit', edit_performance_path(@performance),
+            class: 'button small'
+        %li
+          = link_to 'Delete', performance_path(@performance),
+            class: 'button small alert', method: :delete,
+            data: { confirm: 'Delete this performance?' }
+
 = render 'show', performance: @performance
 
 - if @performance.performance_videos.any?

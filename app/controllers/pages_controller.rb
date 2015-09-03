@@ -12,6 +12,12 @@ class PagesController < ApplicationController
   def contact
   end
 
+  def review
+    @articles = Article.unpublished
+    @performances = Performance.unpublished
+    @members = Member.unpublished
+  end
+
   def media
     @videos = Video.all.order('year DESC')
     @videos_by_year = Video.by_year(@videos)

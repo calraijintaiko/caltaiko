@@ -2,7 +2,8 @@
 # to the views, as well as creation and updating of performances.
 class PerformancesController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index, :upcoming, :past]
-  before_action :set_performance, only: [:show, :edit, :update, :destroy]
+  before_action :set_performance, only: [:show, :edit, :update, :destroy,
+                                         :publish]
 
   # Creates a blank performance to be used by form.
   def new
@@ -51,7 +52,14 @@ class PerformancesController < ApplicationController
   def destroy
     @performance.delete_banner
     @performance.destroy
+    flash[:notice] = 'Performance deleted successfully'
     redirect_to performances_path
+  end
+
+  def publish
+    @performance.update(published: true)
+    flash[:notice] = 'Performance published successfully'
+    redirect_to :back
   end
 
   # Gives all upcoming performances, as received from Performance model.
@@ -69,7 +77,8 @@ class PerformancesController < ApplicationController
   private
 
   def set_performance
-    @performance = Performance.friendly.find(params[:id])
+    @performance = Performance.friendly.find(params[:id] ||
+                                             params[:performance_id])
   end
 
   # rubocop:disable Metrics/LineLength

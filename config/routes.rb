@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get 'about' => :about, as: :about
     get 'about/collegiate-taiko' => :collegiate_taiko, as: :collegiate_taiko
     get 'contact' => :contact, as: :contact
+    get 'review' => :review, as: :review
     get 'media' => :media, as: :media
     get 'media/videos' => :media_videos, as: :media_videos
     get 'media/galleries' => :media_galleries, as: :media_galleries
@@ -29,13 +30,18 @@ Rails.application.routes.draw do
   end
 
   resources :performances do
+    post 'publish'
+
     collection do
       get 'upcoming'
       get 'past'
     end
   end
 
-  resources :articles, path: 'news'
+  resources :articles, path: 'news' do
+    post 'publish'
+  end
+
   resources :videos, except: [:index, :show]
 
   if Rails.env.production?

@@ -3,4 +3,7 @@
     - articles.each do |article|
       = render '/articles/thumb', article: article
   - else
-    %p.column.small-12 Stay tuned for more information soon!
+    .row
+      .column.small-12
+        .panel
+          %p Stay tuned for more information soon!

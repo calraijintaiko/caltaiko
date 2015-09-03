@@ -80,12 +80,14 @@ class Performance < ActiveRecord::Base
 
   # Returns all upcoming performances in order of soonest to furthest away.
   def self.upcoming_performances
-    Performance.where('date >= ?', Time.zone.now).order('date ASC')
+    Performance.where('date >= ?',
+                      Time.zone.now).where(published: true).order('date ASC')
   end
 
   # Returns all past performances in order of most recent to least.
   def self.past_performances
-    Performance.where('date < ?', Time.zone.now).order('date DESC')
+    Performance.where('date < ?',
+                      Time.zone.now).where(published: true).order('date DESC')
   end
 
   # Returns all performances that have an images link.
@@ -100,5 +102,13 @@ class Performance < ActiveRecord::Base
       by_year[performance.date.strftime('%Y')] << performance
     end
     by_year
+  end
+
+  def self.published
+    Performance.where(published: true).order('date DESC')
+  end
+
+  def self.unpublished
+    Performance.where(published: false).order('date DESC')
   end
 end

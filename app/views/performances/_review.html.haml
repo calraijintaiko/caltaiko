@@ -1,0 +1,29 @@
+- if performances.count > 0
+  %table.data-table.hover
+    %thead
+      %tr
+        %th Title
+        %th Date
+        %th Created
+        %th Last Modified
+        %th Publish
+        %th Delete
+    %tbody
+      - performances.each do |performance|
+        %tr
+          %td
+            = link_to performance.title, performance_path(performance)
+          %td= performance.date.strftime('%b %-d, %Y')
+          %td= performance.created_at.strftime('%-m/%-d/%y')
+          %td= performance.updated_at.strftime('%-m/%-d/%y, %l:%M %p')
+          %td.center
+            = link_to performance_publish_path(performance), method: :post,
+              data: { confirm: 'Publish this performance?' } do
+              %i.fi-check
+          %td.center
+            = link_to performance_path(performance), method: :delete,
+              data: { confirm: 'Delete performance?' } do
+              %i.fi-x
+- else
+  .panel
+    %p There are currently no performance drafts.

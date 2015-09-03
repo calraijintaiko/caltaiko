@@ -31,6 +31,7 @@ end
                        location: Faker::Address.street_address,
                        description: Faker::Lorem.paragraph(4),
                        images_link: Faker::Internet.url,
+                       published: true,
                        link: Faker::Internet.url)
   end
 end
@@ -43,6 +44,7 @@ rand(2..5).times do
                      location: Faker::Address.street_address,
                      description: Faker::Lorem.paragraph(4),
                      images_link: Faker::Internet.url,
+                     published: true,
                      link: Faker::Internet.url)
 end
 
@@ -52,6 +54,7 @@ rand(5..10).times do
                  date: Faker::Time.between(Time.new(2006),
                                            Time.now),
                  current: [true, false].sample,
+                 published: true,
                  text: Faker::Lorem.paragraphs(rand(2..5)).join("\r\n\r\n"))
 end
 

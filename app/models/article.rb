@@ -72,6 +72,16 @@ class Article < ActiveRecord::Base
 
   # Returns all current articles.
   def self.current
-    Article.where(current: true).order('date DESC')
+    Article.where(current: true, published: true).order('date DESC')
+  end
+
+  # Returns all published articles
+  def self.published
+    Article.where(published: true).order('date DESC')
+  end
+
+  # Returns all unpublished articles
+  def self.unpublished
+    Article.where(published: false).order('date DESC')
   end
 end

@@ -1,0 +1,30 @@
+:ruby
+  title = 'Review | Cal Raijin Taiko'
+  description = 'Review unpublished drafts of resources.'
+  image = URI.join(root_url, image_path('logo.png'))
+
+  meta title: title,
+       description: description,
+       og: { title: title, description: description, image: image,
+             url: request.original_url }
+
+%header.row
+  %h1.small-12.column REVIEW DRAFTS
+
+%section.row.unpublished
+  .column.small-12
+    %ul.tabs{ data: { tab: '' } }
+      %li.tab-title.active
+        = link_to 'Articles', '#articles'
+      %li.tab-title
+        = link_to 'Performances', '#performances'
+      %li.tab-title
+        = link_to 'Members', '#members'
+
+    .tabs-content
+      .content.active#articles
+        = render 'articles/review', articles: @articles
+      .content#performances
+        = render 'performances/review', performances: @performances
+      .content#members
+        %p eyo

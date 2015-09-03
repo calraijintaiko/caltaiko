@@ -93,4 +93,8 @@ class Member < ActiveRecord::Base
   def self.gens
     Member.select(:gen).distinct.order('gen ASC')
   end
+
+  def self.unpublished
+    Member.all
+  end
 end

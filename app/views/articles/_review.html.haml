@@ -1,0 +1,29 @@
+- if articles.count > 0
+  %table.data-table.hover
+    %thead
+      %tr
+        %th Title
+        %th Date
+        %th Created
+        %th Last Modified
+        %th Publish
+        %th Delete
+    %tbody
+      - articles.each do |article|
+        %tr
+          %td
+            = link_to article.title, article_path(article)
+          %td= article.date.strftime('%b %-d, %Y')
+          %td= article.created_at.strftime('%-m/%-d/%y')
+          %td= article.updated_at.strftime('%-m/%-d/%y, %l:%M %p')
+          %td.center
+            = link_to article_publish_path(article), method: :post,
+              data: { confirm: 'Publish this article?' } do
+              %i.fi-check
+          %td.center
+            = link_to article_path(article), method: :delete,
+              data: { confirm: 'Delete article?' } do
+              %i.fi-x
+- else
+  .panel
+    %p There are currently no article drafts.

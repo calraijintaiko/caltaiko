@@ -1,10 +1,14 @@
 # Articles Controller
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_article, only: [:show, :edit, :update, :destroy, :publish]
 
   def index
-    @articles = Article.all.order('date DESC')
+    @articles = Article.published
+  end
+
+  def review
+    @articles = Article.unpublished
   end
 
   def show
@@ -37,13 +41,20 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
+    flash[:notice] = 'Article deleted successfully'
     redirect_to articles_path
+  end
+
+  def publish
+    @article.update(published: true)
+    flash[:notice] = 'Article published successfully'
+    redirect_to :back
   end
 
   private
 
   def set_article
-    @article = Article.friendly.find(params[:id])
+    @article = Article.friendly.find(params[:id] || params[:article_id])
   end
 
   def article_params
