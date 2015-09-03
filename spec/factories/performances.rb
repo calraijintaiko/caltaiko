@@ -24,6 +24,8 @@ FactoryGirl.define do
     sequence(:location) { |n| "Street #{n}, City #{n}" }
     sequence(:description) { |n| "Come watch Performance #{n}!" }
     images_link ''
+    published true
+
     date do
       Time.zone.local(rand(2005..Time.zone.now.year),
                       rand(1..12), rand(1..31))

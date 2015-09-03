@@ -23,5 +23,6 @@ FactoryGirl.define do
     sequence(:title) { |n| "Article #{n}" }
     f.date { Faker::Business.credit_card_expiry_date }
     f.text { Faker::Company.catch_phrase }
+    f.published true
   end
 end
