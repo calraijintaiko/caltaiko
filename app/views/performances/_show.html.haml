@@ -53,5 +53,6 @@
                 %time{ itemprop: 'startDate',
                   datetime: "#{performance.date.iso8601}" }
                   = performance.date.strftime('%A, %B %d, %Y, %l:%M%p').upcase
-              %span.divider= '|'
+              %span.divider.hide-for-small= '|'
+              %br.hide-for-medium-up
               %span.where{ itemprop: 'location' }= performance.location

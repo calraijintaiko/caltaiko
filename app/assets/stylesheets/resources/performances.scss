@@ -12,18 +12,27 @@
       margin-bottom: 1%;
       word-spacing: 2px;
     }
+
+    time {
+      float: left;
+    }
+
     .where, .what {
-      text-transform: uppercase;
+      float: left;
       // Make them uppercase here instead of in the template so that
       // look nicer in Google rich snippets
+      text-transform: uppercase;
     }
+
     .what {
       color: $main-color;
       margin-bottom: 0;
       margin-top: 0;
       text-shadow: 2px 2px 0 $sub-color-2;
     }
+
     span.divider {
+      float: left;
       font-size: 115%;
       margin-left: 25px;
       margin-right: 25px;
