@@ -1,0 +1,24 @@
+.datepicker-container {
+  position: relative;
+}
+
+input.datepicker,
+input.timepicker {
+  padding: 8px;
+}
+
+.picker__holder {
+
+  .picker__button--today,
+  .picker__button--clear,
+  .picker__button--close {
+    color: #333;
+    margin-bottom: .5rem;
+  }
+
+  .picker__table {
+    td, th {
+      text-align: center;
+    }
+  }
+}

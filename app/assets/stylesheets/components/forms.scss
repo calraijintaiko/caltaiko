@@ -5,4 +5,18 @@ form {
   div.datetime {
     color: transparent;
   }
+
+  .error {
+    small {
+      display: block;
+      padding: .375rem .5625rem;
+      margin-top: -1px;
+      margin-bottom: 1rem;
+      font-size: .75rem;
+      font-weight: normal;
+      font-style: italic;
+      background: #f04124;
+      color: #fff;
+    }
+  }
 }

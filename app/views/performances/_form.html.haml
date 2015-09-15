@@ -1,6 +1,4 @@
--# = stylesheet_link_tag 'datepicker-classic', media: 'all',
-  'data-turbolinks-track' => true
-= stylesheet_link_tag 'datepicker-default', media: 'all',
+= stylesheet_link_tag 'datepicker-classic', media: 'all',
   'data-turbolinks-track' => true
 
 = simple_form_for(@performance) do |f|
@@ -8,18 +6,38 @@
     .column.small-12
       = f.error_notification
 
-    .column.small-12
-      = f.input :date, start_year: 2005, end_year: Time.zone.now.year + 1,
-        ampm: true, minute_step: 15,
-        input_html: { class: 'column small-4 left' }
+    .column.small-12.large-9.datepicker-container
+      .row.collapse.prefix-radius
+        .column.small-2
+          %span.prefix Date
+        .column.small-10
+          %input.datepicker.string.required.column#performance_date{ type: 'text', name: 'performance[date]', placeholder: 'Performance Date' }
+    .column.small-12.large-3
+      .row.collapse.prefix-radius
+        .column.small-2.large-3
+          %span.prefix Time
+        .column.small-10.large-9
+          %input.timepicker.string.required.column#performance_date_2i{ type: 'text', name: 'performance[date(2i)]', placeholder: 'Performance Time' }
 
     .small-12.column
-      = f.input :title, placeholder: 'Performance Title'
+      .row.collapse.prefix-radius
+        .column.small-2.large-1
+          %span.prefix Title
+        .column.small-10.large-11
+          = f.input :title, placeholder: 'Performance Title', label: false
 
     .small-12.large-7.column
-      = f.input :location, placeholder: 'Performance Location'
+      .row.collapse.prefix-radius
+        .column.small-2
+          %span.prefix Location
+        .column.small-10
+          = f.input :location, placeholder: 'Performance Location', label: false
     .small-12.large-5.column
-      = f.input :link, placeholder: 'Link to event page'
+      .row.collapse.prefix-radius
+        .column.small-2
+          %span.prefix Link
+        .column.small-10
+          = f.input :link, placeholder: 'Link to event page', label: false
 
     .small-12.column
       = f.input :description, placeholder: 'Performance Description'
