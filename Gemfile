@@ -108,4 +108,5 @@ group :development do
   gem 'travis'
   gem 'web-console'
   gem 'pry-rails'
+  gem 'pry-byebug'
 end
