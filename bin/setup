@@ -1,0 +1,122 @@
+#!/bin/bash
+red=`tput setaf 1`
+green=`tput setaf 2`
+bold=`tput bold`
+reset=`tput sgr0`
+
+function log_right {
+    LEFT="$1"
+    RIGHT="$2"
+    COLOR=$3
+    RESET=${reset}
+    let COLS=$(tput cols)-${#LEFT}+${#COLOR}+${#RESET}
+    printf "%${COLS}s\n" "$COLOR$RIGHT$RESET"
+}
+
+function check_install {
+    read -p "$1 is not installed. Install now? [y/n]: " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        exit
+    fi
+}
+
+MSG="Checking operating system..."
+echo -n $MSG
+os=`uname -s`
+if [ $os == "Darwin" ]; then
+    log_right "$MSG" "Mac OS X" $bold
+    MSG="Verifying Homebrew is installed..."
+    echo -n $MSG
+    which brew &> /dev/null
+    if [ $? -eq 0 ]; then
+        log_right "$MSG" "Ok" $green
+        MSG="Checking Homebrew is up to date..."
+        echo -n $MSG
+        brew update &> /dev/null
+        if [ $? -eq 0 ]; then
+            log_right "$MSG" "Ok" $green
+        else
+            log_right "$MSG" "Error" $green
+            echo "${red}There was a problem updating Homebrew. Please ensure the following command completes successfully:${reset}"
+            echo -e "\t${bold}brew update${reset}"
+            exit 1
+        fi
+    else
+        log_right "$MSG" "Not installed" $red
+        check_install "Homebrew"
+        echo "Installing Homebrew..."
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        if [ $? -ne 0 ]; then
+            echo "${red}There was a problem installing Homebrew. Please ensure the following command completes successfully:${reset}"
+            echo -e "\t${bold}ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\"${reset}"
+            exit 1
+        fi
+        MSG="Checking if ImageMagick is installed..."
+        echo -n $MSG
+        which convert &> /dev/null
+        if [ $? -eq 0 ]; then
+            log_right "$MSG" "Ok" $green
+        else
+            log_right "$MSG" "Not installed" $red
+            check_install "ImageMagick"
+            brew install imagemagick
+            if [ $? -ne 0 ]; then
+                exit
+            fi
+        fi
+    fi
+else
+    # Currently only support Macs; will update over time
+    log_right "$MSG" "Could not detect operating system" $red
+    echo "Please see the GitHub wiki for instructions on installing ImageMagick on your system."
+fi
+
+MSG="Verifying rvm is installed..."
+echo -n $MSG
+which rvm &> /dev/null
+if [ $? -eq 0 ]; then
+    log_right "$MSG" "Ok" $green
+else
+    log_right "$MSG" "Not installed" $red
+    check_install "rvm"
+    MSG="Installing rvm..."
+    echo -n $MSG
+    \curl -sSL https://get.rvm.io | bash
+    if [ $? -ne 0 ]; then
+        exit
+    fi
+    log_right "$MSG" "rvm successfully installed." $green
+fi
+
+echo "Installing correct ruby version..."
+rvm install `cat .ruby-version`
+if [ $? -ne 0 ]; then
+    exit
+fi
+
+rvm use `cat .ruby-version`
+
+echo "Installing Bundler..."
+gem install bundler
+if [ $? -ne 0 ]; then
+    exit
+fi
+
+echo "Installing third-party gems..."
+bundle install --without production
+if [ $? -ne 0 ]; then
+    exit
+fi
+
+echo "Installing git hooks..."
+overcommit --install
+if [ $? -ne 0 ]; then
+    exit
+fi
+
+echo "Setting up development database..."
+rake db:setup
+if [ $? -ne 0 ]; then
+    exit
+fi
