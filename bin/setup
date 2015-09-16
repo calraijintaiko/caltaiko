@@ -69,6 +69,7 @@ if [ $os == "Darwin" ]; then
 else
     # Currently only support Macs; will update over time
     log_right "$MSG" "Could not detect operating system" $red
+    echo "Please see the GitHub wiki for instructions on installing ImageMagick on your system."
 fi
 
 MSG="Verifying rvm is installed..."
