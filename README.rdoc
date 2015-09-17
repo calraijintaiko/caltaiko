@@ -23,111 +23,26 @@ of the design work!
 
 == Setup:
 
-<b>Note:</b> I've successfully installed this app on Mac and Ubuntu so
-far. From what I've discovered so far, Windows only supports up to
-Ruby 2.0.0 as of August 2014. That being that case, you could try changing the required
-ruby versions in the .ruby-version and Gemfile files, but I have no
-idea if it will work.
-
-1. Install rvm by following these[https://rvm.io/rvm/install] instructions
-   (you'll need to install
-   curl[http://www.vettyofficer.com/2013/06/how-to-install-curl-in-mac-os-x.html]
-   first).
-
-2. Run the commands
-
-       rvm install ruby-2.2.0
-       rvm use ruby-2.2.0
-
-   to download ruby v2.2.0 and begin using it.
-
-3. If you encounter the error
-
-      RVM is not a function, selecting rubies with 'rvm use ...' will not work
-
-   try running the commands
-
-      source ~/.rvm/scripts/rvm
-      type rvm | head -n 1
-
-   If you get the output <tt>rvm is a function</tt> then enter the command
-
-      echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' >> ~/.bashrc
-
-   Close your Terminal session, reopen it, and you should be all set!
-   If not... time to go a-Googling.
-
-=== On Mac:
-a. Install Homebrew with
-
-      ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-
-b. Run the command
-
-       brew install imagemagick
-
-=== On Ubuntu:
-a. Go to the {ImageMagick website}[http://www.imagemagick.org/script/download.php]
-   and select a mirror, then download the latest version.
-
-b. Unpack the compressed folder, then <tt>cd</tt> into it.
-
-c. From within the uncompressed folder, run the following:
-
-          ./configure
-          make
-          sudo make install
-
-   <b>Note:</b> it is possible to download ImageMagick by simply
-   running <tt>sudo apt-get install imagemagick</tt>, but if you do so
-   the binaries will be downloaded to <tt>/usr/bin/</tt>, rather than
-   <tt>/usr/local/bin/</tt>, requiring more configuration later and
-   loss of compability with any future changes.
-
-== Installation:
-
 1. Fork[https://help.github.com/articles/fork-a-repo] this repository
    on the GitHub website, then clone your repository onto your computer:
 
-        git clone git@github.com:[Your Github Account]/caltaiko.git
+      $ git clone git@github.com:[Your Github Account]/caltaiko.git
 
 2. Go into the caltaiko repository
 
-      cd caltaiko
+      $ cd caltaiko
 
-3. Run <tt>which convert</tt> to find out where ImageMagick was installed.
+3. Run the setup script and follow the prompts to install all required
+   dependencies.
 
-   If it does not return <tt>/usr/local/bin/convert</tt>, go to the
-   file <tt>caltaiko/config/environments/development.rb</tt> and
-   change the line
+      $ bin/setup
 
-        Paperclip.options[:command_path] = "/usr/local/bin/"
+   This will also create the development database and seed it with random
+   resources, including an admin account with username <tt>admin</tt> and
+   password <tt>secret</tt>.
 
-   to
-
-        Paperclip.options[:command_path] = "/path/to/bin/"
-
-   where <tt>/path/to/bin/</tt> is the output of <tt>which
-   convert</tt> except for the last <tt>convert</tt> part.
-
-4. Enter the command
-
-         gem install bundler
-
-5. Download the appropriate gems using Bundler[http://bundler.io]:
-
-            bundle install
-
-6. Create the development and test databases by running
-
-          rake db:schema:load
-
-And now you should be all set! Running the command
-
-    rails s
-
-should now start up the application, and navigating to
-<tt>localhost:3000</tt> in a browser will let you play around with it!
+   If any problems arise, please visit the wiki[https://github.com/calraijintaiko/caltaiko/wiki/Contributing#initial-setup]
+   to see if your problem is addressed.
 
 == Integrate with AWS
 
@@ -184,52 +99,12 @@ Google Apps account.
 To keep track of any changes made to the original repository, add
 remote named upstream
 
-   git remote add upstream https://github.com/greytoyota/caltaiko.git
+   git remote add upstream https://github.com/calraijintaiko/caltaiko.git
 
 To sync any changes I make with your own repository, run the commands
 
    git fetch upstream
    git merge upstream/master
-
-== Usage:
-
-* To make use of the website, you will first need to create an
-  account.
-
-  1. Make sure you have created the databases with the <tt>rake
-     db:create</tt> and <tt>rake db:migrate</tt> commands (you'll only
-     ever need to use <tt>rake db:create</tt> once!)
-
-  2. Start up the server with <tt>rails s</tt>, then open a broswer
-     such as Google Chrome to <tt>localhost:3000</tt>
-
-  3. The first time you are using the site, there will be no members,
-     upcoming performances, or past performances. Your first step to
-     creating those will be to create an admin account.
-
-     a. Navigate to <tt>localhost:3000/register</tt> to reach the
-        registration page.
-
-     b. Create an account.
-
-     c. Now, when you navigate to the 'Members', 'Upcoming
-        Performances', or 'Past Performances' pages, you will see an
-        option to add new resources.
-
-  4. From then on, whenever you wish to add, edit, or delete entires
-     in those three resources, go to <tt>localhost:3000/login</tt> to
-     login using the account you created before.
-
-* The goal is to make it so that rather than having the website
-  manager be responsible for updating everything on the website, we
-  will be able to have other officer's be in charge of their areas. So
-  the performance coordinator could easily manage the performances,
-  while the secretary updates the members every year.
-
-* I left the register option available right now so that we could test
-  creating an admin account and updating the website. For deployment
-  it will be disabled.
-
 
 == Documentation
 To generate the formatted Rdoc document, run the command
