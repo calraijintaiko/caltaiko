@@ -2,21 +2,43 @@ form {
   textarea {
     height: 200px;
   }
+
   div.datetime {
     color: transparent;
   }
 
+  input[type="checkbox"] {
+    margin-right: 9px;
+  }
+
+  fieldset {
+    legend {
+      background-color: initial;
+      font-size: 20px;
+      padding: 0 7px;
+    }
+
+    .img-text {
+      position: relative;
+      top: -15px;
+    }
+  }
+
   .error {
     small {
+      background: $error-color;
+      color: $white;
       display: block;
-      padding: .375rem .5625rem;
-      margin-top: -1px;
-      margin-bottom: 1rem;
       font-size: .75rem;
-      font-weight: normal;
       font-style: italic;
-      background: #f04124;
-      color: #fff;
+      font-weight: normal;
+      margin-bottom: 1rem;
+      margin-top: -1px;
+      padding: .375rem .5625rem;
     }
+  }
+
+  .remove-performance-video {
+    margin-top: 23px;
   }
 }
