@@ -82,6 +82,8 @@ group :development, :test do
   gem 'spring-commands-cucumber'
   gem 'simplecov'
   gem 'rb-fsevent'
+  gem 'pry-rails'
+  gem 'pry-byebug'
 end
 
 group :test do
@@ -107,6 +109,4 @@ group :development do
   gem 'ruby-lint'
   gem 'travis'
   gem 'web-console'
-  gem 'pry-rails'
-  gem 'pry-byebug'
 end
