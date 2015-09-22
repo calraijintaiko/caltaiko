@@ -7,6 +7,10 @@ form {
     color: transparent;
   }
 
+  #date, #time {
+    background-color: $white;
+  }
+
   input[type="checkbox"] {
     margin-right: 9px;
   }

@@ -3,6 +3,7 @@
 class PerformancesController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index, :upcoming, :past]
   before_action :set_performance, only: [:show, :edit, :update, :destroy]
+  before_action :merge_date_time, only: [:create, :update]
 
   # Creates a blank performance to be used by form.
   def new
@@ -70,6 +71,21 @@ class PerformancesController < ApplicationController
 
   def set_performance
     @performance = Performance.friendly.find(params[:id])
+  end
+
+  def merge_date_time
+    unless params[:performance][:date]
+      date_string = params.delete(:date) + ' ' + params.delete(:time)
+      date = DateTime.parse(date_string)
+
+      params[:performance].merge!({
+        'date(1i)' => date.year.to_s,
+        'date(2i)' => date.month.to_s,
+        'date(3i)' => date.day.to_s,
+        'date(4i)' => date.hour.to_s,
+        'date(5i)' => date.minute.to_s
+      })
+    end
   end
 
   # rubocop:disable Metrics/LineLength

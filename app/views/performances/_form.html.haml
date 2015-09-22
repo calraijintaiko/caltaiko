@@ -14,15 +14,17 @@
           .column.small-2
             %span.prefix Date
           .column.small-10
-            %input.datepicker.string.required#performance_date{ type: 'text',
-              name: 'performance[date]', placeholder: 'Performance Date' }
+            %input.datepicker.string.required#date{ type: 'text',
+              name: 'date', placeholder: 'Performance Date',
+              value: @performance.safe_date }
       .column.small-12.large-3
         .row.collapse.prefix-radius
           .column.small-2.large-3
             %span.prefix Time
           .column.small-10.large-9
-            %input.timepicker.string.required#performance_time{ type: 'text',
-              name: 'performance[time]', placeholder: 'Performance Time' }
+            %input.timepicker.string.required#time{ type: 'text',
+              name: 'time', placeholder: 'Performance Time',
+              value: @performance.safe_time }
 
       .small-12.column
         .row.collapse.prefix-radius
