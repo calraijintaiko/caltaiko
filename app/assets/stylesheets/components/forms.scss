@@ -7,6 +7,43 @@ form {
     color: transparent;
   }
 
+  .datepicker,
+  .full-datepicker,
+  .timepicker {
+    background-color: $white !important;
+  }
+
+  input[type="checkbox"] {
+    margin-right: 9px;
+  }
+
+  fieldset {
+    legend {
+      background-color: initial;
+      font-size: 20px;
+      padding: 0 7px;
+    }
+
+    .img-text {
+      position: relative;
+      top: -15px;
+    }
+  }
+
+  .error {
+    small {
+      background: $error-color;
+      color: $white;
+      display: block;
+      font-size: .75rem;
+      font-style: italic;
+      font-weight: normal;
+      margin-bottom: 1rem;
+      margin-top: -1px;
+      padding: .375rem .5625rem;
+    }
+  }
+
   .remove-performance-video {
     margin-top: 23px;
   }

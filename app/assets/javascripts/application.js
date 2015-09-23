@@ -20,6 +20,10 @@
 //= require cocoon
 //= require google_analytics
 //= require slick
+//= require picker
+//= require picker.date
+//= require picker.time
+//= require legacy
 //= require_tree .
 //
 //= require turbolinks

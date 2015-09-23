@@ -25,6 +25,8 @@ class Article < ActiveRecord::Base
   validates :date, presence: true
   validates :text, presence: true
 
+  DATE_FORMAT = '%B %d, %Y'
+
   Paperclip.interpolates :slug do |attachment, _style|
     attachment.instance.slug
   end
@@ -68,6 +70,12 @@ class Article < ActiveRecord::Base
     snippet = text.split("\r\n\r\n")[0]
     snippet = snippet[0, 500] + ' **[. . .]**' if snippet.length > 550
     snippet
+  end
+
+  # Returns either the date of the article or the empty string if the
+  # article has no associated date, formatted according to DATE_FORMAT.
+  def safe_date
+    date ? date.strftime(DATE_FORMAT) : ''
   end
 
   # Returns all current articles.

@@ -3,30 +3,78 @@
     .column.small-12
       = f.error_notification
 
-    .column.small-12
-      = f.input :date, start_year: 2005, end_year: Time.zone.now.year + 1,
-        ampm: true, minute_step: 15,
-        input_html: { class: 'column small-4 left' }
+    %fieldset
+      %legend Required Details
 
-    .small-12.column
-      = f.input :title, placeholder: 'Performance Title'
+      .small-12.column
+        .row.collapse.prefix-radius
+          .column.small-2.large-1
+            %span.prefix Title
+          .column.small-10.large-11
+            = f.input :title, placeholder: 'Performance Title', label: false,
+              autofocus: true
 
-    .small-12.large-7.column
-      = f.input :location, placeholder: 'Performance Location'
-    .small-12.large-5.column
-      = f.input :link, placeholder: 'Link to event page'
+      .small-12.column
+        .row.collapse.prefix-radius
+          .column.small-2.large-1
+            %span.prefix Location
+          .column.small-10.large-11
+            = f.input :location, placeholder: 'Performance Location',
+              label: false
 
-    .small-12.column
-      = f.input :description, placeholder: 'Performance Description'
+      .column.small-12.large-9.datepicker-container
+        .row.collapse.prefix-radius
+          .column.small-2
+            %span.prefix Date
+          .column.small-10
+            %input.full-datepicker.string.required#date{ type: 'text',
+              name: 'date', placeholder: 'Performance Date',
+              value: @performance.safe_date }
+      .column.small-12.large-3
+        .row.collapse.prefix-radius
+          .column.small-2.large-3
+            %span.prefix Time
+          .column.small-10.large-9
+            %input.timepicker.string.required#time{ type: 'text',
+              name: 'time', placeholder: 'Performance Time',
+              value: @performance.safe_time }
 
-    .small-7.column
-      = f.input :banner
-    .small-2.column
-      = f.input :delete_banner, as: :boolean
+      .small-12.column
+        = f.input :description, placeholder: 'Performance Description'
 
-  .row
-    .small-12.large-8.column
-      = f.input :images_link, placeholder: 'Link to image gallery'
+    %fieldset.column.small-12.large-6
+      %legend Links
+
+      .small-12.column
+        .row.collapse.prefix-radius
+          .column.small-2
+            %span.prefix Event
+          .column.small-10
+            = f.input :link, placeholder: 'Link to event page', label: false
+
+      .small-12.column
+        .row.collapse.prefix-radius
+          .column.small-2
+            %span.prefix Gallery
+          .small-10.column
+            = f.input :images_link, placeholder: 'Link to image gallery',
+              label: false
+
+    %fieldset.column.small-12.large-5
+      %legend Banner Image
+
+      - if @performance.banner_file_name
+        %small.img-text Current banner file: #{@performance.banner_file_name}
+      - else
+        %small.img-text
+          This performance currently has no associated banner.
+
+      .row
+        .small-7.column
+          = f.input :banner, label: false
+        .small-5.column
+          = f.input :delete_banner, as: :boolean
+
 
   %section#nested_fields
     .row

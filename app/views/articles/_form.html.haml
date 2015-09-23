@@ -3,21 +3,55 @@
     .column.small-12
       = f.error_notification
 
-    .form-inputs
+    %fieldset
+      %legend Required Details
+
       .column.small-12
-        = f.input :title, placeholder: 'Article Title'
-      .column.small-12
-        = f.input :date, discard_hour: true, order: [:month, :day, :year],
-          input_html: { class: 'column small-4 left' }
+        .row.collapse.prefix-radius
+          .column.small-2.large-1
+            %span.prefix Title
+          .column.small-10.large-11
+            = f.input :title, placeholder: 'Article Title', label: false,
+              autofocus: true
+
+      .column.small-12.datepicker-container
+        .row.collapse.prefix-radius
+          .column.small-2.large-1
+            %span.prefix Date
+          .column.small-10.large-11
+            = f.input :date, placeholder: 'Article Date', label: false,
+              class: 'datepicker', as: 'string',
+              input_html: { class: 'datepicker', value: @article.safe_date }
+
       .column.small-12
         = f.input :text, placeholder: 'Article Text'
 
-    .small-7.column
-      = f.input :image
-    .small-2.column
-      = f.input :delete_image, as: :boolean
-    .small-2.column
-      = f.input :current
+    %fieldset.column.small-12.large-6
+      %legend Status
+
+      %small.img-text
+        If this article is marked as current, it will appear on the
+        front page news carousel.
+
+      .row
+        .small-12.column
+          = f.input :current
+
+    %fieldset.column.small-12.large-5
+      %legend Image
+
+      - if @article.image_file_name
+        %small.img-text Current image file: #{@article.image_file_name}
+      - else
+        %small.img-text
+          This performance currently has no associated image.
+
+      .row
+        .small-7.column
+          = f.input :image, label: false
+        .small-5.column
+          = f.input :delete_image, as: :boolean
+
 
   .row
     .column.small-5.large-4

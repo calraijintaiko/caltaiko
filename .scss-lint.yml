@@ -16,6 +16,8 @@ linters:
     enabled: true
   IdSelector:
     enabled: false
+  ImportantRule:
+    enabled: false
   Indentation:
     enabled: true
     width: 2

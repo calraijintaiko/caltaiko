@@ -37,6 +37,9 @@ class Performance < ActiveRecord::Base
   validates :images_link, format: { with: %r{\Ahttps?:\/\/|\A\Z},
                                     message: "URL must begin with 'http://'" }
 
+  DATE_FORMAT = '%A, %B %d, %Y'
+  TIME_FORMAT = '%l:%M %p'
+
   Paperclip.interpolates :slug do |attachment, _style|
     attachment.instance.slug
   end
@@ -78,6 +81,18 @@ class Performance < ActiveRecord::Base
     date >= Time.zone.now
   end
 
+  # Returns either the date of the performance or today's date if the
+  # performance has no associated date, formatted according to DATE_FORMAT.
+  def safe_date
+    date ? date.strftime(DATE_FORMAT) : Date.today.strftime(DATE_FORMAT)
+  end
+
+  # Returns either the time of the performance formatted according to
+  # TIME_FORMAT or a default value of noon if no associated time exists.
+  def safe_time
+    date ? date.strftime(TIME_FORMAT) : '12:00 PM'
+  end
+
   # Returns all upcoming performances in order of soonest to furthest away.
   def self.upcoming_performances
     Performance.where('date >= ?', Time.zone.now).order('date ASC')
@@ -96,8 +111,8 @@ class Performance < ActiveRecord::Base
   def self.by_year(performances)
     by_year = {}
     performances.each do |performance|
-      by_year[performance.date.strftime('%Y')] ||= []
-      by_year[performance.date.strftime('%Y')] << performance
+      by_year[performance.year] ||= []
+      by_year[performance.year] << performance
     end
     by_year
   end
