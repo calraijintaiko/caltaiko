@@ -1,6 +1,3 @@
-= stylesheet_link_tag 'datepicker-classic', media: 'all',
-  'data-turbolinks-track' => true
-
 = simple_form_for(@performance) do |f|
   .row
     .column.small-12
@@ -9,12 +6,28 @@
     %fieldset
       %legend Required Details
 
+      .small-12.column
+        .row.collapse.prefix-radius
+          .column.small-2.large-1
+            %span.prefix Title
+          .column.small-10.large-11
+            = f.input :title, placeholder: 'Performance Title', label: false,
+              autofocus: true
+
+      .small-12.column
+        .row.collapse.prefix-radius
+          .column.small-2.large-1
+            %span.prefix Location
+          .column.small-10.large-11
+            = f.input :location, placeholder: 'Performance Location',
+              label: false
+
       .column.small-12.large-9.datepicker-container
         .row.collapse.prefix-radius
           .column.small-2
             %span.prefix Date
           .column.small-10
-            %input.datepicker.string.required#date{ type: 'text',
+            %input.full-datepicker.string.required#date{ type: 'text',
               name: 'date', placeholder: 'Performance Date',
               value: @performance.safe_date }
       .column.small-12.large-3
@@ -25,21 +38,6 @@
             %input.timepicker.string.required#time{ type: 'text',
               name: 'time', placeholder: 'Performance Time',
               value: @performance.safe_time }
-
-      .small-12.column
-        .row.collapse.prefix-radius
-          .column.small-2.large-1
-            %span.prefix Title
-          .column.small-10.large-11
-            = f.input :title, placeholder: 'Performance Title', label: false
-
-      .small-12.column
-        .row.collapse.prefix-radius
-          .column.small-2.large-1
-            %span.prefix Location
-          .column.small-10.large-11
-            = f.input :location, placeholder: 'Performance Location',
-              label: false
 
       .small-12.column
         = f.input :description, placeholder: 'Performance Description'

@@ -1,6 +1,11 @@
 $(document).on('page:change', function () {
-    $('.datepicker').pickadate({
+    $('.full-datepicker').pickadate({
         format: 'dddd, mmmm dd, yyyy',
+        hiddenName: true
+    });
+
+    $('.datepicker').pickadate({
+        format: 'mmmm dd, yyyy',
         hiddenName: true
     });
 

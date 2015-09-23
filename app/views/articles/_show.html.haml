@@ -11,7 +11,7 @@
             = link_to edit_article_path(article), class: 'right' do
               %i.fi-pencil
 
-      %small= article.date.strftime('%B %-d, %Y')
+      %small= article.safe_date
       .article-image.row
         = image_tag article.image.url(:full), class: 'column small-12'
       :markdown

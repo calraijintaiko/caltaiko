@@ -7,8 +7,10 @@ form {
     color: transparent;
   }
 
-  #date, #time {
-    background-color: $white;
+  .datepicker,
+  .full-datepicker,
+  .timepicker {
+    background-color: $white !important;
   }
 
   input[type="checkbox"] {
