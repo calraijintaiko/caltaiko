@@ -111,8 +111,8 @@ class Performance < ActiveRecord::Base
   def self.by_year(performances)
     by_year = {}
     performances.each do |performance|
-      by_year[performance.date.strftime('%Y')] ||= []
-      by_year[performance.date.strftime('%Y')] << performance
+      by_year[performance.year] ||= []
+      by_year[performance.year] << performance
     end
     by_year
   end
