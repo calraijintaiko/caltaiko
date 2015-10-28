@@ -13,5 +13,5 @@ before_script:
   - export TZ=Canada/Pacific
 
 script:
-  - bundle exec cucumber -f progress
+  - bundle exec cucumber
   - bundle exec rspec spec

@@ -4,13 +4,13 @@ ruby '2.2.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.2.0'
 # Use rubygems 2.3.0
-gem 'rubygems-update', '~> 2.3.0'
+gem 'rubygems-update', '~> 2.4.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -41,7 +41,7 @@ gem 'aws-sdk-v1'
 # gem 'capistrano-rails', group: :development
 
 # Enables prettier urls, ie /members/tom-hata vs /members/1
-gem 'friendly_id', '~> 5.0.0'
+gem 'friendly_id', '~> 5.1.0'
 
 # Allows for easier meta tag setting
 gem 'metamagic'
@@ -59,10 +59,10 @@ gem 'cocoon'
 
 # Enables Foundation framework
 gem 'modernizr-rails'
-gem 'foundation-rails', '~> 5.4.5.0'
+gem 'foundation-rails', '~> 5.5.0'
 
 # Use the DataTables jQuey plug-in for sortable, beautiful tables
-gem 'jquery-datatables-rails', '~> 3.2.0'
+gem 'jquery-datatables-rails', '~> 3.3.0'
 
 group :production do
   # Use Postgres as database for Active Record since required by Heroku
@@ -77,13 +77,13 @@ end
 group :development, :test do
   gem 'sqlite3'
   gem 'guard-rspec'
-  gem 'guard-cucumber'
+  gem 'guard-cucumber', '~>1.6.0'
   gem 'spring-commands-rspec'
   gem 'spring-commands-cucumber'
   gem 'simplecov'
   gem 'rb-fsevent'
   gem 'pry-rails'
-  gem 'pry-byebug'
+  gem 'pry-byebug', '~>3.2.0'
 end
 
 group :test do
@@ -104,7 +104,7 @@ group :development do
   gem 'annotate', '~> 2.6.5'
   gem 'scss-lint', '~>0.30'
   gem 'haml-lint', '~>0.10'
-  gem 'reek', '~>1.5.0'
+  gem 'reek'
   gem 'overcommit'
   gem 'ruby-lint'
   gem 'travis'
