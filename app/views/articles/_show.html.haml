@@ -13,6 +13,6 @@
 
       %small= article.safe_date
       .article-image.row
-        = image_tag article.image.url(:full), class: 'column small-12'
+        = image_tag article.image.url(:carousel), class: 'column small-12'
       :markdown
         #{article.text}
