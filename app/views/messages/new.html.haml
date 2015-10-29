@@ -1,0 +1,70 @@
+:ruby
+  title = 'Contact Us | Cal Raijin Taiko'
+  description = 'How to get in contact with Cal Raijin Taiko'
+  image = URI.join(root_url, image_path('logo.png'))
+
+  meta title: title,
+       description: description,
+       og: { title: title, description: description, image: image,
+             url: request.original_url }
+
+.row
+  .small-12.medium-7.column.text-left
+    .row
+      .column.small-11
+        .row.contact-form.text-block
+          .column.small-12
+            %h3 Contact Us
+            %p
+              Thank you for reaching out to us! Please fill out and submit the
+              contact form below, and we'll get back to you as soon as possible.
+          = form_for @message, method: :post, url: contact_path do |f|
+            - if @message.errors.any?
+              .alert-box.alert
+                %p
+                  Please fix the following errors and resubmit the contact form,
+                  or contact us directly at
+                  = link_to 'caltaiko@gmail.com', 'mailto:caltaiko@gmail.com'
+                  \:
+                %ul
+                  - @message.errors.full_messages.each do |msg|
+                    %li= msg
+
+            .small-12.column
+              .row.collapse.prefix-radius
+                .column.small-2
+                  %span.prefix Name
+                .column.small-10
+                  = f.text_field :name, placeholder: 'Your Name'
+
+            .small-12.column
+              .row.collapse.prefix-radius
+                .column.small-2
+                  %span.prefix Email
+                .column.small-10
+                  = f.email_field :email, placeholder: 'Your Email'
+
+            .small-12.column
+              = f.text_area :content, placeholder: 'Message'
+
+            .small-12.column
+              = f.submit 'Send', class: 'button small'
+
+  .column.small-12.medium-5
+    .row
+      .column.small-12
+        .row
+          %h3.column.small-12 Find us on social media!
+          .social-media
+            .column.small-4
+              = link_to 'https://www.facebook.com/calraijintaiko' do
+                %i.fi-social-facebook
+            .column.small-4
+              = link_to 'http://instagram.com/calraijintaiko' do
+                %i.fi-social-instagram
+            .column.small-4
+              = link_to 'https://www.youtube.com/user/CALtaiko/' do
+                %i.fi-social-youtube
+
+      .column.small-12
+        = image_tag('team_playing.jpg', class: 'team-pic')
