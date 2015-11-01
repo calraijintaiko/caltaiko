@@ -18,7 +18,8 @@
             %p
               Thank you for reaching out to us! Please fill out and submit the
               contact form below, and we'll get back to you as soon as possible.
-          = form_for @message, method: :post, url: contact_path do |f|
+          = form_for @message, method: :post, class: 'contact-form',
+            url: contact_path do |f|
             - if @message.errors.any?
               .alert-box.alert
                 %p
@@ -48,7 +49,15 @@
               = f.text_area :content, placeholder: 'Message'
 
             .small-12.column
-              = f.submit 'Send', class: 'button small'
+              .switch.round
+                %span.left Is this a performance request?
+                %input#message_performance_request{ type: 'checkbox',
+                  name: 'message[performance_request]', checked: '' }
+                %label{ for: 'message_performance_request' }
+                  %span.switch-on Yes
+                  %span.switch-off No
+            .small-12.column
+              = f.submit 'Send', class: 'submit button small'
 
   .column.small-12.medium-5
     .row

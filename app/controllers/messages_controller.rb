@@ -7,8 +7,14 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
 
     if @message.valid?
-      MessageMailer.new_message(@message).deliver
-      redirect_to contact_path, notice: "Your messages has been sent."
+      begin
+        MessageMailer.new_message(@message).deliver_now
+        redirect_to contact_path, notice: "Your messages has been sent."
+      rescue
+        flash[:alert] = 'An error occured and your message could not be sent'\
+          '; please email us directly at caltaiko@gmail.com'
+        render :new
+      end
     else
       render :new
     end
@@ -17,6 +23,7 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:name, :email, :content)
+    params.require(:message).permit(:name, :email, :content,
+                                    :performance_request)
   end
 end

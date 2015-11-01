@@ -13,32 +13,36 @@ $text-link-color: #45619d;
 
 .social-media {
   i {
-    font-size: 450%;
-    -moz-transition: font-size .1s;
-    -ms-transition: font-size .1s;
-    -o-transition: font-size .1s;
-    -webkit-transition: font-size .1s;
-    transition: font-size .1s;
-  }
-  i.fi-social-facebook {
-    color: $fb-color;
-  }
-  i.fi-social-youtube {
-    color: $youtube-color;
-  }
-  i.fi-social-instagram {
-    color: $black;
-  }
-  i:hover {
-    font-size: 500%;
-  }
-  .text-link {
-    color: $text-link-color;
-    margin-left: 33%;
-    position: absolute;
-    top: 25px;
-  }
-  .text-link:hover {
-    color: darken($text-link-color, 15%);
+    font-size: 550%;
+    -moz-transition: all .1s;
+    -ms-transition: all .1s;
+    -o-transition: all .1s;
+    -webkit-transition: all .1s;
+    transition: all .1s;
+
+    &.fi-social-facebook {
+      color: $fb-color;
+
+      &:hover {
+        color: darken($fb-color, 10%);
+      }
+    }
+
+    &.fi-social-youtube {
+      color: $youtube-color;
+
+
+      &:hover {
+        color: darken($youtube-color, 10%);
+      }
+    }
+
+    &.fi-social-instagram {
+      color: $black;
+
+      &:hover {
+        color: lighten($black, 10%);
+      }
+    }
   }
 }
