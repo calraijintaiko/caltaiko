@@ -10,14 +10,16 @@ class Message
   validates :email, presence: true
   validates :content, presence: true
 
+  PERFORMANCE_EMAIL = 'performances@caltaiko.org'
+  GENERAL_EMAIL = 'general@caltaiko.org'
+
   def to_address
-    return 'performances@caltaiko.org' if performance_request
-    'general@caltaiko.org'
+    return PERFORMANCE_EMAIL if performance_request
+    GENERAL_EMAIL
   end
 
   def subject
     return "Performance request from #{name}" if performance_request
     "Message from #{name}"
   end
-
 end
