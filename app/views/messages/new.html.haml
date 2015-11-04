@@ -20,16 +20,6 @@
               contact form below, and we'll get back to you as soon as possible.
           = form_for @message, method: :post, class: 'contact-form',
             url: contact_path do |f|
-            - if @message.errors.any?
-              .alert-box.alert
-                %p
-                  Please fix the following errors and resubmit the contact form,
-                  or contact us directly at
-                  = link_to 'caltaiko@gmail.com', 'mailto:caltaiko@gmail.com'
-                  \:
-                %ul
-                  - @message.errors.full_messages.each do |msg|
-                    %li= msg
 
             .small-12.column
               .row.collapse.prefix-radius
