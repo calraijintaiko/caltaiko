@@ -81,9 +81,9 @@ Rails.application.configure do
     password: ENV['GMAIL_PASSWORD']
   }
   config.action_mailer.default_url_options = {
-    host: 'http://caltaiko.herokuapp.com'
+    host: 'http://www.caltaiko.org'
   }
-  config.action_mailer.asset_host = 'http://caltaiko.herokuapp.com'
+  config.action_mailer.asset_host = 'http://www.caltaiko.org'
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).

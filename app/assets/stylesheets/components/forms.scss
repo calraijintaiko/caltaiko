@@ -48,3 +48,34 @@ form {
     margin-top: 23px;
   }
 }
+
+.contact-form {
+  .switch-on {
+    color: $white;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    left: -55px;
+    position: absolute;
+    top: 8px;
+  }
+
+  .switch-off {
+    color: $white;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    left: -25px;
+    position: absolute;
+    top: 8px;
+  }
+
+  .switch label {
+    float: right !important;
+  }
+
+  .submit {
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+}

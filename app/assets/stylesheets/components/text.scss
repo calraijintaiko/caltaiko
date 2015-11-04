@@ -2,8 +2,18 @@
   @include box-style;
   margin-bottom: 30px;
   padding: 20px;
+
   p {
     margin-bottom: 0;
+  }
+
+  &.contact-form {
+    margin-bottom: 50px !important;
+    margin-left: 10px !important;
+
+    p {
+      margin-bottom: 25px;
+    }
   }
 }
 
