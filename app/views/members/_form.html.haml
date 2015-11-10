@@ -2,25 +2,72 @@
   .row
     .column.small-12
       = f.error_notification
-    .large-6.small-12.column
-      = f.input :name, placeholder: 'Full Name'
-    .large-1.small-3.column
-      = f.input :gen
-    .large-5.small-9.column
-      = f.input :major, placeholder: 'Major'
 
-    .large-7.small-12.column
-      = f.input :email, placeholder: 'Email Address'
+    %fieldset.small-12.column
+      %legend Required Details
 
-    .large-12.small-12.column
-      = f.input :bio
+      .medium-5.small-12.column
+        .row.collapse.prefix-radius
+          .column.small-3.large-2
+            %span.prefix Name
+          .column.small-9.large-10
+            = f.input :name, placeholder: 'Full Name', label: false,
+              autofocus: true
 
-    .small-7.column
-      = f.input :avatar
-    .small-2.column
-      = f.input :delete_avatar, as: :boolean
-    .small-2.column
-      = f.input :current
+      .medium-2.small-7.column
+        .row.collapse.prefix-radius
+          .column.small-4
+            %span.prefix Gen
+          .column.small-8
+            = f.input :gen, label: false
+
+      .medium-5.small-12.column
+        .row.collapse.prefix-radius
+          .column.small-3.large-2
+            %span.prefix Major
+          .large-10.small-9.column
+            = f.input :major, placeholder: 'Major', label: false
+
+      .large-12.small-12.column
+        = f.input :bio
+
+    %fieldset.small-12.medium-6.column
+      %legend Contact Information
+
+      %small.img-text
+        This information will be used only to help contact the member in the
+        future. It will not be publicly available, and will only be viewable
+        to logged in users of the site.
+
+      .row.collapse.prefix-radius
+        .column.small-2.large-2
+          %span.prefix Email
+        .small-10.large-10.column
+          = f.input :email, placeholder: 'Email Address', label: false
+
+
+    .column.small-12.medium-5
+      %fieldset.column.small-12
+        %legend Picture
+
+        - if @member.avatar_file_name
+          %small.img-text Current picture file: #{@member.avatar_file_name}
+        - else
+          %small.img-text This member currently has no associated picture.
+
+        .row
+          .small-7.column
+            = f.input :avatar, label: false
+          .small-5.column
+            = f.input :delete_avatar, as: :boolean
+
+      %fieldset.column.small-12
+        %legend Status
+        %small.img-text Is this member currently active on the team?
+
+        .row
+          .small-12.column
+            = f.input :current
 
   .row
     .column.small-5.large-4
