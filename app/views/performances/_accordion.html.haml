@@ -1,8 +1,0 @@
-.row
-  %ul.accordion.column.small-12{ data: { accordion: '' } }
-    - by_year.each do |year, performances|
-      %li.accordion-navigation
-        = link_to year, "#panel#{year}"
-        - haml_tag :div, id: "panel#{year}",
-          class: "content #{'active' if year.to_i == active_year}" do
-          = render 'thumbnail_feed', performances: performances
