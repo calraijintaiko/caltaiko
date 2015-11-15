@@ -13,7 +13,4 @@
     = link_to 'Add Performance', new_performance_path,
       class: 'button small round hide-for-medium-down large-2 column'
 
-- @by_year.keys.each do |year|
-  .row
-    %h4.small-12.column= year
-  = render 'thumbnail_feed', performances: @by_year[year]
+= render 'accordion', by_year: @by_year, active_year: @active_year
