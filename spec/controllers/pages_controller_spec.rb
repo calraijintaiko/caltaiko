@@ -33,16 +33,21 @@ describe PagesController do
   end
 
   describe 'viewing photo galleries and videos' do
+    let(:video_years) { %w(2005 2006 2009 2012) }
+    let(:gallery_years) { %w(2008 2009 2010 2013) }
+
     before :each do
-      @years = [2010, 2011]
-      @videos_year0 = create_list(:video, rand(5..20), year: @years[0])
-      @videos_year1 = create_list(:video, rand(5..20), year: @years[1])
-      @perf_year0 = create_list(:performance, rand(5..20),
-                                date: Time.zone.local(@years[0]),
-                                images_link: 'http://www.images.com')
-      @perf_year1 = create_list(:performance, rand(5..20),
-                                date: Time.zone.local(@years[1]),
-                                images_link: 'http://www.images.com')
+      @galleries_by_year = {}
+      gallery_years.each do |year|
+        @galleries_by_year[year] = create_list(:performance, rand(5..20),
+                                               date: Time.zone.local(year),
+                                               images_link: 'http://img.com')
+      end
+
+      @videos_by_year = {}
+      video_years.each do |year|
+        @videos_by_year[year] = create_list(:video, rand(5..20), year: year)
+      end
     end
 
     context 'GET media' do
@@ -55,27 +60,24 @@ describe PagesController do
       end
 
       it 'assigns @videos to all videos' do
-        expect(assigns(:videos)).to match_array(@videos_year0 + @videos_year1)
+        expect(assigns(:videos)).to match_array @videos_by_year.values.flatten
       end
 
       it 'assigns @videos_by_year to all videos, separated by year' do
-        by_year = {
-          @years[0].to_s => @videos_year0,
-          @years[1].to_s => @videos_year1
-        }
-        expect(assigns(:videos_by_year)).to match by_year
+        expect(assigns(:videos_by_year)).to match @videos_by_year
       end
 
       it 'assigns @performances to all performances' do
-        expect(assigns(:performances)).to match_array(@perf_year0 + @perf_year1)
+        performances = @galleries_by_year.values.flatten
+        expect(assigns(:performances)).to match_array performances
       end
 
       it 'assigns @performances_by_year to all performances, by year' do
-        by_year = {
-          @years[0].to_s => @perf_year0,
-          @years[1].to_s => @perf_year1
-        }
-        expect(assigns(:performances_by_year)).to match by_year
+        expect(assigns(:performances_by_year)).to match @galleries_by_year
+      end
+
+      it 'assigns @galleries_active_year to the year of the latest gallery' do
+        expect(assigns(:galleries_active_year)).to eql gallery_years.max.to_i
       end
     end
 
@@ -89,15 +91,15 @@ describe PagesController do
       end
 
       it 'assigns @videos to all videos' do
-        expect(assigns(:videos)).to match_array(@videos_year0 + @videos_year1)
+        expect(assigns(:videos)).to match_array @videos_by_year.values.flatten
       end
 
       it 'assigns @videos_by_year to all videos, separated by year' do
-        by_year = {
-          @years[0].to_s => @videos_year0,
-          @years[1].to_s => @videos_year1
-        }
-        expect(assigns(:videos_by_year)).to match by_year
+        expect(assigns(:videos_by_year)).to match @videos_by_year
+      end
+
+      it 'assigns @videos_active_year to the year of the latest video' do
+        expect(assigns(:videos_active_year)).to eql video_years.max.to_i
       end
     end
 
@@ -111,15 +113,16 @@ describe PagesController do
       end
 
       it 'assigns @performances to all performances' do
-        expect(assigns(:performances)).to match_array(@perf_year0 + @perf_year1)
+        performances = @galleries_by_year.values.flatten
+        expect(assigns(:performances)).to match_array performances
       end
 
       it 'assigns @performances_by_year to all performances, by year' do
-        by_year = {
-          @years[0].to_s => @perf_year0,
-          @years[1].to_s => @perf_year1
-        }
-        expect(assigns(:performances_by_year)).to match by_year
+        expect(assigns(:performances_by_year)).to match @galleries_by_year
+      end
+
+      it 'assigns @galleries_active_year to the year of the latest gallery' do
+        expect(assigns(:galleries_active_year)).to eql gallery_years.max.to_i
       end
     end
   end

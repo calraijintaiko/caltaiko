@@ -26,6 +26,7 @@ class PerformancesController < ApplicationController
     @upcoming = Performance.upcoming_performances
     @past = Performance.past_performances
     @by_year = Performance.by_year(@past)
+    @active_year = @past.exists? ? @past.maximum('date').year : ''
   end
 
   # Give performance whose ID or slug matches request.
@@ -65,6 +66,7 @@ class PerformancesController < ApplicationController
   def past
     @past = Performance.past_performances
     @by_year = Performance.by_year(@past)
+    @active_year = @past.exists? ? @past.maximum('date').year : ''
   end
 
   private

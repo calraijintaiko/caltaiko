@@ -12,10 +12,8 @@
     %h1.small-12.column PHOTO GALLERIES
 
   %section.galleries-feed
-    - @performances_by_year.keys.each do |year|
-      .row
-        %h4.small-12.column= year
-      = render 'pages/galleries_feed', performances: @performances_by_year[year]
+    = render 'layouts/accordion', by_year: @performances_by_year, id: 1,
+      partial: 'pages/galleries_feed', active_year: @galleries_active_year
 
 %header.row
   %h1.small-10.column VIDEOS
@@ -23,4 +21,6 @@
     = link_to 'Add Video', new_video_path,
       class: 'button small round column small-2 large-1'
 
-= render 'videos/videos_feed', by_year: @videos_by_year
+%section.videos-feed
+  = render 'layouts/accordion', by_year: @videos_by_year, id: 2,
+    partial: 'videos/videos_feed', active_year: @videos_active_year

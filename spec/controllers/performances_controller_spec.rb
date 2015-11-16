@@ -31,6 +31,11 @@ describe PerformancesController do
       expect(assigns(:by_year)[@years[1]]).to match_array @created_past_year1
     end
 
+    it 'assigns @active_year to the latest year of past performances' do
+      get :index
+      expect(assigns(:active_year)).to eql @years.max.to_i
+    end
+
     it 'renders the index template' do
       get :index
       expect(response).to render_template 'index'
@@ -81,43 +86,50 @@ describe PerformancesController do
   end
 
   describe 'getting all upcoming or past performances' do
-    before :each do
-      @years = %w(2005 2008)
-      @created_upcoming = create_list(:upcoming_performance, rand(5..20))
-      @created_past_year0 = create_list(:performance, rand(5..20),
-                                        date: Time.zone.local(@years[0]))
-      @created_past_year1 = create_list(:performance, rand(5..20),
-                                        date: Time.zone.local(@years[1]))
-      @created_past = @created_past_year0 + @created_past_year1
-    end
-
     context 'GET upcoming' do
-      it 'assigns @upcoming to all upcoming performances' do
+      let(:upcoming) { create_list(:upcoming_performance, rand(5..20)) }
+
+      before :each do
         get :upcoming
-        expect(assigns(:upcoming)).to match_array @created_upcoming
+      end
+
+      it 'assigns @upcoming to all upcoming performances' do
+        expect(assigns(:upcoming)).to match_array upcoming
       end
 
       it 'renders the upcoming template' do
-        get :upcoming
         expect(response).to render_template 'upcoming'
       end
     end
 
     context 'GET past' do
-      it 'assigns @past to all past performances' do
+      let(:years) { %w(2005 2006 2008 2012) }
+
+      before :each do
+        @past_by_year = {}
+        years.each do |year|
+          @past_by_year[year] = create_list(:performance, rand(5..20),
+                                            date: Time.zone.local(year))
+        end
         get :past
-        expect(assigns(:past)).to match_array @created_past
+      end
+
+      it 'assigns @past to all past performances' do
+        expect(assigns(:past)).to match_array @past_by_year.values.flatten
       end
 
       it 'assigns @by_year to all past performances broken down by year' do
-        get :index
-        expect(assigns(:by_year).keys).to match_array @years
-        expect(assigns(:by_year)[@years[0]]).to match_array @created_past_year0
-        expect(assigns(:by_year)[@years[1]]).to match_array @created_past_year1
+        expect(assigns(:by_year).keys).to match_array years
+        years.each do |year|
+          expect(assigns(:by_year)[year]).to match_array @past_by_year[year]
+        end
+      end
+
+      it 'assigns @active_year to the latest year of past performances' do
+        expect(assigns(:active_year)).to eql years.max.to_i
       end
 
       it 'renders the past template' do
-        get :past
         expect(response).to render_template 'past'
       end
     end
