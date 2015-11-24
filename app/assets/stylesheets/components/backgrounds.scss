@@ -1,0 +1,17 @@
+body {
+  &.pages {
+    &#front {
+      @include full-page-background('backgrounds/front_page.jpg');
+    }
+
+    &#about {
+      @include full-page-background('backgrounds/about_page.jpg');
+    }
+  }
+
+  &.messages {
+    &#new {
+      @include full-page-background('backgrounds/contact_page.jpg');
+    }
+  }
+}
