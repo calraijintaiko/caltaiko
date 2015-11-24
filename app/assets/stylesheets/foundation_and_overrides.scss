@@ -79,7 +79,7 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-grid-classes: $include-html-classes;
 $include-xl-html-grid-classes: true;
 
-// $row-width: rem-calc(1000);
+$row-width: rem-calc(2000);
 // $total-columns: 12;
 // $column-gutter: rem-calc(30);
 
@@ -97,9 +97,8 @@ $include-xl-html-grid-classes: true;
 // $font-weight-bold: bold !default;
 
 // We use these to control various global styles
-// $body-bg: url(http://subtlepatterns.com/patterns/cream_dust.png);
-$body-bg: #fafafa;
-// $body-font-color: $jet;
+$body-bg: $jet;
+$body-font-color: $white;
 $body-font-family: 'Lato', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
@@ -113,36 +112,14 @@ $body-font-family: 'Lato', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans
 // $default-float: left;
 // $last-child-float: $opposite-direction;
 
-$yellow : #ffc600;
-
 // We use these as default colors throughout
-$primary-color: #000;
+$primary-color: $white;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
 
-// $white       : #FFFFFF;
-// $ghost       : #FAFAFA;
-// $snow        : #F9F9F9;
-// $vapor       : #F6F6F6;
-// $white-smoke : #F5F5F5;
-$silver      : #efefef;
-// $smoke       : #EEEEEE;
-// $gainsboro   : #DDDDDD;
-// $iron        : #CCCCCC;
-// $base        : #AAAAAA;
-// $aluminum    : #999999;
-// $jumbo       : #888888;
-// $monsoon     : #777777;
-// $steel       : #666666;
-// $charcoal    : #555555;
-// $tuatara     : #444444;
-$oil         : #333;
-// $jet         : #222222;
-// $black       : #000000;
-// $blye        : #008CBA;
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
@@ -203,7 +180,7 @@ $oil         : #333;
 $header-font-family: 'Oswald', $body-font-family;
 // $header-font-weight: $font-weight-normal;
 // $header-font-style: normal;
-$header-font-color: #000;
+$header-font-color: $white;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -237,6 +214,7 @@ $small-font-size: 80%;
 // $small-font-color: scale-color($header-font-color, $lightness: 35%);
 
 // We use these to style paragraphs
+$paragraph-font-color: $white;
 // $paragraph-font-family: inherit;
 // $paragraph-font-weight: $font-weight-normal;
 // $paragraph-font-size: 1rem;
@@ -318,7 +296,7 @@ $anchor-font-color-hover: scale-color($primary-color, $lightness: 25%);
 // $microformat-abbr-font-decoration: none;
 
 
-// 01. Accordion
+// 01. A'front_page_background.jpg'ccordion
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // $include-html-accordion-classes: $include-html-classes;
@@ -449,14 +427,15 @@ $button-sml: rem-calc(8);
 // $button-font-align: center;
 
 // We use these to control various hover effects.
-// $button-function-factor: -20%;
+$button-function-factor: -20%;
 
 // We use these to control button border and hover styles.
-// $button-border-width: 0px;
+$button-border-width: 2px;
 // $button-border-style: solid;
-$button-bg-color: $oil;
+$button-bg-color: $transparent;
+$button-bg-hover: $white;
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
-// $button-border-color: $button-bg-hover;
+$button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
 // $secondary-button-border-color: $secondary-button-bg-hover;
 // $success-button-bg-hover: scale-color($success-color, $lightness: $button-function-factor);
@@ -1365,8 +1344,8 @@ $has-tip-font-color-hover: $anchor-font-color-hover;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: $oil;
-// $topbar-bg: $topbar-bg-color;
+$topbar-bg-color: $transparent;
+$topbar-bg: $topbar-bg-color;
 
 // Height and margin
 $topbar-height: 2.8rem;
@@ -1377,26 +1356,26 @@ $topbar-height: 2.8rem;
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: $oil;
-$topbar-dropdown-link-color: $yellow;
-// $topbar-dropdown-link-bg: $oil;
+$topbar-dropdown-bg: $topbar-bg-color;
+$topbar-dropdown-link-color: $white;
+$topbar-dropdown-link-bg: $topbar-bg-color;
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: $white;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-$topbar-link-color: $yellow;
-$topbar-link-color-hover: $yellow;
-$topbar-link-color-active: $yellow;
-$topbar-link-color-active-hover: $yellow;
+$topbar-link-color: $white;
+// $topbar-link-color-hover: $yellow;
+// $topbar-link-color-active: $yellow;
+// $topbar-link-color-active-hover: $yellow;
 // $topbar-link-weight: $font-weight-normal;
 $topbar-link-font-size: rem-calc(20);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-// $topbar-link-bg: $topbar-bg;
-// $topbar-link-bg-color-hover: $charcoal;
-// $topbar-link-bg-hover: #272727;
-// $topbar-link-bg-active: $primary-color;
+$topbar-link-bg: $topbar-bg-color;
+$topbar-link-bg-color-hover: $topbar-bg-color;
+$topbar-link-bg-hover: $topbar-bg-color;
+$topbar-link-bg-active: $topbar-bg-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 $topbar-link-font-family: 'Oswald', $body-font-family;
 // $topbar-link-text-transform: none;
@@ -1408,13 +1387,13 @@ $topbar-link-padding: $topbar-height / 3 * 1.2;
 // $topbar-button-top: 7px;
 
 // $topbar-dropdown-label-color: $monsoon;
-$topbar-dropdown-label-text-transform: uppercase;
+// $topbar-dropdown-label-text-transform: uppercase;
 // $topbar-dropdown-label-font-weight: $font-weight-bold;
 // $topbar-dropdown-label-font-size: rem-calc(10);
-// $topbar-dropdown-label-bg: $oil;
+$topbar-dropdown-label-bg: $topbar-bg-color;
 
 // Top menu icon styles
-$topbar-menu-link-transform: uppercase;
+// $topbar-menu-link-transform: uppercase;
 // $topbar-menu-link-font-size: rem-calc(13);
 // $topbar-menu-link-weight: $font-weight-bold;
 // $topbar-menu-link-color: $white;

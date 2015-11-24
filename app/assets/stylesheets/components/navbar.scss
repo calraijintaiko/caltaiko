@@ -7,18 +7,6 @@
   color: $admin-link;
 }
 
-.top-bar, .tab-bar {
-  -moz-box-shadow: 0 0 12px 0 $black;
-  -webkit-box-shadow: 0 0 12px 0 $black;
-  box-shadow: 0 0 12px 0 $black;
-}
-
-.top-bar, .top-bar-section li:not(.has-form) {
-  a {
-    text-transform: uppercase;
-  }
-}
-
 .top-bar ul.title-area li.name {
   img {
     height: 100%;
@@ -36,7 +24,6 @@
   h1.title a {
     color: $yellow;
     letter-spacing: 1px;
-    text-transform: uppercase;
   }
 }
 

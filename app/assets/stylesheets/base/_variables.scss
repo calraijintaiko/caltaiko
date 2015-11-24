@@ -1,9 +1,32 @@
+// Colors
+$black: #000;
+$white: #fff;
+$yellow: #ffc600;
+$silver: #efefef;
+$oil: #333;
+$jet: #222;
+// $ghost       : #FAFAFA;
+// $snow        : #F9F9F9;
+// $vapor       : #F6F6F6;
+// $white-smoke : #F5F5F5;
+// $smoke       : #EEEEEE;
+// $gainsboro   : #DDDDDD;
+// $iron        : #CCCCCC;
+// $base        : #AAAAAA;
+// $aluminum    : #999999;
+// $jumbo       : #888888;
+// $monsoon     : #777777;
+// $steel       : #666666;
+// $charcoal    : #555555;
+// $tuatara     : #444444;
+// $black       : #000000;
+// $blye        : #008CBA;
+$transparent  : rgba(0, 0, 0, 0);
+
 $fb-color: #45619d;
 $youtube-color: #cc181e;
 $link-color: #000;
-$black: #000;
 $border-color: #fff;
-$white: #fff;
 $main-color: #222;
 $dark-bg: #222;
 $admin-link: #333;
@@ -12,7 +35,8 @@ $sub-color-2: #b3b3b3;
 $sub-color-3: #ededed;
 $strong-color: #eef268;
 $error-color: #f04124;
-$yellow: #ffc600;
+
+// Fonts
 $main-font: "lato", geneva, tahoma, sans-serif;
 $strong-font: "lato", arial, helvetica, sans-serif;
 $header-font: "oswald", verdana, geneva, sans-serif;
