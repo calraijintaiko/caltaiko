@@ -9,61 +9,54 @@
              url: request.original_url }
 
 .row
-  .small-12.medium-7.column.text-left
-    .row
-      .column.small-11
-        .row.contact-form.text-block
-          .column.small-12
-            %h3 Contact Us
-            %p
-              Thank you for reaching out to us! Please fill out and submit the
-              contact form below, and we'll get back to you as soon as possible.
-          = form_for @message, method: :post, class: 'contact-form',
-            url: contact_path do |f|
-
-            .small-12.column
-              .row.collapse.prefix-radius
-                .column.small-2
-                  %span.prefix Name
-                .column.small-10
-                  = f.text_field :name, placeholder: 'Your Name'
-
-            .small-12.column
-              .row.collapse.prefix-radius
-                .column.small-2
-                  %span.prefix Email
-                .column.small-10
-                  = f.email_field :email, placeholder: 'Your Email'
-
-            .small-12.column
-              = f.text_area :content, placeholder: 'Message'
-
-            .small-12.column
-              .switch.round
-                %span.left Is this a performance request?
-                %input#message_performance_request{ type: 'checkbox',
-                  name: 'message[performance_request]', checked: '' }
-                %label{ for: 'message_performance_request' }
-                  %span.switch-on Yes
-                  %span.switch-off No
-            .small-12.column
-              = f.submit 'Send', class: 'submit button small'
-
-  .column.small-12.medium-5
-    .row
+  .small-12.medium-7.column.text-left.small-centered
+    .row.contact-form
       .column.small-12
-        .row
-          %h3.column.small-12 Find us on social media!
-          .social-media
-            .column.small-4
-              = link_to 'https://www.facebook.com/calraijintaiko' do
-                %i.fi-social-facebook
-            .column.small-4
-              = link_to 'http://instagram.com/calraijintaiko' do
-                %i.fi-social-instagram
-            .column.small-4
-              = link_to 'https://www.youtube.com/user/CALtaiko/' do
-                %i.fi-social-youtube
+        :markdown
+          Thank you for reaching out to us! Feel free to either email us at
+          **[general@caltaiko.org](mailto:general@caltaiko.org)** or submit
+          the contact form below, and we'll get back to you as soon as
+          possible.
+      = form_for @message, method: :post, class: 'contact-form',
+        url: contact_path do |f|
 
-      .column.small-12
-        = image_tag('team_playing.jpg', class: 'team-pic')
+        .small-12.large-6.column
+          .row.collapse.prefix-radius
+            .column.small-2
+              %span.prefix Name
+            .column.small-10
+              = f.text_field :name, placeholder: 'Your Name'
+
+        .small-12.large-6.column
+          .row.collapse.prefix-radius
+            .column.small-2
+              %span.prefix Email
+            .column.small-10
+              = f.email_field :email, placeholder: 'Your Email'
+
+        .small-12.column
+          = f.text_area :content, placeholder: 'Message'
+
+        .small-12.column
+          .switch.round
+            %span.left Is this a performance request?
+            %input#message_performance_request{ type: 'checkbox',
+              name: 'message[performance_request]', checked: '' }
+            %label{ for: 'message_performance_request' }
+              %span.switch-on Yes
+              %span.switch-off No
+        .small-12.column
+          = f.submit 'Send', class: 'submit button small'
+
+  .column.small-12.medium-6.small-centered
+    .row
+      .social-media
+        .column.small-4
+          = link_to 'https://www.facebook.com/calraijintaiko' do
+            %i.fi-social-facebook
+        .column.small-4.center
+          = link_to 'http://instagram.com/calraijintaiko' do
+            %i.fi-social-instagram
+        .column.small-4
+          = link_to 'https://www.youtube.com/user/CALtaiko/' do
+            %i.fi-social-youtube.right
