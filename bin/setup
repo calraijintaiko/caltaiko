@@ -88,6 +88,8 @@ else
         exit
     fi
     log_right "$MSG" "rvm successfully installed." $green
+    # Need to reload bash_profile to rvm to PATH
+    source ~/.bash_profile
 fi
 
 echo "Installing correct ruby version..."
