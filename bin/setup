@@ -31,7 +31,7 @@ if [ $os == "Darwin" ]; then
     which brew &> /dev/null
     if [ $? -eq 0 ]; then
         log_right "$MSG" "Ok" $green
-        MSG="Checking Homebrew is up to date..."
+        MSG="Verifying Homebrew is up to date..."
         echo -n $MSG
         brew update &> /dev/null
         if [ $? -eq 0 ]; then
@@ -52,18 +52,19 @@ if [ $os == "Darwin" ]; then
             echo -e "\t${bold}ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\"${reset}"
             exit 1
         fi
-        MSG="Checking if ImageMagick is installed..."
-        echo -n $MSG
-        which convert &> /dev/null
-        if [ $? -eq 0 ]; then
-            log_right "$MSG" "Ok" $green
-        else
-            log_right "$MSG" "Not installed" $red
-            check_install "ImageMagick"
-            brew install imagemagick
-            if [ $? -ne 0 ]; then
-                exit
-            fi
+    fi
+
+    MSG="Verifying ImageMagick is installed..."
+    echo -n $MSG
+    which convert &> /dev/null
+    if [ $? -eq 0 ]; then
+        log_right "$MSG" "Ok" $green
+    else
+        log_right "$MSG" "Not installed" $red
+        check_install "ImageMagick"
+        brew install imagemagick
+        if [ $? -ne 0 ]; then
+            exit
         fi
     fi
 else
