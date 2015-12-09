@@ -35,18 +35,19 @@
               = f.email_field :email, placeholder: 'Your Email'
 
         .small-12.column
-          = f.text_area :content, placeholder: 'Message'
+          = f.text_area :content, placeholder: 'Enter your message here'
 
         .small-12.column
-          .switch.round
+          .switch.radius
             %span.left Is this a performance request?
             %input#message_performance_request{ type: 'checkbox',
               name: 'message[performance_request]', checked: '' }
             %label{ for: 'message_performance_request' }
               %span.switch-on Yes
               %span.switch-off No
-        .small-12.column
-          = f.submit 'Send', class: 'submit button small'
+
+        .small-12.column.submit
+          = f.submit 'Send', class: 'center button'
 
   .column.small-12.medium-6.small-centered
     .row

@@ -21,7 +21,10 @@ $jet: #222;
 // $tuatara     : #444444;
 // $black       : #000000;
 // $blye        : #008CBA;
-$transparent  : rgba(0, 0, 0, 0);
+$transparent: rgba(0, 0, 0, 0);
+$transparent-light: rgba(23, 20, 15, .18);
+$transparent-medium: rgba(23, 20, 15, .48);
+$transparent-dark: rgba(23, 20, 15, .96);
 
 $fb-color: $white;
 $youtube-color: $white;
