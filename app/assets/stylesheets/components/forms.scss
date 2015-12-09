@@ -17,6 +17,21 @@ form {
     margin-right: 9px;
   }
 
+  ::-webkit-input-placeholder { // WebKit, Blink, Edge
+    color: scale-color($white, $lightness: -10%);
+  }
+  :-moz-placeholder { // Mozilla Firefox 4 to 18
+    color: scale-color($white, $lightness: -20%);
+    opacity: 1;
+  }
+  ::-moz-placeholder { // Mozilla Firefox 19+
+    color: scale-color($white, $lightness: -20%);
+    opacity: 1;
+  }
+  :-ms-input-placeholder { // Internet Explorer 10-11
+    color: scale-color($white, $lightness: -20%);
+  }
+
   fieldset {
     legend {
       background-color: initial;
@@ -70,12 +85,18 @@ form {
     top: 8px;
   }
 
-  .switch label {
-    float: right !important;
+  .switch {
+    label {
+      background: $transparent-medium;
+      float: right !important;
+    }
+
+    input:checked + label {
+      background: $transparent-dark;
+    }
   }
 
   .submit {
-    margin-bottom: 10px;
-    margin-top: 20px;
+    margin-top: 50px;
   }
 }

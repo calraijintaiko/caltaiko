@@ -605,10 +605,10 @@ $button-border-color: $button-bg-hover;
 // $form-label-small-transform: capitalize;
 // $form-label-bottom-margin: 0;
 // $input-font-family: inherit;
-// $input-font-color: rgba(0,0,0,0.75);
-// $input-font-size: rem-calc(14);
-// $input-bg-color: $white;
-// $input-focus-bg-color: scale-color($white, $lightness: -2%);
+$input-font-color: $white;
+$input-font-size: rem-calc(14);
+$input-bg-color: $transparent-light;
+$input-focus-bg-color: $transparent-medium;
 // $input-border-color: scale-color($white, $lightness: -20%);
 // $input-focus-border-color: scale-color($white, $lightness: -40%);
 // $input-border-style: solid;
@@ -631,7 +631,7 @@ $button-border-color: $button-bg-hover;
 // $legend-padding: rem-calc(0 3);
 
 // We use these to style the prefix and postfix input elements
-// $input-prefix-bg: scale-color($white, $lightness: -5%);
+$input-prefix-bg: $transparent-medium;
 // $input-prefix-border-color: scale-color($white, $lightness: -20%);
 // $input-prefix-border-size: 1px;
 // $input-prefix-border-type: solid;
