@@ -14,7 +14,6 @@ Feature: upcoming performances should be listed in a feed on the front and
 
     Examples:
       | page                  |
-      | home                  |
       | performances          |
       | upcoming performances |
 
@@ -25,6 +24,5 @@ Feature: upcoming performances should be listed in a feed on the front and
 
     Examples:
       | page                  |
-      | home                  |
       | performances          |
       | upcoming performances |
