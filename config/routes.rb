@@ -9,10 +9,11 @@ Rails.application.routes.draw do
     as: :showcase
   get 'videos', to: redirect('media/videos')
 
-  scope controller: :messages do
-    get 'contact' => :new, as: :contact
-    post 'contact' => :create
-  end
+  # Took out contact form during redesign
+  # scope controller: :messages do
+  #   get 'contact' => :new, as: :contact
+  #   post 'contact' => :create
+  # end
 
   scope controller: :pages do
     get 'about' => :about, as: :about
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
     get 'media' => :media, as: :media
     get 'media/videos' => :media_videos, as: :media_videos
     get 'media/galleries' => :media_galleries, as: :media_galleries
+    get 'contact' => :contact, as: :contact
   end
 
   resources :members do

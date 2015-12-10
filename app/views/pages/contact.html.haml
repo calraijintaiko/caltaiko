@@ -1,0 +1,33 @@
+:ruby
+  title = 'Contact Us | Cal Raijin Taiko'
+  description = 'How to get in contact with Cal Raijin Taiko'
+  image = URI.join(root_url, image_path('logo.png'))
+
+  meta title: title,
+       description: description,
+       og: { title: title, description: description, image: image,
+             url: request.original_url }
+
+.row
+  .small-12.medium-7.column.text-left.small-centered
+    .row.contact-text
+      .column.small-12.text-center
+        :markdown
+          For performance requests, please email us at
+          **[performances@caltaiko.org](mailto:performances@caltaiko.org)**
+
+          All other inquiries can be sent to
+          **[general@caltaiko.org](mailto:general@caltaiko.org)**
+
+  .column.small-12.medium-6.small-centered
+    .row
+      .social-media
+        .column.small-4
+          = link_to 'https://www.facebook.com/calraijintaiko' do
+            %i.fi-social-facebook
+        .column.small-4.center
+          = link_to 'http://instagram.com/calraijintaiko' do
+            %i.fi-social-instagram
+        .column.small-4
+          = link_to 'https://www.youtube.com/user/CALtaiko/' do
+            %i.fi-social-youtube.right
