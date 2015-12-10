@@ -7,10 +7,8 @@ body {
     &#about {
       @include full-page-background('backgrounds/about_page.jpg');
     }
-  }
 
-  &.messages {
-    &#new {
+    &#contact {
       @include full-page-background('backgrounds/contact_page.jpg');
     }
   }
