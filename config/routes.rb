@@ -9,11 +9,12 @@ Rails.application.routes.draw do
     as: :showcase
   get 'videos', to: redirect('media/videos')
 
-  # Took out contact form during redesign
-  # scope controller: :messages do
-  #   get 'contact' => :new, as: :contact
-  #   post 'contact' => :create
-  # end
+  # Moved contact form during redesign; shouldn't be used, but leaving
+  # it in just in case
+  scope controller: :messages do
+    get 'contact/form' => :new, as: :contact_form
+    post 'contact/form' => :create
+  end
 
   scope controller: :pages do
     get 'about' => :about, as: :about
