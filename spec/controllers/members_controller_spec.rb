@@ -107,9 +107,9 @@ describe MembersController do
     end
 
     it 'fails when given non-integer gen' do
-      expect { get :gen, gen: 'yo mmama' }.to raise_error
-      expect { get :gen, gen: 2.1231 }.to raise_error
-      expect { get :gen, gen: -1 }.to raise_error
+      expect { get :gen, gen: 'yo mmama' }.to raise_error ActionController::UrlGenerationError
+      expect { get :gen, gen: 2.1231 }.to raise_error ActionController::UrlGenerationError
+      expect { get :gen, gen: -1 }.to raise_error ActionController::UrlGenerationError
     end
 
     it 'redirects to index when given gen of 0' do
