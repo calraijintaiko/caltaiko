@@ -7,16 +7,16 @@
   color: $admin-link;
 }
 
-.top-bar ul.title-area li.name {
-  img {
-    height: 100%;
-    padding-left: 10px;
-    position: absolute;
-  }
-  h1 {
-    font-size: 1.25rem;
+.top-bar {
+  .title-area .name {
+    font-family: $header-font;
+    font-size: 4rem;
     letter-spacing: 1px;
     padding-left: 45px;
+  }
+
+  .active {
+    border: 1px $white solid;
   }
 }
 

@@ -7,12 +7,15 @@ class PagesController < ApplicationController
   end
 
   def about
+    @page_title = 'ABOUT US'
   end
 
   def contact
+    @page_title = 'CONTACT'
   end
 
   def media
+    @page_title = 'MEDIA'
     @videos = Video.all.order('year DESC')
     @videos_by_year = Video.by_year(@videos)
     @videos_active_year = @videos.exists? ? @videos.maximum('year') : ''
@@ -27,12 +30,14 @@ class PagesController < ApplicationController
   end
 
   def media_videos
+    @page_title = 'MEDIA'
     @videos = Video.all.order('year DESC')
     @videos_by_year = Video.by_year(@videos)
     @videos_active_year = @videos.exists? ? @videos.maximum('year') : ''
   end
 
   def media_galleries
+    @page_title = 'MEDIA'
     @performances = Performance.images?.order('date DESC')
     @performances_by_year = Performance.by_year(@performances)
     if @performances.exists?
@@ -40,8 +45,5 @@ class PagesController < ApplicationController
     else
       @galleries_active_year = ''
     end
-  end
-
-  def collegiate_taiko
   end
 end

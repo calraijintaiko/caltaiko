@@ -18,7 +18,6 @@ Rails.application.routes.draw do
 
   scope controller: :pages do
     get 'about' => :about, as: :about
-    get 'about/collegiate-taiko' => :collegiate_taiko, as: :collegiate_taiko
     get 'media' => :media, as: :media
     get 'media/videos' => :media_videos, as: :media_videos
     get 'media/galleries' => :media_galleries, as: :media_galleries
