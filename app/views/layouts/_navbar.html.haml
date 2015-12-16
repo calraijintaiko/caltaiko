@@ -44,9 +44,10 @@
         %a.left-off-canvas-toggle.menu-icon
           %span
 
-      %section.middle.tab-bar-section
-        %h1.title
-          = link_to 'Cal Raijin Taiko', root_url
+      - unless @page_title.nil?
+        %section.middle.tab-bar-section
+          %h1.title
+            = link_to @page_title, root_url
 
       - if user_signed_in?
         %section.right-small

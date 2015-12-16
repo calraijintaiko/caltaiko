@@ -20,10 +20,16 @@
   }
 }
 
-.tab-bar .tab-bar-section {
-  h1.title a {
-    color: $yellow;
-    letter-spacing: 1px;
+.off-canvas-wrap {
+  height: 100%;
+
+  .inner-wrap {
+    height: 100%;
+
+    h1.title a {
+      color: $white;
+      letter-spacing: 1px;
+    }
   }
 }
 
