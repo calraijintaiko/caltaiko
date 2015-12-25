@@ -9,7 +9,7 @@
              url: request.original_url }
 
 .row
-  .small-12.medium-7.column.text-left.small-centered
+  .small-12.large-7.column.text-left.small-centered
     .row.contact-text
       .column.small-12.text-center
         :markdown
@@ -19,7 +19,7 @@
           All other inquiries can be sent to
           **[general@caltaiko.org](mailto:general@caltaiko.org)**
 
-  .column.small-12.medium-6.small-centered
+  .column.small-10.large-6.small-centered
     .row
       .social-media
         .column.small-4
@@ -31,3 +31,5 @@
         .column.small-4
           = link_to 'https://www.youtube.com/user/CALtaiko/' do
             %i.fi-social-youtube.right
+
+= render 'layouts/full_height'

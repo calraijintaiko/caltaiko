@@ -24,12 +24,8 @@
 }
 
 .off-canvas-wrap {
-  height: 100%;
-
   .inner-wrap {
-    height: 100%;
-
-    h1.title a {
+    .title a {
       color: $white;
       letter-spacing: 1px;
     }
