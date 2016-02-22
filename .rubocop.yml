@@ -1,5 +1,4 @@
 AllCops:
-  RunRailsCops: true
   Include:
     - '**/Rakefile'
     - '**/config.ru'
@@ -13,6 +12,9 @@ AllCops:
     - 'lib/tasks/cucumber.rake'
     - 'features/step_definitions/web_steps.rb'
     - 'features/support/*'
+
+Rails:
+  enabled: true
 
 Metrics/MethodLength:
   Max: 20

@@ -44,14 +44,14 @@ class User < ActiveRecord::Base
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     # Note: the use of assignment (=) rather than comparison (==) is intentional
-    # rubocop:disable Lint/AssignmentInCondition, Rails/FindBy
+    # rubocop:disable Lint/AssignmentInCondition
     if login = conditions.delete(:login)
       where(conditions).where(['lower(username) = :val OR lower(email) = :val',
                                { val: login.downcase }]).first
     else
       where(conditions).first
     end
-    # rubocop:enable Lint/AssignmentInCondition, Rails/FindBy
+    # rubocop:enable Lint/AssignmentInCondition
   end
 
   validates :username, presence: true, uniqueness: { case_sensitive: false }
