@@ -7,8 +7,10 @@ class Message
   attr_accessor :name, :email, :content, :performance_request
 
   validates :name, presence: true
-  validates :email, presence: true
   validates :content, presence: true
+  validates :email, presence: true,
+                    format: { with: /(\A.+@\w+\.\w+\z)|(\A\z)/,
+                              message: 'Please enter a valid email address.' }
 
   PERFORMANCE_EMAIL = 'performances@caltaiko.org'
   GENERAL_EMAIL = 'general@caltaiko.org'

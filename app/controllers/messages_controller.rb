@@ -16,7 +16,8 @@ class MessagesController < ApplicationController
         render :new
       end
     else
-      flash[:alert] = 'Please fill out every field in the contact form.'
+      flash[:alert] = 'Please fill out every field in the contact form, and '\
+        'check to ensure the email address entered is valid.'
       render :new
     end
   end
