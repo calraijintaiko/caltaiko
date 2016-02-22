@@ -31,12 +31,13 @@ class Article < ActiveRecord::Base
     attachment.instance.slug
   end
 
-  # rubocop:disable Metrics/LineLength
+  # rubocop:disable Metrics/LineLength, Style/AlignHash
   has_attached_file :image, styles: { thumb: '700x500#', carousel: '1000x450#' },
-                            path: '/articles/:slug/:attachment/:style/:filename',
-                            url: '/articles/:slug/:attachment/:style/:filename',
-                            default_url: '/images/articles/:attachment/:style/missing.png'
-  # rubocop:enable Metrics/LineLength
+    path: '/articles/:slug/:attachment/:style/:filename',
+    url: '/articles/:slug/:attachment/:style/:filename',
+    default_url: '/images/articles/:attachment/:style/missing.png',
+    s3_protocol: :https
+  # rubocop:enable Metrics/LineLength, Style/AlignHash
   include DeletableAttachment
   validates_attachment_content_type :image, content_type: %r{\Aimage/.*\Z}
 

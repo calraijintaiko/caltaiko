@@ -49,7 +49,8 @@ class Performance < ActiveRecord::Base
                                        thumb: '300x119#' },
     path: '/performances/:slug/:attachment/:style/:filename',
     url: '/performances/:slug/:attachment/:style/:filename',
-    default_url: '/images/performances/:attachment/:style/missing.png'
+    default_url: '/images/performances/:attachment/:style/missing.png',
+    s3_protocol: :https
   # rubocop:enable Style/AlignHash
   include DeletableAttachment
   validates_attachment_content_type :banner, content_type: %r{\Aimage/.*\Z}
