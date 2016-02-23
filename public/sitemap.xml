@@ -7,313 +7,201 @@
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 <url>
-  <loc>http://www.caltaiko.org/</loc>
-  <changefreq>monthly</changefreq>
-  <priority>1.00</priority>
+  <loc>https://www.caltaiko.org/</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/news</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
+  <loc>https://www.caltaiko.org/news</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
+  <loc>https://www.caltaiko.org/performances</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/current</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
+  <loc>https://www.caltaiko.org/performances/upcoming</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/alumni</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
+  <loc>https://www.caltaiko.org/performances/past</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/performances</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
+  <loc>https://www.caltaiko.org/members</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/performances/upcoming</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
+  <loc>https://www.caltaiko.org/members/current</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/performances/past</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
+  <loc>https://www.caltaiko.org/members/alumni</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/media</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
+  <loc>https://www.caltaiko.org/media</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/about</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
+  <loc>https://www.caltaiko.org/media/galleries</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/contact</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
+  <loc>https://www.caltaiko.org/media/videos</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/performances/sundays-on-telegraph-2014</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
+  <loc>https://www.caltaiko.org/about</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/performances/calapalooza-2014</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
+  <loc>https://www.caltaiko.org/about/collegiate-taiko</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/performances/nike-women-s-marathon-2014</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
+  <loc>https://www.caltaiko.org/contact</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/gen/9</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/news/cal-taiko-decal-starts-next-wednesday</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/amy-zou</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/news/thank-you-to-the-nike-women-s-half-marathon-staff-for-inviting-us-to-play-this-year</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/arianne-ferare</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/news/say-hello-to-our-newest-members-generation-11</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/catherine-zhang</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/news/announcing-our-fall-2015-tryouts</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/christine-liu</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/news/thank-you-stanford-taiko-and-bakuhatsu-taiko-dan</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/clifford-wang</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/news/congratulations-on-your-first-performance-gen-x</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/edward-liu</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/news/welcome-gen-x</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/jeremy-chen</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/news/come-join-us-for-our-fall-2014-tryouts</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/jessica-xu</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/news/announcing-our-7th-annual-spring-showcase</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/joel-graycar</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/news/welcome-gen-9</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/joshua-fandel</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/csa-lunar-new-year-banquet-2016</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/katie-chen</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/calapalooza-2016</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/kristen-chinn</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/nsu-s-13th-annual-culture-show-renewed-2015</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/matthew-tanaka</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/east-asian-union-night-market-2015</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/quinn-z-shen</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/nike-women-s-half-marathon-2015</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/rainy-hernandez</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/calapalooza-2015</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/rebecca-wang</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/caltopia-2015</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/scott-miller</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/sake-summit-2015</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/stella-sun</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/san-jose-obon-festival-2015</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/susanna-elledge</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/satsuki-bazaar-arts-festival-2015</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/gen/5</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/bay-to-breakers-2015</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/gen/6</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/us-japan-taiko-festival-2015</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/gen/7</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/cal-raijin-taiko-s-10th-anniversary-spring-showcase-2015</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/gen/8</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/tedxberkeley-2015</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/airi-takashima</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/nsu-presents-barriers-2014</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/audrey-han</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/uniqlo-walnut-creek-grand-opening-2014</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/erica-kido-shimomoto</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/nike-women-s-marathon-2014</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/ivana-kim</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/calapalooza-2014</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/kristin-aquino</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/sundays-on-telegraph-2014</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/lauren-che</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/caltopia-2014</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/lutetia-li</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/j-pop-summit-festival-2014</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/mia-tong</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/san-jose-obon-festival-2014</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/rosie-abe</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/bay-to-breakers-2014</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/vicky-chen</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/heartbeat-2014</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/vivian-lee</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/san-francisco-cherry-blossom-festival-2014</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/members/yuki-izawa</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/nike-women-s-marathon-2013</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/performances/caltopia-2014</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/uniqlo-one-year-anniversary-2013</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/performances/j-pop-summit-festival-2014</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/calapalooza-2013</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/performances/san-jose-obon-festival-2014</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/j-pop-summit-festival-2013</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/performances/heartbeat-2014</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/cal-raijin-taiko-presents-kakera-2013</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/performances/san-francisco-cherry-blossom-festival-2014</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/44th-internationl-taiko-festival-2012</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/performances/nike-women-s-marathon-2013</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/performances/cal-raijin-taiko-presents-sora-ni-mukatte-2012</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/performances/uniqlo-one-year-anniversary-2013</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/members/gen/1</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/performances/calapalooza-2013</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/members/gen/2</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/performances/j-pop-summit-festival-2013</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/members/gen/3</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/performances/cal-raijin-taiko-presents-kakera-2013</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/members/gen/4</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/performances/44th-internationl-taiko-festival-2012</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/members/gen/5</loc>
 </url>
 <url>
-  <loc>http://www.caltaiko.org/performances/cal-raijin-taiko-presents-sora-ni-mukatte-2012</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
+  <loc>https://www.caltaiko.org/members/gen/6</loc>
+</url>
+<url>
+  <loc>https://www.caltaiko.org/members/gen/7</loc>
+</url>
+<url>
+  <loc>https://www.caltaiko.org/members/gen/8</loc>
+</url>
+<url>
+  <loc>https://www.caltaiko.org/members/gen/9</loc>
+</url>
+<url>
+  <loc>https://www.caltaiko.org/members/gen/10</loc>
 </url>
 </urlset>
