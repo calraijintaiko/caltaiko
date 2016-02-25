@@ -1,6 +1,6 @@
 :ruby
   title = @member.name + ' | Cal Raijin Taiko'
-  description = "View the member bio for #{@member.name}"
+  description = @member.bio
   image = @member.avatar.url(:full)
 
   meta title: title, description: description,
