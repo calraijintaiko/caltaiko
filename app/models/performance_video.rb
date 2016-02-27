@@ -11,6 +11,12 @@
 class PerformanceVideo < ActiveRecord::Base
   belongs_to :performance
 
+  def youtube_id
+    regex_match = /\watch\?v=(.+)\z/.match(link)
+    return if regex_match.nil?
+    regex_match[1]
+  end
+
   def embed_link
     link.sub('watch?v=', 'embed/')
   end
