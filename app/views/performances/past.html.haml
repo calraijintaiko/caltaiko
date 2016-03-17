@@ -15,5 +15,5 @@
     = link_to 'Add Performance', new_performance_path,
       class: 'button small round hide-for-medium-down large-2 column'
 
-= render 'layouts/accordion', by_year: @by_year, active_year: @active_year,
+= render 'layouts/accordion', by_key: @by_year, active_key: @active_year,
   partial: 'performances/thumbnail_feed', id: 1

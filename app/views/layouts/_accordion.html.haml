@@ -1,8 +1,8 @@
 .row
   %ul.accordion.column.small-12{ data: { accordion: '' }, role: 'tablist' }
-    - by_year.each do |year, objects|
+    - by_key.each do |key, objects|
       %li.accordion-navigation
-        = link_to year, "#panel#{id}#{year}", role: 'tab'
-        - haml_tag :div, id: "panel#{id}#{year}", role: 'tabpanel',
-          class: "content #{'active' if year.to_i == active_year}" do
+        = link_to key, "#panel#{id}#{key.gsub(' ', '_')}", role: 'tab'
+        - haml_tag :div, id: "panel#{id}#{key.gsub(' ', '_')}", role: 'tabpanel',
+          class: "content #{'active' if key.to_s == active_key.to_s}" do
           = render partial, objects: objects

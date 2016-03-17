@@ -1,7 +1,7 @@
 .row
   %section.current-members.column.small-12
     %ul.small-block-grid-2.medium-block-grid-4.xlarge-block-grid-5
-      - members.each do |member|
+      - objects.each do |member|
         %li
           %article.member
             .member-image
@@ -22,7 +22,7 @@
             .hide-for-large-up
               %p.name= member.name
 
-  - members.each do |member|
+  - objects.each do |member|
     .reveal-modal.medium{ id: "#{member.slug}", data: { reveal: '' } }
       = render 'members/show', member: member
       %a.close-reveal-modal.hide-for-large-up &#215;

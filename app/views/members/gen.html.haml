@@ -15,7 +15,7 @@
   %meta{ itemprop: 'name', content: "Generation #{@gen}" }
 
   - if @members.length > 0
-    = render 'current_members', members: @members
+    = render 'thumbs_with_modals', objects: @members
   - else
     .row
       %p.column.small-12#nice-try-wise-guy

@@ -14,8 +14,8 @@
     %h1.small-12.column PHOTO GALLERIES
 
   %section.galleries-feed
-    = render 'layouts/accordion', by_year: @performances_by_year, id: 1,
-      partial: 'pages/galleries_feed', active_year: @galleries_active_year
+    = render 'layouts/accordion', by_key: @performances_by_year, id: 1,
+      partial: 'pages/galleries_feed', active_key: @galleries_active_year
 - else
   .row
     .column.small-12

@@ -27,6 +27,9 @@ class MembersController < ApplicationController
     @current = Member.current_members
     @alumni = Member.alumni
     @gens = Member.gens
+    @by_gen = Member.by_gen(@alumni)
+    @gens = Member.gens
+    @active_gen = @alumni.exists? ? 'Generation ' + @alumni.maximum('gen').to_s : ''
   end
 
   # Give member whose ID or slug matches request.
@@ -64,7 +67,9 @@ class MembersController < ApplicationController
   # Gives all alumni, as received from Member model.
   def alumni
     @alumni = Member.alumni
+    @by_gen = Member.by_gen(@alumni)
     @gens = Member.gens
+    @active_gen = @alumni.exists? ? 'Generation ' + @alumni.maximum('gen').to_s : ''
   end
 
   # Gives all members of inputted gen, or returns to index if input invalid.

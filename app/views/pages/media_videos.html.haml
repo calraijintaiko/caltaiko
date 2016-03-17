@@ -15,5 +15,5 @@
     = link_to 'Add Video', new_video_path,
       class: 'button small round column small-2 large-1'
 
-= render 'layouts/accordion', by_year: @videos_by_year, id: 2,
-  partial: 'videos/videos_feed', active_year: @videos_active_year
+= render 'layouts/accordion', by_key: @videos_by_year, id: 2,
+  partial: 'videos/videos_feed', active_key: @videos_active_year
