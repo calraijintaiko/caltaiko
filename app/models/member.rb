@@ -49,7 +49,7 @@ class Member < ActiveRecord::Base
     url: '/members/:slug/:attachment/:style/:filename',
     # default_url: '/images/members/:attachment/:style/missing.png'
     # if robohash website ever closes down, delete below and uncomment above
-    default_url: 'https://robohash.org/:id?size=500x500&bgset=bgany',
+    default_url: 'https://robohash.org/set_any/bgset_any/:id?size=500x500',
     s3_protocol: :https
   # rubocop:enable Style/AlignHash
   include DeletableAttachment
@@ -82,7 +82,7 @@ class Member < ActiveRecord::Base
 
   # Returns all alumni of the team, ordered by name then gen.
   def self.alumni
-    Member.where(current: false).order('name ASC, gen')
+    Member.where(current: false).order('gen DESC, name')
   end
 
   # Returns all the members of Generation GEN
@@ -93,5 +93,15 @@ class Member < ActiveRecord::Base
   # Returns all of the generations
   def self.gens
     Member.select(:gen).distinct.order('gen ASC')
+  end
+
+  def self.by_gen(members)
+    by_gen = {}
+    members.each do |member|
+      gen = 'Generation ' + member.gen.to_s
+      by_gen[gen] ||= []
+      by_gen[gen] << member
+    end
+    by_gen
   end
 end

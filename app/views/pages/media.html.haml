@@ -14,8 +14,8 @@
     %h1.small-12.column PHOTO GALLERIES
 
   %section.galleries-feed
-    = render 'layouts/accordion', by_year: @performances_by_year, id: 1,
-      partial: 'pages/galleries_feed', active_year: @galleries_active_year
+    = render 'layouts/accordion', by_key: @performances_by_year, id: 1,
+      partial: 'pages/galleries_feed', active_key: @galleries_active_year
 
 %header.row
   %h1.small-10.column VIDEOS
@@ -24,5 +24,5 @@
       class: 'button small round column small-2 large-1'
 
 %section.videos-feed
-  = render 'layouts/accordion', by_year: @videos_by_year, id: 2,
-    partial: 'videos/videos_feed', active_year: @videos_active_year
+  = render 'layouts/accordion', by_key: @videos_by_year, id: 2,
+    partial: 'videos/videos_feed', active_key: @videos_active_year

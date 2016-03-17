@@ -15,7 +15,7 @@
     = link_to 'Add Member', new_member_path,
       class: 'button small round column hide-for-medium-down large-1'
 
-= render 'current_members', members: @current
+= render 'thumbs_with_modals', objects: @current
 
 = render 'gens', gens: @gens
 
@@ -25,4 +25,5 @@
     = link_to 'Add Member', new_member_path,
       class: 'button small round column hide-for-medium-down large-1'
 
-= render 'alumni_members', members: @alumni
+= render 'layouts/accordion', by_key: @by_gen, active_key: @active_gen,
+  partial: 'members/thumbs_with_modals', id: 1
