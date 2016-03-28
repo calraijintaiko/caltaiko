@@ -3,8 +3,8 @@ ruby '2.2.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.2.0'
-# Use rubygems 2.3.0
-gem 'rubygems-update', '~> 2.4.0'
+# Use rubygems 2.6.0
+gem 'rubygems-update', '~> 2.6.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -62,7 +62,7 @@ gem 'modernizr-rails'
 gem 'foundation-rails', '~> 5.5.0'
 
 # Use the DataTables jQuey plug-in for sortable, beautiful tables
-gem 'jquery-datatables-rails', '~> 3.3.0'
+gem 'jquery-datatables-rails', '~> 3.4.0'
 
 group :production do
   # Use Postgres as database for Active Record since required by Heroku
@@ -76,14 +76,8 @@ end
 # Testing-suite gems
 group :development, :test do
   gem 'sqlite3'
-  gem 'guard-rspec'
-  gem 'guard-cucumber', '~>1.6.0'
-  gem 'spring-commands-rspec'
-  gem 'spring-commands-cucumber'
   gem 'simplecov'
   gem 'rb-fsevent'
-  gem 'pry-rails'
-  gem 'pry-byebug', '~>3.2.0'
 end
 
 group :test do
@@ -95,12 +89,15 @@ group :test do
   gem 'factory_girl_rails'
   gem 'codeclimate-test-reporter', require: nil
   gem 'cucumber-rails', require: false
-  # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
 end
 
 group :development do
   gem 'spring'
+  gem 'guard-rspec'
+  gem 'guard-cucumber', '~>1.6.0'
+  gem 'spring-commands-rspec'
+  gem 'spring-commands-cucumber'
   gem 'annotate', '~> 2.6.5'
   gem 'scss-lint', '~>0.30'
   gem 'haml-lint', '~>0.10'
@@ -109,4 +106,6 @@ group :development do
   gem 'ruby-lint'
   gem 'travis'
   gem 'web-console'
+  gem 'pry-rails'
+  gem 'pry-byebug', '~>3.3.0'
 end
