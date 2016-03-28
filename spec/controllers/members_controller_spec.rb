@@ -1,6 +1,14 @@
 require 'rails_helper'
 
 describe MembersController do
+  describe 'GET new' do
+    it 'renders the new template' do
+      signed_in_as_a_valid_user
+      get :new
+      expect(response).to render_template 'new'
+    end
+  end
+
   describe 'GET index' do
     before :each do
       @created_current = create_list(:member, rand(5..20), current: true)
@@ -23,7 +31,7 @@ describe MembersController do
     end
   end
 
-  describe 'getting a specific member' do
+  describe 'for a specific member' do
     before :each do
       @id = rand(1..100)
       @johnny = create(:member, name: 'Johnny B', id: @id)
@@ -59,6 +67,77 @@ describe MembersController do
         expect(response).to render_template 'edit'
       end
     end
+
+    context 'POST update' do
+      context 'all required attributes are present and valid' do
+        before :each do
+          attributes = {
+            name: 'Bob',
+            gen: 20,
+            major: 'Taiko yo',
+            bio: 'new bio'
+          }
+          post :update, member: attributes, id: @id
+        end
+
+        it 'updates the members attributes to the submitted values' do
+          johnny = Member.find(@id)
+          expect(johnny.name).to eq 'Bob'
+          expect(johnny.gen).to eq 20
+          expect(johnny.major).to eq 'Taiko yo'
+          expect(johnny.bio).to eq 'new bio'
+        end
+
+        it 'redirects to the show template for that member' do
+          expect(response).to redirect_to Member.find(@id)
+        end
+
+        it 'assigns @member to the updated member' do
+          expect(assigns(:member).id).to eq @id
+        end
+      end
+
+      context 'not all required attributes are present or valid' do
+        before :each do
+          attributes = {
+            name: 'Bob',
+            bio: nil
+          }
+          post :update, member: attributes, id: @id
+        end
+
+        it 'renders the edit template' do
+          expect(response).to render_template 'edit'
+        end
+
+        it 'does not update the members attributes in the database' do
+          johnny = Member.find(@id)
+          expect(johnny.name).to eq 'Johnny B'
+          expect(johnny.name).to_not eq 'Bob'
+        end
+      end
+    end
+  end
+
+  describe 'GET database' do
+    before :each do
+      @created_current = create_list(:member, rand(5..20), current: true)
+      @created_alumni = create_list(:member, rand(5..20), current: false)
+      signed_in_as_a_valid_user
+      get :database
+    end
+
+    it 'renders the database template' do
+      expect(response).to render_template 'database'
+    end
+
+    it 'assigns @current to the current members' do
+        expect(assigns(:current)).to match_array @created_current
+    end
+
+    it 'assigns @alumni to the alumni members' do
+        expect(assigns(:alumni)).to match_array @created_alumni
+    end
   end
 
   describe 'getting all current members or alumni' do
@@ -82,7 +161,7 @@ describe MembersController do
     context 'GET alumni' do
       it 'assigns @alumni to all alumni' do
         get :alumni
-        expect(assigns(:alumni)).to match_array @created_alumni
+
       end
 
       it 'renders the alumni template' do
@@ -195,6 +274,11 @@ describe MembersController do
 
     it 'GET edit redirects to the login page' do
       get :edit, id: 1
+      expect(response).to redirect_to(new_user_session_path)
+    end
+
+    it 'GET database redirects to the login page' do
+      get :database
       expect(response).to redirect_to(new_user_session_path)
     end
 
