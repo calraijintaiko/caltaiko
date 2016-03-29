@@ -13,6 +13,16 @@ RSpec.describe Message, type: :model do
     expect(build(:message, email: nil)).to_not be_valid
   end
 
+  it 'is valid for a valid email address' do
+    expect(build(:message, email: 'test@example.com')).to be_valid
+  end
+
+  it 'is invalid for an invalid email address' do
+    expect(build(:message, email: 'test')).to_not be_valid
+    expect(build(:message, email: 'test@example')).to_not be_valid
+    expect(build(:message, email: 'example.com')).to_not be_valid
+  end
+
   it 'is invalid without any content' do
     expect(build(:message, content: nil)).to_not be_valid
   end
