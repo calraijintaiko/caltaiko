@@ -1,6 +1,14 @@
 require 'rails_helper'
 
 describe PerformancesController do
+  describe 'GET new' do
+    it 'renders the new template' do
+      signed_in_as_a_valid_user
+      get :new
+      expect(response).to render_template 'new'
+    end
+  end
+
   describe 'GET index' do
     before :each do
       @years = %w(2005 2008)
@@ -81,6 +89,57 @@ describe PerformancesController do
       it 'renders the show template' do
         get :edit, id: @id
         expect(assigns(:performance)).to eq @itf
+      end
+    end
+
+    context 'POST update' do
+      context 'all required attributes are present and valid' do
+        before :each do
+          attributes = {
+            title: 'ITF',
+            description: 'cool concert',
+            location: 'Zellerbach Hall'
+          }
+          post :update, performance: attributes, id: @id,
+            date: 'Monday, March 28, 2016', time: '12:00 PM'
+        end
+
+        it 'updates the performances attributes to the submitted values' do
+          itf = Performance.find(@id)
+          expect(itf.title).to eq 'ITF'
+          expect(itf.location).to eq 'Zellerbach Hall'
+          expect(itf.description).to eq 'cool concert'
+          date = DateTime.parse('28 March 2016 12:00:00PM -07:00')
+          expect(itf.date).to eq date
+        end
+
+        it 'redirects to the show template for that performance' do
+          expect(response).to redirect_to Performance.find(@id)
+        end
+
+        it 'assigns @performance to the updated performance' do
+          expect(assigns(:performance).id).to eq @id
+        end
+      end
+
+      context 'not all required attributes are present or valid' do
+        before :each do
+          attributes = {
+            name: 'Bob',
+            location: nil,
+            date: 'March 28, 2016, 12:00 PM'
+          }
+          post :update, performance: attributes, id: @id
+        end
+
+        it 'renders the edit template' do
+          expect(response).to render_template 'edit'
+        end
+
+        it 'does not update the performances attributes in the database' do
+          itf = Performance.find(@id)
+          expect(itf.title).to eq 'international taiko festival'
+        end
       end
     end
   end
