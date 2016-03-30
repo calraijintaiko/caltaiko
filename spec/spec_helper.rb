@@ -1,9 +1,16 @@
 # get code coverage statistics from SimpleCov gem
 require 'simplecov'
-SimpleCov.start 'rails'
+SimpleCov.start 'rails' do
+  add_filter 'deletable_attachment.rb'
+  add_filter 'registrations_controller.rb'
+end
+
 # Integrate Code Climate with Travis CI
 require "codeclimate-test-reporter"
-CodeClimate::TestReporter.start
+CodeClimate::TestReporter.start do
+  add_filter 'deletable_attachment.rb'
+  add_filter 'registrations_controller.rb'
+end
 
 # Enable debugging
 require 'pry-byebug'

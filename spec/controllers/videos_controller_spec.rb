@@ -68,6 +68,58 @@ describe VideosController do
     end
   end
 
+  context 'POST update' do
+    before :each do
+      @id = rand(1..100)
+      create(:video, id: @id, title: 'An Awesome Video', year: 2015,
+             link: 'https://www.youtube.com/watch?v=9VoNgLnjzVg')
+      signed_in_as_a_valid_user
+    end
+
+    context 'all required attributes are present and valid' do
+      before :each do
+        attributes = {
+          title: 'An Awesome New Title',
+          link: 'https://www.youtube.com/watch?v=poop',
+          year: 2010
+        }
+        post :update, video: attributes, id: @id
+      end
+
+      it 'updates the videos attributes to the submitted values' do
+        video = Video.find(@id)
+        expect(video.title).to eq 'An Awesome New Title'
+        expect(video.link).to eq 'https://www.youtube.com/watch?v=poop'
+        expect(video.year).to eq 2010
+      end
+
+      it 'redirects to the videos media page' do
+        expect(response).to redirect_to(media_videos_path)
+      end
+    end
+
+    context 'not all required attributes are present or valid' do
+      before :each do
+        attributes = {
+          title: 'An Awesome New Title',
+          year: nil
+        }
+        post :update, video: attributes, id: @id
+      end
+
+      it 'renders the edit template' do
+        expect(response).to render_template 'edit'
+      end
+
+      it 'does not update the videos attributes in the database' do
+        video = Video.find(@id)
+        expect(video.title).to eq 'An Awesome Video'
+        expect(video.link).to eq 'https://www.youtube.com/watch?v=9VoNgLnjzVg'
+        expect(video.year).to eq 2015
+      end
+    end
+  end
+
   describe 'DELETE destroy' do
     it 'removes a video from the database' do
       signed_in_as_a_valid_user

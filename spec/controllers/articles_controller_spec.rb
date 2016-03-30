@@ -1,6 +1,14 @@
 require 'rails_helper'
 
 describe ArticlesController do
+  describe 'GET new' do
+    it 'renders the new template' do
+      signed_in_as_a_valid_user
+      get :new
+      expect(response).to render_template 'new'
+    end
+  end
+
   describe 'GET index' do
     before :each do
       @created_articles = create_list(:article, rand(5..20))
@@ -94,6 +102,61 @@ describe ArticlesController do
 
       it 'does not save the workshift to the database' do
         expect(Article.first).to be_nil
+      end
+    end
+  end
+
+  context 'POST update' do
+    before :each do
+      @id = 90
+      create(:article, id: @id, title: 'An Awesome Article',
+             date: Date.new(2016, 03, 30), text: 'Some cool article text')
+      signed_in_as_a_valid_user
+    end
+
+    context 'all required attributes are present and valid' do
+      before :each do
+        attributes = {
+          title: 'An Awesome New Title',
+          date: Date.new(2016, 06, 19),
+          text: 'Some new text'
+        }
+        post :update, article: attributes, id: @id
+      end
+
+      it 'updates the articles attributes to the submitted values' do
+        article = Article.find(@id)
+        expect(article.title).to eq 'An Awesome New Title'
+        expect(article.date).to eq DateTime.new(2016, 06, 19, 0, 0, 0, '-07')
+        expect(article.text).to eq 'Some new text'
+      end
+
+      it 'redirects to the show template for that article' do
+        expect(response).to redirect_to Article.find(@id)
+      end
+
+      it 'assigns @article to the updated article' do
+        expect(assigns(:article).id).to eq @id
+      end
+    end
+
+    context 'not all required attributes are present or valid' do
+      before :each do
+        attributes = {
+          title: 'An Awesome New Title',
+          date: nil
+        }
+        post :update, article: attributes, id: @id
+      end
+
+      it 'renders the edit template' do
+        expect(response).to render_template 'edit'
+      end
+
+      it 'does not update the articles attributes in the database' do
+        article = Article.find(@id)
+        expect(article.title).to eq 'An Awesome Article'
+        expect(article.date).to eq DateTime.new(2016, 03, 30, 0, 0, 0, '-07')
       end
     end
   end

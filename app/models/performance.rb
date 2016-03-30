@@ -82,18 +82,6 @@ class Performance < ActiveRecord::Base
     date >= Time.zone.now
   end
 
-  # Returns either the date of the performance or today's date if the
-  # performance has no associated date, formatted according to DATE_FORMAT.
-  def safe_date
-    date ? date.strftime(DATE_FORMAT) : Date.today.strftime(DATE_FORMAT)
-  end
-
-  # Returns either the time of the performance formatted according to
-  # TIME_FORMAT or a default value of noon if no associated time exists.
-  def safe_time
-    date ? date.strftime(TIME_FORMAT) : '12:00 PM'
-  end
-
   # Returns all upcoming performances in order of soonest to furthest away.
   def self.upcoming_performances
     Performance.where('date >= ?', Time.zone.now).order('date ASC')

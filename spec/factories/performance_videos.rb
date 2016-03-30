@@ -13,8 +13,9 @@
 require 'faker'
 
 FactoryGirl.define do
-  factory :performance_video do |f|
+  factory :performance_video do
     sequence(:title) { |n| "Performance Video #{n}" }
-    f.link { Faker::Internet.url('www.youtube.com') }
+    link { Faker::Internet.url('www.youtube.com') }
+    performance
   end
 end
