@@ -39,5 +39,15 @@ FactoryGirl.define do
 
     factory :upcoming_performance, traits: [:upcoming]
     factory :past_performance, traits: [:past]
+    factory :performance_with_videos do
+      transient do
+        videos_count = 3
+      end
+
+      after(:create) do |performance, evaluator|
+        create_list(:performance_video, evaluator.videos_count,
+                    performance: performance)
+      end
+    end
   end
 end

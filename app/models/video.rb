@@ -35,10 +35,6 @@ class Video < ActiveRecord::Base
     regex_match[1]
   end
 
-  def embed_link
-    link.sub('watch?v=', 'embed/')
-  end
-
   def self.by_year(videos)
     by_year = {}
     videos.each do |video|

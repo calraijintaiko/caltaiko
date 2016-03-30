@@ -22,11 +22,9 @@ describe Video do
     expect(build(:video, link: 'https://www.google.com')).to be_valid
   end
 
-  it 'correctly generates the YouTube embed URL' do
+  it 'correctly grabs the YouTube ID from the URL' do
     video = create(:video, link: 'https://www.youtube.com/watch?v=OTWx8yql_5g')
-    expect(video.embed_link).to eq 'https://www.youtube.com/embed/OTWx8yql_5g'
-    video.link = 'https://www.youtube.com/embed/OTWx8yql_5g'
-    expect(video.embed_link).to eq 'https://www.youtube.com/embed/OTWx8yql_5g'
+    expect(video.youtube_id).to eq 'OTWx8yql_5g'
   end
 
   it 'returns all videos separated by year' do

@@ -14,6 +14,11 @@ describe Article do
     expect(build(:article, text: nil)).to_not be_valid
   end
 
+  it 'can retrieve the properly formatted date' do
+    article = build(:article, date: Date.new(2016, 06, 19))
+    expect(article.safe_date).to eq 'June 19, 2016'
+  end
+
   describe 'getting all current articles' do
     it 'returns all articles marked current' do
       created_current = create_list(:article, 14, current: true)
@@ -69,7 +74,7 @@ describe Article do
           'beautiful spec. If you happen to find a way, definitely let me ' \
           'know, so this monstrosity of a test can be made more beautiful ' \
           'and I can sleep easier at night. Oh how it hurts to look upon ' \
-          'such ugliness, and know that it is I how gave it life!'
+          'such ugliness, and know that it is I who gave it life!'
         article = create(:article, text: par1 + "\r\n\r\npar2")
         expect(article.snippet).to include par1[0, 500]
         expect(article.snippet).to_not include par1[500..-1]
