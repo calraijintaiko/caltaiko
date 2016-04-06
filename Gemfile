@@ -108,4 +108,5 @@ group :development do
   gem 'web-console'
   gem 'pry-rails'
   gem 'pry-byebug', '~>3.3.0'
+  gem 'quiet_assets'
 end

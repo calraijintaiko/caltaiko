@@ -258,6 +258,8 @@ GEM
     pusher-client (0.6.2)
       json
       websocket (~> 1.0)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -452,6 +454,7 @@ DEPENDENCIES
   pg
   pry-byebug (~> 3.3.0)
   pry-rails
+  quiet_assets
   rails (~> 4.2.0)
   rails_12factor
   rb-fsevent
