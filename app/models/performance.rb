@@ -62,7 +62,25 @@ class Performance < ActiveRecord::Base
 
   # Returns the full date of a specific performance, in format YEAR MONTH DAY.
   def full_date
-    return date.to_date unless date.nil?
+    date.to_date unless date.nil?
+  end
+
+  def display_date
+    date.strftime(DATE_FORMAT)
+  end
+
+  def display_time
+    date.strftime(TIME_FORMAT)
+  end
+
+  def display_datetime
+    display_date + ', ' + display_time
+  end
+
+  def google_maps_embed_url
+    params = { key: Rails.application.secrets.google_maps_api_key,
+               q: location }
+    'https://www.google.com/maps/embed/v1/place?' + params.to_param
   end
 
   # Generates a unique slug for a performance.

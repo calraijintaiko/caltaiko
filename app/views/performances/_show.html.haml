@@ -1,58 +1,23 @@
 - banner = image_tag(performance.banner.url(:display), itemprop: 'image')
 
+.performance-banner
+  = banner
+  .text.row
+    .column.small-12
+      %p.performance-datetime
+        %time{ itemprop: 'startDate',
+        datetime: "#{performance.date.iso8601}" }
+          = performance.display_datetime
+      %h1.performance-title= performance.title
+
 .row
-  .column.small-12
-    %article.performance{ itemscope: '', itemtype: 'http://schema.org/Event' }
-      .row
-        .column.small-12
-          .performance-image
-            = link_to banner, performance.link
-            = link_to performance.link,
-              class: 'text-link upcoming-perf hide-for-medium-down' do
-              %p{ itemprop: 'description' }= performance.description
-              %br
-              %br
-              %p.underlined VIEW EVENT
-            = link_to performance.link,
-              class: 'text-link upcoming-perf hide-for-large-up' do
-              %p.underlined VIEW EVENT
+  .column.small-12.medium-6.large-5.performance-description
+    %p= performance.description
 
-        .column.small-12.performance-deets
-          .performance-deets-top
-            %h2.what.column.small-10{ itemprop: 'name' }= performance.title
-            .icons.column.small-2
-              - if controller.action_name != 'show'
-                = link_to performance_path(performance),
-                  title: 'Get a shareable link for this performance',
-                  data: { tooltip: '', options: 'disable_for_touch:true' },
-                  aria: { haspopup: 'true' }, itemprop: 'url',
-                  class: 'right hide-for-medium-down has-tip tip-top' do
-                  %i.fi-link
-              - if performance.images_link.length > 0
-                = link_to performance.images_link, aria: { haspopup: 'true' },
-                  data: { tooltip: '', options: 'disable_for_touch:true' },
-                  title: 'View images from this performance',
-                  class: 'right has-tip tip-top' do
-                  %i.fi-photo
-              - if user_signed_in?
-                = link_to performance_path(performance), method: :delete,
-                  data: { confirm: "Delete performance #{performance.title}?" },
-                  class: 'right hide-for-medium-down' do
-                  %i.fi-trash
-                = link_to edit_performance_path(performance),
-                  class: 'right hide-for-medium-down' do
-                  %i.fi-pencil
+  .column.small-12.medium-6.large-7.performance-location
+    %p.where{ itemprop: 'location' }= performance.location
 
-          .performance-deets-bottom
-            %p.when.column.small-12.medium-10
-              - if performance.upcoming?
-                %time{ itemprop: 'startDate',
-                  datetime: "#{performance.date.iso8601}" }
-                  = performance.date.strftime('%A, %B %d, %l:%M%p').upcase
-              - else
-                %time{ itemprop: 'startDate',
-                  datetime: "#{performance.date.iso8601}" }
-                  = "#{performance.safe_date}, #{performance.safe_time}".upcase
-              %span.divider.hide-for-small= '|'
-              %br.hide-for-medium-up
-              %span.where{ itemprop: 'location' }= performance.location
+    .performance-map
+      %iframe{ width: '600', height: '450', frameborder: '0',
+        style: 'border: 0', allowfullscreen: '',
+        src: performance.google_maps_embed_url }

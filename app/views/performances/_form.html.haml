@@ -29,7 +29,7 @@
           .column.small-10
             %input.full-datepicker.string.required#date{ type: 'text',
               name: 'date', placeholder: 'Performance Date',
-              value: @performance.safe_date }
+              value: @performance.display_date }
       .column.small-12.large-3
         .row.collapse.prefix-radius
           .column.small-2.large-3
@@ -37,7 +37,7 @@
           .column.small-10.large-9
             %input.timepicker.string.required#time{ type: 'text',
               name: 'time', placeholder: 'Performance Time',
-              value: @performance.safe_time }
+              value: @performance.display_time }
 
       .small-12.column
         = f.input :description, placeholder: 'Performance Description'

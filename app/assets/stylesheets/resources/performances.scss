@@ -2,6 +2,42 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.performance-banner {
+  background-color: $dark-bg;
+  margin-top: -3%;
+  position: relative;
+
+  img {
+    filter: alpha(opacity=30);
+    opacity: .3;
+    width: 100%;
+    zoom: 1;
+  }
+
+  .text {
+    bottom: 15px;
+    left: 0;
+    position: absolute;
+    right: 0;
+
+    .performance-datetime {
+      color: rgba(255, 255, 255, .75);
+      font-family: $header-font;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      margin-bottom: 0;
+      text-transform: uppercase;
+    }
+
+    .performance-title {
+      color: $white;
+      font-size: 4rem;
+      margin-top: 0;
+      text-transform: uppercase;
+    }
+  }
+}
+
 .performance {
   @include box-style;
   margin-bottom: 50px;

@@ -1,0 +1,53 @@
+- banner = image_tag(performance.banner.url(:display), itemprop: 'image')
+
+.row
+  .column.small-12
+    %article.performance{ itemscope: '', itemtype: 'http://schema.org/Event' }
+      .row
+        .column.small-12
+          .performance-image
+            = link_to banner, performance.link
+            = link_to performance.link,
+              class: 'text-link upcoming-perf hide-for-medium-down' do
+              %p{ itemprop: 'description' }= performance.description
+              %br
+              %br
+              %p.underlined VIEW EVENT
+            = link_to performance.link,
+              class: 'text-link upcoming-perf hide-for-large-up' do
+              %p.underlined VIEW EVENT
+
+        .column.small-12.performance-deets
+          .performance-deets-top
+            %h2.what.column.small-10{ itemprop: 'name' }= performance.title
+            .icons.column.small-2
+              - if controller.action_name != 'show'
+                = link_to performance_path(performance),
+                  title: 'Get a shareable link for this performance',
+                  data: { tooltip: '', options: 'disable_for_touch:true' },
+                  aria: { haspopup: 'true' }, itemprop: 'url',
+                  class: 'right hide-for-medium-down has-tip tip-top' do
+                  %i.fi-link
+              - if performance.images_link.length > 0
+                = link_to performance.images_link, aria: { haspopup: 'true' },
+                  data: { tooltip: '', options: 'disable_for_touch:true' },
+                  title: 'View images from this performance',
+                  class: 'right has-tip tip-top' do
+                  %i.fi-photo
+              - if user_signed_in?
+                = link_to performance_path(performance), method: :delete,
+                  data: { confirm: "Delete performance #{performance.title}?" },
+                  class: 'right hide-for-medium-down' do
+                  %i.fi-trash
+                = link_to edit_performance_path(performance),
+                  class: 'right hide-for-medium-down' do
+                  %i.fi-pencil
+
+          .performance-deets-bottom
+            %p.when.column.small-12.medium-10
+              %time{ itemprop: 'startDate',
+                datetime: "#{performance.date.iso8601}" }
+                = performance.display_datetime.upcase
+              %span.divider.hide-for-small= '|'
+              %br.hide-for-medium-up
+              %span.where{ itemprop: 'location' }= performance.location
