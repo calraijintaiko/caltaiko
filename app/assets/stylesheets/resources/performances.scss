@@ -8,8 +8,8 @@
   position: relative;
 
   img {
-    filter: alpha(opacity=30);
-    opacity: .3;
+    filter: alpha(opacity=40);
+    opacity: .4;
     width: 100%;
     zoom: 1;
   }
@@ -34,6 +34,38 @@
       font-size: 4rem;
       margin-top: 0;
       text-transform: uppercase;
+    }
+  }
+}
+
+.performance-page {
+  p {
+    font-size: 1.3rem;
+  }
+
+  .performance-description {
+    margin: 25px 0;
+  }
+
+  .performance-details {
+    h3 {
+      text-transform: uppercase;
+    }
+  }
+
+  .performance-map {
+    height: 0;
+    margin-bottom: 50px;
+    overflow: hidden;
+    padding-bottom: 75%;
+    position: relative;
+
+    iframe {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
     }
   }
 }

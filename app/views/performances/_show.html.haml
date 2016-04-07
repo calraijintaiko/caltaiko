@@ -10,13 +10,18 @@
           = performance.display_datetime
       %h1.performance-title= performance.title
 
-.row
-  .column.small-12.medium-6.large-5.performance-description
+.row.performance-page
+  .column.small-12.performance-description
     %p= performance.description
 
-  .column.small-12.medium-6.large-7.performance-location
+  .column.small-12.medium-6.performance-details
+    %h3 Where
     %p.where{ itemprop: 'location' }= performance.location
 
+    %h3 When
+    %p= performance.display_datetime
+
+  .column.small-12.medium-6
     .performance-map
       %iframe{ width: '600', height: '450', frameborder: '0',
         style: 'border: 0', allowfullscreen: '',
