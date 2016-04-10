@@ -2,8 +2,8 @@
 
 .performance-banner
   = banner
-  .text.row
-    .column.small-12
+  .text.row.show-for-large-up
+    .column.large-12
       %p.performance-datetime
         %time{ itemprop: 'startDate',
         datetime: "#{performance.date.iso8601}" }
@@ -11,17 +11,48 @@
       %h1.performance-title= performance.title
 
 .row.performance-page
+  .column.small-12.hide-for-large-up
+    %h1.performance-title= performance.title
+
   .column.small-12.performance-description
-    %p= performance.description
+    :markdown
+      #{performance.description}
 
-  .column.small-12.medium-6.performance-details
-    %h3 Where
-    %p.where{ itemprop: 'location' }= performance.location
+  .column.small-12.large-6.performance-details
+    .row
+      .column.small-12.medium-6.large-12
+        %h3 Where
+        %p.where{ itemprop: 'location' }= performance.location
 
-    %h3 When
-    %p= performance.display_datetime
+      .column.small-12.medium-6.large-12
+        %h3 When
+        %p= performance.display_datetime
 
-  .column.small-12.medium-6
+    .performance-icons
+      .row
+        = link_to performance.images_link,
+          class: 'column small-12 medium-6 large-12' do
+          %i.fi-photo
+          %span.icon-text View images from this performance!
+
+        = link_to performance.link,
+          class: 'column small-12 medium-6 large-12' do
+          %i.fi-info
+          %span.icon-text Check the event page for more information!
+
+        - if user_signed_in?
+          = link_to edit_performance_path(performance),
+            class: 'column small-12 medium-6 large-12' do
+            %i.fi-pencil
+            %span.icon-text Edit this performance
+
+          = link_to performance_path(performance), method: :delete,
+            class: 'column small-12 medium-6 large-12',
+            data: { confirm: "Delete performance '#{performance.title}'?" } do
+            %i.fi-trash
+            %span.icon-text Delete this performance
+
+  .column.small-12.large-6
     .performance-map
       %iframe{ width: '600', height: '450', frameborder: '0',
         style: 'border: 0', allowfullscreen: '',

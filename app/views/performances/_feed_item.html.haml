@@ -6,16 +6,9 @@
       .row
         .column.small-12
           .performance-image
-            = link_to banner, performance.link
-            = link_to performance.link,
-              class: 'text-link upcoming-perf hide-for-medium-down' do
-              %p{ itemprop: 'description' }= performance.description
-              %br
-              %br
-              %p.underlined VIEW EVENT
-            = link_to performance.link,
-              class: 'text-link upcoming-perf hide-for-large-up' do
-              %p.underlined VIEW EVENT
+            = link_to banner, performance
+            = link_to 'VIEW EVENT', performance,
+              class: 'text-link'
 
         .column.small-12.performance-deets
           .performance-deets-top
@@ -23,11 +16,11 @@
             .icons.column.small-2
               - if controller.action_name != 'show'
                 = link_to performance_path(performance),
-                  title: 'Get a shareable link for this performance',
+                  title: 'Get more information about this performance',
                   data: { tooltip: '', options: 'disable_for_touch:true' },
                   aria: { haspopup: 'true' }, itemprop: 'url',
                   class: 'right hide-for-medium-down has-tip tip-top' do
-                  %i.fi-link
+                  %i.fi-info
               - if performance.images_link.length > 0
                 = link_to performance.images_link, aria: { haspopup: 'true' },
                   data: { tooltip: '', options: 'disable_for_touch:true' },
