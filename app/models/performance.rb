@@ -66,15 +66,15 @@ class Performance < ActiveRecord::Base
   end
 
   def display_date
-    date.strftime(DATE_FORMAT)
+    date.strftime(DATE_FORMAT) unless date.nil?
   end
 
   def display_time
-    date.strftime(TIME_FORMAT)
+    date.strftime(TIME_FORMAT) unless date.nil?
   end
 
   def display_datetime
-    display_date + ', ' + display_time
+    display_date + ', ' + display_time unless date.nil?
   end
 
   def google_maps_embed_url
