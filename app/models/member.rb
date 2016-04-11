@@ -16,8 +16,10 @@
 #  current             :boolean
 #  slug                :string(255)
 #  email               :string(255)
+#  phone               :string(255)
 #
-# To create a member, all of the fields except the avatar must be present.
+# To create a member, all of the fields except the avatar, email, or
+# phone must be present.
 # * The name must be at least two characters long
 # * The gen must be an integer greater than 0
 # * The major must also be at least two characters long
@@ -38,6 +40,7 @@ class Member < ActiveRecord::Base
   validates :bio, presence: true
   validates :email, format: { with: /(\A.+@\w+\.\w+\z)|(\A\z)/,
                               message: 'Please enter a valid email address.' }
+  validates :phone, phone: { allow_blank: true }
 
   Paperclip.interpolates :slug do |attachment, _style|
     attachment.instance.slug
@@ -73,6 +76,19 @@ class Member < ActiveRecord::Base
   # Return the last name of the member
   def last_name
     name.split.last
+  end
+
+  # Force the phone to be only numbers on input
+  def phone=(val)
+    write_attribute(:phone, Phonelib.parse(val).sanitized)
+  end
+
+  # If a phone record exists, return an international form of the number.
+  def format_phone
+    if phone
+      phone = Phonelib.parse(self.phone)
+      phone.national
+    end
   end
 
   # Returns all current members of the team, ordered by name then gen.

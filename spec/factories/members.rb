@@ -16,9 +16,11 @@
 #  current             :boolean
 #  slug                :string(255)
 #  email               :string(255)
+#  phone               :string(255)
 #
 
 require 'faker'
+require 'phonelib'
 
 FactoryGirl.define do
   factory :member do |f|
@@ -27,5 +29,6 @@ FactoryGirl.define do
     f.major { Faker::Commerce.department }
     f.bio { Faker::Company.catch_phrase }
     f.current { [true, false].sample }
+    f.phone { '(510) 999-9999' }
   end
 end

@@ -61,6 +61,9 @@ gem 'cocoon'
 gem 'modernizr-rails'
 gem 'foundation-rails', '~> 5.5.0'
 
+# Parse and validate phone numbers
+gem 'phonelib'
+
 # Use the DataTables jQuey plug-in for sortable, beautiful tables
 gem 'jquery-datatables-rails', '~> 3.4.0'
 

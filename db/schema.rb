@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140928053240) do
+ActiveRecord::Schema.define(version: 20160410021940) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140928053240) do
     t.boolean  "current"
     t.string   "slug"
     t.string   "email"
+    t.string   "phone"
   end
 
   add_index "members", ["slug"], name: "index_members_on_slug", unique: true

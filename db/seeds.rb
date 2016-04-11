@@ -1,4 +1,5 @@
 require 'faker'
+require 'phonelib'
 
 # This file should contain all the record creation needed to seed the database
 # with its default values. The data can then be loaded with the rake db:seed
@@ -18,6 +19,7 @@ User.create(email: 'admin@example.com',
                   major: Faker::Commerce.department,
                   current: gen > Time.new.year - 2009,
                   email: Faker::Internet.email,
+                  phone: '5102680055',
                   bio: Faker::Lorem.paragraph(5))
   end
 end

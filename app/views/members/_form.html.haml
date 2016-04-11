@@ -45,6 +45,13 @@
         .small-10.large-10.column
           = f.input :email, placeholder: 'Email Address', label: false
 
+      .row.collapse.prefix-radius
+        .column.small-2.large-2
+          %span.prefix Phone
+        .small-10.large-10.column
+          = f.input :phone, placeholder: 'Phone Number',
+            input_html: { value: @member.format_phone }, label: false
+
 
     .column.small-12.medium-5
       %fieldset.column.small-12
