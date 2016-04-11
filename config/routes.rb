@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root 'pages#front'
 
-  get 'showcase', to: redirect('http://caltaiko-showcase-2015.eventbrite.com'),
+  get 'showcase', to: redirect('http://yuzuri.eventbrite.com'),
     as: :showcase
   get 'videos', to: redirect('media/videos')
 
