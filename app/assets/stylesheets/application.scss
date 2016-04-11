@@ -9,9 +9,9 @@
 // file per style scope.
 
 @import 'base/variables';
+@import 'foundation_and_overrides';
 @import 'base/mixins';
 @import 'components/*';
 @import 'resources/*';
 @import 'foundation-icons';
-@import 'foundation_and_overrides';
 @import 'dataTables/jquery.dataTables.foundation';

@@ -1,58 +1,59 @@
 - banner = image_tag(performance.banner.url(:display), itemprop: 'image')
 
-.row
-  .column.small-12
-    %article.performance{ itemscope: '', itemtype: 'http://schema.org/Event' }
+.performance-banner
+  = banner
+  .text.row.show-for-large-up
+    .column.large-12
+      %p.performance-datetime
+        %time{ itemprop: 'startDate',
+        datetime: "#{performance.date.iso8601}" }
+          = performance.display_datetime
+      %h1.performance-title= performance.title
+
+.row.performance-page
+  .column.small-12.hide-for-large-up
+    %h1.performance-title= performance.title
+
+  .column.small-12.performance-description
+    :markdown
+      #{performance.description}
+
+  .column.small-12.large-6.performance-details
+    .row
+      .column.small-12.medium-6.large-12
+        %h3 Where
+        %p.where{ itemprop: 'location' }= performance.location
+
+      .column.small-12.medium-6.large-12
+        %h3 When
+        %p= performance.display_datetime
+
+    .performance-icons
       .row
-        .column.small-12
-          .performance-image
-            = link_to banner, performance.link
-            = link_to performance.link,
-              class: 'text-link upcoming-perf hide-for-medium-down' do
-              %p{ itemprop: 'description' }= performance.description
-              %br
-              %br
-              %p.underlined VIEW EVENT
-            = link_to performance.link,
-              class: 'text-link upcoming-perf hide-for-large-up' do
-              %p.underlined VIEW EVENT
+        = link_to performance.images_link,
+          class: 'column small-12 medium-6 large-12' do
+          %i.fi-photo
+          %span.icon-text View images from this performance!
 
-        .column.small-12.performance-deets
-          .performance-deets-top
-            %h2.what.column.small-10{ itemprop: 'name' }= performance.title
-            .icons.column.small-2
-              - if controller.action_name != 'show'
-                = link_to performance_path(performance),
-                  title: 'Get a shareable link for this performance',
-                  data: { tooltip: '', options: 'disable_for_touch:true' },
-                  aria: { haspopup: 'true' }, itemprop: 'url',
-                  class: 'right hide-for-medium-down has-tip tip-top' do
-                  %i.fi-link
-              - if performance.images_link.length > 0
-                = link_to performance.images_link, aria: { haspopup: 'true' },
-                  data: { tooltip: '', options: 'disable_for_touch:true' },
-                  title: 'View images from this performance',
-                  class: 'right has-tip tip-top' do
-                  %i.fi-photo
-              - if user_signed_in?
-                = link_to performance_path(performance), method: :delete,
-                  data: { confirm: "Delete performance #{performance.title}?" },
-                  class: 'right hide-for-medium-down' do
-                  %i.fi-trash
-                = link_to edit_performance_path(performance),
-                  class: 'right hide-for-medium-down' do
-                  %i.fi-pencil
+        = link_to performance.link,
+          class: 'column small-12 medium-6 large-12' do
+          %i.fi-info
+          %span.icon-text Check the event page for more information!
 
-          .performance-deets-bottom
-            %p.when.column.small-12.medium-10
-              - if performance.upcoming?
-                %time{ itemprop: 'startDate',
-                  datetime: "#{performance.date.iso8601}" }
-                  = performance.date.strftime('%A, %B %d, %l:%M%p').upcase
-              - else
-                %time{ itemprop: 'startDate',
-                  datetime: "#{performance.date.iso8601}" }
-                  = "#{performance.safe_date}, #{performance.safe_time}".upcase
-              %span.divider.hide-for-small= '|'
-              %br.hide-for-medium-up
-              %span.where{ itemprop: 'location' }= performance.location
+        - if user_signed_in?
+          = link_to edit_performance_path(performance),
+            class: 'column small-12 medium-6 large-12' do
+            %i.fi-pencil
+            %span.icon-text Edit this performance
+
+          = link_to performance_path(performance), method: :delete,
+            class: 'column small-12 medium-6 large-12',
+            data: { confirm: "Delete performance '#{performance.title}'?" } do
+            %i.fi-trash
+            %span.icon-text Delete this performance
+
+  .column.small-12.large-6
+    .performance-map
+      %iframe{ width: '600', height: '450', frameborder: '0',
+        style: 'border: 0', allowfullscreen: '',
+        src: performance.google_maps_embed_url }
