@@ -103,7 +103,7 @@ group :development do
   gem 'spring-commands-cucumber'
   gem 'annotate', '~> 2.6.5'
   gem 'scss-lint', '~>0.30'
-  gem 'haml-lint', '~>0.10'
+  gem 'haml_lint', '~>0.17'
   gem 'reek'
   gem 'overcommit'
   gem 'ruby-lint'
