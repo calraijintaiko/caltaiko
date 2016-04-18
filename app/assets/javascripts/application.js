@@ -24,6 +24,7 @@
 //= require picker.date
 //= require picker.time
 //= require legacy
+//= require jquery.maskedinput.min
 //= require_tree .
 //
 //= require turbolinks
