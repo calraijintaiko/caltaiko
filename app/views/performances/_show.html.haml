@@ -6,7 +6,7 @@
     .column.large-12
       %p.performance-datetime
         %time{ itemprop: 'startDate',
-        datetime: "#{performance.date.iso8601}" }
+        datetime: performance.date.iso8601.to_s }
           = performance.display_datetime
       %h1.performance-title= performance.title
 
@@ -30,10 +30,11 @@
 
     .performance-icons
       .row
-        = link_to performance.images_link,
-          class: 'column small-12 medium-6 large-12' do
-          %i.fi-photo
-          %span.icon-text View images from this performance!
+        - unless performance.images_link.empty?
+          = link_to performance.images_link,
+            class: 'column small-12 medium-6 large-12' do
+            %i.fi-photo
+            %span.icon-text View images from this performance!
 
         = link_to performance.link,
           class: 'column small-12 medium-6 large-12' do
