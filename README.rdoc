@@ -15,9 +15,9 @@ of the design work!
 
 * Git[https://help.github.com/articles/set-up-git]
 
-* {Ruby 2.2.3}[https://www.ruby-lang.org/en/]
+* {Ruby 2.3.0}[https://www.ruby-lang.org/en/]
 
-* {Rails 4.2.4}[http://rubyonrails.org/]
+* {Rails 4.2.6}[http://rubyonrails.org/]
 
 * ImageMagick[http://www.imagemagick.org/]
 

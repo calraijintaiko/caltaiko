@@ -8,7 +8,7 @@ addons:
   code_climate:
     repo_token: 73bdd89da2ab3fecea83dbd973bbb186f3926f00d1d2bba8a73176d6e8561ba4
 
-bundler_args: --without production
+bundler_args: --without production development
 before_script:
   - export TZ=Canada/Pacific
 
