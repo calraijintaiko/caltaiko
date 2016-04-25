@@ -38,14 +38,14 @@ class ApplicationController < ActionController::Base
   # Used by Devise, this method defines what fields show up for
   # respective actions (+sign_up+, +sign_in+, +account_update+).
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) do |u|
+    devise_parameter_sanitizer.permit(:sign_up) do |u|
       u.permit(:username, :email, :password, :password_confirmation,
                :remember_me)
     end
-    devise_parameter_sanitizer.for(:sign_in) do |u|
+    devise_parameter_sanitizer.permit(:sign_in) do |u|
       u.permit(:login, :username, :email, :password, :remember_me)
     end
-    devise_parameter_sanitizer.for(:account_update) do |u|
+    devise_parameter_sanitizer.permit(:account_update) do |u|
       u.permit(:username, :email, :password, :password_confirmation,
                :current_password)
     end
