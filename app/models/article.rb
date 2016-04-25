@@ -43,12 +43,18 @@ class Article < ActiveRecord::Base
 
   # Returns the year of the articles date as a String
   def year
-    return date.strftime('%Y') unless date.nil?
+    date&.strftime('%Y')
+  end
+
+  # Returns either the date of the article or the empty string if the
+  # article has no associated date, formatted according to DATE_FORMAT.
+  def safe_date
+    date&.strftime(DATE_FORMAT)
   end
 
   # Returns the date of the article in the format year-month-day
   def full_date
-    return date.to_date unless date.nil?
+    date&.to_date
   end
 
   # Generates a unique slug for a new article based on it's title.
@@ -70,12 +76,6 @@ class Article < ActiveRecord::Base
     snippet = text.split("\r\n\r\n")[0]
     snippet = snippet[0, 500] + ' **[. . .]**' if snippet.length > 550
     snippet
-  end
-
-  # Returns either the date of the article or the empty string if the
-  # article has no associated date, formatted according to DATE_FORMAT.
-  def safe_date
-    date ? date.strftime(DATE_FORMAT) : ''
   end
 
   # Returns all current articles.

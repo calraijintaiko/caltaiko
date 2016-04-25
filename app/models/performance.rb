@@ -57,20 +57,20 @@ class Performance < ActiveRecord::Base
 
   # Returns the year of a specific performance.
   def year
-    return date.strftime('%Y') unless date.nil?
+    date&.strftime('%Y')
   end
 
   # Returns the full date of a specific performance, in format YEAR MONTH DAY.
   def full_date
-    date.to_date unless date.nil?
+    date&.to_date
   end
 
   def display_date
-    date.strftime(DATE_FORMAT) unless date.nil?
+    date&.strftime(DATE_FORMAT)
   end
 
   def display_time
-    date.strftime(TIME_FORMAT) unless date.nil?
+    date&.strftime(TIME_FORMAT)
   end
 
   def display_datetime
