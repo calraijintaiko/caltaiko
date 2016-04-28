@@ -1,0 +1,27 @@
+.news-feed--paginate {
+  text-align: center;
+}
+.news-feed--paginate a,
+.news-feed--paginate span,
+.news-feed--paginate em {
+  display: inline-block;
+  margin-right: 1px;
+  padding: .2em .5em;
+}
+
+.news-feed--paginate .disabled {
+  border: 1px solid $sub-color-3;
+  color: $sub-color-2;
+}
+
+.news-feed--paginate a {
+  border: 1px solid $sub-color;
+  color: $main-color;
+  text-decoration: none;
+}
+
+.news-feed--paginate a:hover,
+.news-feed--paginate a:focus {
+  border-color: $link-color;
+  color: $link-color;
+}

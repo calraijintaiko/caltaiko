@@ -46,6 +46,9 @@ gem 'friendly_id', '~> 5.1.0'
 # Allows for easier meta tag setting
 gem 'metamagic'
 
+# Paginate all the things
+gem 'will_paginate'
+
 # Allows for use of Haml rather than standard erb
 gem 'haml'
 gem 'haml-rails', group: :development

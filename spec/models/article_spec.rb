@@ -19,9 +19,9 @@ describe Article do
     expect(article.safe_date).to eq 'June 19, 2016'
   end
 
-  describe 'getting all current articles' do
-    it 'returns all articles marked current' do
-      created_current = create_list(:article, 14, current: true)
+  describe 'getting first page of articles' do
+    it 'returns first page of articles marked current' do
+      created_current = create_list(:article, 10, current: true)
       expect(Article.current).to match_array created_current
     end
   end
