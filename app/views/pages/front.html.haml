@@ -8,6 +8,10 @@
        og: { title: title, description: description, image: image,
              url: root_url }
 
+  facebook_feed_src = 'https://www.facebook.com/calraijintaiko'
+  instagram_feed_src = 'https://snapwidget.com/in/?u=Y2FscmFpamlu' \
+    'dGFpa298aW58MTAwfDR8Nnx8eWVzfDV8bm9uZXxvblN0YXJ0fHllc3xubw==&ve=090516'
+
 :javascript
   $(document).on('page:change', function() {
     $('.slick-carousel').slick({
@@ -47,7 +51,7 @@
       community and beyond to spread the **knowledge**, **love**, and
       **passion** of taiko.
 
-- if @articles.length > 0
+- unless @articles.empty?
   %header.row
     %h1.small-10.column
       = link_to 'NEWS', articles_path
@@ -59,7 +63,7 @@
     .slick-carousel.column.small-12
       - @articles.each do |article|
         .carousel-item
-          %a{ href: "#{article_path(article)}" }
+          %a{ href: article_path(article) }
             = image_tag article.image.url(:carousel)
           .caption
             = article.title
@@ -77,19 +81,18 @@
 .row.hide-for-small-down
   .column.small-12.large-6
     %h1
-      = link_to 'FACEBOOK', 'https://www.facebook.com/calraijintaiko'
-    .fb-page{ data: { href: 'https://www.facebook.com/calraijintaiko',
+      = link_to 'FACEBOOK', facebook_feed_src
+    .fb-page{ data: { href: facebook_feed_src,
       width: '480px', height: '685px', small_header: 'false',
       adapt_container_width: 'true', hide_cover: 'false',
       show_facepile: 'true', show_posts: 'true' } }
       .fb-xfbml-parse-ignore
-        %blockquote{ cite: 'https://www.facebook.com/calraijintaiko' }
+        %blockquote{ cite: facebook_feed_src }
           = link_to 'Cal Raijin Taiko',
-            'https://www.facebook.com/calraijintaiko'
+            facebook_feed_src
 
   .column.small-12.large-6
     %h1
       = link_to 'INSTAGRAM', 'https://instagram.com/calraijintaiko/'
     %iframe#instagram-feed{ allowtransparency: 'true',
-      src: 'https://widget.websta.me/in/calraijintaiko/?s=100&w=4&h=6&b=1&p=5',
-      frameborder: '0', scrolling: 'no' }
+      src: instagram_feed_src, frameborder: '0', scrolling: 'no' }
