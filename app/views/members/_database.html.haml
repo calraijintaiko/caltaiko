@@ -10,7 +10,8 @@
     %tbody
       - members.each do |member|
         %tr
-          %td= member.name
+          %td
+            = link_to member.name, member
           %td= member.gen
           %td= member.major
           %td= member.email
