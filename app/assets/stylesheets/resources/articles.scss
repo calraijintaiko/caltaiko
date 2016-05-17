@@ -7,7 +7,7 @@
   //@include box-style($sub-color-3, $sub-color-2);
 }
 
-article.article {
+.article-thumb {
   @include box-style($sub-color-3, $sub-color-2);
   margin-bottom: 5%;
   padding: 20px;
@@ -28,6 +28,6 @@ article.article {
   }
 }
 
-article.article:first-child {
+.article-thumb:first-child {
   margin-top: 2%;
 }

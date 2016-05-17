@@ -2,56 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.performance-banner {
-  background-color: $dark-bg;
-  margin-top: -3%;
-  position: relative;
-
-  @media #{$large-up} {
-    img {
-      filter: alpha(opacity=40);
-      opacity: .4;
-      width: 100%;
-      zoom: 1;
-    }
-  }
-
-  .text {
-    bottom: 15px;
-    left: 0;
-    position: absolute;
-    right: 0;
-
-    .performance-datetime {
-      color: rgba(255, 255, 255, .75);
-      font-family: $header-font;
-      font-size: 1.5rem;
-      letter-spacing: 1px;
-      margin-bottom: 0;
-      text-transform: uppercase;
-    }
-
-    .performance-title {
-      color: $white;
-      font-size: 4rem;
-      margin-top: 0;
-      text-transform: uppercase;
-    }
-  }
-}
-
 .performance-page {
-  p {
-    font-size: 1.3rem;
-  }
-
   .performance-title {
     margin-bottom: 0;
     text-transform: uppercase;
-  }
-
-  .performance-description {
-    margin: 25px 0;
   }
 
   .performance-details {
@@ -73,20 +27,6 @@
       position: absolute;
       top: 0;
       width: 100%;
-    }
-  }
-
-  .performance-icons {
-    margin-bottom: 25px;
-
-    i {
-      font-size: 35px;
-      margin-right: 20px;
-    }
-
-    .icon-text {
-      position: relative;
-      top: -7px;
     }
   }
 }

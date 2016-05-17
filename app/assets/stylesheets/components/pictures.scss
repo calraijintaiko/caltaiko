@@ -1,3 +1,41 @@
+.banner-image {
+  background-color: $dark-bg;
+  margin-top: -3%;
+  position: relative;
+
+  @media #{$large-up} {
+    img {
+      filter: alpha(opacity=40);
+      opacity: .4;
+      width: 100%;
+      zoom: 1;
+    }
+  }
+
+  .text {
+    bottom: 15px;
+    left: 0;
+    position: absolute;
+    right: 0;
+
+    .subtitle {
+      color: rgba(255, 255, 255, .75);
+      font-family: $header-font;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      margin-bottom: 0;
+      text-transform: uppercase;
+    }
+
+    .title {
+      color: $white;
+      font-size: 4rem;
+      margin-top: 0;
+      text-transform: uppercase;
+    }
+  }
+}
+
 img.team-pic {
   border: 3px $main-color solid;
 }
