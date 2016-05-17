@@ -11,6 +11,22 @@
   }
 }
 
+.article {
+  .icons {
+    margin-bottom: 25px;
+
+    i {
+      font-size: 35px;
+      margin-right: 20px;
+    }
+
+    .icon-text {
+      position: relative;
+      top: -7px;
+    }
+  }
+}
+
 .performance {
   .icons {
     margin-top: -10px;

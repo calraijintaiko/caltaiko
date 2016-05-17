@@ -1,18 +1,31 @@
-.row
-  .small-12.column
-    %article.article
-      .row
-        %h3.small-12.large-10.column= article.title
-        - if user_signed_in?
-          .icons.hide-for-medium-down.column.large-2
-            = link_to article_path(article), method: :delete, class: 'right',
-              data: { confirm: "Delete article '#{article.title}'?" } do
-              %i.fi-trash
-            = link_to edit_article_path(article), class: 'right' do
-              %i.fi-pencil
+- banner = image_tag(article.image.url(:carousel), itemprop: 'image')
 
-      %small= article.safe_date
-      .article-image.row
-        = image_tag article.image.url(:carousel), class: 'column small-12'
-      :markdown
-        #{article.text}
+.banner-image
+  = banner
+  .text.row.show-for-large-up
+    .column.large-12
+      %p.subtitle
+        %time{ itemprop: 'startDate',
+        datetime: article.date.iso8601.to_s }
+          = article.safe_date
+      %h1.title= article.title
+
+.row.article
+  .small-12.column.article-text
+    :markdown
+      #{article.text}
+
+  - if user_signed_in?
+    .small-12.column
+      .icons
+        .row
+          = link_to edit_article_path(article),
+            class: 'column small-12 medium-6' do
+            %i.fi-pencil
+            %span.icon-text Edit this article
+
+          = link_to article_path(article), method: :delete,
+            class: 'column small-12 medium-6',
+            data: { confirm: "Delete article '#{article.title}'?" } do
+            %i.fi-trash
+            %span.icon-text Delete this article

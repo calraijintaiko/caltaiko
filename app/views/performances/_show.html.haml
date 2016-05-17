@@ -1,20 +1,20 @@
 - banner = image_tag(performance.banner.url(:display), itemprop: 'image')
 
-.performance-banner
+.banner-image
   = banner
   .text.row.show-for-large-up
     .column.large-12
-      %p.performance-datetime
+      %p.subtitle
         %time{ itemprop: 'startDate',
         datetime: performance.date.iso8601.to_s }
           = performance.display_datetime
-      %h1.performance-title= performance.title
+      %h1.title= performance.title
 
-.row.performance-page
+.row.performance-page.article
   .column.small-12.hide-for-large-up
     %h1.performance-title= performance.title
 
-  .column.small-12.performance-description
+  .column.small-12.article-text
     :markdown
       #{performance.description}
 
@@ -28,7 +28,7 @@
         %h3 When
         %p= performance.display_datetime
 
-    .performance-icons
+    .icons
       .row
         - unless performance.images_link.empty?
           = link_to performance.images_link,
