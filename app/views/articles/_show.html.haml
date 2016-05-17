@@ -11,6 +11,10 @@
       %h1.title= article.title
 
 .row.article
+  .column.small-12.hide-for-large-up
+    %h1.article-title= article.title
+    %p.article-date= article.safe_date
+
   .small-12.column.article-text
     :markdown
       #{article.text}
