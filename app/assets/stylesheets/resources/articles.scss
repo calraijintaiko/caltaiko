@@ -2,11 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.carousel {
-  margin-bottom: 30px;
-  //@include box-style($sub-color-3, $sub-color-2);
-}
-
 .article-thumb {
   @include box-style($sub-color-3, $sub-color-2);
   margin-bottom: 5%;

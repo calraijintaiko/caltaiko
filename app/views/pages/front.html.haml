@@ -59,14 +59,15 @@
       = link_to 'Add Article', new_article_path,
         class: 'button small round hide-for-medium-down large-1 column'
 
-  .news.row
-    .slick-carousel.column.small-12
-      - @articles.each do |article|
-        .carousel-item
-          %a{ href: article_path(article) }
-            = image_tag article.image.url(:carousel)
-          .caption
-            = article.title
+  %section.news
+    .row
+      .slick-carousel.column.small-12
+        - @articles.each do |article|
+          .carousel-item
+            %a{ href: article_path(article) }
+              = image_tag article.image.url(:carousel)
+            .caption
+              = article.title
 
 %header.row
   %h1.small-10.column
