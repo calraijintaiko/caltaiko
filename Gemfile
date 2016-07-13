@@ -30,9 +30,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'devise'
 
 # Use Paperclip to attach images
-gem 'paperclip', '~> 4.1'
+gem 'paperclip', '~> 5.0'
 # Enable AWS support
-gem 'aws-sdk-v1'
+gem 'aws-sdk'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -104,7 +104,7 @@ group :development do
   gem 'spring-commands-rspec'
   gem 'spring-commands-cucumber'
   gem 'annotate', '~> 2.6.5'
-  gem 'scss_lint'
+  gem 'scss_lint', require: false
   gem 'haml_lint'
   gem 'reek'
   gem 'overcommit'
