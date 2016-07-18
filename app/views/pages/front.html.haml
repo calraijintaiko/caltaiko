@@ -53,11 +53,13 @@
 
 - unless @articles.empty?
   %header.row
-    %h1.small-10.column
+    %h1.small-12.column
       = link_to 'NEWS', articles_path
-    - if user_signed_in?
-      = link_to 'Add Article', new_article_path,
-        class: 'button small round hide-for-medium-down large-1 column'
+      - if user_signed_in?
+        .right
+          = render 'layouts/button_link', link: new_article_path,
+            tooltip: 'Create a new article', link_class: 'add-button',
+            button: 'plus'
 
   %section.news
     .row
@@ -70,11 +72,13 @@
               = article.title
 
 %header.row
-  %h1.small-10.column
+  %h1.small-12.column
     = link_to 'UPCOMING PERFORMANCES', '/performances/upcoming'
-  - if user_signed_in?
-    = link_to 'Add Performance', new_performance_path,
-      class: 'button small round hide-for-medium-down large-2 column'
+    - if user_signed_in?
+      .right
+        = render 'layouts/button_link', link: new_performance_path,
+          tooltip: 'Create a new performance', link_class: 'add-button',
+          button: 'plus'
 
 = render 'performances/performances_feed', performances: @performances
 

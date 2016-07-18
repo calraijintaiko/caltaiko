@@ -1,8 +1,8 @@
 :ruby
   title = 'Performances | Cal Raijin Taiko'
   description = "Cal Raijin Taiko's upcoming and past performances." \
-    " Since our founding in 2005, Cal Raijin Taiko has performed at" \
-    " community and campus events all across the Bay Area."
+    ' Since our founding in 2005, Cal Raijin Taiko has performed at' \
+    ' community and campus events all across the Bay Area.'
   image = URI.join(root_url, image_path('logo.png'))
 
   meta title: title, description: description,
@@ -10,20 +10,24 @@
              url: request.original_url }
 
 %header.row
-  %h1.column.small-10
+  %h1.column.small-12
     = link_to 'UPCOMING PERFORMANCES', upcoming_performances_path
-  - if user_signed_in?
-    = link_to 'Add Performance', new_performance_path,
-      class: 'button small round column hide-for-medium-down large-2'
+    - if user_signed_in?
+      .right
+        = render 'layouts/button_link', link: new_performance_path,
+          tooltip: 'Create a new performance', link_class: 'add-button',
+          button: 'plus'
 
 = render 'performances_feed', performances: @upcoming
 
 %header.row
-  %h1.column.small-10
+  %h1.column.small-12
     = link_to 'PAST PERFORMANCES', past_performances_path
-  - if user_signed_in?
-    = link_to 'Add Performance', new_performance_path,
-      class: 'button small round hide-for-medium-down large-2 column'
+    - if user_signed_in?
+      .right
+        = render 'layouts/button_link', link: new_performance_path,
+          tooltip: 'Create a new performance', link_class: 'add-button',
+          button: 'plus'
 
 = render 'layouts/accordion', by_key: @by_year, active_key: @active_year,
   partial: 'performances/thumbnail_feed', id: 1

@@ -1,15 +1,15 @@
 :ruby
   title = 'Media | Cal Raijin Taiko'
   description = "View photos and videos of Cal Raijin Taiko's past" \
-    " performances. Since our founding in 2005, Cal Raijin Taiko has" \
-    " performed at community and campus events all across the Bay Area."
+    ' performances. Since our founding in 2005, Cal Raijin Taiko has' \
+    ' performed at community and campus events all across the Bay Area.'
   image = URI.join(root_url, image_path('logo.png'))
 
   meta title: title, description: description,
        og: { title: title, description: description, image: image,
              url: request.original_url }
 
-- if @performances.length > 0
+- unless @performances.empty?
   %header.row
     %h1.small-12.column PHOTO GALLERIES
 
@@ -18,10 +18,13 @@
       partial: 'pages/galleries_feed', active_key: @galleries_active_year
 
 %header.row
-  %h1.small-10.column VIDEOS
-  - if user_signed_in?
-    = link_to 'Add Video', new_video_path,
-      class: 'button small round column small-2 large-1'
+  %h1.small-12.column
+    VIDEOS
+    - if user_signed_in?
+      .right
+        = render 'layouts/button_link', link: new_video_path,
+          tooltip: 'Create a new video', link_class: 'add-button',
+          button: 'plus'
 
 %section.videos-feed
   = render 'layouts/accordion', by_key: @videos_by_year, id: 2,

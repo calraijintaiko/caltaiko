@@ -1,7 +1,7 @@
 :ruby
   title = 'Upcoming Performances | Cal Raijin Taiko'
   description = "A few of Cal Raijin Taiko's upcoming performances." \
-    " We perform at community and campus events all across the Bay Area."
+    ' We perform at community and campus events all across the Bay Area.'
   image = URI.join(root_url, image_path('logo.png'))
 
   meta title: title, description: description,
@@ -9,9 +9,12 @@
              url: request.original_url }
 
 %header.row
-  %h1.column.small-10 UPCOMING PERFORMANCES
-  - if user_signed_in?
-    = link_to 'Add Performance', new_performance_path,
-      class: 'button small round hide-for-medium-down large-2 column'
+  %h1.column.small-12
+    UPCOMING PERFORMANCES
+    - if user_signed_in?
+      .right
+        = render 'layouts/button_link', link: new_performance_path,
+          tooltip: 'Create a new performance', link_class: 'add-button',
+          button: 'plus'
 
 = render 'performances_feed', performances: @upcoming

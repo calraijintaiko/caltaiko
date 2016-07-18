@@ -10,9 +10,12 @@
              url: request.original_url }
 
 %header.row
-  %h1.small-8.column NEWS
-  - if user_signed_in?
-    = link_to 'Add Article', new_article_path,
-      class: 'button small round hide-for-medium-down large-1 column'
+  %h1.small-12.column
+    NEWS
+    - if user_signed_in?
+      .right
+        = render 'layouts/button_link', link: new_article_path,
+          tooltip: 'Create a new article', link_class: 'add-button',
+          button: 'plus'
 
 = render 'news_feed', articles: @articles

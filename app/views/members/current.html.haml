@@ -10,10 +10,13 @@
              url: request.original_url }
 
 %header.row
-  %h1.large-11.column CURRENT MEMBERS
-  - if user_signed_in?
-    = link_to 'Add Member', new_member_path,
-      class: 'button small round column hide-for-medium-down large-1'
+  %h1.small-12.column
+    CURRENT MEMBERS
+    - if user_signed_in?
+      .right
+        = render 'layouts/button_link', link: new_member_path,
+          tooltip: 'Create a new member', link_class: 'add-button',
+          button: 'plus'
 
 = render 'thumbs_with_modals', objects: @current
 
