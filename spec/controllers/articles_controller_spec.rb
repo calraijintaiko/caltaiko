@@ -11,7 +11,7 @@ describe ArticlesController do
 
   describe 'GET index' do
     before :each do
-      @created_articles = create_list(:article, rand(5..20))
+      @created_articles = create_list(:article, rand(5..10))
     end
 
     it 'assigns @articles to all articles' do

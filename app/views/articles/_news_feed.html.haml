@@ -1,7 +1,12 @@
+- content_for :head do
+  = pagination_link_tags articles
+
 %section.news-feed
-  - if articles.length > 0
+  - if !articles.empty?
     - articles.each do |article|
       = render '/articles/thumb', article: article
+    .news-feed--paginate
+      = will_paginate articles, page_links: false
   - else
     .row
       .column.small-12
