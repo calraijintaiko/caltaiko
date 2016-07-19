@@ -88,8 +88,8 @@ describe MembersController do
           expect(johnny.bio).to eq 'new bio'
         end
 
-        it 'redirects to the show template for that member' do
-          expect(response).to redirect_to Member.find(@id)
+        it 'redirects to the members index template' do
+          expect(response).to redirect_to members_path
         end
 
         it 'assigns @member to the updated member' do
