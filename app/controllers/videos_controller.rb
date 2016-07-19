@@ -10,6 +10,7 @@ class VideosController < ApplicationController
     @video = Video.new(video_params)
 
     if @video.save
+      flash[:notice] = "Successfully added \"#{@video.title}\" to media page"
       redirect_to media_videos_path
     else
       render 'new'
@@ -24,6 +25,7 @@ class VideosController < ApplicationController
     set_video
 
     if @video.update(video_params)
+      flash[:notice] = "Successfully updated video \"#{@video.title}\""
       redirect_to media_videos_path
     else
       render 'edit'
@@ -34,6 +36,7 @@ class VideosController < ApplicationController
     set_video
     @video.destroy
 
+    flash[:notice] = "Successfully deleted video \"#{@video.title}\""
     redirect_to media_videos_path
   end
 

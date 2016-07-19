@@ -15,6 +15,7 @@ class PerformancesController < ApplicationController
   def create
     @performance = Performance.new(performance_params)
     if @performance.save
+      flash[:notice] = "Performance \"#{@performance.title}\" successfully created"
       redirect_to @performance
     else
       render 'new'
@@ -43,6 +44,7 @@ class PerformancesController < ApplicationController
   # performance, otherwise back to edit form.
   def update
     if @performance.update(performance_params)
+      flash[:notice] = "Performance \"#{@performance.title}\" updated"
       redirect_to @performance
     else
       render 'edit'
@@ -53,6 +55,8 @@ class PerformancesController < ApplicationController
   def destroy
     @performance.delete_banner
     @performance.destroy
+
+    flash[:notice] = "Performance \"#{@performance.title}\" successfully deleted"
     redirect_to performances_path
   end
 

@@ -16,7 +16,8 @@ class MembersController < ApplicationController
     @member = Member.new(member_params)
 
     if @member.save
-      redirect_to @member
+      flash[:notice] = "#{@member.name}'s profile successfully created"
+      redirect_to members_path
     else
       render 'new'
     end
@@ -45,7 +46,8 @@ class MembersController < ApplicationController
   # otherwise back to edit form.
   def update
     if @member.update(member_params)
-      redirect_to @member
+      flash[:notice] = "#{@member.name}'s profile successfully updated"
+      redirect_to members_path
     else
       render 'edit'
     end
@@ -55,6 +57,7 @@ class MembersController < ApplicationController
   def destroy
     @member.destroy
 
+    flash[:notice] = "#{@member.name}'s profile successfully deleted"
     redirect_to members_path
   end
 
@@ -98,7 +101,7 @@ class MembersController < ApplicationController
   end
 
   def member_params
-    params.require(:member).permit(:name, :email, :phone, :gen, :major, :bio, :avatar,
-                                   :current, :delete_avatar)
+    params.require(:member).permit(:name, :email, :phone, :gen, :major, :bio,
+                                   :avatar, :current, :delete_avatar)
   end
 end
