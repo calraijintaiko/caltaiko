@@ -36,10 +36,11 @@
             %i.fi-photo
             %span.icon-text View images from this performance!
 
-        = link_to performance.link,
-          class: 'column small-12 medium-6 large-12' do
-          %i.fi-info
-          %span.icon-text Check the event page for more information!
+        - unless performance.link.empty?
+          = link_to performance.link,
+            class: 'column small-12 medium-6 large-12' do
+            %i.fi-info
+            %span.icon-text Check the event page for more information!
 
         - if user_signed_in?
           = link_to edit_performance_path(performance),
