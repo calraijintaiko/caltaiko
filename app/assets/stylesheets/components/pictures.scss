@@ -5,7 +5,7 @@
 
   @media #{$large-up} {
     img {
-      filter: alpha(opacity=40);
+      filter: alpha(opacity = 40);
       opacity: .4;
       width: 100%;
       zoom: 1;
@@ -19,7 +19,7 @@
     right: 0;
 
     .subtitle {
-      color: rgba(255, 255, 255, .75);
+      color: $hover-text-color;
       font-family: $header-font;
       font-size: 1.5rem;
       letter-spacing: 1px;
@@ -40,39 +40,49 @@ img.team-pic {
   border: 3px $main-color solid;
 }
 
-#team-pic {
-  background-color: $dark-bg;
-  border: 3px $main-color solid;
+#about-page-banner {
   margin-bottom: 30px;
-  padding: 0;
+}
+
+.performance-image {
+  background-color: $dark-bg;
+  border-bottom: 1px $border-color solid;
+  position: relative;
 
   img {
     @include transition;
+    display: block;
+    position: relative;
+    width: 100%;
+    z-index: 1;
   }
 
   .text-link {
     @include transition($effect: color);
-    color: rgba(0, 0, 0, 0);
-    display: block;
-    font-family: $main-font;
-    margin: 0;
+    color: $transparent;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato';
+    height: 100%;
+    justify-content: center;
+    letter-spacing: 1px;
     position: absolute;
     text-align: center;
     text-decoration: none;
-    top: 42%;
+    top: 0;
     width: 100%;
+    word-spacing: 2px;
     z-index: 0;
   }
 }
 
-#team-pic:hover {
+.performance-image:hover {
   img {
-    filter: alpha(opacity=50);
-    opacity: .5;
-    zoom: 1;
+    filter: alpha(opacity = 30);
+    opacity: .3;
   }
 
-  .text-link {
+  a.text-link {
     color: $white;
     z-index: 3;
   }

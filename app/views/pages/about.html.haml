@@ -8,9 +8,17 @@
        og: { title: title, description: description, image: image,
              url: request.original_url }
 
+.banner-image#about-page-banner
+  = image_tag('about_page_banner.jpg')
+  .text.row.show-for-medium-up
+    .column.large-12
+      %h1.title About Us
+
 .row
+  .small-12.column.hide-for-medium-up
+    %h1.article-title About Us
   .small-12.column
-    .text-block
+    .article
       :markdown
         In the Spring of 2005, a small-but-committed group of students pooled
         together their resources and formed UC Berkeley's first taiko group.
@@ -22,16 +30,16 @@
 
 .row
   .small-12.medium-7.column
-    #team-pic
+    .performance-image
       = link_to image_tag('team_photo.jpg'), members_path
       = link_to 'Meet the team!', members_path, class: 'text-link'
   .column.small-12.medium-5
-    .text-block
+    .article
       :markdown
-        In the decade since it's inception, the members of Cal Raijin Taiko have
-        composed over a dozen unique and vibrant songs, and performed for scores
-        of audiences large and small.
-        Our **[alumni](#{alumni_members_path})** have spread
-        throughout the country, many of them founding entirely new taiko groups
-        in the cities where they settle. Every Fall we accept new members to
-        make up the next Generation of our Cal Raijin Taiko family.
+        Over the years since our founding, the members of Cal Raijin Taiko have
+        composed more than a dozen unique and vibrant songs, and performed for
+        scores of audiences large and small.
+        Our **[alumni](#{alumni_members_path})** have spread throughout the
+        country, many of them going on to found entirely new taiko groups.
+        Every Fall we accept new members to make up the next Generation of our
+        Cal Raijin Taiko family.
