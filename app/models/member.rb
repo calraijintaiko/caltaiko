@@ -50,9 +50,7 @@ class Member < ActiveRecord::Base
   has_attached_file :avatar, styles: { thumb: '500x500#', full: '500x9999' },
     path: '/members/:slug/:attachment/:style/:filename',
     url: '/members/:slug/:attachment/:style/:filename',
-    # default_url: '/images/members/:attachment/:style/missing.png'
-    # if robohash website ever closes down, delete below and uncomment above
-    default_url: 'https://robohash.org/set_any/bgset_any/:id?size=500x500',
+    default_url: '/images/members/:attachment/:style/missing.png',
     s3_protocol: :https
   # rubocop:enable Style/AlignHash
   include DeletableAttachment
