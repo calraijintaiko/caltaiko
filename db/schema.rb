@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -42,9 +41,8 @@ ActiveRecord::Schema.define(version: 20160410021940) do
     t.string   "slug"
     t.string   "email"
     t.string   "phone"
+    t.index ["slug"], name: "index_members_on_slug", unique: true
   end
-
-  add_index "members", ["slug"], name: "index_members_on_slug", unique: true
 
   create_table "performance_videos", force: :cascade do |t|
     t.string   "title"
@@ -52,9 +50,8 @@ ActiveRecord::Schema.define(version: 20160410021940) do
     t.integer  "performance_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["performance_id"], name: "index_performance_videos_on_performance_id"
   end
-
-  add_index "performance_videos", ["performance_id"], name: "index_performance_videos_on_performance_id"
 
   create_table "performances", force: :cascade do |t|
     t.datetime "date"
@@ -70,9 +67,8 @@ ActiveRecord::Schema.define(version: 20160410021940) do
     t.string   "slug"
     t.string   "link"
     t.string   "images_link"
+    t.index ["slug"], name: "index_performances_on_slug", unique: true
   end
-
-  add_index "performances", ["slug"], name: "index_performances_on_slug", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -88,11 +84,10 @@ ActiveRecord::Schema.define(version: 20160410021940) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "username"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["username"], name: "index_users_on_username", unique: true
 
   create_table "videos", force: :cascade do |t|
     t.datetime "created_at"
