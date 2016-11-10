@@ -9,7 +9,7 @@ RSpec.describe MessagesController, type: :controller do
   end
 
   describe 'POST create' do
-    let(:post_create) { post :create, message: attributes }
+    let(:post_create) { post :create, params: { message: attributes } }
 
     context 'no name is provided' do
       let(:attributes) do

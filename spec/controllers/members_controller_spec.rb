@@ -40,30 +40,30 @@ describe MembersController do
 
     context 'GET show' do
       it 'gets member using slug' do
-        get :show, id: 'johnny-b'
+        get :show, params: { id: 'johnny-b' }
         expect(assigns(:member)).to eq @johnny
       end
       it 'gets member using id' do
-        get :show, id: @id
+        get :show, params: { id: @id }
         expect(assigns(:member)).to eq @johnny
       end
       it 'renders the show template' do
-        get :show, id: @id
+        get :show, params: { id: @id }
         expect(response).to render_template 'show'
       end
     end
 
     context 'GET edit' do
       it 'gets member using slug' do
-        get :edit, id: 'johnny-b'
+        get :edit, params: { id: 'johnny-b' }
         expect(assigns(:member)).to eq @johnny
       end
       it 'gets member using id' do
-        get :edit, id: @id
+        get :edit, params: { id: @id }
         expect(assigns(:member)).to eq @johnny
       end
       it 'renders the edit template' do
-        get :edit, id: @id
+        get :edit, params: { id: @id }
         expect(response).to render_template 'edit'
       end
     end
@@ -77,7 +77,7 @@ describe MembersController do
             major: 'Taiko yo',
             bio: 'new bio'
           }
-          post :update, member: attributes, id: @id
+          post :update, params: { member: attributes, id: @id }
         end
 
         it 'updates the members attributes to the submitted values' do
@@ -103,7 +103,7 @@ describe MembersController do
             name: 'Bob',
             bio: nil
           }
-          post :update, member: attributes, id: @id
+          post :update, params: { member: attributes, id: @id }
         end
 
         it 'renders the edit template' do
@@ -179,20 +179,20 @@ describe MembersController do
     end
 
     it 'returns all members of a certain gen' do
-      get :gen, gen: @gens[0]
+      get :gen, params: { gen: @gens[0] }
       expect(assigns(:members)).to match_array @gen0
-      get :gen, gen: @gens[1]
+      get :gen, params: { gen: @gens[1] }
       expect(assigns(:members)).to match_array @gen1
     end
 
     it 'fails when given non-integer gen' do
-      expect { get :gen, gen: 'yo mmama' }.to raise_error ActionController::UrlGenerationError
-      expect { get :gen, gen: 2.1231 }.to raise_error ActionController::UrlGenerationError
-      expect { get :gen, gen: -1 }.to raise_error ActionController::UrlGenerationError
+      expect { get :gen, params: { gen: 'yo mmama' }}.to raise_error ActionController::UrlGenerationError
+      expect { get :gen, params: { gen: 2.1231 }}.to raise_error ActionController::UrlGenerationError
+      expect { get :gen, params: { gen: -1 }}.to raise_error ActionController::UrlGenerationError
     end
 
     it 'redirects to index when given gen of 0' do
-      get :gen, gen: '0'
+      get :gen, params: { gen: '0' }
       expect(response).to redirect_to members_path
     end
   end
@@ -228,7 +228,7 @@ describe MembersController do
           'bio' => 'Tom Hata founder man',
           'current' => false
         }
-        post :create, member: attributes
+        post :create, params: { member: attributes }
         attributes.each do |key, value|
           expect(assigns(:member).attributes[key]).to eq value
         end
@@ -244,7 +244,7 @@ describe MembersController do
           'bio' => 'Tom Hata founder man',
           'current' => false
         }
-        post :create, member: attributes
+        post :create, params: { member: attributes }
       end
 
       it 'renders the new template' do
@@ -261,7 +261,7 @@ describe MembersController do
     it 'removes an member from the database' do
       signed_in_as_a_valid_user
       create(:member, id: 1)
-      delete :destroy, id: 1
+      delete :destroy, params: { id: 1 }
       expect(Member.find_by_id(1)).to be_nil
     end
   end
@@ -273,7 +273,7 @@ describe MembersController do
     end
 
     it 'GET edit redirects to the login page' do
-      get :edit, id: 1
+      get :edit, params: { id: 1 }
       expect(response).to redirect_to(new_user_session_path)
     end
 
@@ -288,13 +288,13 @@ describe MembersController do
         'link' => 'https://www.youtube.com/watch?v=p2H5YVfZVFw',
         'year' => 2012
       }
-      post :create, member: attributes
+      post :create, params: { member: attributes }
       expect(response).to redirect_to(new_user_session_path)
     end
 
     it 'DELETE destroy redirects to the login page' do
       create(:member, id: 1)
-      delete :destroy, id: 1
+      delete :destroy, params: { id: 1 }
       expect(Member.find_by_id(1)).to_not be_nil
       expect(response).to redirect_to(new_user_session_path)
     end

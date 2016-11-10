@@ -86,7 +86,8 @@ group :test do
   gem 'timecop'
   gem 'capybara'
   gem 'launchy'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.5.0'
+  gem 'rails-controller-testing'
   gem 'factory_girl_rails'
   gem 'codeclimate-test-reporter', require: nil
   gem 'cucumber-rails', require: false

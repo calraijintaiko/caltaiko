@@ -17,17 +17,17 @@ describe VideosController do
     end
 
     it 'gets video using slug' do
-      get :edit, id: 'cal-raijin-taiko-sazanami'
+      get :edit, params: { id: 'cal-raijin-taiko-sazanami' }
       expect(assigns(:video)).to eq @vid
     end
 
     it 'gets video using id' do
-      get :edit, id: @id
+      get :edit, params: { id: @id }
       expect(assigns(:video)).to eq @vid
     end
 
     it 'renders the edit template' do
-      get :edit, id: @id
+      get :edit, params: { id: @id }
       expect(response).to render_template 'edit'
     end
   end
@@ -41,7 +41,7 @@ describe VideosController do
           'link' => 'https://www.youtube.com/watch?v=p2H5YVfZVFw',
           'year' => 2012
         }
-        post :create, video: attributes
+        post :create, params: { video: attributes }
         attributes.each do |key, value|
           expect(assigns(:video).attributes[key]).to eq value
         end
@@ -55,7 +55,7 @@ describe VideosController do
           'title' => 'Cute Cats',
           'year' => 2012
         }
-        post :create, video: attributes
+        post :create, params: { video: attributes }
       end
 
       it 'renders the new template' do
@@ -83,7 +83,7 @@ describe VideosController do
           link: 'https://www.youtube.com/watch?v=poop',
           year: 2010
         }
-        post :update, video: attributes, id: @id
+        post :update, params: { video: attributes, id: @id }
       end
 
       it 'updates the videos attributes to the submitted values' do
@@ -104,7 +104,7 @@ describe VideosController do
           title: 'An Awesome New Title',
           year: nil
         }
-        post :update, video: attributes, id: @id
+        post :update, params: { video: attributes, id: @id }
       end
 
       it 'renders the edit template' do
@@ -124,7 +124,7 @@ describe VideosController do
     it 'removes a video from the database' do
       signed_in_as_a_valid_user
       create(:video, id: 1)
-      delete :destroy, id: 1
+      delete :destroy, params: { id: 1 }
       expect(Video.find_by_id(1)).to be_nil
     end
   end
@@ -137,7 +137,7 @@ describe VideosController do
 
     it 'GET edit redirects to the login page' do
       create(:video, id: 1)
-      get :edit, id: 1
+      get :edit, params: { id: 1 }
       expect(response).to redirect_to(new_user_session_path)
     end
 
@@ -147,13 +147,13 @@ describe VideosController do
         'link' => 'https://www.youtube.com/watch?v=p2H5YVfZVFw',
         'year' => 2012
       }
-      post :create, video: attributes
+      post :create, params: { video: attributes }
       expect(response).to redirect_to(new_user_session_path)
     end
 
     it 'DELETE destroy redirects to the login page' do
       create(:video, id: 1)
-      delete :destroy, id: 1
+      delete :destroy, params: { id: 1 }
       expect(Video.find_by_id(1)).to_not be_nil
       expect(response).to redirect_to(new_user_session_path)
     end

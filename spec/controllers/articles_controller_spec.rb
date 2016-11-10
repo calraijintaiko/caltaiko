@@ -35,34 +35,34 @@ describe ArticlesController do
 
     context 'GET show' do
       it 'gets article using slug' do
-        get :show, id: 'announcing-fall-2014-tryouts'
+        get :show, params: { id: 'announcing-fall-2014-tryouts' }
         expect(assigns(:article)).to eq @article
       end
 
       it 'gets article using id' do
-        get :show, id: @id
+        get :show, params: { id: @id }
         expect(assigns(:article)).to eq @article
       end
 
       it 'renders the show template' do
-        get :show, id: @id
+        get :show, params: { id: @id }
         expect(response).to render_template 'show'
       end
     end
 
     context 'GET edit' do
       it 'gets article using slug' do
-        get :edit, id: 'announcing-fall-2014-tryouts'
+        get :edit, params: { id: 'announcing-fall-2014-tryouts' }
         expect(assigns(:article)).to eq @article
       end
 
       it 'gets article using id' do
-        get :edit, id: @id
+        get :edit, params: { id: @id }
         expect(assigns(:article)).to eq @article
       end
 
       it 'renders the edit template' do
-        get :edit, id: @id
+        get :edit, params: { id: @id }
         expect(response).to render_template 'edit'
       end
     end
@@ -78,7 +78,7 @@ describe ArticlesController do
           'text' => 'Cal Raijin Taiko proved to be the bestest evar',
           'current' => true
         }
-        post :create, article: attributes
+        post :create, params: { article: attributes }
         attributes.each do |key, value|
           expect(assigns(:article).attributes[key]).to eq value
         end
@@ -93,7 +93,7 @@ describe ArticlesController do
           'date' => Time.zone.now,
           'current' => true
         }
-        post :create, article: attributes
+        post :create, params: { article: attributes }
       end
 
       it 'renders the new template' do
@@ -121,7 +121,7 @@ describe ArticlesController do
           date: Date.new(2016, 06, 19),
           text: 'Some new text'
         }
-        post :update, article: attributes, id: @id
+        post :update, params: { article: attributes, id: @id }
       end
 
       it 'updates the articles attributes to the submitted values' do
@@ -146,7 +146,7 @@ describe ArticlesController do
           title: 'An Awesome New Title',
           date: nil
         }
-        post :update, article: attributes, id: @id
+        post :update, params: { article: attributes, id: @id }
       end
 
       it 'renders the edit template' do
@@ -165,7 +165,7 @@ describe ArticlesController do
     it 'removes an article from the database' do
       signed_in_as_a_valid_user
       create(:article, id: 1)
-      delete :destroy, id: 1
+      delete :destroy, params: { id: 1 }
       expect(Article.find_by_id(1)).to be_nil
     end
   end
@@ -177,7 +177,7 @@ describe ArticlesController do
     end
 
     it 'GET edit redirects to the login page' do
-      get :edit, id: 1
+      get :edit, params: { id: 1 }
       expect(response).to redirect_to(new_user_session_path)
     end
 
@@ -187,13 +187,13 @@ describe ArticlesController do
         'link' => 'https://www.youtube.com/watch?v=p2H5YVfZVFw',
         'year' => 2012
       }
-      post :create, article: attributes
+      post :create, params: { article: attributes }
       expect(response).to redirect_to(new_user_session_path)
     end
 
     it 'DELETE destroy redirects to the login page' do
       create(:article, id: 1)
-      delete :destroy, id: 1
+      delete :destroy, params: { id: 1 }
       expect(Article.find_by_id(1)).to_not be_nil
       expect(response).to redirect_to(new_user_session_path)
     end

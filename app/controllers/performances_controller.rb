@@ -84,7 +84,7 @@ class PerformancesController < ApplicationController
       date_string = params.delete(:date) + ' ' + params.delete(:time)
       date = DateTime.parse(date_string)
 
-      params[:performance].merge!({
+      params[:performance] = params[:performance].merge({
         'date(1i)' => date.year.to_s,
         'date(2i)' => date.month.to_s,
         'date(3i)' => date.day.to_s,

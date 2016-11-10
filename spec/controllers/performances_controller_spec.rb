@@ -60,34 +60,34 @@ describe PerformancesController do
 
     context 'GET show' do
       it 'gets performance using slug' do
-        get :show, id: 'international-taiko-festival-2010'
+        get :show, params: { id: 'international-taiko-festival-2010' }
         expect(assigns(:performance)).to eq @itf
       end
 
       it 'gets performance using id' do
-        get :show, id: @id
+        get :show, params: { id: @id }
         expect(assigns(:performance)).to eq @itf
       end
 
       it 'renders the show template' do
-        get :show, id: @id
+        get :show, params: { id: @id }
         expect(assigns(:performance)).to eq @itf
       end
     end
 
     context 'GET edit' do
       it 'gets performance using slug' do
-        get :edit, id: 'international-taiko-festival-2010'
+        get :edit, params: { id: 'international-taiko-festival-2010' }
         expect(assigns(:performance)).to eq @itf
       end
 
       it 'gets performance using id' do
-        get :edit, id: @id
+        get :edit, params: { id: @id }
         expect(assigns(:performance)).to eq @itf
       end
 
       it 'renders the show template' do
-        get :edit, id: @id
+        get :edit, params: { id: @id }
         expect(assigns(:performance)).to eq @itf
       end
     end
@@ -100,8 +100,10 @@ describe PerformancesController do
             description: 'cool concert',
             location: 'Zellerbach Hall'
           }
-          post :update, performance: attributes, id: @id,
-            date: 'Monday, March 28, 2016', time: '12:00 PM'
+          post :update, params: {
+            performance: attributes, id: @id,
+            date: 'Monday, March 28, 2016', time: '12:00 PM',
+          }
         end
 
         it 'updates the performances attributes to the submitted values' do
@@ -129,7 +131,7 @@ describe PerformancesController do
             location: nil,
             date: 'March 28, 2016, 12:00 PM'
           }
-          post :update, performance: attributes, id: @id
+          post :update, params: { performance: attributes, id: @id }
         end
 
         it 'renders the edit template' do
@@ -204,7 +206,7 @@ describe PerformancesController do
           'description' => 'Come watch our spring showcase!',
           'date' => Time.zone.local(2011, 6, 19)
         }
-        post :create, performance: attributes
+        post :create, params: { performance: attributes }
         attributes.each do |key, value|
           expect(assigns(:performance).attributes[key]).to eq value
         end
@@ -219,7 +221,7 @@ describe PerformancesController do
           'description' => 'Come watch our spring showcase!',
           'date' => Time.zone.local(2011, 6, 19)
         }
-        post :create, performance: attributes
+        post :create, params: { performance: attributes }
       end
 
       it 'renders the new template' do
@@ -236,7 +238,7 @@ describe PerformancesController do
     it 'removes an performance from the database' do
       signed_in_as_a_valid_user
       create(:performance, id: 1)
-      delete :destroy, id: 1
+      delete :destroy, params: { id: 1 }
       expect(Performance.find_by_id(1)).to be_nil
     end
   end
@@ -248,7 +250,7 @@ describe PerformancesController do
     end
 
     it 'GET edit redirects to the login page' do
-      get :edit, id: 1
+      get :edit, params: { id: 1 }
       expect(response).to redirect_to(new_user_session_path)
     end
 
@@ -258,13 +260,13 @@ describe PerformancesController do
         'link' => 'https://www.youtube.com/watch?v=p2H5YVfZVFw',
         'year' => 2012
       }
-      post :create, performance: attributes
+      post :create, params: { performance: attributes }
       expect(response).to redirect_to(new_user_session_path)
     end
 
     it 'DELETE destroy redirects to the login page' do
       create(:performance, id: 1)
-      delete :destroy, id: 1
+      delete :destroy, params: { id: 1 }
       expect(Performance.find_by_id(1)).to_not be_nil
       expect(response).to redirect_to(new_user_session_path)
     end
