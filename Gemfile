@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.2.0'
+gem 'rails', '~> 5.0.0'
 # Use rubygems 2.6.0
 gem 'rubygems-update', '~> 2.6.0'
 # Use SCSS for stylesheets
@@ -17,8 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster.
-# Read more: https://github.com/rails/turbolinks
-gem 'turbolinks', '~> 2.5.0'
+gem 'turbolinks', '~> 5.0.0'
 # Fix javascript not loading because of turbolinks
 gem 'jquery-turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -103,7 +101,7 @@ group :development do
   gem 'guard-cucumber', '~>1.6.0'
   gem 'spring-commands-rspec'
   gem 'spring-commands-cucumber'
-  gem 'annotate', '~> 2.6.5'
+  gem 'annotate', '~> 2.7.0'
   gem 'scss_lint', require: false
   gem 'haml_lint'
   gem 'reek'
@@ -113,5 +111,4 @@ group :development do
   gem 'web-console'
   gem 'pry-rails'
   gem 'pry-byebug', '~>3.3.0'
-  gem 'quiet_assets'
 end
