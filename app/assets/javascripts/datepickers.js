@@ -1,4 +1,4 @@
-$(document).on('page:change', function () {
+$(document).on('turbolinks:load', function () {
     $('.full-datepicker').pickadate({
         format: 'dddd, mmmm dd, yyyy',
         hiddenName: true

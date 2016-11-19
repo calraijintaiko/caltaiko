@@ -1,5 +1,5 @@
 "use strict";
-$(document).on('page:change', function() {
+$(document).on('turbolinks:load', function() {
     $(".youtube").each(function() {
         var id = $(this).data('id');
 
