@@ -12,16 +12,6 @@
   instagram_feed_src = 'https://snapwidget.com/in/?u=Y2FscmFpamlu' \
     'dGFpa298aW58MTAwfDR8Nnx8eWVzfDV8bm9uZXxvblN0YXJ0fHllc3xubw==&ve=090516'
 
-:javascript
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&" +
-      "version=v2.4&appId=699325996783664";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-
 = stylesheet_link_tag 'slick', media: 'all', 'data-turbolinks-track' => true
 = stylesheet_link_tag 'slick-theme', media: 'all',
   'data-turbolinks-track' => true
