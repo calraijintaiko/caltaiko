@@ -14,4 +14,4 @@ script:
   - bundle exec rspec spec
 
 after_script:
-  - CODECLIMATE_REPO_TOKEN=73bdd89da2ab3fecea83dbd973bbb186f3926f00d1d2bba8a73176d6e8561ba4 bundle exec codeclimate-test-reporter
+  - bundle exec codeclimate-test-reporter
