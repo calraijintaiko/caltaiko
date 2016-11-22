@@ -9,7 +9,7 @@
 #  title      :string(255)
 #  slug       :string(255)
 #  year       :integer
-class Video < ActiveRecord::Base
+class Video < ApplicationRecord
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
   validates :title, presence: true

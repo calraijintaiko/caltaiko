@@ -30,7 +30,7 @@
 # default images available to be used.
 # They can be found in
 #     /public/images/:style/missing.png
-class Member < ActiveRecord::Base
+class Member < ApplicationRecord
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
   validates :name, presence: true, length: { minimum: 2 }

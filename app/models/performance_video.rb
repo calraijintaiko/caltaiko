@@ -8,7 +8,7 @@
 #  created_at     :datetime
 #  updated_at     :datetime
 #  performance_id :integer
-class PerformanceVideo < ActiveRecord::Base
+class PerformanceVideo < ApplicationRecord
   belongs_to :performance
 
   validates :title, presence: true

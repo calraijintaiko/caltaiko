@@ -28,7 +28,7 @@
 # === Note:
 # After deployment, the +registerable+ tag will be removed, so that someone
 # couldn't just create an account.
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

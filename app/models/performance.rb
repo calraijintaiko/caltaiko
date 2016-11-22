@@ -16,7 +16,7 @@
 #  slug                :string(255)
 #  link                :string(255)
 #  images_link         :string(255)
-class Performance < ActiveRecord::Base
+class Performance < ApplicationRecord
   has_many :performance_videos, dependent: :destroy
   accepts_nested_attributes_for :performance_videos, allow_destroy: true,
                                                      reject_if: :reject_videos

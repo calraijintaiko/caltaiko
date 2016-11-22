@@ -18,7 +18,7 @@
 # All current articles will show up on the homepage.
 # Articles can be accessed using either their id or a slug
 # assigned to them when they are created.
-class Article < ActiveRecord::Base
+class Article < ApplicationRecord
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
   validates :title, presence: true
