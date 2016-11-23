@@ -8,6 +8,8 @@ bundler_args: --without production development
 before_script:
   - bin/rails db:migrate RAILS_ENV=test
   - export TZ=Canada/Pacific
+  - npm install -g bower
+  - bower install
 
 script:
   - bundle exec cucumber
