@@ -1,0 +1,25 @@
+{
+  "name": "caltaiko",
+  "version": "1.0.0",
+  "description": "= Cal Raijin Taiko Website",
+  "main": "application.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calraijintaiko/caltaiko.git"
+  },
+  "author": "Joel Graycar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/calraijintaiko/caltaiko/issues"
+  },
+  "homepage": "https://github.com/calraijintaiko/caltaiko#readme",
+  "dependencies": {
+    "bower": "^1.8.0"
+  }
+}
