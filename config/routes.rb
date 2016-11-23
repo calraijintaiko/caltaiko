@@ -26,8 +26,8 @@ Rails.application.routes.draw do
     collection do
       get 'current'
       get 'alumni'
-      get 'gen' => :all_gens
-      get 'gen/:gen' => :gen, constraints: { gen: /\d+/ }
+      get 'gen' => :all_gens, as: :all_gens
+      get 'gen/:gen' => :gen, constraints: { gen: /\d+/ }, as: :gen
       get 'database'
     end
   end
