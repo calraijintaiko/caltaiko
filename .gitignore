@@ -18,6 +18,10 @@
 /log/*.log
 /tmp
 
+# Ignore frontend dependencies.
+/node_modules
+/vendor/assets/bower_components/
+
 # Ignore generated Rdoc documentation
 /doc
 

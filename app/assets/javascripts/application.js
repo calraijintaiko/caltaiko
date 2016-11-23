@@ -25,6 +25,7 @@
 //= require picker.time
 //= require legacy
 //= require jquery.maskedinput.min
+//= require webcomponentsjs/webcomponents-lite.min
 //= require_tree .
 //
 //= require turbolinks
