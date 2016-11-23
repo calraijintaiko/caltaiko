@@ -30,6 +30,7 @@
 //
 //= require turbolinks
 
+Foundation.global.namespace = '';
 $(document).on('turbolinks:load', function() {
   $(function(){ $(document).foundation(); });
 });
