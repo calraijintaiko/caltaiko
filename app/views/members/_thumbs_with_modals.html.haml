@@ -4,11 +4,11 @@
       - objects.each do |member|
         %li
           %article.member
-            .member-image
-              %a{ href: '#', data: { reveal: { id: "#{member.slug}" } } }
-                = image_tag(member.avatar.url(:thumb))
-              %a.text-link.hide-for-medium-down{ href: '#',
-                data: { reveal: { id: "#{member.slug}" } } }= member.name
+            .member-image{ data: { name: member.name, gen: member.gen,
+              gen_link: gen_members_path(member.gen), major: member.major,
+              bio: member.bio, image: member.avatar.url(:full) } }
+              %a= image_tag(member.avatar.url(:thumb))
+              %a.text-link.hide-for-medium-down= member.name
 
             - if user_signed_in?
               .icons.hide-for-medium-down.row
@@ -21,8 +21,3 @@
                   %i.fi-trash
             .hide-for-large-up
               %p.name= member.name
-
-  - objects.each do |member|
-    .reveal-modal.medium{ id: "#{member.slug}", data: { reveal: '' } }
-      = render 'members/show', member: member
-      %a.close-reveal-modal.hide-for-large-up &#215;

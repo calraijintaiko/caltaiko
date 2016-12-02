@@ -17,6 +17,8 @@ module Caltaiko
 
     # Add font files to asset pipeline
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
+    # Add bower components to asset pipeline
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.

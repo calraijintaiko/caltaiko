@@ -1,0 +1,9 @@
+:ruby
+  def component_path(component)
+    asset_path("assets/#{component}/#{component}.html")
+  end
+
+%link{ rel: 'import', href: component_path('polymer') }
+%link{ rel: 'import', href: component_path('paper-button') }
+%link{ rel: 'import', href: component_path('paper-dialog') }
+%link{ rel: 'import', href: component_path('paper-dialog-scrollable') }
