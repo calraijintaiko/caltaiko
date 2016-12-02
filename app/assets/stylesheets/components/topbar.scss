@@ -1,3 +1,5 @@
-body.f-topbar-fixed {
-  padding-top: 45px;
+@media (min-width: 1024px) {
+  body.f-topbar-fixed {
+    padding-top: 45px;
+  }
 }
