@@ -7,7 +7,7 @@
     "doc": "doc"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "bin/postinstall.sh"
   },
   "repository": {
     "type": "git",
@@ -20,9 +20,7 @@
   },
   "homepage": "https://github.com/calraijintaiko/caltaiko#readme",
   "dependencies": {
-    "bower": "^1.8.0"
-  },
-  "scripts": {
-      "postinstall": "./node_modules/bower/bin/bower install"
+    "bower": "^1.8.0",
+    "vulcanize": "^1.14.12"
   }
 }

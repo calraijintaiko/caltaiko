@@ -9,8 +9,11 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( :modernizr )
 
 # Slick Carousel assets
-Rails.application.config.assets.precompile += %w( slick.css )
-Rails.application.config.assets.precompile += %w( slick-theme.css )
-Rails.application.config.assets.precompile += %w( ajax-loader.gif )
-Rails.application.config.assets.precompile += %w( datepicker-default.css )
-Rails.application.config.assets.precompile += %w( datepicker-classic.css )
+Rails.application.config.assets.precompile += %w(
+  slick.css
+  slick-theme.css
+  ajax-loader.gif
+  datepicker-default.css
+  datepicker-classic.css
+  components.html
+)
