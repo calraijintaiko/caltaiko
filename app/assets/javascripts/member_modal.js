@@ -1,4 +1,8 @@
 $(document).on('turbolinks:load', function() {
+    $('#member-dialog .bio-pic')[0].onload = function() {
+        $('#member-dialog')[0].center();
+    };
+
     $('.member-image').click(function(e) {
         var member = e.currentTarget.dataset;
         var dialog = $('#member-dialog')[0];
@@ -12,7 +16,7 @@ $(document).on('turbolinks:load', function() {
         dialogName.innerText = member.name;
         dialogGen.innerText = 'Generation ' + member.gen;
         dialogGen.href = member.genLink;
-        dialogMajor.innerText = member.major;
+        dialogMajor.innerText = '· ' + member.major;
         dialogBio.innerText = member.bio;
 
         dialog.withBackdrop = true;
