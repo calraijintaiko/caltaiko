@@ -19,7 +19,7 @@
     %meta{ name: 'mobile-web-app-capable', content: 'yes' }
     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
 
-    = render 'layouts/components'
+    %link{ rel: 'import', href: asset_path('components.html') }
 
   %body{ class: controller.controller_name, id: controller.action_name }
     = render 'layouts/navbar'
