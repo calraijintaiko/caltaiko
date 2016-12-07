@@ -1,6 +1,6 @@
 @media (max-width: 600px) {
   #member-dialog {
-    width: 95%;
+    width: 85%;
   }
 }
 
@@ -30,5 +30,13 @@
   .member-gen-major {
     font-size: 17px;
     margin-bottom: 15px;
+  }
+
+  .spacer {
+    margin-top: 20px;
+  }
+
+  .bio-block {
+    padding-left: 25px;
   }
 }
