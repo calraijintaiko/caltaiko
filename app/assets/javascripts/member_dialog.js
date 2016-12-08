@@ -11,6 +11,7 @@ $(document).on('turbolinks:load', function() {
         var dialogGen = dialog.querySelector('#member-gen');
         var dialogMajor = dialog.querySelector('#member-major');
         var dialogBio = dialog.querySelector('#member-bio');
+        var dialogScrollable = dialog.querySelector('#scrollable');
 
         dialogImage.src = member.image;
         dialogName.innerText = member.name;
@@ -18,6 +19,7 @@ $(document).on('turbolinks:load', function() {
         dialogGen.href = member.genLink;
         dialogMajor.innerText = '· ' + member.major;
         dialogBio.innerText = member.bio;
+        dialogScrollable.style.maxWidth = '100%';
 
         dialog.withBackdrop = true;
         dialog.open();
