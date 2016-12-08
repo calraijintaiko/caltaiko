@@ -10,13 +10,20 @@
        og: { title: title, description: description, image: image,
              url: request.original_url }
 
+.banner-image.static-page-banner
+  = image_tag('contact_page_banner.jpg')
+  .text.row.show-for-medium-up
+    .column.large-12
+      %h1.title Contact Us
+
 .row
+  .column.small-12.hide-for-medium-up
+    %h1.article-title Contact Us
   .small-12.medium-7.column.text-left
     .row
       .column.small-11
-        .row.contact-form.text-block
+        .row.contact-form
           .column.small-12
-            %h3 Contact Us
             %p
               Thank you for reaching out to us! Please fill out and submit the
               contact form below, and we'll get back to you as soon as possible.

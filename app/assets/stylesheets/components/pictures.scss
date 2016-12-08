@@ -34,14 +34,23 @@
       text-transform: uppercase;
     }
   }
+
+  &.static-page-banner {
+    margin-bottom: 30px;
+
+    @media #{$medium-only} {
+      img {
+        filter: alpha(opacity = 40);
+        opacity: .4;
+        width: 100%;
+        zoom: 1;
+      }
+    }
+  }
 }
 
 img.team-pic {
   border: 3px $main-color solid;
-}
-
-#about-page-banner {
-  margin-bottom: 30px;
 }
 
 .performance-image {
