@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if grep --quiet "$1.html" components.html; then
+  echo "Component $1 is already added."
+else
+  echo "<link rel=\"import\" href=\"vendor/assets/bower_components/$1/$1.html\">" >> components.html
+  if [ $? -ne 0 ]; then
+      echo "Error adding component $1 to components.html"
+      exit
+  fi
+  sort components.html -o components.html
+  echo "Added component $1 to components.html"
+
+  ./node_modules/vulcanize/bin/vulcanize --strip-comments components.html > vendor/assets/bower_components/components.html
+  if [ $? -ne 0 ]; then
+      echo "Error while vulcanizing components.html"
+      exit
+  fi
+  echo "Successfully vulcanized components.html"
+fi
