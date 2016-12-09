@@ -17,7 +17,7 @@ $(document).on('turbolinks:load', function() {
         dialogName.innerText = member.name;
         dialogGen.innerText = 'Generation ' + member.gen;
         dialogGen.href = member.genLink;
-        dialogMajor.innerText = '· ' + member.major;
+        dialogMajor.innerText = '\267 ' + member.major;
         dialogBio.innerText = member.bio;
         dialogScrollable.style.maxWidth = '100%';
 
