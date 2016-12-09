@@ -8,13 +8,11 @@
        og: { title: title, description: description, image: image,
              url: request.original_url }
 
-.generation{ itemscope: '', itemtype: 'http://schema.org/Organization' }
+.generation
   %header.row
     %h2.column.small-12 GENERATION #{@gen}
 
-  %meta{ itemprop: 'name', content: "Generation #{@gen}" }
-
-  - if @members.length > 0
+  - if !@members.empty?
     = render 'thumbs_with_modals', objects: @members
   - else
     .row

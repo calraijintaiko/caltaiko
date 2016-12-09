@@ -1,6 +1,6 @@
-%article.individual{ itemscope: '', itemtype: 'http://schema.org/Person' }
+%article.individual
   .row
-    = image_tag member.avatar.url(:full), itemprop: 'image',
+    = image_tag member.avatar.url(:full),
       class: 'bio-pic small-12 large-5 column'
     .spacer.column.small-12.hide-for-large-up
       %p
@@ -8,18 +8,17 @@
       .row
         %p.column.small-10
           %strong Name:
-          %span{ itemprop: 'name' }= member.name
+          %span= member.name
         %p.column.small-4
           %strong Gen:
           = link_to number_with_precision(member.gen, precision: 0),
             "#{root_url}members/gen/#{member.gen}"
-        %meta{ itemprop: 'memberOf', content: "Generation #{member.gen}" }
         %p.column.small-8
           %strong Major:
           = member.major
 
-        %p.bio.text-justify.column.small-12{ itemprop: 'description' }
-          #{member.bio}
+        %p.bio.text-justify.column.small-12
+          = member.bio
 
       - if user_signed_in?
         .icons.hide-for-medium-down
