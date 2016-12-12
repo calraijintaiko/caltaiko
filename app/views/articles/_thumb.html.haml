@@ -9,7 +9,11 @@
   - if user_signed_in?
     .card-actions
       = link_to edit_article_path(article) do
-        %paper-button.edit.btn{ raised: '' } Edit
+        %paper-button.edit.btn.with-icon{ raised: '' }
+          %iron-icon{ icon: 'create' }
+          Edit
       = link_to article_path(article), method: :delete,
         data: { confirm: "Delete article '#{article.title}'?" } do
-        %paper-button.delete.btn{ raised: '' } Delete
+        %paper-button.delete.btn.with-icon{ raised: '' }
+          %iron-icon{ icon: 'clear' }
+          Delete
