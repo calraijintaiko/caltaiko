@@ -1,15 +1,15 @@
-.row
-  .column.small-12
-    %article.article-thumb
-      .row
-        = link_to image_tag(article.image.url(:thumb)), article_path(article),
-          class: 'column small-12 medium-6 large-4'
-        .column.small-12.medium-6.large-8
-          = link_to article_path(article) do
-            %h3= article.title
-          %small=  article.safe_date
-          :markdown
-            #{article.snippet}
-          - if article.text.length > 300
-            = link_to 'Continue reading', article_path(article),
-              class: 'continue-reading'
+%paper-card{ image: article.image.url(:thumb) }
+  .card-content
+    .article-title= article.title
+    .article-snippet
+      :markdown
+        #{article.snippet}
+    = link_to 'Continue reading', article_path(article),
+      class: 'continue-reading'
+  - if user_signed_in?
+    .card-actions
+      = link_to edit_article_path(article) do
+        %paper-button.edit.btn{ raised: '' } Edit
+      = link_to article_path(article), method: :delete,
+        data: { confirm: "Delete article '#{article.title}'?" } do
+        %paper-button.delete.btn{ raised: '' } Delete

@@ -1,9 +1,9 @@
-%section.news-feed
-  - if articles.length > 0
-    - articles.each do |article|
-      = render '/articles/thumb', article: article
+%section.row
+  - if !articles.empty?
+    .column.small-12.news-feed
+      - articles.each do |article|
+        = render '/articles/thumb', article: article
   - else
-    .row
-      .column.small-12
-        .panel
-          %p Stay tuned for more information soon!
+    .column.small-12
+      .panel
+        %p Stay tuned for more information soon!

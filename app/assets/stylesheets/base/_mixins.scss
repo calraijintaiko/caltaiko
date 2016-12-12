@@ -23,3 +23,14 @@
   -o-transition: $effect $time ease-in-out;
   transition: $effect $time ease-in-out;
 }
+
+@mixin styled-button($color) {
+  border: 1px solid $color;
+  color: $color;
+  transition: all .3s ease;
+
+  &:hover {
+    background-color: $color;
+    color: $white;
+  }
+}

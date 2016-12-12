@@ -11,3 +11,14 @@
     color: $link-color;
   }
 }
+
+.btn {
+
+  &.delete {
+    @include styled-button($delete-btn-color);
+  }
+
+  &.edit {
+    @include styled-button($edit-btn-color);
+  }
+}
