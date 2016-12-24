@@ -27,8 +27,7 @@
             %p
               Thank you for reaching out to us! Please fill out and submit the
               contact form below, and we'll get back to you as soon as possible.
-          = form_for @message, method: :post, class: 'contact-form',
-            url: contact_path do |f|
+          = form_for @message, method: :post, url: contact_path do |f|
 
             .small-12.column
               .row.collapse.prefix-radius
@@ -56,7 +55,10 @@
                   %span.switch-on Yes
                   %span.switch-off No
             .small-12.column
-              = f.submit 'Send', class: 'submit button small'
+              %paper-button.send.btn.with-icon{ raised: '',
+                onclick: 'submitForm("new_message")' }
+                %iron-icon{ icon: 'send' }
+                Send
 
   .column.small-12.medium-5
     .row

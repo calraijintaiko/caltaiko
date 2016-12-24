@@ -24,8 +24,8 @@
   transition: $effect $time ease-in-out;
 }
 
-@mixin styled-button($color) {
-  border: 1px solid $color;
+@mixin styled-button($color, $border-width: 0) {
+  border: $border-width solid $color;
   color: $color;
   transition: all .3s ease;
 

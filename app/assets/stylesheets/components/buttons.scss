@@ -31,4 +31,9 @@
   &.edit {
     @include styled-button($edit-btn-color);
   }
+
+  &.send {
+    @include styled-button($send-btn-color, 1px);
+    margin-top: 15px;
+  }
 }

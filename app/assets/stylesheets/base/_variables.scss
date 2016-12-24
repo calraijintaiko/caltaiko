@@ -1,9 +1,13 @@
+$black: #000;
+$blue: #3f51b5;
+$red: #f00;
+$yellow: #ffc600;
+$white: #fff;
+
 $fb-color: #45619d;
 $youtube-color: #cc181e;
 $link-color: #000;
-$black: #000;
 $border-color: #fff;
-$white: #fff;
 $main-color: #222;
 $dark-bg: #222;
 $admin-link: #333;
@@ -12,12 +16,12 @@ $sub-color-2: #b3b3b3;
 $sub-color-3: #ededed;
 $strong-color: #eef268;
 $error-color: #f04124;
-$yellow: #ffc600;
 $transparent: rgba(0, 0, 0, 0);
 $hover-text-color: rgba(255, 255, 255, .75);
 
-$delete-btn-color: #f00;
-$edit-btn-color: #3f51b5;
+$delete-btn-color: $red;
+$edit-btn-color: $blue;
+$send-btn-color: $blue;
 
 $main-font: "lato", geneva, tahoma, sans-serif;
 $strong-font: "lato", arial, helvetica, sans-serif;
