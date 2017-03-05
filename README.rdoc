@@ -13,11 +13,15 @@ of the design work!
 
 * rvm[https://rvm.io/rvm/install]
 
+* npm[https://www.npmjs.com/]
+
+* Bower[https://bower.io/]
+
 * Git[https://help.github.com/articles/set-up-git]
 
 * {Ruby 2.3}[https://www.ruby-lang.org/en/]
 
-* {Rails 4.2}[http://rubyonrails.org/]
+* {Rails 5.0}[http://rubyonrails.org/]
 
 * ImageMagick[http://www.imagemagick.org/]
 
@@ -35,7 +39,7 @@ of the design work!
 3. Run the setup script and follow the prompts to install all required
    dependencies.
 
-      $ bin/setup
+      $ bin/env_setup
 
    This will also create the development database and seed it with random
    resources, including an admin account with username <tt>admin</tt> and
