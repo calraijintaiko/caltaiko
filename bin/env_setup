@@ -118,6 +118,48 @@ if [ $? -ne 0 ]; then
     exit
 fi
 
+MSG="Verifying npm is installed..."
+echo -n $MSG
+which npm &> /dev/null
+if [ $? -eq 0 ]; then
+    log_right "$MSG" "Ok" $green
+else
+    log_right "$MSG" "Not installed" $red
+    echo "Please install npm by following the instructions for your operating system online."
+    exit
+fi
+
+MSG="Verifying Bower is installed..."
+echo -n $MSG
+which bower &> /dev/null
+if [ $? -eq 0 ]; then
+    log_right "$MSG" "Ok" $green
+else
+    log_right "$MSG" "Not installed" $red
+    check_install "bower"
+    MSG="Installing bower..."
+    echo -n $MSG
+    npm install bower
+    if [ $? -ne 0 ]; then
+        exit
+    fi
+    log_right "$MSG" "bower successfully installed." $green
+    # Need to reload bash_profile to rvm to PATH
+    source ~/.bash_profile
+fi
+
+echo "Installing Bower dependencies..."
+bower install
+if [ $? -ne 0 ]; then
+    exit
+fi
+
+echo "Vulcanizing Polymer components..."
+./node_modules/vulcanize/bin/vulcanize --strip-comments components.html > vendor/assets/bower_components/components.html
+if [ $? -ne 0 ]; then
+    exit
+fi
+
 echo "Setting up development database..."
 rake db:setup
 if [ $? -ne 0 ]; then
