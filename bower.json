@@ -17,7 +17,6 @@
   ],
   "dependencies": {
     "paper-elements": "PolymerElements/paper-elements#^1.0.7",
-    "polymer-starter-kit": "PolymerElements/polymer-starter-kit#^2.0.1",
     "polymer": "Polymer/polymer#^1.7.0",
     "iron-elements": "PolymerElements/iron-elements#^1.0.10"
   }
