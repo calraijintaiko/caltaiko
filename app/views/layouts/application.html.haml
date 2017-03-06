@@ -25,3 +25,12 @@
   %body{ class: controller.controller_name, id: controller.action_name }
     = render 'layouts/navbar'
     = render 'members/dialog'
+
+    - if notice
+      %paper-toast{ opened: '', duration: '6000' }
+        %span.notice-text Success!
+        = notice
+    - if alert
+      %paper-toast{ opened: '', duration: '6000' }
+        %span.alert-text Error
+        = alert
