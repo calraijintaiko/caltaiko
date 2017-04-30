@@ -18,7 +18,6 @@
 //= require dataTables/jquery.dataTables.foundation
 //= require foundation
 //= require cocoon
-//= require google_analytics
 //= require slick
 //= require picker
 //= require picker.date

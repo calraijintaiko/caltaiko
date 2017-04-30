@@ -22,6 +22,9 @@
 
     %link{ rel: 'import', href: asset_path('components.html') }
 
+    - if Rails.env.production?
+      = render 'layouts/google_analytics_js'
+
   %body{ class: controller.controller_name, id: controller.action_name }
     = render 'layouts/navbar'
     = render 'members/dialog'
