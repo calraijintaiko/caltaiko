@@ -34,3 +34,23 @@
     color: $white;
   }
 }
+
+// Clamps multi-line text with a fade-out box over the last line.
+@mixin multi-line-clamp(
+    $line-height: 1.2em, $font-size: 1.25em, $height: 5em) {
+  font-size: $font-size;
+  height: $height;
+  line-height: $line-height;
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    background: linear-gradient(to right, $transparent, $white);
+    bottom: 0;
+    content: '';
+    height: $line-height;
+    position: absolute;
+    right: 0;
+    width: 70%;
+  }
+}

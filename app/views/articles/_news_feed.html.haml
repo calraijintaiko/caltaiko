@@ -1,7 +1,7 @@
-%section.row
+%section.row.news-feed
   - if !articles.empty?
-    .column.small-12.news-feed
-      - articles.each do |article|
+    - articles.each do |article|
+      .column.small-12.medium-6.large-4
         = render '/articles/thumb', article: article
   - else
     .column.small-12

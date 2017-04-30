@@ -28,25 +28,23 @@
 }
 
 .news-feed {
-  column-count: 1;
-
-  @media #{$medium-only} {
-    column-count: 2;
-  }
-
-  @media #{$large-up} {
-    column-count: 3;
-  }
-
   paper-card {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
     .article-title {
+      @include multi-line-clamp(
+          $line-height: 1.25em, $font-size: 1.25em, $height: 2.5em);
       display: block;
-      font-size: 1.25rem;
       font-weight: bold;
-      line-height: 1.25;
-      margin-bottom: 12px;
+      margin-bottom: 1em;
+    }
+
+    .article-snippet {
+      @include multi-line-clamp(
+          $line-height: 1em, $font-size: 1.25em, $height: 5em);
+      margin-bottom: 1em;
+      overflow: hidden;
+      position: relative;
     }
 
     .continue-reading {
