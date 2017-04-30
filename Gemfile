@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 
-gem 'rails', '~> 5.0.0'
+gem 'rails', '~> 5.1.0'
 # Use rubygems 2.6.0
 gem 'rubygems-update', '~> 2.6.0'
 # Use SCSS for stylesheets
@@ -9,7 +9,7 @@ gem 'sass-rails', '~> 5.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails', '~> 4.2.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Use Devise for authentification
-gem 'devise'
+gem 'devise', github: 'plataformatec/devise'
 
 # Use Paperclip to attach images
 gem 'paperclip', '~> 5.0'
