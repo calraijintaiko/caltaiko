@@ -1,7 +1,8 @@
-%section.perf-feed
+%section.perf-feed.row
   - if performances.length > 0
     - performances.each do |performance|
-      = render '/performances/feed_item', performance: performance
+      .column.small-12
+        = render '/performances/feed_item', performance: performance
   - else
     .row
       .column.small-12

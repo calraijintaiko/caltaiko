@@ -1,6 +1,18 @@
 // Place all the styles related to the upcoming_performances controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.performance-card {
+  margin-bottom: 50px;
+  width: 100%;
+
+  .title {
+    margin-bottom: 0;
+    margin-top: -5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
 
 .performance-page {
   .performance-title {
