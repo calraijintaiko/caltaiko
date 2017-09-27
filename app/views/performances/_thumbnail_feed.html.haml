@@ -1,42 +1,12 @@
 %section.thumbnail-feed.row
-  %ul.small-block-grid-1.medium-block-grid-2.large-block-grid-3
-    - objects.each do |performance|
-      - title = performance.title
-      %li.text-center
-        %article.thumb-performance
-          .performance-image
-            = link_to image_tag(performance.banner.url(:thumb)), performance
-            = link_to 'VIEW EVENT', performance, class: 'text-link'
-          .details
-            %p.text-left
-              - if title.length > 34
-                = (title[0, 32] + '...').upcase
-              - else
-                = title.upcase
-            .row.date-and-icons
-              %p.perf-date.column.small-5.text-left
-                = performance.date.strftime('%A, %-m/%-d')
-
-              .icons.column.small-7
-                - if user_signed_in?
-                  .edit-icons.hide-for-medium-down
-                    = link_to performance_path(performance), method: :delete,
-                      data: { confirm: "Delete performance #{title}?" },
-                      class: 'right hide-for-medium-down' do
-                      %i.fi-trash
-                    = link_to edit_performance_path(performance),
-                      class: 'right hide-for-medium-down' do
-                      %i.fi-pencil
-                - if performance.images_link.length > 0
-                  = link_to performance.images_link, aria: { haspopup: 'true' },
-                    title: 'View images from this performance',
-                    data: { tooltip: '', options: 'disable_for_touch:true' },
-                    class: 'right has-tip tip-top' do
-                    %i.fi-photo
-                - if performance.performance_videos.any?
-                  = link_to performance_path(performance),
-                    title: 'View videos from this performance',
-                    data: { tooltip: '', options: 'disable_for_touch:true' },
-                    aria: { haspopup: 'true' },
-                    class: 'right has-tip tip-top' do
-                    %i.fi-video
+  - objects.each do |performance|
+    .column.small-12.medium-6.large-4
+      %paper-card.performance-card.thumbnail-card
+        .performance-image
+          = link_to image_tag(performance.banner.url(:thumb)), performance
+          = link_to 'VIEW EVENT', performance, class: 'text-link'
+        .card-content
+          %time.subtitle{ itemprop: 'startDate',
+            datetime: performance.date.iso8601.to_s }
+            = performance.date.strftime('%A, %-m/%-d')
+          .title= performance.title
